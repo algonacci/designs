@@ -1,0 +1,19 @@
+{
+  "name": "designs",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "convert": "bun run index.ts",
+    "install-browsers": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}
