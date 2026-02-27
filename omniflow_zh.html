@@ -1,398 +1,430 @@
 <!doctype html>
 <html lang="zh">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Omniflow ERP - 综合企业解决方案</title>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
 
-      html,
-      body {
-        margin: 0;
-        width: 1080px;
-        height: 1920px;
-        overflow: hidden;
-        font-family: "Trebuchet MS", "Segoe UI", sans-serif;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omniflow ERP - AI-native ERP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-      body {
-        position: relative;
-        color: #ffffff;
-        background:
-          radial-gradient(circle at 10% 24%, #3b82f655 0, #3b82f600 28%),
-          radial-gradient(circle at 94% 10%, #6366f14d 0, #6366f100 26%),
-          radial-gradient(circle at 50% 90%, #10b98144 0, #10b98100 30%),
-          linear-gradient(162deg, #1e293b 0%, #1e3a8a 58%, #312e81 100%);
-      }
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0c0e14;
+    }
 
-      .shape {
-        position: absolute;
-        border: 1px solid #ffffff30;
-      }
+    .canvas {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 24%, rgba(59, 130, 246, 0.2) 0, transparent 40%),
+        radial-gradient(circle at 94% 10%, rgba(99, 102, 241, 0.15) 0, transparent 35%),
+        linear-gradient(162deg, #0c0e14 0%, #161a29 58%, #0c0e14 100%);
+    }
 
-      .shape.s1 {
-        top: 124px;
-        right: 70px;
-        width: 220px;
-        height: 220px;
-        border-radius: 34px;
-        transform: rotate(24deg);
-      }
+    .shape {
+      position: absolute;
+      border: 1.5px solid rgba(255, 255, 255, 0.05);
+      z-index: 0;
+    }
 
-      .shape.s2 {
-        bottom: 330px;
-        left: -90px;
-        width: 320px;
-        height: 320px;
-        border-radius: 50%;
-      }
+    .shape.s1 {
+      top: 100px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 80px;
+      transform: rotate(15deg);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent);
+    }
 
-      .shape.s3 {
-        bottom: 118px;
-        right: 40px;
-        width: 170px;
-        height: 170px;
-        border-radius: 22px;
-        transform: rotate(-12deg);
-      }
+    .story-shell {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      right: 50px;
+      bottom: 50px;
+      border-radius: 90px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+      backdrop-filter: blur(60px);
+      -webkit-backdrop-filter: blur(60px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 50px 100px;
+      z-index: 1;
+    }
 
-      .shape.s4 {
-        top: 300px;
-        left: 80px;
-        width: 120px;
-        height: 120px;
-        border-radius: 30px;
-        transform: rotate(45deg);
-        border-color: #ffffff20;
-      }
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+    }
 
-      .story-shell {
-        position: absolute;
-        inset: 42px;
-        border-radius: 34px;
-        border: 1px solid #ffffff38;
-        background: linear-gradient(180deg, #ffffff1a 0%, #ffffff08 100%);
-      }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
 
-      .safe-zone {
-        position: absolute;
-        inset: 110px 88px 380px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
+    .brand-mark {
+      width: 110px;
+      height: 110px;
+      filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.4));
+    }
 
-      .brand {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-        margin-bottom: 20px;
-      }
+    .brand-copy h1 {
+      margin: 0;
+      font-size: 50px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+    }
 
-      .brand-logomark {
-        width: 180px;
-        height: 180px;
-      }
+    .tag {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 18px;
+      background: rgba(59, 130, 246, 0.1);
+      color: #7dd3fc;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
 
-      .brand-logotype {
-        width: 360px;
-        height: auto;
-      }
+    .title {
+      margin: 30px 0 0;
+      width: 100%;
+      max-width: 900px;
+      font-size: 78px;
+      line-height: 1.05;
+      letter-spacing: -3px;
+      font-weight: 700;
+      color: #ffffff;
+    }
 
-      .tag {
-        display: inline-block;
-        margin-top: 8px;
-        padding: 10px 20px;
-        border-radius: 999px;
-        border: 1px solid #ffffff5c;
-        font-size: 24px;
-        background: rgba(37, 99, 235, 0.2);
-      }
+    .subtitle {
+      margin: 25px 0 0;
+      font-size: 30px;
+      color: #94a3b8;
+      max-width: 850px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
 
-      .title {
-        margin: 0;
-        max-width: 880px;
-        font-size: 62px;
-        line-height: 1.1;
-        letter-spacing: -1.2px;
-        margin-bottom: 16px;
-      }
+    .modules-grid {
+      margin: 60px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+      flex-grow: 1;
+      align-content: center;
+    }
 
-      .subtitle {
-        color: #bfdbfe;
-        font-size: 32px;
-        max-width: 800px;
-        margin: 0 0 24px;
-        line-height: 1.4;
-      }
+    .module-item {
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
 
-      .modules-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-        width: 100%;
-        max-width: 860px;
-        margin-top: 32px;
-      }
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-      .module-card {
-        background: rgba(255, 255, 255, 0.12);
-        border: 1px solid rgba(255, 255, 255, 0.25);
-        border-radius: 20px;
-        padding: 24px 20px;
-        text-align: left;
-        transition: all 0.3s ease;
-      }
+    .module-icon-box {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-      .module-card:hover {
-        background: rgba(255, 255, 255, 0.18);
-        transform: translateY(-4px);
-      }
+    .module-icon-box svg {
+      width: 28px;
+      height: 28px;
+      color: white;
+    }
 
-      .module-header {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 12px;
-      }
+    .module-name {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+    }
 
-      .module-icon {
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
+    .module-desc {
+      margin: 0;
+      font-size: 22px;
+      color: #94a3b8;
+      line-height: 1.3;
+      font-weight: 400;
+    }
 
-      .module-icon svg {
-        width: 28px;
-        height: 28px;
-        color: #ffffff;
-      }
+    .chip-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 5px;
+    }
 
-      .module-name {
-        font-size: 28px;
-        font-weight: 700;
-        margin: 0;
-        line-height: 1;
-      }
+    .mini-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #60a5fa;
+    }
 
-      .module-desc {
-        font-size: 20px;
-        color: #bfdbfe;
-        margin: 0;
-        line-height: 1.3;
-      }
+    .footer-cta {
+      margin-top: 60px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 45px;
+    }
 
-      .features-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 12px;
-      }
+    .cta-button {
+      display: inline-block;
+      border-radius: 100px;
+      padding: 30px 100px;
+      background: linear-gradient(135deg, #e0faff 0%, #87dfff 100%);
+      color: #0c1e3a;
+      font-size: 40px;
+      font-weight: 800;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(135, 223, 255, 0.2);
+      text-decoration: none;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-      .feature-badge {
-        font-size: 16px;
-        padding: 6px 12px;
-        border-radius: 8px;
-        background: rgba(37, 99, 235, 0.25);
-        border: 1px solid rgba(59, 130, 246, 0.3);
-      }
+    .footer-url {
+      font-size: 36px;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.1;
+    }
 
-      .footer-cta {
-        position: absolute;
-        left: 88px;
-        right: 88px;
-        bottom: 350px;
-        text-align: center;
-      }
+    .footer-slogan {
+      color: #64748b;
+      font-weight: 400;
+      font-size: 28px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
 
-      .cta-button {
-        display: inline-block;
-        border-radius: 999px;
-        padding: 18px 42px;
-        background: linear-gradient(120deg, #2563eb 0%, #4f46e5 100%);
-        color: #ffffff;
-        font-size: 32px;
-        font-weight: 700;
-        box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
-      }
-
-      .cta-text {
-        display: block;
-        margin-top: 16px;
-        font-size: 22px;
-        color: #bfdbfe;
-      }
-    </style>
-  </head>
-  <body>
+<body>
+  <div class="canvas">
     <div class="shape s1"></div>
-    <div class="shape s2"></div>
-    <div class="shape s3"></div>
-    <div class="shape s4"></div>
 
     <div class="story-shell">
-      <main class="safe-zone">
+      <div class="header-content">
         <div class="brand">
-          <img src="img/logo_logo-white-logomark.svg" alt="Omniflow Logo" class="brand-logomark" />
-          <img src="img/logo_logo-white-logotype.svg" alt="Omniflow" class="brand-logotype" />
-          <span class="tag">综合企业解决方案</span>
-        </div>
-
-        <h2 class="title">8个集成模块完善您的业务</h2>
-        <p class="subtitle">一站式ERP系统，在一个平台上管理人力资源、销售、会计和业务运营</p>
-
-        <div class="modules-grid">
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 class="module-name">HRIS</h3>
-            </div>
-            <p class="module-desc">集成人力资源管理系统</p>
-            <div class="features-list">
-              <span class="feature-badge">薪酬</span>
-              <span class="feature-badge">考勤</span>
-              <span class="feature-badge">请假</span>
-            </div>
-          </div>
-
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-              </div>
-              <h3 class="module-name">电商</h3>
-            </div>
-            <p class="module-desc">在线商店平台</p>
-            <div class="features-list">
-              <span class="feature-badge">库存</span>
-              <span class="feature-badge">订单</span>
-              <span class="feature-badge">多渠道</span>
-            </div>
-          </div>
-
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </div>
-              <h3 class="module-name">XRM</h3>
-            </div>
-            <p class="module-desc">客户关系管理</p>
-            <div class="features-list">
-              <span class="feature-badge">线索</span>
-              <span class="feature-badge">销售</span>
-              <span class="feature-badge">支持</span>
-            </div>
-          </div>
-
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 class="module-name">会计</h3>
-            </div>
-            <p class="module-desc">完整会计系统</p>
-            <div class="features-list">
-              <span class="feature-badge">税务</span>
-              <span class="feature-badge">报表</span>
-              <span class="feature-badge">账簿</span>
-            </div>
-          </div>
-
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 class="module-name">POS</h3>
-            </div>
-            <p class="module-desc">现代集成POS系统</p>
-            <div class="features-list">
-              <span class="feature-badge">多种支付</span>
-              <span class="feature-badge">条码扫描</span>
-              <span class="feature-badge">实时同步</span>
-            </div>
-          </div>
-
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 class="module-name">LMS</h3>
-            </div>
-            <p class="module-desc">员工培训系统</p>
-            <div class="features-list">
-              <span class="feature-badge">课程</span>
-              <span class="feature-badge">进度</span>
-              <span class="feature-badge">考核</span>
-            </div>
-          </div>
-
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                </svg>
-              </div>
-              <h3 class="module-name">支付网关</h3>
-            </div>
-            <p class="module-desc">支付集成</p>
-            <div class="features-list">
-              <span class="feature-badge">QRIS</span>
-              <span class="feature-badge">电子钱包</span>
-              <span class="feature-badge">虚拟账户</span>
-            </div>
-          </div>
-
-          <div class="module-card">
-            <div class="module-header">
-              <div class="module-icon" style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <h3 class="module-name">电话营销</h3>
-            </div>
-            <p class="module-desc">电话销售系统</p>
-            <div class="features-list">
-              <span class="feature-badge">自动拨号</span>
-              <span class="feature-badge">通话录音</span>
-              <span class="feature-badge">线索评分</span>
-            </div>
+          <img src="img/logo_logo-white-logomark.svg" alt="Omniflow Logo" class="brand-mark"
+            onerror="this.src='https://via.placeholder.com/150?text=O'" />
+          <div class="brand-copy">
+            <h1>Omniflow</h1>
+            <span class="tag">一体化业务解决方案</span>
           </div>
         </div>
-      </main>
+
+        <h2 class="title">8个集成ERP模块</h2>
+        <p class="subtitle">在单一云平台中实时管理从人力资源到财务的各项业务运营。</p>
+      </div>
+
+      <div class="modules-grid">
+        <!-- HRIS -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="module-name">人力资源 (HR)</h3>
+          </div>
+          <p class="module-desc">自动化薪酬与人事管理。</p>
+          <div class="chip-container">
+            <span class="mini-chip">薪酬</span>
+            <span class="mini-chip">考勤</span>
+          </div>
+        </div>
+
+        <!-- XRM -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="module-name">扩展管理 (XRM)</h3>
+          </div>
+          <p class="module-desc">安全与用户管理系统。</p>
+          <div class="chip-container">
+            <span class="mini-chip">权限</span>
+            <span class="mini-chip">日志</span>
+          </div>
+        </div>
+
+        <!-- POS -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="module-name">销售收银 (POS)</h3>
+          </div>
+          <p class="module-desc">收银与库存实时同步。</p>
+          <div class="chip-container">
+            <span class="mini-chip">扫描</span>
+            <span class="mini-chip">实时</span>
+          </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #6366f1, #4338ca);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <h3 class="module-name">支付网关</h3>
+          </div>
+          <p class="module-desc">扫码与电子钱包集成支付。</p>
+          <div class="chip-container">
+            <span class="mini-chip">扫码</span>
+            <span class="mini-chip">安全</span>
+          </div>
+        </div>
+
+        <!-- Accounting -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="module-name">会计方案</h3>
+          </div>
+          <p class="module-desc">实时生成完整财务报表。</p>
+          <div class="chip-container">
+            <span class="mini-chip">损益</span>
+            <span class="mini-chip">税务</span>
+          </div>
+        </div>
+
+        <!-- LMS -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="module-name">教育平台 (LMS)</h3>
+          </div>
+          <p class="module-desc">学习管理系统与在线考试。</p>
+          <div class="chip-container">
+            <span class="mini-chip">在线课程</span>
+            <span class="mini-chip">考试</span>
+          </div>
+        </div>
+
+        <!-- Telemarketing -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <h3 class="module-name">营销拨号</h3>
+          </div>
+          <p class="module-desc">自动拨号与智能语音脚本。</p>
+          <div class="chip-container">
+            <span class="mini-chip">VoIP</span>
+            <span class="mini-chip">脚本</span>
+          </div>
+        </div>
+
+        <!-- E-Commerce -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #10b981, #059669);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <h3 class="module-name">电子商务</h3>
+          </div>
+          <p class="module-desc">集成ERP系统的网店平台。</p>
+          <div class="chip-container">
+            <span class="mini-chip">同步</span>
+            <span class="mini-chip">多渠道</span>
+          </div>
+        </div>
+      </div>
 
       <div class="footer-cta">
-        <span class="cta-button">申请免费演示</span>
-        <span class="cta-text">Omniflow.id | 云端ERP解决方案</span>
+        <div class="cta-button">预约免费演示</div>
+        <div class="footer-url">
+          Omniflow.id
+          <div class="footer-slogan">AI-native ERP</div>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
