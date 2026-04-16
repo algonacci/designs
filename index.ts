@@ -4,15 +4,13 @@ import { join } from "path";
 
 const OUTPUT_DIR = "output";
 
-async function htmlToJpg(htmlPath: string, outputPath: string): Promise<void> {
+async function htmlToJpg(htmlPath: string, outputPath: string, width = 1080, height = 1920): Promise<void> {
   let browser: Browser | null = null;
 
   try {
     browser = await chromium.launch();
-    // Launch with high device scale factor for 3x resolution (3240x5760)
-    // This makes text ultra-crisp and removes the "pecah" (noise) artifacts
     const context = await browser.newContext({
-      viewport: { width: 1080, height: 1920 },
+      viewport: { width, height },
       deviceScaleFactor: 3,
     });
     const page: Page = await context.newPage();
@@ -42,18 +40,33 @@ async function htmlToJpg(htmlPath: string, outputPath: string): Promise<void> {
 }
 
 async function main(): Promise<void> {
-  const args = process.argv.slice(2);
+  const rawArgs = process.argv.slice(2);
 
-  if (args.length === 0 || args.includes("--help") || args.includes("-h")) {
+  if (rawArgs.length === 0 || rawArgs.includes("--help") || rawArgs.includes("-h")) {
     console.log(`
-Usage: bun run index.ts [html-files...]
+Usage: bun run index.ts [--width W] [--height H] [html-files...]
 
 Examples:
   bun run index.ts omniflow_id.html
+  bun run index.ts --width 1200 --height 630 revolta/revolta_og.html
   bun run index.ts *.html
-  bun run index.ts omniflow_id.html tot_invitation.html
     `);
     process.exit(0);
+  }
+
+  // Parse --width and --height flags
+  let width = 1080;
+  let height = 1920;
+  const args: string[] = [];
+
+  for (let i = 0; i < rawArgs.length; i++) {
+    if (rawArgs[i] === "--width" && rawArgs[i + 1]) {
+      width = parseInt(rawArgs[++i]);
+    } else if (rawArgs[i] === "--height" && rawArgs[i + 1]) {
+      height = parseInt(rawArgs[++i]);
+    } else {
+      args.push(rawArgs[i]);
+    }
   }
 
   if (!existsSync(OUTPUT_DIR)) {
@@ -61,13 +74,13 @@ Examples:
     console.log(`Created output directory: ${OUTPUT_DIR}`);
   }
 
-  console.log(`Converting ${args.length} HTML file(s) to JPG...\n`);
+  console.log(`Converting ${args.length} HTML file(s) to JPG... [${width}x${height}]\n`);
 
   for (const htmlFile of args) {
     const outputFileName = htmlFile.replace(/\.html$/i, ".jpg");
     const outputPath = join(OUTPUT_DIR, outputFileName);
 
-    await htmlToJpg(htmlFile, outputPath);
+    await htmlToJpg(htmlFile, outputPath, width, height);
   }
 
   console.log(`\n✓ All conversions complete! Check ${OUTPUT_DIR}/`);
