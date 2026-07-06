@@ -1,0 +1,416 @@
+/* =============================================================
+   Braincore.id — SPORTS DAY / EASY RUN
+   Instagram Portrait feed (1080x1350) — sporty & energetic
+   ============================================================= */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  --primary: #0f172a;
+  --secondary: #1e3a8a;
+  --accent: #3b82f6;
+  --highlight: #60a5fa;
+  --spark: #22d3ee;
+
+  --ink-100: #f8fafc;
+  --ink-200: #e2e8f0;
+  --ink-300: #cbd5e1;
+  --ink-400: #94a3b8;
+
+  --glass-bg: linear-gradient(160deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.02) 100%);
+  --glass-border: rgba(255, 255, 255, 0.14);
+
+  --r-sm: 14px;
+  --r-md: 22px;
+  --r-lg: 30px;
+  --r-pill: 999px;
+
+  --sp-1: 8px;
+  --sp-2: 14px;
+  --sp-3: 20px;
+  --sp-4: 28px;
+  --sp-5: 40px;
+
+  --font: 'Inter', system-ui, sans-serif;
+  --display: 'Anton', 'Inter', sans-serif;
+}
+
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  font-family: var(--font);
+  color: var(--ink-100);
+  background: var(--primary);
+}
+
+/* =============================================================
+   CANVAS
+   ============================================================= */
+.canvas {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #08111f 0%, #10254e 48%, #163a73 100%);
+}
+
+/* ---------- Background decoration ---------- */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.6;
+}
+
+.blob--a {
+  top: -160px;
+  right: -120px;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.6), transparent 70%);
+}
+
+.blob--b {
+  bottom: -200px;
+  left: -160px;
+  width: 620px;
+  height: 620px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.35), transparent 70%);
+}
+
+/* Diagonal accent band */
+.band {
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  height: 360px;
+  top: 40%;
+  transform: rotate(-12deg);
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.16), transparent);
+  filter: blur(6px);
+}
+
+/* Diagonal speed lines */
+.stripes {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(115deg,
+      rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 46px);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 42%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(ellipse at 50% 42%, #000 0%, transparent 78%);
+}
+
+/* =============================================================
+   FRAME
+   ============================================================= */
+.frame {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding: 74px 80px 66px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =============================================================
+   NAV
+   ============================================================= */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand__logo {
+  height: 84px;
+  width: auto;
+  display: block;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  padding: 12px 22px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--ink-200);
+}
+
+.label .ping {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--spark);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.25);
+}
+
+/* =============================================================
+   HERO
+   ============================================================= */
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sp-4);
+}
+
+/* Kicker with side lines */
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--highlight);
+}
+
+.kicker .line {
+  width: 70px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--highlight));
+}
+
+.kicker .line:last-child { background: linear-gradient(90deg, var(--highlight), transparent); }
+
+/* Big display type */
+.display {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 208px;
+  line-height: 0.82;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: skewX(-6deg);
+}
+
+.display .l1 {
+  display: block;
+  background: linear-gradient(120deg, var(--spark), var(--highlight) 55%, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 14px 40px rgba(34, 211, 238, 0.35));
+}
+
+.display .l2 {
+  display: block;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--highlight);
+}
+
+.tagline {
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--ink-300);
+  max-width: 640px;
+  line-height: 1.4;
+}
+
+/* ---------- Route line ---------- */
+.route {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  width: 100%;
+  margin-top: var(--sp-2);
+}
+
+.route__pt {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border-radius: var(--r-pill);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.route__pt .seed {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--spark);
+  box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.25);
+}
+
+.route__pt svg { width: 22px; height: 22px; color: var(--highlight); }
+
+.route__track {
+  position: relative;
+  flex: 1;
+  height: 10px;
+  border-radius: var(--r-pill);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.route__track .fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 64%;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--accent), var(--spark));
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.5);
+}
+
+.route__track .knob {
+  position: absolute;
+  left: 64%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 6px rgba(34, 211, 238, 0.25), 0 0 22px rgba(34, 211, 238, 0.7);
+}
+
+/* Checkered finish flag */
+.flag-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  background-image: conic-gradient(#0f172a 90deg, #fff 0 180deg, #0f172a 0 270deg, #fff 0);
+  background-size: 11px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* =============================================================
+   INFO CARDS
+   ============================================================= */
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.info__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+}
+
+.info__icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin-bottom: 4px;
+}
+
+.info__icon svg { width: 28px; height: 28px; }
+
+.info__val {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #fff;
+}
+
+.info__sub {
+  font-size: 20px;
+  color: var(--ink-400);
+}
+
+/* =============================================================
+   CTA
+   ============================================================= */
+.cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-4);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 26px 56px;
+  border-radius: var(--r-pill);
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--spark) 0%, var(--accent) 55%, var(--secondary) 100%);
+  box-shadow: 0 22px 48px rgba(34, 211, 238, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.cta svg { width: 28px; height: 28px; }
+
+.cta-note {
+  font-size: 20px;
+  color: var(--ink-400);
+  letter-spacing: 1px;
+}
+
+/* =============================================================
+   FOOTER
+   ============================================================= */
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--sp-4);
+  padding-top: var(--sp-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.foot__url {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.foot__tags {
+  font-size: 20px;
+  color: var(--highlight);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

@@ -1,0 +1,40 @@
+/* =============================================================
+   Braincore Sports Day — STORY overrides (1080 x 1920, 9:16)
+   Load AFTER styles.css.
+   ============================================================= */
+
+html,
+body { height: 1920px; }
+
+.canvas { height: 1920px; }
+
+/* bottom padding tuned so footer clears the IG Story reply bar */
+.frame { padding: 96px 80px 96px; }
+
+/* Center the hero+info+CTA block; keep footer pinned to the bottom */
+.hero {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
+
+.foot { margin-top: auto; }
+
+/* Bigger display for story */
+.display { font-size: 300px; }
+
+.tagline {
+  font-size: 33px;
+  max-width: 720px;
+}
+
+/* Info: keep the feed layout (1 row, 3 cols) — just center the text wrapper */
+.info__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+/* CTA breathing room */
+.cta-wrap { margin-top: 56px; }
+.cta { font-size: 33px; padding: 30px 64px; }
