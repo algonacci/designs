@@ -1,0 +1,155 @@
+/* =============================================================
+   Braincore Consultation v2 — Cyber-Slate · 1080x1350 feed
+   Uses real Braincore logo from ../../img/braincore/
+   ============================================================= */
+:root {
+  --bg: #070B12;
+  --surface: #111827;
+  --elevated: #1F2937;
+  --accent: #3B82F6;
+  --cyan: #22D3EE;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --border: rgba(34,211,238,0.13);
+  --glow: 0 0 40px -10px rgba(34,211,238,0.3);
+  --elevate: 0 25px 50px -12px rgba(0,0,0,0.7);
+  --r-lg: 32px; --r-md: 20px; --r-pill: 100px;
+  --sp-1:8px; --sp-2:14px; --sp-3:20px; --sp-4:28px; --sp-5:40px; --sp-6:56px;
+  --ff: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --ff-mono: 'Space Grotesk', monospace;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+
+html, body {
+  width:1080px; height:1350px; overflow:hidden;
+  font-family:var(--ff); color:var(--text); background:var(--bg);
+}
+
+.canvas {
+  position:relative; width:1080px; height:1350px; overflow:hidden;
+  background:var(--bg);
+}
+
+.canvas::before {
+  content:''; position:absolute; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(circle at 90% 8%, rgba(59,130,246,0.14) 0%, transparent 50%),
+    radial-gradient(circle at 12% 92%, rgba(34,211,238,0.07) 0%, transparent 48%);
+}
+
+.bg-grid {
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:54px 54px;
+}
+
+.frame {
+  position:relative; z-index:1;
+  width:100%; height:100%; display:flex; flex-direction:column;
+  padding:70px 60px 60px;
+}
+
+/* Nav */
+.nav { display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+.brand-logo { height:52px; width:auto; display:block; }
+.nav-pill {
+  padding:10px 24px; border-radius:var(--r-pill);
+  background:rgba(255,255,255,0.04); border:1px solid var(--border);
+  font-size:15px; font-weight:600; color:var(--text); font-family:var(--ff-mono);
+}
+
+/* Foot */
+.foot { display:flex; align-items:center; justify-content:space-between; flex-shrink:0; margin-top:auto; padding-top:20px; border-top:1px solid rgba(255,255,255,0.06); }
+.foot-tag { font-size:17px; color:var(--muted); font-family:var(--ff-mono); font-weight:600; }
+
+/* Utils */
+.pill-accent {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:12px 22px; border-radius:var(--r-pill);
+  background:rgba(59,130,246,0.10); border:1px solid rgba(59,130,246,0.22);
+  color:var(--cyan); font-size:16px; font-weight:700; font-family:var(--ff-mono);
+  letter-spacing:0.05em; align-self:flex-start;
+}
+.eyebrow { font-size:19px; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:var(--cyan); }
+.grad {
+  background:linear-gradient(120deg, var(--cyan), var(--accent));
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.card {
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-lg); box-shadow:var(--elevate);
+}
+.cta-btn {
+  display:inline-flex; align-items:center; gap:12px; align-self:flex-start;
+  padding:26px 50px; border-radius:var(--r-pill);
+  background:linear-gradient(135deg, var(--accent), #1D4ED8);
+  color:#fff; font-size:26px; font-weight:700; text-decoration:none;
+  box-shadow:0 20px 45px rgba(59,130,246,0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.cta-btn svg { width:26px; height:26px; }
+
+/* ============================================================
+   SLIDE 1 — COVER
+   ============================================================ */
+.s1-body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:24px; }
+.s1-grid { display:grid; grid-template-columns:1.2fr 1fr; gap:50px; align-items:center; margin-top:var(--sp-5); }
+.s1-copy { display:flex; flex-direction:column; gap:22px; }
+.s1-headline { font-size:74px; font-weight:800; line-height:1.04; letter-spacing:-0.02em; color:var(--text); }
+.s1-sub { font-size:24px; line-height:1.5; color:var(--muted); max-width:450px; }
+.s1-visual { position:relative; height:800px; }
+.messy { position:absolute; border-radius:16px; border:1px solid rgba(255,255,255,0.05); background:rgba(255,255,255,0.02); }
+.messy:nth-child(1) { top:20px; left:10px; width:170px; height:120px; transform:rotate(-7deg); opacity:0.55; }
+.messy:nth-child(2) { top:60px; right:20px; width:140px; height:90px; transform:rotate(12deg); opacity:0.38; }
+.messy:nth-child(3) { top:170px; left:0; width:190px; height:110px; transform:rotate(-3deg); opacity:0.5; }
+.messy:nth-child(4) { top:130px; right:50px; width:130px; height:80px; transform:rotate(8deg); opacity:0.32; }
+.clear-card {
+  position:absolute; bottom:40px; left:0; right:0;
+  padding:34px 28px; display:flex; flex-direction:column; gap:18px;
+}
+.clear-row { display:flex; align-items:center; gap:14px; }
+.clear-check { width:36px; height:36px; border-radius:10px; display:grid; place-items:center; background:rgba(34,211,238,0.10); border:1px solid var(--border); }
+.clear-check svg { width:20px; height:20px; color:var(--cyan); }
+.clear-text { font-size:24px; font-weight:700; }
+.clear-sub { font-size:17px; color:var(--muted); }
+
+/* ============================================================
+   SLIDE 2 & 3 — GRID
+   ============================================================ */
+.section-body { flex:1; display:flex; flex-direction:column; justify-content:center; gap:36px; }
+.section-head { text-align:center; display:flex; flex-direction:column; gap:8px; }
+.section-title { font-size:48px; font-weight:700; letter-spacing:-0.01em; color:var(--text); }
+.section-sub { font-size:20px; color:var(--muted); }
+.kicker { display:flex; align-items:center; justify-content:center; gap:14px; font-size:18px; font-weight:700; letter-spacing:0.12em; color:var(--cyan); text-transform:uppercase; font-family:var(--ff-mono); }
+.kicker .line { width:56px; height:1.5px; background:linear-gradient(90deg, transparent, var(--cyan)); }
+.kicker .line:last-child { background:linear-gradient(90deg, var(--cyan), transparent); }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.grid-card { padding:30px 26px; display:flex; flex-direction:column; gap:12px; }
+.grid-icon { width:48px; height:48px; border-radius:13px; display:grid; place-items:center; background:rgba(34,211,238,0.08); border:1px solid var(--border); }
+.grid-icon svg { width:24px; height:24px; color:var(--cyan); }
+.grid-title { font-size:26px; font-weight:700; color:var(--text); }
+.grid-desc { font-size:20px; line-height:1.38; color:var(--muted); }
+
+/* ============================================================
+   SLIDE 4 & 5 — CENTERED HERO
+   ============================================================ */
+.hero-center { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:28px; }
+.hero-headline { font-size:66px; font-weight:800; line-height:1.06; color:var(--text); max-width:820px; letter-spacing:-0.015em; }
+.hero-sub { font-size:24px; line-height:1.5; color:var(--muted); max-width:640px; }
+.hero-center .cta-btn { align-self:center; margin-top:var(--sp-2); }
+
+/* WA button */
+.wa-btn {
+  display:inline-flex; align-items:center; gap:20px;
+  padding:28px 48px; border-radius:var(--r-pill);
+  background:linear-gradient(135deg, #25d366, #128c7e);
+  color:#fff; text-decoration:none;
+  box-shadow:0 26px 55px rgba(37,211,102,0.4), inset 0 1px 0 rgba(255,255,255,0.3);
+}
+.wa-icon { width:70px; height:70px; border-radius:50%; display:grid; place-items:center; background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.25); }
+.wa-icon svg { width:42px; height:42px; }
+.wa-text { display:flex; flex-direction:column; align-items:flex-start; line-height:1.05; }
+.wa-label { font-size:18px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; opacity:0.9; }
+.wa-num { font-size:48px; font-weight:700; letter-spacing:0.02em; }

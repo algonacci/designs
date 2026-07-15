@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omniflow ERP - AI-native ERP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0c0e14;
+    }
+
+    .canvas {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 10% 24%, rgba(59, 130, 246, 0.2) 0, transparent 40%),
+        radial-gradient(circle at 94% 10%, rgba(99, 102, 241, 0.15) 0, transparent 35%),
+        linear-gradient(162deg, #0c0e14 0%, #161a29 58%, #0c0e14 100%);
+    }
+
+    .shape {
+      position: absolute;
+      border: 1.5px solid rgba(255, 255, 255, 0.05);
+      z-index: 0;
+    }
+
+    .shape.s1 {
+      top: 100px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 80px;
+      transform: rotate(15deg);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.02), transparent);
+    }
+
+    .story-shell {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      right: 50px;
+      bottom: 50px;
+      border-radius: 90px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
+      backdrop-filter: blur(60px);
+      -webkit-backdrop-filter: blur(60px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 80px 50px 100px;
+      z-index: 1;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      text-align: center;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .brand-mark {
+      width: 110px;
+      height: 110px;
+      filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.4));
+    }
+
+    .brand-copy h1 {
+      margin: 0;
+      font-size: 50px;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+    }
+
+    .tag {
+      display: inline-block;
+      margin-top: 5px;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 18px;
+      background: rgba(59, 130, 246, 0.1);
+      color: #7dd3fc;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .title {
+      margin: 30px 0 0;
+      width: 100%;
+      max-width: 900px;
+      font-size: 78px;
+      line-height: 1.05;
+      letter-spacing: -3px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      margin: 25px 0 0;
+      font-size: 30px;
+      color: #94a3b8;
+      max-width: 850px;
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    .modules-grid {
+      margin: 60px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      width: 100%;
+      flex-grow: 1;
+      align-content: center;
+    }
+
+    .module-item {
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .module-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .module-icon-box {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .module-icon-box svg {
+      width: 28px;
+      height: 28px;
+      color: white;
+    }
+
+    .module-name {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+    }
+
+    .module-desc {
+      margin: 0;
+      font-size: 22px;
+      color: #94a3b8;
+      line-height: 1.3;
+      font-weight: 400;
+    }
+
+    .chip-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 5px;
+    }
+
+    .mini-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 5px 14px;
+      border-radius: 100px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #60a5fa;
+    }
+
+    .footer-cta {
+      margin-top: 60px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      border-radius: 100px;
+      padding: 30px 100px;
+      background: linear-gradient(135deg, #e0faff 0%, #87dfff 100%);
+      color: #0c1e3a;
+      font-size: 40px;
+      font-weight: 800;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(135, 223, 255, 0.2);
+      text-decoration: none;
+      border: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-url {
+      font-size: 36px;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .footer-slogan {
+      color: #64748b;
+      font-weight: 400;
+      font-size: 28px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="canvas">
+    <div class="shape s1"></div>
+
+    <div class="story-shell">
+      <div class="header-content">
+        <div class="brand">
+          <img src="../img/logo_logo-white-logomark.svg" alt="Omniflow Logo" class="brand-mark"
+            onerror="this.src='https://via.placeholder.com/150?text=O'" />
+          <div class="brand-copy">
+            <h1>Omniflow</h1>
+            <span class="tag">Solusi Bisnis Terpadu</span>
+          </div>
+        </div>
+
+        <h2 class="title">8 Module ERP Terintegrasi</h2>
+        <p class="subtitle">Kelola operasional bisnis dari SDM hingga akuntansi secara real-time dalam satu platform
+          cloud.</p>
+      </div>
+
+      <div class="modules-grid">
+        <!-- HRIS -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="module-name">HRIS</h3>
+          </div>
+          <p class="module-desc">SDM & Payroll otomatis.</p>
+          <div class="chip-container">
+            <span class="mini-chip">Payroll</span>
+            <span class="mini-chip">Absensi</span>
+          </div>
+        </div>
+
+        <!-- XRM -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="module-name">XRM</h3>
+          </div>
+          <p class="module-desc">Security & User Management.</p>
+          <div class="chip-container">
+            <span class="mini-chip">RBAC</span>
+            <span class="mini-chip">Log</span>
+          </div>
+        </div>
+
+        <!-- POS -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="module-name">POS</h3>
+          </div>
+          <p class="module-desc">Kasir & Stok Integrasi.</p>
+          <div class="chip-container">
+            <span class="mini-chip">Scan</span>
+            <span class="mini-chip">Realtime</span>
+          </div>
+        </div>
+
+        <!-- Payment -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #6366f1, #4338ca);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <h3 class="module-name">Payment</h3>
+          </div>
+          <p class="module-desc">QRIS & E-Wallet terpadu.</p>
+          <div class="chip-container">
+            <span class="mini-chip">QRIS</span>
+            <span class="mini-chip">VA</span>
+          </div>
+        </div>
+
+        <!-- Accounting -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="module-name">Accounting</h3>
+          </div>
+          <p class="module-desc">Laporan keuangan instan.</p>
+          <div class="chip-container">
+            <span class="mini-chip">Laba Rugi</span>
+            <span class="mini-chip">Tax</span>
+          </div>
+        </div>
+
+        <!-- LMS -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="module-name">LMS</h3>
+          </div>
+          <p class="module-desc">Sistem manajemen pembelajaran.</p>
+          <div class="chip-container">
+            <span class="mini-chip">E-Learning</span>
+            <span class="mini-chip">Ujian</span>
+          </div>
+        </div>
+
+        <!-- Telemarketing -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+            </div>
+            <h3 class="module-name">Telemarketing</h3>
+          </div>
+          <p class="module-desc">Auto Dialer & TTS.</p>
+          <div class="chip-container">
+            <span class="mini-chip">VoIP</span>
+            <span class="mini-chip">Script</span>
+          </div>
+        </div>
+
+        <!-- E-Commerce -->
+        <div class="module-item">
+          <div class="module-header">
+            <div class="module-icon-box" style="background: linear-gradient(135deg, #10b981, #059669);">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+              </svg>
+            </div>
+            <h3 class="module-name">E-Commerce</h3>
+          </div>
+          <p class="module-desc">Toko online integrasi ERP.</p>
+          <div class="chip-container">
+            <span class="mini-chip">Omni</span>
+            <span class="mini-chip">Sync</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-cta">
+        <div class="cta-button">Coba Demo Gratis</div>
+        <div class="footer-url">
+          Omniflow.id
+          <div class="footer-slogan">AI-native ERP</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
