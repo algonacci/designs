@@ -1,0 +1,64 @@
+/* =============================================================
+   Braincore Consultation — STORY (1080 x 1920, 9:16)
+   Load AFTER styles.css
+   ============================================================= */
+
+html, body { height: 1920px; }
+.canvas { height: 1920px; }
+
+.frame { padding: 96px 80px 96px; }
+
+/* typography bump */
+.eyebrow { font-size: 22px; letter-spacing: 5px; }
+.headline { font-size: 86px; letter-spacing: -3px; }
+.subhead { font-size: 32px; }
+
+.kicker { font-size: 25px; }
+.kicker .line { width: 80px; }
+
+.cta { font-size: 30px; padding: 30px 56px; }
+
+/* === Slide 1 — Cover === */
+.cover-grid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--sp-4);
+  align-content: center;
+}
+
+.cover-copy {
+  align-items: center;
+  text-align: center;
+  padding-right: 0;
+}
+
+.cover-copy .headline { font-size: 96px; }
+.cover-copy .subhead { max-width: 620px; }
+.cover-copy .cta { align-self: center; }
+
+.cover-visual {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.hero-img { aspect-ratio: 16 / 9; }
+
+/* Reposition floating cards for story */
+.fc1 { top: 4%;  left: -8%; }
+.fc2 { top: 28%; right: -4%; }
+.fc3 { bottom: 14%; left: -6%; }
+.fc4 { bottom: 4%;  right: -6%; }
+
+/* Slide 2+3 grid — keep 2×2 but scale */
+.section-head .headline { font-size: 74px; }
+
+.grid-card { padding: 36px 32px; }
+.card__title { font-size: 34px; }
+.card__desc { font-size: 25px; }
+
+/* Slide 4+5 */
+.hero-center .headline { font-size: 92px; }
+
+.wa-btn__num { font-size: 54px; }

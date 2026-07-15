@@ -4,7 +4,7 @@ import { join } from "path";
 
 const OUTPUT_DIR = "output";
 
-async function htmlToJpg(htmlPath: string, outputPath: string, width = 1080, height = 1920): Promise<void> {
+async function htmlToJpg(htmlPath: string, outputPath: string, width = 1080, height = 1920, imageType: "jpeg" | "png" = "jpeg"): Promise<void> {
   let browser: Browser | null = null;
 
   try {
@@ -20,11 +20,10 @@ async function htmlToJpg(htmlPath: string, outputPath: string, width = 1080, hei
 
     await page.goto(fileUrl, { waitUntil: "networkidle" });
 
-    // Using high-quality JPEG (100) and ensuring it captures the high-res buffer correctly
     await page.screenshot({
       path: outputPath,
-      type: "jpeg",
-      quality: 100,
+      type: imageType,
+      ...(imageType === "jpeg" ? { quality: 100 } : {}),
       fullPage: false,
     });
 
@@ -54,9 +53,10 @@ Examples:
     process.exit(0);
   }
 
-  // Parse --width and --height flags
+  // Parse --width, --height, and --png flags
   let width = 1080;
   let height = 1920;
+  let imageType: "jpeg" | "png" = "jpeg";
   const args: string[] = [];
 
   for (let i = 0; i < rawArgs.length; i++) {
@@ -64,6 +64,8 @@ Examples:
       width = parseInt(rawArgs[++i]);
     } else if (rawArgs[i] === "--height" && rawArgs[i + 1]) {
       height = parseInt(rawArgs[++i]);
+    } else if (rawArgs[i] === "--png") {
+      imageType = "png";
     } else {
       args.push(rawArgs[i]);
     }
@@ -74,13 +76,14 @@ Examples:
     console.log(`Created output directory: ${OUTPUT_DIR}`);
   }
 
-  console.log(`Converting ${args.length} HTML file(s) to JPG... [${width}x${height}]\n`);
+  const ext = imageType === "png" ? ".png" : ".jpg";
+  console.log(`Converting ${args.length} HTML file(s) to ${imageType.toUpperCase()}... [${width}x${height}]\n`);
 
   for (const htmlFile of args) {
-    const outputFileName = htmlFile.replace(/\.html$/i, ".jpg");
+    const outputFileName = htmlFile.replace(/\.html$/i, ext);
     const outputPath = join(OUTPUT_DIR, outputFileName);
 
-    await htmlToJpg(htmlFile, outputPath, width, height);
+    await htmlToJpg(htmlFile, outputPath, width, height, imageType);
   }
 
   console.log(`\n✓ All conversions complete! Check ${OUTPUT_DIR}/`);

@@ -1,0 +1,26 @@
+/* Story override — 1080 x 1920 */
+html, body { height:1920px; }
+.canvas { height:1920px; }
+.frame { padding:96px 60px 96px; }
+
+.s1-headline { font-size:86px; }
+.s1-sub { font-size:27px; max-width:580px; }
+.s1-copy .cta-btn { font-size:28px; padding:30px 60px; }
+
+.hero-headline { font-size:80px; }
+.hero-sub { font-size:28px; }
+
+.section-title { font-size:56px; }
+.section-sub { font-size:22px; }
+.kicker { font-size:19px; }
+.grid-title { font-size:28px; }
+.grid-desc { font-size:22px; }
+
+.wa-num { font-size:56px; }
+
+/* 1-col cover for story */
+.s1-grid { grid-template-columns:1fr; grid-template-rows:auto 1fr; gap:30px; }
+.s1-copy { align-items:center; text-align:center; }
+.s1-copy .subhead { max-width:560px; }
+.s1-visual { height:540px; }
+.s1-copy .cta-btn { align-self:center; }
