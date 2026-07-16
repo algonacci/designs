@@ -123,10 +123,21 @@ Example: adding a "Careers" page:
 ## Design notes
 
 - **Dimensions**: 1200×630 px (OG standard)
-- **Fonts**: Outfit (headings), Space Grotesk (URL/meta). Loaded from Google Fonts in the HTML template.
-- **Colors**: Each banner gets an `accent` hex → generates radial glow, badge border, headline gradient, and bottom accent line automatically.
-- **Badge**: Rendered as a small monospace pill above the headline. The `tag` field becomes the badge text.
-- **Logo**: Inline SVG (white logomark polygon + wordmark paths) — no external assets needed.
+- **Fonts**: Outfit (headings), Space Grotesk (badge + URL). Loaded from Google Fonts in the HTML template.
+- **Colors**: Each banner gets an `accent` hex → auto-generates radial glow, badge border, headline gradient, and bottom accent line.
+- **Layout** (top → bottom, all centered):
+  - Logomark: 110×110 px, white polygon SVG (`viewBox="0 0 1000 1000"`)
+  - Wordmark: 300 px wide, white path SVG (`viewBox="0 175 1000 140"` — cropped tight, no top whitespace)
+  - Logomark → wordmark: `margin-top: -2px` (zero visible gap)
+  - Badge pill: `margin-top: 24px`, `font-size: 14px`, Space Grotesk, uppercase, accent-colored border + bg
+  - Headline: `margin-top: 10px`, `font-size: 50px`, `font-weight: 800`, accent gradient on key words
+  - Subtitle: `margin-top: 8px`, `font-size: 23px`, `color: #94A3B8`
+  - URL: `margin-top: 10px`, `font-size: 18px`, Space Grotesk, `color: #64748B`
+  - Frame: `justify-content: center`, `padding: 56px 80px 60px`, `gap: 0` (all spacing via manual margins)
+- **Background**: Dark navy gradient `#0A0F1A → #111827 → #151F32` with subtle grid overlay (56×56 px) and radial accent glows
+- **Accent line**: 4 px gradient bar at the very bottom, fades from transparent → accent → transparent
+- **Badge**: Space Grotesk monospace pill between wordmark and headline. The `tag` field in data.toml becomes the badge text.
+- **Logo**: Inline SVG (white logomark polygon + cropped wordmark paths) — no external assets needed.
 - **File size**: PNG → WebP at quality 85 via `sharp`. Each ~21 KB.
 - **Total**: 96 banners, ~2 MB on disk.
 - **Playwright**: 1 browser session, 4 concurrent pages. Renders all 96 in ~2-3 minutes.

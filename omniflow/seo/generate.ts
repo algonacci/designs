@@ -50,7 +50,7 @@ const LOGOMARK_SVG =
   '</svg>';
 
 const WORDMARK_SVG =
-  '<svg viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg">' +
+  '<svg viewBox="0 175 1000 140" fill="none" xmlns="http://www.w3.org/2000/svg">' +
   '<path fill="#FFFFFF" d="M89.6,285.76l13.13-74.22,19.78-16.93h56.97l16.14,19.46-13.29,75.01-19.31,16.3h-57.28l-16.14-19.62ZM153.06,287.03l9.49-8.07,10.29-57.92-6.65-8.07h-34.02l-9.49,8.07-10.44,57.92,6.65,8.07h34.18Z"/>' +
   '<path fill="#FFFFFF" d="M218.09,194.62h18.67l20.41,71.53h.32l45.42-71.53h21.2l-19.46,110.77h-20.73l11.87-67.41h-.32l-34.5,51.9h-13.29l-16.14-51.9h-.32l-11.87,67.41h-20.73l19.46-110.77Z"/>' +
   '<path fill="#FFFFFF" d="M344.85,194.62h19.31l36.24,75.17h.32l13.13-75.17h20.73l-19.62,110.77h-19.31l-35.92-75.01h-.32l-13.29,75.01h-20.73l19.46-110.77Z"/>' +
@@ -145,15 +145,15 @@ function renderBanner(b: Banner): string {
     '.bg-grid{position:absolute;inset:0;pointer-events:none;z-index:0;',
     '  background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);',
     '  background-size:56px 56px;}',
-    '.frame{position:relative;z-index:1;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:50px 80px;gap:18px;}',
-    '.brand-block{display:flex;flex-direction:column;align-items:center;gap:4px;}',
-    '.logomark{width:85px;height:85px;filter:drop-shadow(0 4px 20px rgba(59,130,246,0.5));}',
-    '.wordmark{width:260px;height:auto;display:block;}',
-    '.badge-pill{display:inline-block;padding:4px 16px;border-radius:100px;border:1px solid ' + hexToRgba(b.accent, 0.25) + ';background:' + hexToRgba(b.accent, 0.06) + ';color:' + lighten(b.accent, 0.25) + ';font-size:14px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;font-family:"Space Grotesk",monospace;}',
-    '.headline{font-size:50px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;text-align:center;max-width:860px;}',
+    '.frame{position:relative;z-index:1;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 80px 60px;gap:0;}',
+    '.brand-block{display:flex;flex-direction:column;align-items:center;gap:0;}',
+    '.logomark{width:110px;height:110px;filter:drop-shadow(0 4px 20px rgba(59,130,246,0.5));}',
+    '.wordmark{width:300px;height:auto;display:block;margin-top:-2px;}',
+    '.badge-pill{display:inline-block;padding:4px 16px;border-radius:100px;border:1px solid ' + hexToRgba(b.accent, 0.25) + ';background:' + hexToRgba(b.accent, 0.06) + ';color:' + lighten(b.accent, 0.25) + ';font-size:14px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;font-family:"Space Grotesk",monospace;margin-top:24px;}',
+    '.headline{font-size:50px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;text-align:center;max-width:860px;margin-top:10px;}',
     '.headline .grad{background:linear-gradient(120deg,' + lighten(b.accent, 0.2) + ',' + b.accent + ',' + accent2 + ');-webkit-background-clip:text;background-clip:text;color:transparent;}',
-    '.sub{font-size:23px;line-height:1.45;color:#94A3B8;text-align:center;max-width:660px;}',
-    '.url{font-size:18px;font-weight:600;color:#64748B;font-family:"Space Grotesk",monospace;letter-spacing:0.02em;margin-top:4px;}',
+    '.sub{font-size:23px;line-height:1.45;color:#94A3B8;text-align:center;max-width:660px;margin-top:8px;}',
+    '.url{font-size:18px;font-weight:600;color:#64748B;font-family:"Space Grotesk",monospace;letter-spacing:0.02em;margin-top:10px;}',
     '.accent-line{position:absolute;bottom:0;left:0;right:0;height:4px;',
     '  background:linear-gradient(90deg,transparent 10%,' + b.accent + ' 50%,transparent 90%);opacity:0.6;z-index:1;}',
     '</style></head>',
