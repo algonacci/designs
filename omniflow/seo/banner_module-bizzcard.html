@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Omniflow Bizzcard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+html,body{width:1200px;height:630px;overflow:hidden;font-family:"Outfit",sans-serif;color:#F1F5F9;background:#0A0F1A}
+.canvas{position:relative;width:1200px;height:630px;overflow:hidden;
+  background:linear-gradient(135deg,#0A0F1A 0%,#111827 55%,#151F32 100%);}
+.canvas::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 75% 25%,rgba(99,102,241,0.13) 0%,transparent 50%),
+             radial-gradient(circle at 15% 85%,rgba(167,99,241,0.06) 0%,transparent 45%);}
+.bg-grid{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);
+  background-size:56px 56px;}
+.frame{position:relative;z-index:1;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:50px 80px;gap:18px;}
+.brand-block{display:flex;flex-direction:column;align-items:center;gap:4px;}
+.logomark{width:85px;height:85px;filter:drop-shadow(0 4px 20px rgba(59,130,246,0.5));}
+.wordmark{width:260px;height:auto;display:block;}
+.badge-pill{display:inline-block;padding:4px 16px;border-radius:100px;border:1px solid rgba(99,102,241,0.25);background:rgba(99,102,241,0.06);color:#d8d9fb;font-size:14px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;font-family:"Space Grotesk",monospace;}
+.headline{font-size:50px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;text-align:center;max-width:860px;}
+.headline .grad{background:linear-gradient(120deg,#c1c2f9,#6366F1,#a763f1);-webkit-background-clip:text;background-clip:text;color:transparent;}
+.sub{font-size:23px;line-height:1.45;color:#94A3B8;text-align:center;max-width:660px;}
+.url{font-size:18px;font-weight:600;color:#64748B;font-family:"Space Grotesk",monospace;letter-spacing:0.02em;margin-top:4px;}
+.accent-line{position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,transparent 10%,#6366F1 50%,transparent 90%);opacity:0.6;z-index:1;}
+</style></head>
+<body><div class="canvas"><div class="bg-grid"></div><div class="frame">
+<div class="brand-block">
+<div class="logomark"><svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon fill="#FFFFFF" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg></div>
+<div class="wordmark"><svg viewBox="0 0 1000 500" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#FFFFFF" d="M89.6,285.76l13.13-74.22,19.78-16.93h56.97l16.14,19.46-13.29,75.01-19.31,16.3h-57.28l-16.14-19.62ZM153.06,287.03l9.49-8.07,10.29-57.92-6.65-8.07h-34.02l-9.49,8.07-10.44,57.92,6.65,8.07h34.18Z"/><path fill="#FFFFFF" d="M218.09,194.62h18.67l20.41,71.53h.32l45.42-71.53h21.2l-19.46,110.77h-20.73l11.87-67.41h-.32l-34.5,51.9h-13.29l-16.14-51.9h-.32l-11.87,67.41h-20.73l19.46-110.77Z"/><path fill="#FFFFFF" d="M344.85,194.62h19.31l36.24,75.17h.32l13.13-75.17h20.73l-19.62,110.77h-19.31l-35.92-75.01h-.32l-13.29,75.01h-20.73l19.46-110.77Z"/><path fill="#FFFFFF" d="M455.93,194.62h21.52l-19.62,110.77h-21.52l19.62-110.77Z"/><path fill="#FFFFFF" d="M498.81,194.62h78.33l-3.17,18.2h-56.81l-5.38,30.7h49.21l-3.17,18.2h-49.21l-7.75,43.67h-21.52l19.46-110.77Z"/><path fill="#FFFFFF" d="M589.96,194.62h21.52l-16.3,92.57h55.23l-3.16,18.2h-76.75l19.46-110.77Z"/><path fill="#FFFFFF" d="M658.63,285.76l13.13-74.22,19.78-16.93h56.97l16.14,19.46-13.29,75.01-19.31,16.3h-57.28l-16.14-19.62ZM722.09,287.03l9.49-8.07,10.29-57.92-6.65-8.07h-34.02l-9.49,8.07-10.44,57.92,6.65,8.07h34.18Z"/><path fill="#FFFFFF" d="M779.21,194.62h21.21l-.32,78.17h.63l35.76-78.17h16.14l7.75,78.17h.63l27.22-78.17h22.15l-42.41,110.77h-20.1l-8.39-77.86h-.63l-36.08,77.86h-20.1l-3.48-110.77Z"/></svg></div>
+</div>
+<span class="badge-pill">Tools & Utilities</span>
+<h1 class="headline">Digital Business <span class="grad">Card</span> Solution</h1>
+<p class="sub">QR & NFC-enabled digital cards with contact sharing and lead capture.</p>
+<span class="url">omniflow.id/en/modules/bizzcard</span>
+</div><div class="accent-line"></div></div></body></html>

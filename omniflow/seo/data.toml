@@ -1,0 +1,933 @@
+# Omniflow OG banner data — single source of truth
+# Each [banners] entry → one HTML file → one rendered PNG
+
+[banners.home-en]
+key       = "home-en"
+page      = "Home"
+headline  = "Integrated ERP Solutions for Business Transformation"
+subtitle  = "Streamline operations and accelerate growth with Omniflow's smart ERP ecosystem."
+accent    = "#3B82F6"
+tag       = "AI-native ERP"
+lang      = "en"
+url_path  = "en"
+
+[banners.home-id]
+key       = "home-id"
+page      = "Beranda"
+headline  = "Transformasi Bisnis Anda dengan Solusi ERP Terintegrasi"
+subtitle  = "Sederhanakan operasi dan percepat pertumbuhan dengan ekosistem ERP pintar Omniflow."
+accent    = "#3B82F6"
+tag       = "ERP berbasis AI"
+lang      = "id"
+url_path  = "id"
+
+[banners.home-zh]
+key       = "home-zh"
+page      = "首页"
+headline  = "通过集成ERP解决方案转型您的业务"
+subtitle  = "通过 Omniflow 的智能ERP生态系统简化运营并加速增长。"
+accent    = "#3B82F6"
+tag       = "AI原生ERP"
+lang      = "zh"
+url_path  = "zh"
+
+[banners.modules]
+key       = "modules"
+page      = "Modules"
+headline  = "26 Integrated ERP Modules"
+subtitle  = "From HRIS to AI-powered analytics — one platform to run your entire business."
+accent    = "#6366F1"
+tag       = "All Modules"
+url_path  = "en/modules"
+
+[banners.modules-id]
+key       = "modules-id"
+page      = "Modul"
+headline  = "26 Modul ERP Terintegrasi"
+subtitle  = "Dari HRIS hingga analitik berbasis AI — satu platform untuk menjalankan seluruh bisnis Anda."
+accent    = "#6366F1"
+tag       = "Semua Modul"
+lang      = "id"
+url_path  = "id/modules"
+
+[banners.modules-zh]
+key       = "modules-zh"
+page      = "模块"
+headline  = "26个集成ERP模块"
+subtitle  = "从HRIS到AI驱动的分析 — 一站式平台运行您的整个业务。"
+accent    = "#6366F1"
+tag       = "所有模块"
+lang      = "zh"
+url_path  = "zh/modules"
+
+[banners.industries]
+key       = "industries"
+page      = "Industries"
+headline  = "ERP Solutions for Every Industry"
+subtitle  = "Tailored systems for manufacturing, healthcare, education, hospitality, and more."
+accent    = "#10B981"
+tag       = "Industry Solutions"
+url_path  = "en/industries"
+
+[banners.industries-id]
+key       = "industries-id"
+page      = "Industri"
+headline  = "Solusi ERP untuk Setiap Industri"
+subtitle  = "Sistem yang disesuaikan untuk manufaktur, kesehatan, pendidikan, perhotelan, dan lainnya."
+accent    = "#10B981"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/industries"
+
+[banners.industries-zh]
+key       = "industries-zh"
+page      = "行业"
+headline  = "面向各行业的ERP解决方案"
+subtitle  = "为制造、医疗、教育、酒店等行业量身定制的系统。"
+accent    = "#10B981"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/industries"
+
+[banners.integrations]
+key       = "integrations"
+page      = "Integrations"
+headline  = "Seamless Integrations with Your Stack"
+subtitle  = "Connect Omniflow with your favorite tools — payment gateways, analytics, messaging, and more."
+accent    = "#8B5CF6"
+tag       = "Integrations"
+url_path  = "en/integrations"
+
+[banners.integrations-id]
+key       = "integrations-id"
+page      = "Integrasi"
+headline  = "Integrasi Mulus dengan Sistem Anda"
+subtitle  = "Hubungkan Omniflow dengan alat favorit Anda — payment gateway, analitik, messaging, dan lainnya."
+accent    = "#8B5CF6"
+tag       = "Integrasi"
+lang      = "id"
+url_path  = "id/integrations"
+
+[banners.integrations-zh]
+key       = "integrations-zh"
+page      = "集成"
+headline  = "与您现有技术栈无缝集成"
+subtitle  = "将 Omniflow 与您喜爱的工具连接 — 支付网关、分析、消息传递等。"
+accent    = "#8B5CF6"
+tag       = "集成"
+lang      = "zh"
+url_path  = "zh/integrations"
+
+[banners.blog]
+key       = "blog"
+page      = "Blog"
+headline  = "Insights on ERP, AI & Business Growth"
+subtitle  = "Stay updated with the latest trends in enterprise technology and digital transformation."
+accent    = "#EC4899"
+tag       = "Blog & Insights"
+url_path  = "en/blog"
+
+[banners.blog-id]
+key       = "blog-id"
+page      = "Blog"
+headline  = "Wawasan tentang ERP, AI & Pertumbuhan Bisnis"
+subtitle  = "Ikuti tren terbaru dalam teknologi enterprise dan transformasi digital."
+accent    = "#EC4899"
+tag       = "Blog & Wawasan"
+lang      = "id"
+url_path  = "id/blog"
+
+[banners.blog-zh]
+key       = "blog-zh"
+page      = "博客"
+headline  = "关于ERP、AI与业务增长的洞见"
+subtitle  = "了解企业技术和数字化转型的最新趋势。"
+accent    = "#EC4899"
+tag       = "博客与洞见"
+lang      = "zh"
+url_path  = "zh/blog"
+
+[banners.contact]
+key       = "contact"
+page      = "Contact"
+headline  = "Let's Build Something Great Together"
+subtitle  = "Get in touch with our team to discuss your business needs and start your ERP journey."
+accent    = "#F59E0B"
+tag       = "Contact Us"
+url_path  = "en/contact"
+
+[banners.contact-id]
+key       = "contact-id"
+page      = "Kontak"
+headline  = "Mari Bangun Sesuatu yang Hebat Bersama"
+subtitle  = "Hubungi tim kami untuk mendiskusikan kebutuhan bisnis Anda dan memulai perjalanan ERP Anda."
+accent    = "#F59E0B"
+tag       = "Hubungi Kami"
+lang      = "id"
+url_path  = "id/contact"
+
+[banners.contact-zh]
+key       = "contact-zh"
+page      = "联系我们"
+headline  = "让我们携手共创辉煌"
+subtitle  = "联系我们的团队讨论您的业务需求，开启您的ERP之旅。"
+accent    = "#F59E0B"
+tag       = "联系我们"
+lang      = "zh"
+url_path  = "zh/contact"
+
+[banners.affiliate]
+key       = "affiliate"
+page      = "Affiliate"
+headline  = "Earn Commissions as an Omniflow Partner"
+subtitle  = "Refer businesses to our platform and earn up to 15% lifetime commission."
+accent    = "#22C55E"
+tag       = "Affiliate Program"
+url_path  = "en/affiliate"
+
+[banners.affiliate-id]
+key       = "affiliate-id"
+page      = "Afiliasi"
+headline  = "Dapatkan Komisi sebagai Mitra Omniflow"
+subtitle  = "Referensikan bisnis ke platform kami dan dapatkan komisi hingga 15% seumur hidup."
+accent    = "#22C55E"
+tag       = "Program Afiliasi"
+lang      = "id"
+url_path  = "id/affiliate"
+
+[banners.affiliate-zh]
+key       = "affiliate-zh"
+page      = "联盟营销"
+headline  = "成为Omniflow合作伙伴赚取佣金"
+subtitle  = "向我们的平台推荐企业，赚取高达15%的终身佣金。"
+accent    = "#22C55E"
+tag       = "联盟计划"
+lang      = "zh"
+url_path  = "zh/affiliate"
+
+# ── 26 MODULES ──
+
+[banners.module-hris]
+key       = "module-hris"
+page      = "HRIS"
+headline  = "Smart Human Resource Information System"
+subtitle  = "Payroll, attendance, leave management, and performance tracking — all in one place."
+accent    = "#3B82F6"
+tag       = "Core ERP / HR"
+url_path  = "en/modules/hris"
+
+[banners.module-hris-id]
+key       = "module-hris-id"
+page      = "HRIS"
+headline  = "Sistem Informasi Sumber Daya Manusia Cerdas"
+subtitle  = "Payroll, absensi, manajemen cuti, dan pelacakan kinerja — semuanya dalam satu tempat."
+accent    = "#3B82F6"
+tag       = "Core ERP / SDM"
+lang      = "id"
+url_path  = "id/modules/hris"
+
+[banners.module-hris-zh]
+key       = "module-hris-zh"
+page      = "HRIS"
+headline  = "智能人力资源信息系统"
+subtitle  = "薪资、考勤、休假管理和绩效追踪 — 一站式解决方案。"
+accent    = "#3B82F6"
+tag       = "Core ERP / 人力资源"
+lang      = "zh"
+url_path  = "zh/modules/hris"
+
+[banners.module-accounting]
+key       = "module-accounting"
+page      = "Accounting"
+headline  = "Comprehensive Financial Management"
+subtitle  = "Automated bookkeeping, invoicing, tax compliance, and real-time financial reporting."
+accent    = "#F97316"
+tag       = "Core ERP / Finance"
+url_path  = "en/modules/accounting"
+
+[banners.module-accounting-id]
+key       = "module-accounting-id"
+page      = "Akuntansi"
+headline  = "Manajemen Keuangan yang Komprehensif"
+subtitle  = "Pembukuan otomatis, faktur, kepatuhan pajak, dan laporan keuangan real-time."
+accent    = "#F97316"
+tag       = "Core ERP / Keuangan"
+lang      = "id"
+url_path  = "id/modules/accounting"
+
+[banners.module-accounting-zh]
+key       = "module-accounting-zh"
+page      = "会计"
+headline  = "全面的财务管理"
+subtitle  = "自动化记账、发票、税务合规和实时财务报告。"
+accent    = "#F97316"
+tag       = "Core ERP / 财务"
+lang      = "zh"
+url_path  = "zh/modules/accounting"
+
+[banners.module-sales]
+key       = "module-sales"
+page      = "Sales Management"
+headline  = "Power Up Your Sales Pipeline"
+subtitle  = "Lead tracking, deal forecasting, and pipeline visualization to close faster."
+accent    = "#3B82F6"
+tag       = "Core ERP / Sales"
+url_path  = "en/modules/sales"
+
+[banners.module-sales-id]
+key       = "module-sales-id"
+page      = "Manajemen Penjualan"
+headline  = "Optimalkan Pipeline Penjualan Anda"
+subtitle  = "Pelacakan prospek, peramalan deal, dan visualisasi pipeline untuk menutup lebih cepat."
+accent    = "#3B82F6"
+tag       = "Core ERP / Penjualan"
+lang      = "id"
+url_path  = "id/modules/sales"
+
+[banners.module-sales-zh]
+key       = "module-sales-zh"
+page      = "销售管理"
+headline  = "增强您的销售管道"
+subtitle  = "线索追踪、交易预测和管道可视化，助您更快成交。"
+accent    = "#3B82F6"
+tag       = "Core ERP / 销售"
+lang      = "zh"
+url_path  = "zh/modules/sales"
+
+[banners.module-purchasing]
+key       = "module-purchasing"
+page      = "Purchasing"
+headline  = "Intelligent Procurement Management"
+subtitle  = "Vendor control, RFQ automation, and cost optimization for smarter purchasing."
+accent    = "#6366F1"
+tag       = "Core ERP / Procurement"
+url_path  = "en/modules/purchasing"
+
+[banners.module-purchasing-id]
+key       = "module-purchasing-id"
+page      = "Pengadaan"
+headline  = "Manajemen Pengadaan yang Cerdas"
+subtitle  = "Kontrol vendor, otomatisasi RFQ, dan optimasi biaya untuk pengadaan yang lebih cerdas."
+accent    = "#6366F1"
+tag       = "Core ERP / Pengadaan"
+lang      = "id"
+url_path  = "id/modules/purchasing"
+
+[banners.module-purchasing-zh]
+key       = "module-purchasing-zh"
+page      = "采购"
+headline  = "智能采购管理"
+subtitle  = "供应商控制、询价自动化和成本优化，实现更智能的采购。"
+accent    = "#6366F1"
+tag       = "Core ERP / 采购"
+lang      = "zh"
+url_path  = "zh/modules/purchasing"
+
+[banners.module-inventory]
+key       = "module-inventory"
+page      = "Inventory"
+headline  = "Multi-Location Inventory Control"
+subtitle  = "Real-time stock tracking, warehouse optimization, and demand forecasting."
+accent    = "#0EA5E9"
+tag       = "Core ERP / Inventory"
+url_path  = "en/modules/inventory"
+
+[banners.module-inventory-id]
+key       = "module-inventory-id"
+page      = "Inventaris"
+headline  = "Kontrol Inventaris Multi-Lokasi"
+subtitle  = "Pelacakan stok real-time, optimalisasi gudang, dan peramalan permintaan."
+accent    = "#0EA5E9"
+tag       = "Core ERP / Inventaris"
+lang      = "id"
+url_path  = "id/modules/inventory"
+
+[banners.module-inventory-zh]
+key       = "module-inventory-zh"
+page      = "库存"
+headline  = "多地点库存控制"
+subtitle  = "实时库存跟踪、仓库优化和需求预测。"
+accent    = "#0EA5E9"
+tag       = "Core ERP / 库存"
+lang      = "zh"
+url_path  = "zh/modules/inventory"
+
+[banners.module-asset-management]
+key       = "module-asset-management"
+page      = "Asset Management"
+headline  = "Enterprise Asset Lifecycle Management"
+subtitle  = "Tracking, depreciation, maintenance scheduling, and full asset lifecycle visibility."
+accent    = "#6366F1"
+tag       = "Core ERP / Assets"
+url_path  = "en/modules/asset-management"
+
+[banners.module-asset-management-id]
+key       = "module-asset-management-id"
+page      = "Manajemen Aset"
+headline  = "Manajemen Siklus Hidup Aset Perusahaan"
+subtitle  = "Pelacakan, penyusutan, penjadwalan pemeliharaan, dan visibilitas siklus hidup aset penuh."
+accent    = "#6366F1"
+tag       = "Core ERP / Aset"
+lang      = "id"
+url_path  = "id/modules/asset-management"
+
+[banners.module-asset-management-zh]
+key       = "module-asset-management-zh"
+page      = "资产管理"
+headline  = "企业资产生命周期管理"
+subtitle  = "跟踪、折旧、维护调度和完整的资产生命周期可见性。"
+accent    = "#6366F1"
+tag       = "Core ERP / 资产"
+lang      = "zh"
+url_path  = "zh/modules/asset-management"
+
+[banners.module-analytics]
+key       = "module-analytics"
+page      = "Analytics"
+headline  = "Deep Business Intelligence & Analytics"
+subtitle  = "Centralized analytics integrating with BCA, OrderOnline, Majoo, Moka, and more."
+accent    = "#D946EF"
+tag       = "Core ERP / Analytics"
+url_path  = "en/modules/analytics"
+
+[banners.module-analytics-id]
+key       = "module-analytics-id"
+page      = "Analitik"
+headline  = "Intelijen Bisnis & Analitik Mendalam"
+subtitle  = "Platform analitik terpusat yang terintegrasi dengan BCA, OrderOnline, Majoo, Moka, dan lainnya."
+accent    = "#D946EF"
+tag       = "Core ERP / Analitik"
+lang      = "id"
+url_path  = "id/modules/analytics"
+
+[banners.module-analytics-zh]
+key       = "module-analytics-zh"
+page      = "分析"
+headline  = "深度商业智能与分析"
+subtitle  = "与BCA、OrderOnline、Majoo、Moka等集成的集中分析平台。"
+accent    = "#D946EF"
+tag       = "Core ERP / 分析"
+lang      = "zh"
+url_path  = "zh/modules/analytics"
+
+[banners.module-xrm]
+key       = "module-xrm"
+page      = "XRM"
+headline  = "Extended Relationship Management"
+subtitle  = "Customer 360°, sales pipeline, and engagement tracking for stronger relationships."
+accent    = "#A855F7"
+tag       = "Customer & Commerce"
+url_path  = "en/modules/xrm"
+
+[banners.module-xrm-id]
+key       = "module-xrm-id"
+page      = "XRM"
+headline  = "Manajemen Hubungan yang Diperluas"
+subtitle  = "Customer 360°, pipeline penjualan, dan pelacakan engagement untuk hubungan yang lebih kuat."
+accent    = "#A855F7"
+tag       = "Customer & Commerce"
+lang      = "id"
+url_path  = "id/modules/xrm"
+
+[banners.module-xrm-zh]
+key       = "module-xrm-zh"
+page      = "XRM"
+headline  = "扩展关系管理"
+subtitle  = "客户360°视图、销售管道和互动追踪，建立更强的关系。"
+accent    = "#A855F7"
+tag       = "Customer & Commerce"
+lang      = "zh"
+url_path  = "zh/modules/xrm"
+
+[banners.module-customers]
+key       = "module-customers"
+page      = "Customers"
+headline  = "360° Customer Profiles & Loyalty"
+subtitle  = "Centralize customer data with comprehensive profiles and loyalty programs."
+accent    = "#F43F5E"
+tag       = "Customer & Commerce"
+url_path  = "en/modules/customers"
+
+[banners.module-customers-id]
+key       = "module-customers-id"
+page      = "Pelanggan"
+headline  = "Profil Pelanggan 360° & Loyalitas"
+subtitle  = "Pusatkan data pelanggan dengan profil komprehensif dan program loyalitas."
+accent    = "#F43F5E"
+tag       = "Customer & Commerce"
+lang      = "id"
+url_path  = "id/modules/customers"
+
+[banners.module-customers-zh]
+key       = "module-customers-zh"
+page      = "客户"
+headline  = "360°客户画像与忠诚度"
+subtitle  = "通过全面的画像和忠诚度计划集中管理客户数据。"
+accent    = "#F43F5E"
+tag       = "Customer & Commerce"
+lang      = "zh"
+url_path  = "zh/modules/customers"
+
+[banners.module-ecommerce]
+key       = "module-ecommerce"
+page      = "E-Commerce"
+headline  = "ERP-Integrated Online Storefront"
+subtitle  = "Full-featured e‑commerce with inventory sync, payments, and order management."
+accent    = "#10B981"
+tag       = "Customer & Commerce"
+url_path  = "en/modules/ecommerce"
+
+[banners.module-ecommerce-id]
+key       = "module-ecommerce-id"
+page      = "E-Commerce"
+headline  = "Toko Online Terintegrasi ERP"
+subtitle  = "E‑commerce lengkap dengan sinkronisasi inventaris, pembayaran, dan manajemen pesanan."
+accent    = "#10B981"
+tag       = "Customer & Commerce"
+lang      = "id"
+url_path  = "id/modules/ecommerce"
+
+[banners.module-ecommerce-zh]
+key       = "module-ecommerce-zh"
+page      = "电子商务"
+headline  = "ERP集成的在线商店"
+subtitle  = "功能齐全的电子商务，具有库存同步、支付和订单管理功能。"
+accent    = "#10B981"
+tag       = "Customer & Commerce"
+lang      = "zh"
+url_path  = "zh/modules/ecommerce"
+
+[banners.module-pos]
+key       = "module-pos"
+page      = "Point of Sale"
+headline  = "Modern Point of Sale System"
+subtitle  = "Cashier dashboard, barcode scanning, and real-time inventory sync for retail & F&B."
+accent    = "#EF4444"
+tag       = "Customer & Commerce"
+url_path  = "en/modules/pos"
+
+[banners.module-pos-id]
+key       = "module-pos-id"
+page      = "Point of Sale"
+headline  = "Sistem Point of Sale Modern"
+subtitle  = "Dashboard kasir, pemindaian barcode, dan sinkronisasi inventaris real-time untuk retail & F&B."
+accent    = "#EF4444"
+tag       = "Customer & Commerce"
+lang      = "id"
+url_path  = "id/modules/pos"
+
+[banners.module-pos-zh]
+key       = "module-pos-zh"
+page      = "销售终端"
+headline  = "现代销售终端系统"
+subtitle  = "收银仪表板、条码扫描和实时库存同步，适用于零售和餐饮业。"
+accent    = "#EF4444"
+tag       = "Customer & Commerce"
+lang      = "zh"
+url_path  = "zh/modules/pos"
+
+[banners.module-telemarketing]
+key       = "module-telemarketing"
+page      = "Telemarketing"
+headline  = "Automated Outbound Call Management"
+subtitle  = "VoIP dialer, TTS scripting, and lead tracking for high-volume sales teams."
+accent    = "#EAB308"
+tag       = "Customer & Commerce"
+url_path  = "en/modules/telemarketing"
+
+[banners.module-telemarketing-id]
+key       = "module-telemarketing-id"
+page      = "Telemarketing"
+headline  = "Manajemen Panggilan Outbound Otomatis"
+subtitle  = "Dialer VoIP, skrip TTS, dan pelacakan prospek untuk tim penjualan volume tinggi."
+accent    = "#EAB308"
+tag       = "Customer & Commerce"
+lang      = "id"
+url_path  = "id/modules/telemarketing"
+
+[banners.module-telemarketing-zh]
+key       = "module-telemarketing-zh"
+page      = "电话营销"
+headline  = "自动化外呼管理"
+subtitle  = "VoIP拨号器、TTS脚本和线索追踪，适用于高容量销售团队。"
+accent    = "#EAB308"
+tag       = "Customer & Commerce"
+lang      = "zh"
+url_path  = "zh/modules/telemarketing"
+
+[banners.module-helpdesk]
+key       = "module-helpdesk"
+page      = "Helpdesk"
+headline  = "Multi-Channel Customer Support"
+subtitle  = "Ticketing system with SLA tracking, knowledge base, and omnichannel integration."
+accent    = "#06B6D4"
+tag       = "Customer & Commerce"
+url_path  = "en/modules/helpdesk"
+
+[banners.module-helpdesk-id]
+key       = "module-helpdesk-id"
+page      = "Helpdesk"
+headline  = "Dukungan Pelanggan Multi-Channel"
+subtitle  = "Sistem tiket dengan SLA tracking, knowledge base, dan integrasi omnichannel."
+accent    = "#06B6D4"
+tag       = "Customer & Commerce"
+lang      = "id"
+url_path  = "id/modules/helpdesk"
+
+[banners.module-helpdesk-zh]
+key       = "module-helpdesk-zh"
+page      = "帮助台"
+headline  = "多渠道客户支持"
+subtitle  = "工单系统，具有SLA跟踪、知识库和全渠道集成。"
+accent    = "#06B6D4"
+tag       = "Customer & Commerce"
+lang      = "zh"
+url_path  = "zh/modules/helpdesk"
+
+[banners.module-payment-gateway]
+key       = "module-payment-gateway"
+page      = "Payment Gateway"
+headline  = "Secure Multi-Method Payment Processing"
+subtitle  = "QRIS, virtual accounts, e-wallets, and credit cards — all in one integration."
+accent    = "#14B8A6"
+tag       = "Customer & Commerce"
+url_path  = "en/modules/payment-gateway"
+
+[banners.module-payment-gateway-id]
+key       = "module-payment-gateway-id"
+page      = "Payment Gateway"
+headline  = "Pemrosesan Pembayaran Multi-Metode yang Aman"
+subtitle  = "QRIS, virtual account, e-wallet, dan kartu kredit — semua dalam satu integrasi."
+accent    = "#14B8A6"
+tag       = "Customer & Commerce"
+lang      = "id"
+url_path  = "id/modules/payment-gateway"
+
+[banners.module-payment-gateway-zh]
+key       = "module-payment-gateway-zh"
+page      = "支付网关"
+headline  = "安全的多方式支付处理"
+subtitle  = "QRIS、虚拟账户、电子钱包和信用卡 — 一站式集成。"
+accent    = "#14B8A6"
+tag       = "Customer & Commerce"
+lang      = "zh"
+url_path  = "zh/modules/payment-gateway"
+
+[banners.module-lms]
+key       = "module-lms"
+page      = "LMS"
+headline  = "Learning Management System"
+subtitle  = "Corporate training, course authoring, exams, and certification management."
+accent    = "#06B6D4"
+tag       = "Industry Solution"
+url_path  = "en/modules/lms"
+
+[banners.module-lms-id]
+key       = "module-lms-id"
+page      = "LMS"
+headline  = "Sistem Manajemen Pembelajaran"
+subtitle  = "Pelatihan korporat, pembuatan kursus, ujian, dan manajemen sertifikasi."
+accent    = "#06B6D4"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/modules/lms"
+
+[banners.module-lms-zh]
+key       = "module-lms-zh"
+page      = "LMS"
+headline  = "学习管理系统"
+subtitle  = "企业培训、课程制作、考试和认证管理。"
+accent    = "#06B6D4"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/modules/lms"
+
+[banners.module-booking-engine]
+key       = "module-booking-engine"
+page      = "Booking Engine"
+headline  = "Smart Booking & Reservation System"
+subtitle  = "Appointment scheduling, resource booking, and automated reminders for any business."
+accent    = "#10B981"
+tag       = "Industry Solution"
+url_path  = "en/modules/booking-engine"
+
+[banners.module-booking-engine-id]
+key       = "module-booking-engine-id"
+page      = "Booking Engine"
+headline  = "Sistem Booking & Reservasi Cerdas"
+subtitle  = "Penjadwalan janji temu, pemesanan sumber daya, dan pengingat otomatis untuk bisnis apa pun."
+accent    = "#10B981"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/modules/booking-engine"
+
+[banners.module-booking-engine-zh]
+key       = "module-booking-engine-zh"
+page      = "预订引擎"
+headline  = "智能预订与预约系统"
+subtitle  = "适用于任何企业的预约安排、资源预订和自动提醒。"
+accent    = "#10B981"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/modules/booking-engine"
+
+[banners.module-event-ticketing]
+key       = "module-event-ticketing"
+page      = "Event Ticketing"
+headline  = "End-to-End Event Management"
+subtitle  = "Ticket sales, QR code check-in, and attendee management for events of any scale."
+accent    = "#EC4899"
+tag       = "Industry Solution"
+url_path  = "en/modules/event-ticketing"
+
+[banners.module-event-ticketing-id]
+key       = "module-event-ticketing-id"
+page      = "Event Ticketing"
+headline  = "Manajemen Event End-to-End"
+subtitle  = "Penjualan tiket, check-in QR code, dan manajemen peserta untuk event skala apa pun."
+accent    = "#EC4899"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/modules/event-ticketing"
+
+[banners.module-event-ticketing-zh]
+key       = "module-event-ticketing-zh"
+page      = "活动票务"
+headline  = "端到端活动管理"
+subtitle  = "适用于各种规模活动的票务销售、二维码签到和参会者管理。"
+accent    = "#EC4899"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/modules/event-ticketing"
+
+[banners.module-habitat]
+key       = "module-habitat"
+page      = "Habitat"
+headline  = "Digital Community Management"
+subtitle  = "Resident portal, facility booking, billing, and communication for modern communities."
+accent    = "#22C55E"
+tag       = "Industry Solution"
+url_path  = "en/modules/habitat"
+
+[banners.module-habitat-id]
+key       = "module-habitat-id"
+page      = "Habitat"
+headline  = "Manajemen Komunitas Digital"
+subtitle  = "Portal penghuni, pemesanan fasilitas, penagihan, dan komunikasi untuk komunitas modern."
+accent    = "#22C55E"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/modules/habitat"
+
+[banners.module-habitat-zh]
+key       = "module-habitat-zh"
+page      = "Habitat"
+headline  = "数字化社区管理"
+subtitle  = "面向现代社区的住户门户、设施预订、账单和沟通平台。"
+accent    = "#22C55E"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/modules/habitat"
+
+[banners.module-property-management]
+key       = "module-property-management"
+page      = "Property Management"
+headline  = "Integrated Property Management"
+subtitle  = "Lease tracking, tenant management, maintenance, and financial reporting for landlords."
+accent    = "#64748B"
+tag       = "Industry Solution"
+url_path  = "en/modules/property-management"
+
+[banners.module-property-management-id]
+key       = "module-property-management-id"
+page      = "Manajemen Properti"
+headline  = "Manajemen Properti Terintegrasi"
+subtitle  = "Pelacakan sewa, manajemen penyewa, pemeliharaan, dan laporan keuangan untuk pemilik properti."
+accent    = "#64748B"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/modules/property-management"
+
+[banners.module-property-management-zh]
+key       = "module-property-management-zh"
+page      = "物业管理"
+headline  = "集成物业管理"
+subtitle  = "面向业主的租赁跟踪、租户管理、维护和财务报告。"
+accent    = "#64748B"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/modules/property-management"
+
+[banners.module-simklinik]
+key       = "module-simklinik"
+page      = "SIMKlinik"
+headline  = "Clinic Information System"
+subtitle  = "Electronic medical records, pharmacy management, billing, and patient scheduling."
+accent    = "#F43F5E"
+tag       = "Industry Solution"
+url_path  = "en/modules/simklinik"
+
+[banners.module-simklinik-id]
+key       = "module-simklinik-id"
+page      = "SIMKlinik"
+headline  = "Sistem Informasi Klinik"
+subtitle  = "Rekam medis elektronik, manajemen farmasi, penagihan, dan penjadwalan pasien."
+accent    = "#F43F5E"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/modules/simklinik"
+
+[banners.module-simklinik-zh]
+key       = "module-simklinik-zh"
+page      = "SIMKlinik"
+headline  = "诊所信息系统"
+subtitle  = "电子病历、药房管理、计费和患者排班。"
+accent    = "#F43F5E"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/modules/simklinik"
+
+[banners.module-profilex]
+key       = "module-profilex"
+page      = "Profilex"
+headline  = "Psychological Assessment Platform"
+subtitle  = "MBTI, DISC, and custom psychometric tests with auto-grading and detailed reports."
+accent    = "#A855F7"
+tag       = "Industry Solution"
+url_path  = "en/modules/profilex"
+
+[banners.module-profilex-id]
+key       = "module-profilex-id"
+page      = "Profilex"
+headline  = "Platform Asesmen Psikologi"
+subtitle  = "MBTI, DISC, dan tes psikometri kustom dengan penilaian otomatis dan laporan detail."
+accent    = "#A855F7"
+tag       = "Solusi Industri"
+lang      = "id"
+url_path  = "id/modules/profilex"
+
+[banners.module-profilex-zh]
+key       = "module-profilex-zh"
+page      = "Profilex"
+headline  = "心理评估平台"
+subtitle  = "MBTI、DISC和自定义心理测量测试，具有自动评分和详细报告。"
+accent    = "#A855F7"
+tag       = "行业解决方案"
+lang      = "zh"
+url_path  = "zh/modules/profilex"
+
+[banners.module-urls]
+key       = "module-urls"
+page      = "URLs"
+headline  = "Professional URL Shortener"
+subtitle  = "Branded short links, click analytics, and redirect management for marketing campaigns."
+accent    = "#EC4899"
+tag       = "Tools & Utilities"
+url_path  = "en/modules/urls"
+
+[banners.module-urls-id]
+key       = "module-urls-id"
+page      = "URLs"
+headline  = "URL Shortener Profesional"
+subtitle  = "Tautan pendek bermerek, analitik klik, dan manajemen redirect untuk kampanye marketing."
+accent    = "#EC4899"
+tag       = "Alat & Utilitas"
+lang      = "id"
+url_path  = "id/modules/urls"
+
+[banners.module-urls-zh]
+key       = "module-urls-zh"
+page      = "URLs"
+headline  = "专业URL缩短器"
+subtitle  = "品牌短链接、点击分析和营销活动重定向管理。"
+accent    = "#EC4899"
+tag       = "工具与实用程序"
+lang      = "zh"
+url_path  = "zh/modules/urls"
+
+[banners.module-bizzcard]
+key       = "module-bizzcard"
+page      = "Bizzcard"
+headline  = "Digital Business Card Solution"
+subtitle  = "QR & NFC-enabled digital cards with contact sharing and lead capture."
+accent    = "#6366F1"
+tag       = "Tools & Utilities"
+url_path  = "en/modules/bizzcard"
+
+[banners.module-bizzcard-id]
+key       = "module-bizzcard-id"
+page      = "Bizzcard"
+headline  = "Solusi Kartu Nama Digital"
+subtitle  = "Kartu digital dengan QR & NFC, berbagi kontak, dan penangkapan prospek."
+accent    = "#6366F1"
+tag       = "Alat & Utilitas"
+lang      = "id"
+url_path  = "id/modules/bizzcard"
+
+[banners.module-bizzcard-zh]
+key       = "module-bizzcard-zh"
+page      = "Bizzcard"
+headline  = "数字名片解决方案"
+subtitle  = "支持QR和NFC的数字名片，具有联系人分享和线索捕获功能。"
+accent    = "#6366F1"
+tag       = "工具与实用程序"
+lang      = "zh"
+url_path  = "zh/modules/bizzcard"
+
+[banners.module-ai]
+key       = "module-ai"
+page      = "AI"
+headline  = "AI-Powered Business Intelligence"
+subtitle  = "Smart automation, predictive analytics, and AI agents to supercharge your operations."
+accent    = "#8B5CF6"
+tag       = "Tools & Utilities"
+url_path  = "en/modules/ai"
+
+[banners.module-ai-id]
+key       = "module-ai-id"
+page      = "AI"
+headline  = "Intelijen Bisnis Berbasis AI"
+subtitle  = "Otomatisasi cerdas, analitik prediktif, dan agen AI untuk memperkuat operasi Anda."
+accent    = "#8B5CF6"
+tag       = "Alat & Utilitas"
+lang      = "id"
+url_path  = "id/modules/ai"
+
+[banners.module-ai-zh]
+key       = "module-ai-zh"
+page      = "AI"
+headline  = "AI驱动的商业智能"
+subtitle  = "智能自动化、预测分析和AI代理，为您的运营赋能。"
+accent    = "#8B5CF6"
+tag       = "工具与实用程序"
+lang      = "zh"
+url_path  = "zh/modules/ai"
+
+[banners.module-ecf]
+key       = "module-ecf"
+page      = "ECF"
+headline  = "Equity Crowdfunding Platform"
+subtitle  = "Transparent fundraising for operators and investors with compliance built in."
+accent    = "#F59E0B"
+tag       = "Tools & Utilities"
+url_path  = "en/modules/ecf"
+
+[banners.module-ecf-id]
+key       = "module-ecf-id"
+page      = "ECF"
+headline  = "Platform Equity Crowdfunding"
+subtitle  = "Penggalangan dana transparan untuk operator dan investor dengan kepatuhan bawaan."
+accent    = "#F59E0B"
+tag       = "Alat & Utilitas"
+lang      = "id"
+url_path  = "id/modules/ecf"
+
+[banners.module-ecf-zh]
+key       = "module-ecf-zh"
+page      = "ECF"
+headline  = "股权众筹平台"
+subtitle  = "面向运营商和投资者的透明筹款，内置合规功能。"
+accent    = "#F59E0B"
+tag       = "工具与实用程序"
+lang      = "zh"
+url_path  = "zh/modules/ecf"
