@@ -1,0 +1,87 @@
+/* =============================================================
+   Braincore Sports Day — REPORT (Story, 1080 x 1920, 9:16)
+   Load AFTER styles.css. Photo area intentionally left empty —
+   meant to be overlaid with real event photos afterwards.
+   ============================================================= */
+
+html,
+body { height: 1920px; }
+
+.canvas { height: 1920px; }
+
+/* IG Story safe area: keep clear of the username/timestamp band up top
+   and the reply-bar band at the bottom. */
+.frame {
+  padding: 210px 80px 260px;
+}
+
+/* Bigger, better-clear-of-the-top logo */
+.nav .brand__logo {
+  height: 128px;
+}
+
+/* ---------- Header block ---------- */
+.report-head {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+}
+
+.report-head .display {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: skewX(-6deg);
+  background: linear-gradient(120deg, var(--spark), var(--highlight) 55%, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 14px 40px rgba(34, 211, 238, 0.35));
+}
+
+.report-head .tagline {
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--ink-300);
+  max-width: 720px;
+  line-height: 1.4;
+}
+
+/* ---------- Empty photo canvas (frameless — photos get injected here later) ---------- */
+.photo-well {
+  flex: 1;
+  margin-top: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+
+/* ---------- Footer recap note ---------- */
+.report-foot {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-2);
+}
+
+.report-foot__thanks {
+  font-size: 34px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.report-foot__note {
+  font-size: 22px;
+  color: var(--ink-300);
+  max-width: 640px;
+  line-height: 1.5;
+}
+
+.foot { margin-top: var(--sp-4); }
