@@ -205,6 +205,35 @@ tag       = "联盟计划"
 lang      = "zh"
 url_path  = "zh/affiliate"
 
+[banners.consultation]
+key       = "consultation"
+page      = "Consultation"
+headline  = "Schedule a Free Consultation Today"
+subtitle  = "Book a no-obligation session with our team to explore how Omniflow fits your business."
+accent    = "#3B82F6"
+tag       = "Free Consultation"
+url_path  = "en/consultation"
+
+[banners.consultation-id]
+key       = "consultation-id"
+page      = "Konsultasi"
+headline  = "Jadwalkan Konsultasi Gratis Hari Ini"
+subtitle  = "Pesan sesi tanpa kewajiban dengan tim kami untuk melihat bagaimana Omniflow cocok untuk bisnis Anda."
+accent    = "#3B82F6"
+tag       = "Konsultasi Gratis"
+lang      = "id"
+url_path  = "id/consultation"
+
+[banners.consultation-zh]
+key       = "consultation-zh"
+page      = "免费咨询"
+headline  = "立即预约免费咨询"
+subtitle  = "预约一次无义务的会议，与我们的团队探讨 Omniflow 如何满足您的业务需求。"
+accent    = "#3B82F6"
+tag       = "免费咨询"
+lang      = "zh"
+url_path  = "zh/consultation"
+
 # ── 26 MODULES ──
 
 [banners.module-hris]

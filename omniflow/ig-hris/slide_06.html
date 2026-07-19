@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omniflow HRIS — Slide 6</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Outfit', sans-serif; background: #F8FAFC; }
+
+    .canvas {
+      position: relative; width: 1080px; height: 1350px; overflow: hidden;
+      background: linear-gradient(200deg, #FFFFFF 0%, #F3F6FA 45%, #EDF1F7 100%);
+      display: flex; flex-direction: row-reverse;
+    }
+    .canvas::before {
+      content: ""; position: absolute; pointer-events: none; z-index: 0;
+      top: 60px; left: 40%; width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.05), transparent 70%);
+    }
+    .canvas::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image:
+        radial-gradient(rgba(59,130,246,0.04) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+
+    .photo-side {
+      position: relative; width: 46%; height: 100%; overflow: hidden; z-index: 1;
+    }
+    .photo-side img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: 65% center;
+      filter: saturate(0.85) brightness(1.03);
+    }
+    .photo-side::after {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(270deg, rgba(243,246,250,0.22), transparent 45%);
+    }
+
+    .text-side {
+      position: relative; width: 54%; height: 100%; padding: 80px 55px 80px 75px;
+      display: flex; flex-direction: column; justify-content: center; z-index: 1;
+    }
+
+    .accent-line {
+      width: 72px; height: 5px; border-radius: 3px; background: #3B82F6; margin-bottom: 40px;
+    }
+
+    .headline {
+      font-size: 55px; font-weight: 700; color: #0F172A;
+      line-height: 1.08; letter-spacing: -0.02em;
+    }
+    .headline span { color: #3B82F6; }
+
+    .body-copy {
+      margin-top: 28px; font-size: 25px; color: #64748B;
+      line-height: 1.48; font-weight: 400;
+    }
+
+    .check-items {
+      display: flex; flex-direction: column; gap: 16px; margin-top: 38px;
+    }
+    .check-item {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 21px; color: #334155; font-weight: 500;
+    }
+    .check-icon {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: #EFF6FF; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-corner {
+      position: absolute; top: 48px; left: 75px; z-index: 2;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .brand-corner svg { width: 28px; height: 28px; }
+    .brand-corner span {
+      font-size: 17px; font-weight: 600; color: #3B82F6;
+      letter-spacing: -0.01em;
+    }
+
+    .slide-num {
+      position: absolute; bottom: 56px; left: 75px; z-index: 2;
+      font-size: 18px; color: #CBD5E1; font-weight: 500; letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="photo-side"><img src="img/woman-reviewing-report.jpg" alt="Professional woman reviewing report on laptop"></div>
+    <div class="text-side">
+      <div class="accent-line"></div>
+      <h1 class="headline">Saat <span>audit</span> datang, Anda cukup export satu laporan.</h1>
+      <p class="body-copy">Data payroll, BPJS, PPh 21, semua tersimpan dengan jejak digital yang siap audit kapan pun dibutuhkan.</p>
+      <div class="check-items">
+        <div class="check-item">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32" fill="none"><polyline points="6,16 14,24 26,10" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          Laporan PPh 21 otomatis
+        </div>
+        <div class="check-item">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32" fill="none"><polyline points="6,16 14,24 26,10" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          Rekonsiliasi BPJS real-time
+        </div>
+        <div class="check-item">
+          <div class="check-icon">
+            <svg viewBox="0 0 32 32" fill="none"><polyline points="6,16 14,24 26,10" stroke="#3B82F6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          Audit trail digital lengkap
+        </div>
+      </div>
+    </div>
+    <div class="brand-corner">
+      <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon fill="#3B82F6" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg>
+      <span>omniflow.</span>
+    </div>
+    <div class="slide-num">6 / 8</div>
+  </div>
+</body>
+</html>
