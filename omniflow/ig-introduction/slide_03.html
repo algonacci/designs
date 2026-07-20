@@ -39,10 +39,19 @@
     .brand span { font-size: 18px; font-weight: 600; color: #FFFFFF; letter-spacing: -0.01em; }
 
     .hero { position: relative; z-index: 2; margin-top: 52px; display: flex; align-items: flex-start; gap: 34px; }
+    .numeral-wrap { position: relative; }
+    .numeral-wrap::before {
+      content: ""; position: absolute; left: 48%; top: 46%; z-index: -1;
+      transform: translate(-50%, -50%);
+      width: 620px; height: 520px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.30), rgba(147,197,253,0.12) 45%, transparent 70%);
+    }
     .numeral {
+      position: relative;
       font-size: 372px; font-weight: 700; line-height: 0.82; letter-spacing: -0.05em;
       background: linear-gradient(160deg, #FFFFFF 0%, #DBEAFE 55%, #93C5FD 100%);
       -webkit-background-clip: text; background-clip: text; color: transparent;
+      text-shadow: 0 18px 60px rgba(0,0,0,0.28);
     }
     .numeral-side { padding-top: 30px; }
     .numeral-side .word {
@@ -53,6 +62,13 @@
       text-transform: uppercase; letter-spacing: 0.14em;
     }
     .numeral-side .rule { width: 64px; height: 4px; border-radius: 4px; background: #F97316; margin-top: 22px; }
+    .growth {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 26px; padding: 12px 22px; border-radius: 100px;
+      background: rgba(249,115,22,0.20); border: 1.5px solid rgba(249,115,22,0.5);
+      font-size: 21px; font-weight: 600; color: #FED7AA;
+    }
+    .growth svg { width: 20px; height: 20px; flex: none; }
 
     .tag-row { position: relative; z-index: 2; margin-top: 50px; display: flex; gap: 16px; }
     .tag {
@@ -98,11 +114,15 @@
     </div>
 
     <div class="hero">
-      <div class="numeral">26</div>
+      <div class="numeral-wrap"><div class="numeral">26</div></div>
       <div class="numeral-side">
         <div class="word">modul<br>terintegrasi</div>
         <div class="sub">Satu platform</div>
         <div class="rule"></div>
+        <div class="growth">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FDBA74" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.6 17.6 11 11.2l3.4 3.4 5.2-5.2"/><path d="M14.2 9.4h5.4v5.4"/></svg>
+          Dan terus bertambah
+        </div>
       </div>
     </div>
 

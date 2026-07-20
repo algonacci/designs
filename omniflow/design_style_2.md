@@ -95,15 +95,20 @@ Foto menutupi seluruh canvas, ditimpa veil gelap bergradasi, headline di bawah, 
 **Untuk:** hook, membuka masalah. **Butuh foto:** ya.
 
 ```css
+/* dikalibrasi untuk foto yang SUDAH gelap (interior remang, malam hari) */
 .veil {
   background: linear-gradient(180deg,
-    rgba(11,18,32,0.72) 0%, rgba(11,18,32,0.34) 26%,
-    rgba(11,18,32,0.88) 62%, #0B1220 88%);
+    rgba(11,18,32,0.58) 0%, rgba(11,18,32,0.10) 28%,
+    rgba(11,18,32,0.82) 62%, #0B1220 87%);
 }
-.photo img { filter: saturate(0.62) brightness(0.92) contrast(1.04); opacity: 0.68; }
+.photo img { filter: saturate(0.88) brightness(1.14) contrast(1.02); opacity: 1; }
 ```
 
 Veil dua tahap ini penting: bagian tengah dibiarkan terang supaya foto terbaca, bagian bawah dibuat pekat supaya teks aman berapa pun fotonya.
+
+**Veil harus dikalibrasi ulang setiap ganti foto.** Angka di atas bukan konstanta. Untuk foto terang (kantor siang, jendela besar) naikkan tahap atas ke sekitar `0.72` dan tengah ke `0.34`, lalu turunkan `brightness` ke `0.92` dan `opacity` ke `0.68`. Menumpuk veil gelap di atas foto yang sudah gelap akan membuat subjeknya hilang sama sekali, dan itu baru kelihatan setelah render, bukan saat membaca CSS.
+
+**Zona chip harus kosong.** Chip berada di pita y=208–508px. Foto yang wajah subjeknya jatuh di pita itu akan tertimpa chip. Pilih foto yang subjeknya di bawah ~560px, atau yang area atasnya gelap dan minim detail. Potret ketat hampir selalu gagal di sini.
 
 ### B. Diagram before/after
 Dua panel SVG berdampingan dengan panah di tengah. Kiri: node berserak dengan garis putus-putus kusut. Kanan: hub-and-spoke rapi dengan logo di pusat.
@@ -146,10 +151,19 @@ Tiga tile angka di atas, satu kartu foto besar dengan caption overlay di bawah.
 **Untuk:** kredibilitas, bukti sosial. **Butuh foto:** ya.
 
 ### H. Centered brand CTA
-Logo besar di tengah, wordmark, tagline, divider oranye, headline, dua tombol, URL.
+Logo besar di tengah, wordmark, tagline, divider oranye, headline, kartu destinasi, petunjuk bio.
 **Untuk:** slide penutup. **Butuh foto:** tidak.
 
 Satu-satunya arketipe dengan `text-align: center`. Kalau dipakai di tengah carousel, kekuatannya sebagai penutup hilang.
+
+**Jangan pakai tombol di slide CTA.** Ini postingan IG, tidak ada yang bisa diketuk. Tombol bergaya web membuat elemen terbesar dan paling mencolok di slide justru menjanjikan aksi yang mustahil dilakukan, sementara URL yang benar-benar berguna terdorong jadi teks kecil di bawah. Hierarkinya terbalik.
+
+Susunan yang benar:
+1. **URL jadi elemen utama** (26px, weight 600), masing-masing dengan satu baris keterangan isinya
+2. **Mekanisme IG yang nyata** yang dapat aksen oranye, bukan tombol palsu: "Link lengkap ada di bio" dengan panah ke atas
+3. Bungkus destinasi dalam satu kartu kaca supaya tetap punya bobot visual
+
+Aksen oranye tetap dipertahankan, cuma dipindah ke elemen yang jujur. Menghapus tombol tanpa menggantikan bobot warnanya akan membuat slide penutup terasa datar.
 
 ---
 
@@ -375,6 +389,8 @@ Aturan lama di design_style.md soal region, pencahayaan, dan filter tetap berlak
 
 - **Maksimal 2 slide berfoto per 8 slide.** Sisanya diselesaikan dengan desain. Ini memangkas biaya produksi sekaligus menaikkan variasi.
 - **Tidak boleh ada foto yang dipakai dua kali** dalam satu carousel.
+- **Tidak boleh meminjam foto dari carousel lain.** Setiap carousel punya set fotonya sendiri. Foto yang sama muncul di dua kampanye membuat keduanya terasa seperti template, dan folder `img/` jadi penuh duplikat byte-identical yang membengkakkan repo.
+- **Periksa foto pada ukuran penuh sebelum dipakai**, bukan dari thumbnail hasil pencarian. Masalah komposisi (wajah jatuh di zona chip, background terlalu terang, subjek terlalu ke tengah) tidak terlihat di thumbnail 385px.
 - **Dua slide berfoto harus memakai perlakuan berbeda.** Satu full-bleed dengan veil, satu inset card dengan caption. Dua foto split 50/50 akan terbaca kembar.
 - Foto di slide gelap: `saturate(0.62) brightness(0.92) contrast(1.04)`, `opacity: 0.68`.
 - Foto di kartu terang: `saturate(0.85) brightness(1.02)` sesuai standar lama.

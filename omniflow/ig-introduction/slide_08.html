@@ -67,28 +67,36 @@
       font-size: 24px; color: #C7DAFB; line-height: 1.5; max-width: 780px;
     }
 
-    .buttons { position: relative; z-index: 2; margin-top: 52px; display: flex; gap: 20px; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 12px;
-      padding: 22px 40px; border-radius: 100px;
-      font-size: 25px; font-weight: 600; letter-spacing: -0.01em;
+    .destinations {
+      position: relative; z-index: 2; margin-top: 48px; width: 640px;
+      background: rgba(255,255,255,0.10);
+      border: 1.5px solid rgba(255,255,255,0.22);
+      border-radius: 24px; overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
     }
-    .btn svg { width: 22px; height: 22px; }
-    .btn.primary {
-      background: #FFFFFF; color: #1D4ED8;
-      box-shadow: 0 14px 40px rgba(0,0,0,0.24);
+    .dest {
+      padding: 26px 30px; display: flex; align-items: center;
+      justify-content: center; gap: 18px; text-align: center;
     }
-    .btn.accent {
-      background: #F97316; color: #FFFFFF;
-      box-shadow: 0 14px 40px rgba(249,115,22,0.42);
+    .dest + .dest { border-top: 1.5px solid rgba(255,255,255,0.16); }
+    .dest .ic {
+      width: 46px; height: 46px; border-radius: 13px; flex: none;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
     }
+    .dest .ic svg { width: 23px; height: 23px; }
+    .dest .ic + div { width: 336px; }
+    .dest .u { font-size: 26px; font-weight: 600; color: #FFFFFF; letter-spacing: -0.01em; }
+    .dest .d { font-size: 18px; color: #BFDBFE; margin-top: 5px; font-weight: 400; }
 
-    .urls {
-      position: relative; z-index: 2; margin-top: 44px;
-      display: flex; align-items: center; gap: 18px;
-      font-size: 21px; color: #A9C6F7; font-weight: 500;
+    .bio-hint {
+      position: relative; z-index: 2; margin-top: 34px;
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 15px 30px; border-radius: 100px;
+      background: rgba(249,115,22,0.22); border: 1.5px solid rgba(249,115,22,0.55);
+      font-size: 22px; font-weight: 600; color: #FED7AA;
     }
-    .urls span.dot { width: 5px; height: 5px; border-radius: 50%; background: #60A5FA; display: block; }
+    .bio-hint svg { width: 20px; height: 20px; flex: none; }
 
     .slide-num {
       position: absolute; z-index: 3; bottom: 62px; right: 80px;
@@ -112,21 +120,30 @@
     <h1 class="headline">Lihat semua modul. Atau jadwalkan demo gratis.</h1>
     <p class="body-copy">Tim kami akan memandu Anda melihat sistem yang sesuai dengan kebutuhan bisnis Anda.</p>
 
-    <div class="buttons">
-      <span class="btn primary">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 3.6h7v7h-7z"/><path d="M13.4 3.6h7v7h-7z"/><path d="M3.6 13.4h7v7h-7z"/><path d="M13.4 13.4h7v7h-7z"/></svg>
-        Lihat Modul
-      </span>
-      <span class="btn accent">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 5.6h16.8v14.8H3.6z"/><path d="M3.6 10.2h16.8"/><path d="M8.2 3.2v4.4"/><path d="M15.8 3.2v4.4"/></svg>
-        Jadwalkan Demo
-      </span>
+    <div class="destinations">
+      <div class="dest">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 3.6h7v7h-7z"/><path d="M13.4 3.6h7v7h-7z"/><path d="M3.6 13.4h7v7h-7z"/><path d="M13.4 13.4h7v7h-7z"/></svg>
+        </div>
+        <div>
+          <div class="u">omniflow.id/modules</div>
+          <div class="d">Jelajahi semua 26 modul</div>
+        </div>
+      </div>
+      <div class="dest">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 5.6h16.8v14.8H3.6z"/><path d="M3.6 10.2h16.8"/><path d="M8.2 3.2v4.4"/><path d="M15.8 3.2v4.4"/></svg>
+        </div>
+        <div>
+          <div class="u">omniflow.id/konsultasi</div>
+          <div class="d">Jadwalkan demo gratis</div>
+        </div>
+      </div>
     </div>
 
-    <div class="urls">
-      omniflow.id/modules
-      <span class="dot"></span>
-      omniflow.id/konsultasi
+    <div class="bio-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#FDBA74" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19.4V5.2"/><path d="M5.8 11.4 12 5.2l6.2 6.2"/></svg>
+      Link lengkap ada di bio
     </div>
 
     <div class="slide-num">08 / 08</div>
