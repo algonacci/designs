@@ -4,7 +4,7 @@ import { join } from "path";
 
 const OUTPUT_DIR = "output";
 
-async function htmlToJpg(htmlPath: string, outputPath: string, width = 1080, height = 1920, imageType: "jpeg" | "png" = "jpeg"): Promise<void> {
+async function htmlToJpg(htmlPath: string, outputPath: string, width = 1080, height = 1920, imageType: "jpeg" | "png" = "jpeg", quality = 92): Promise<void> {
   let browser: Browser | null = null;
 
   try {
@@ -23,7 +23,7 @@ async function htmlToJpg(htmlPath: string, outputPath: string, width = 1080, hei
     await page.screenshot({
       path: outputPath,
       type: imageType,
-      ...(imageType === "jpeg" ? { quality: 100 } : {}),
+      ...(imageType === "jpeg" ? { quality } : {}),
       fullPage: false,
     });
 
@@ -53,10 +53,11 @@ Examples:
     process.exit(0);
   }
 
-  // Parse --width, --height, and --png flags
+  // Parse --width, --height, --quality, and --png flags
   let width = 1080;
   let height = 1920;
   let imageType: "jpeg" | "png" = "jpeg";
+  let quality = 92;
   const args: string[] = [];
 
   for (let i = 0; i < rawArgs.length; i++) {
@@ -66,6 +67,8 @@ Examples:
       height = parseInt(rawArgs[++i]);
     } else if (rawArgs[i] === "--png") {
       imageType = "png";
+    } else if (rawArgs[i] === "--quality" && rawArgs[i + 1]) {
+      quality = parseInt(rawArgs[++i]);
     } else {
       args.push(rawArgs[i]);
     }
@@ -77,13 +80,13 @@ Examples:
   }
 
   const ext = imageType === "png" ? ".png" : ".jpg";
-  console.log(`Converting ${args.length} HTML file(s) to ${imageType.toUpperCase()}... [${width}x${height}]\n`);
+  console.log(`Converting ${args.length} HTML file(s) to ${imageType.toUpperCase()} (q=${quality})... [${width}x${height}]\n`);
 
   for (const htmlFile of args) {
     const outputFileName = htmlFile.replace(/\.html$/i, ext);
     const outputPath = join(OUTPUT_DIR, outputFileName);
 
-    await htmlToJpg(htmlFile, outputPath, width, height, imageType);
+    await htmlToJpg(htmlFile, outputPath, width, height, imageType, quality);
   }
 
   console.log(`\n✓ All conversions complete! Check ${OUTPUT_DIR}/`);
