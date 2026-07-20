@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Omniflow Introduction — Slide 5</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Outfit', sans-serif; }
+
+    .canvas {
+      position: relative; width: 1080px; height: 1350px; overflow: hidden;
+      background: #0B1220; padding: 80px 80px 112px; display: flex; flex-direction: column;
+    }
+    .canvas::after {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(147,197,253,0.07) 1px, transparent 1px);
+      background-size: 38px 38px;
+    }
+    .orb-a {
+      position: absolute; z-index: 0; border-radius: 50%; pointer-events: none;
+      width: 620px; height: 620px; top: -220px; right: -160px;
+      background: radial-gradient(circle, rgba(139,92,246,0.28), transparent 68%);
+    }
+    .orb-b {
+      position: absolute; z-index: 0; border-radius: 50%; pointer-events: none;
+      width: 560px; height: 560px; bottom: -200px; left: -180px;
+      background: radial-gradient(circle, rgba(59,130,246,0.26), transparent 70%);
+    }
+
+    .brand { position: relative; z-index: 2; display: flex; align-items: center; gap: 9px; }
+    .brand svg { width: 30px; height: 30px; }
+    .brand span { font-size: 18px; font-weight: 600; color: #FFFFFF; letter-spacing: -0.01em; }
+
+    .head { position: relative; z-index: 2; margin-top: 46px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 9px 20px; border-radius: 100px; margin-bottom: 26px;
+      background: rgba(139,92,246,0.18); border: 1.5px solid rgba(139,92,246,0.45);
+      font-size: 14px; font-weight: 600; color: #C4B5FD;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .badge svg { width: 16px; height: 16px; }
+    .headline {
+      font-size: 54px; font-weight: 700; color: #FFFFFF;
+      line-height: 1.09; letter-spacing: -0.022em; max-width: 880px;
+    }
+    .headline span {
+      background: linear-gradient(100deg, #A78BFA, #60A5FA);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .body-copy {
+      margin-top: 22px; font-size: 24px; color: #94A3B8; line-height: 1.5; max-width: 840px;
+    }
+
+    .ai-chips { position: relative; z-index: 2; margin-top: 38px; display: flex; gap: 14px; }
+    .ai-chips span {
+      padding: 15px 26px; border-radius: 100px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+      font-size: 21px; font-weight: 500; color: #CBD5E1;
+    }
+
+    /* product UI mock */
+    .mock {
+      position: relative; z-index: 2; margin-top: auto;
+      width: 920px; background: #FFFFFF; border-radius: 26px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      overflow: hidden;
+    }
+    .mock-head {
+      display: flex; align-items: center; gap: 16px;
+      padding: 26px 30px; border-bottom: 1.5px solid #F1F5F9;
+    }
+    .mock-head .mark {
+      width: 50px; height: 50px; border-radius: 14px; flex: none;
+      background: linear-gradient(140deg, #8B5CF6, #3B82F6);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mock-head .mark svg { width: 26px; height: 26px; }
+    .mock-head .t1 { font-size: 24px; font-weight: 700; color: #0F172A; }
+    .mock-head .t2 { font-size: 17px; color: #94A3B8; font-weight: 400; margin-top: 3px; }
+    .mock-head .live {
+      margin-left: auto; display: flex; align-items: center; gap: 9px;
+      padding: 8px 16px; border-radius: 100px; background: #F0FDF4;
+      font-size: 15px; font-weight: 600; color: #16A34A;
+    }
+    .mock-head .live i { width: 8px; height: 8px; border-radius: 50%; background: #22C55E; display: block; }
+
+    .mock-body { padding: 30px 32px 34px; }
+    .row {
+      display: flex; align-items: flex-start; gap: 15px;
+      padding: 24px 24px; border-radius: 16px;
+    }
+    .row .dot { width: 34px; height: 34px; border-radius: 10px; flex: none; display: flex; align-items: center; justify-content: center; }
+    .row .dot svg { width: 19px; height: 19px; }
+    .row .lbl { font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+    .row .txt { font-size: 21px; color: #334155; line-height: 1.42; margin-top: 5px; font-weight: 400; }
+    .row .txt b { font-weight: 600; color: #0F172A; }
+
+    .row.alert { background: #FFF7ED; }
+    .row.alert .dot { background: #FFEDD5; }
+    .row.alert .lbl { color: #EA580C; }
+    .row.rec { background: #EFF6FF; margin-top: 14px; }
+    .row.rec .dot { background: #DBEAFE; }
+    .row.rec .lbl { color: #2563EB; }
+
+    .chart { margin-top: 20px; padding: 0 4px; }
+    .chart-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+    .chart-top .ct { font-size: 17px; font-weight: 600; color: #64748B; letter-spacing: 0.04em; }
+    .chart-top .cv { font-size: 17px; font-weight: 600; color: #94A3B8; }
+    .bars { display: flex; align-items: flex-end; gap: 14px; height: 132px; }
+    .bars div { flex: 1; border-radius: 8px 8px 4px 4px; background: #DBEAFE; }
+    .bars div.hi { background: linear-gradient(180deg, #60A5FA, #2563EB); }
+    .bars div.warn { background: linear-gradient(180deg, #FDBA74, #F97316); }
+    .axis { display: flex; gap: 14px; margin-top: 12px; }
+    .axis span { flex: 1; text-align: center; font-size: 15px; color: #CBD5E1; font-weight: 500; }
+
+    .slide-num {
+      position: absolute; z-index: 3; bottom: 62px; right: 80px;
+      font-size: 18px; color: rgba(255,255,255,0.38); font-weight: 500; letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb-a"></div>
+    <div class="orb-b"></div>
+
+    <div class="brand">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><polygon fill="#FFFFFF" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg>
+      <span>omniflow.</span>
+    </div>
+
+    <div class="head">
+      <span class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#C4B5FD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.4 3.2 13 8.6l5.4 1.6-5.4 1.6-1.6 5.4-1.6-5.4L4.4 10.2l5.4-1.6z"/></svg>
+        AI-Native
+      </span>
+      <h1 class="headline">Bukan ERP biasa. Omniflow <span>berpikir</span> seperti Anda.</h1>
+      <p class="body-copy">AI merangkum laporan, menandai anomali, dan merekomendasikan tindakan. Tim Anda fokus pada keputusan, bukan input data.</p>
+      <div class="ai-chips">
+        <span>Ringkas laporan</span>
+        <span>Deteksi anomali</span>
+        <span>Rekomendasi tindakan</span>
+      </div>
+    </div>
+
+    <div class="mock">
+      <div class="mock-head">
+        <div class="mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11.4 3.2 13 8.6l5.4 1.6-5.4 1.6-1.6 5.4-1.6-5.4L4.4 10.2l5.4-1.6z"/><path d="M18.4 15.6l.6 1.9 1.9.6-1.9.6-.6 1.9-.6-1.9-1.9-.6 1.9-.6z"/></svg>
+        </div>
+        <div>
+          <div class="t1">AI Insight</div>
+          <div class="t2">Ringkasan otomatis, diperbarui tiap jam</div>
+        </div>
+        <div class="live"><i></i>Live</div>
+      </div>
+
+      <div class="mock-body">
+        <div class="row alert">
+          <div class="dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2 21 19.6H3z"/><path d="M12 10v4"/><path d="M12 17.2h.01"/></svg>
+          </div>
+          <div>
+            <div class="lbl">Anomali terdeteksi</div>
+            <div class="txt">Stok bahan baku <b>SKU-4471</b> turun 38% dibanding rata-rata 4 minggu terakhir.</div>
+          </div>
+        </div>
+
+        <div class="chart">
+          <div class="chart-top">
+            <span class="ct">PERGERAKAN STOK, 7 MINGGU</span>
+            <span class="cv">unit</span>
+          </div>
+          <div class="bars">
+            <div style="height:62%"></div>
+            <div style="height:74%"></div>
+            <div style="height:68%"></div>
+            <div style="height:85%"></div>
+            <div class="hi" style="height:78%"></div>
+            <div class="hi" style="height:54%"></div>
+            <div class="warn" style="height:32%"></div>
+          </div>
+          <div class="axis">
+            <span>M1</span><span>M2</span><span>M3</span><span>M4</span><span>M5</span><span>M6</span><span>M7</span>
+          </div>
+        </div>
+
+        <div class="row rec">
+          <div class="dot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.2 18.4h5.6"/><path d="M10 21.4h4"/><path d="M12 2.6a6.4 6.4 0 0 0-3.6 11.7v2.1h7.2v-2.1A6.4 6.4 0 0 0 12 2.6z"/></svg>
+          </div>
+          <div>
+            <div class="lbl">Rekomendasi</div>
+            <div class="txt">Buat <b>purchase order</b> ke 2 vendor utama sebelum Jumat untuk menjaga jadwal produksi.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-num">05 / 08</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Omniflow Introduction — Slide 8</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Outfit', sans-serif; }
+
+    .canvas {
+      position: relative; width: 1080px; height: 1350px; overflow: hidden;
+      background: linear-gradient(158deg, #1D4ED8 0%, #2563EB 40%, #16296A 100%);
+      padding: 80px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+    }
+    .canvas::after {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1px);
+      background-size: 38px 38px;
+    }
+    .orb-a {
+      position: absolute; z-index: 0; border-radius: 50%; pointer-events: none;
+      width: 720px; height: 720px; top: -260px; left: -200px;
+      background: radial-gradient(circle, rgba(255,255,255,0.17), transparent 66%);
+    }
+    .orb-b {
+      position: absolute; z-index: 0; border-radius: 50%; pointer-events: none;
+      width: 600px; height: 600px; bottom: -220px; right: -180px;
+      background: radial-gradient(circle, rgba(249,115,22,0.24), transparent 70%);
+    }
+
+    .mark {
+      position: relative; z-index: 2;
+      width: 132px; height: 132px; border-radius: 34px;
+      background: rgba(255,255,255,0.13); border: 1.5px solid rgba(255,255,255,0.26);
+      backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+    }
+    .mark svg { width: 72px; height: 72px; }
+
+    .wordmark {
+      position: relative; z-index: 2; margin-top: 28px;
+      font-size: 40px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.02em;
+    }
+    .tagline {
+      position: relative; z-index: 2; margin-top: 10px;
+      font-size: 20px; font-weight: 500; color: #BFDBFE;
+      text-transform: uppercase; letter-spacing: 0.18em;
+    }
+
+    .divider {
+      position: relative; z-index: 2; margin: 46px 0 44px;
+      width: 92px; height: 4px; border-radius: 4px; background: #F97316;
+    }
+
+    .headline {
+      position: relative; z-index: 2;
+      font-size: 56px; font-weight: 700; color: #FFFFFF;
+      line-height: 1.1; letter-spacing: -0.022em; max-width: 860px;
+    }
+    .body-copy {
+      position: relative; z-index: 2; margin-top: 24px;
+      font-size: 24px; color: #C7DAFB; line-height: 1.5; max-width: 780px;
+    }
+
+    .buttons { position: relative; z-index: 2; margin-top: 52px; display: flex; gap: 20px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 22px 40px; border-radius: 100px;
+      font-size: 25px; font-weight: 600; letter-spacing: -0.01em;
+    }
+    .btn svg { width: 22px; height: 22px; }
+    .btn.primary {
+      background: #FFFFFF; color: #1D4ED8;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.24);
+    }
+    .btn.accent {
+      background: #F97316; color: #FFFFFF;
+      box-shadow: 0 14px 40px rgba(249,115,22,0.42);
+    }
+
+    .urls {
+      position: relative; z-index: 2; margin-top: 44px;
+      display: flex; align-items: center; gap: 18px;
+      font-size: 21px; color: #A9C6F7; font-weight: 500;
+    }
+    .urls span.dot { width: 5px; height: 5px; border-radius: 50%; background: #60A5FA; display: block; }
+
+    .slide-num {
+      position: absolute; z-index: 3; bottom: 62px; right: 80px;
+      font-size: 18px; color: rgba(255,255,255,0.42); font-weight: 500; letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="orb-a"></div>
+    <div class="orb-b"></div>
+
+    <div class="mark">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><polygon fill="#FFFFFF" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg>
+    </div>
+    <div class="wordmark">omniflow.</div>
+    <div class="tagline">AI-native ERP</div>
+
+    <div class="divider"></div>
+
+    <h1 class="headline">Lihat semua modul. Atau jadwalkan demo gratis.</h1>
+    <p class="body-copy">Tim kami akan memandu Anda melihat sistem yang sesuai dengan kebutuhan bisnis Anda.</p>
+
+    <div class="buttons">
+      <span class="btn primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 3.6h7v7h-7z"/><path d="M13.4 3.6h7v7h-7z"/><path d="M3.6 13.4h7v7h-7z"/><path d="M13.4 13.4h7v7h-7z"/></svg>
+        Lihat Modul
+      </span>
+      <span class="btn accent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.6 5.6h16.8v14.8H3.6z"/><path d="M3.6 10.2h16.8"/><path d="M8.2 3.2v4.4"/><path d="M15.8 3.2v4.4"/></svg>
+        Jadwalkan Demo
+      </span>
+    </div>
+
+    <div class="urls">
+      omniflow.id/modules
+      <span class="dot"></span>
+      omniflow.id/konsultasi
+    </div>
+
+    <div class="slide-num">08 / 08</div>
+  </div>
+</body>
+</html>

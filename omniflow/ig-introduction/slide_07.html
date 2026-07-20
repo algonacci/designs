@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Omniflow Introduction — Slide 7</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Outfit', sans-serif; }
+
+    .canvas {
+      position: relative; width: 1080px; height: 1350px; overflow: hidden;
+      background: linear-gradient(175deg, #FFFFFF 0%, #F4F7FC 46%, #E9EFF8 100%);
+      padding: 80px 80px 112px; display: flex; flex-direction: column;
+    }
+    .canvas::after {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(59,130,246,0.045) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .glow {
+      position: absolute; z-index: 0; border-radius: 50%; pointer-events: none;
+      width: 580px; height: 580px; top: -190px; right: -170px;
+      background: radial-gradient(circle, rgba(59,130,246,0.12), transparent 70%);
+    }
+
+    .brand { position: relative; z-index: 2; display: flex; align-items: center; gap: 9px; }
+    .brand svg { width: 30px; height: 30px; }
+    .brand span { font-size: 18px; font-weight: 600; color: #3B82F6; letter-spacing: -0.01em; }
+
+    .head { position: relative; z-index: 2; margin-top: 44px; }
+    .badge {
+      display: inline-flex; align-items: center; padding: 8px 18px; border-radius: 100px;
+      background: #EFF6FF; border: 1.5px solid #DBEAFE; margin-bottom: 26px;
+      font-size: 14px; font-weight: 600; color: #1E40AF;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .headline {
+      font-size: 52px; font-weight: 700; color: #0F172A;
+      line-height: 1.09; letter-spacing: -0.022em; max-width: 880px;
+    }
+    .headline span { color: #3B82F6; }
+
+    .stats {
+      position: relative; z-index: 2; margin-top: 48px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .stat {
+      padding: 30px 26px; background: #FFFFFF; border-radius: 22px;
+      border: 1px solid #E9EEF6; box-shadow: 0 3px 16px rgba(15,23,42,0.045);
+    }
+    .stat .v {
+      font-size: 46px; font-weight: 700; color: #3B82F6; letter-spacing: -0.03em; line-height: 1;
+    }
+    .stat .v.sm { font-size: 34px; letter-spacing: -0.02em; padding-top: 8px; }
+    .stat .k {
+      margin-top: 14px; font-size: 20px; color: #64748B; line-height: 1.4; font-weight: 400;
+    }
+
+    .photo-card {
+      position: relative; z-index: 2; margin-top: auto;
+      width: 920px; height: 540px; border-radius: 26px; overflow: hidden;
+      box-shadow: 0 18px 50px rgba(15,23,42,0.16);
+    }
+    .photo-card img {
+      width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%;
+      filter: saturate(0.85) brightness(1.02);
+    }
+    .photo-card .shade {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(11,18,32,0.05) 0%, rgba(11,18,32,0.30) 42%, rgba(11,18,32,0.86) 100%);
+    }
+    .photo-card .cap {
+      position: absolute; left: 38px; right: 38px; bottom: 34px;
+    }
+    .photo-card .cap .t {
+      font-size: 30px; font-weight: 600; color: #FFFFFF; line-height: 1.28; letter-spacing: -0.01em;
+    }
+    .photo-card .cap .s {
+      margin-top: 12px; font-size: 20px; color: #CBD5E1; font-weight: 400;
+    }
+    .photo-card .tagpill {
+      position: absolute; top: 28px; left: 30px;
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 10px 18px; border-radius: 100px;
+      background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(12px);
+      font-size: 16px; font-weight: 600; color: #FFFFFF; letter-spacing: 0.04em;
+    }
+    .photo-card .tagpill i { width: 8px; height: 8px; border-radius: 50%; background: #4ADE80; display: block; }
+
+    .slide-num {
+      position: absolute; z-index: 3; bottom: 62px; right: 80px;
+      font-size: 18px; color: #CBD5E1; font-weight: 500; letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="glow"></div>
+
+    <div class="brand">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><polygon fill="#3B82F6" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg>
+      <span>omniflow.</span>
+    </div>
+
+    <div class="head">
+      <span class="badge">Kenapa Omniflow</span>
+      <h1 class="headline">Bukan hanya software. Ini fondasi <span>pertumbuhan</span> bisnis.</h1>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="v">2-4</div>
+        <div class="k">minggu implementasi, bukan berbulan-bulan</div>
+      </div>
+      <div class="stat">
+        <div class="v">26</div>
+        <div class="k">modul siap pakai dalam satu langganan</div>
+      </div>
+      <div class="stat">
+        <div class="v sm">Lokal</div>
+        <div class="k">tim engineer yang paham regulasi Indonesia</div>
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src="img/woman-reviewing-report.jpg" alt="Tim support lokal Omniflow">
+      <div class="shade"></div>
+      <div class="tagpill"><i></i>Dukungan bahasa Indonesia</div>
+      <div class="cap">
+        <div class="t">Didampingi tim lokal, dari onboarding sampai operasional harian.</div>
+        <div class="s">Bukan tiket yang dibalas zona waktu berbeda.</div>
+      </div>
+    </div>
+
+    <div class="slide-num">07 / 08</div>
+  </div>
+</body>
+</html>

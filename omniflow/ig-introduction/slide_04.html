@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Omniflow Introduction — Slide 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Outfit', sans-serif; }
+
+    .canvas {
+      position: relative; width: 1080px; height: 1350px; overflow: hidden;
+      background: linear-gradient(185deg, #FFFFFF 0%, #F6F8FC 52%, #ECF1F8 100%);
+      padding: 80px 80px 108px; display: flex; flex-direction: column;
+    }
+    .canvas::after {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      background-image: radial-gradient(rgba(59,130,246,0.045) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    .glow {
+      position: absolute; z-index: 0; border-radius: 50%; pointer-events: none;
+      width: 560px; height: 560px; top: -180px; left: -140px;
+      background: radial-gradient(circle, rgba(59,130,246,0.11), transparent 70%);
+    }
+
+    .brand { position: relative; z-index: 2; display: flex; align-items: center; gap: 9px; }
+    .brand svg { width: 30px; height: 30px; }
+    .brand span { font-size: 18px; font-weight: 600; color: #3B82F6; letter-spacing: -0.01em; }
+
+    .head { position: relative; z-index: 2; margin-top: 44px; }
+    .badge {
+      display: inline-flex; align-items: center; padding: 8px 18px; border-radius: 100px;
+      background: #EFF6FF; border: 1.5px solid #DBEAFE; margin-bottom: 26px;
+      font-size: 14px; font-weight: 600; color: #1E40AF;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .headline {
+      font-size: 50px; font-weight: 700; color: #0F172A;
+      line-height: 1.1; letter-spacing: -0.022em; max-width: 900px;
+    }
+    .headline span { color: #3B82F6; }
+    .body-copy { margin-top: 20px; font-size: 24px; color: #64748B; line-height: 1.5; max-width: 860px; }
+
+    .grid {
+      position: relative; z-index: 2; margin-top: auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 26px;
+    }
+    .card {
+      position: relative; min-height: 372px; padding: 34px 34px;
+      background: #FFFFFF; border-radius: 26px;
+      border: 1px solid #EAEFF6;
+      box-shadow: 0 4px 20px rgba(15,23,42,0.05);
+      display: flex; flex-direction: column;
+      overflow: hidden;
+    }
+    .card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: var(--accent);
+    }
+    .card .ico {
+      width: 78px; height: 78px; border-radius: 50%;
+      background: var(--tint); display: flex; align-items: center; justify-content: center;
+    }
+    .card .ico svg { width: 36px; height: 36px; }
+    .card .cat {
+      margin-top: 28px; font-size: 31px; font-weight: 700; color: #0F172A; letter-spacing: -0.01em;
+    }
+    .card .mods { margin-top: 16px; display: flex; flex-direction: column; gap: 11px; }
+    .card .mods div {
+      font-size: 21px; color: #64748B; font-weight: 400;
+      display: flex; align-items: center; gap: 11px;
+    }
+    .card .mods i { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); display: block; flex: none; }
+    .card .count {
+      position: absolute; top: 34px; right: 32px;
+      padding: 7px 16px; border-radius: 100px;
+      background: var(--tint); color: var(--accent);
+      font-size: 16px; font-weight: 700; letter-spacing: 0.02em;
+    }
+
+    .c-ops { --accent: #3B82F6; --tint: #EFF6FF; }
+    .c-ppl { --accent: #22C55E; --tint: #F0FDF4; }
+    .c-fin { --accent: #F97316; --tint: #FFF7ED; }
+    .c-ai  { --accent: #8B5CF6; --tint: #F5F3FF; }
+
+    .slide-num {
+      position: absolute; z-index: 3; bottom: 62px; right: 80px;
+      font-size: 18px; color: #CBD5E1; font-weight: 500; letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="glow"></div>
+
+    <div class="brand">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><polygon fill="#3B82F6" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg>
+      <span>omniflow.</span>
+    </div>
+
+    <div class="head">
+      <span class="badge">Kategori</span>
+      <h1 class="headline">Empat pilar Omniflow untuk setiap kebutuhan <span>bisnis</span></h1>
+      <p class="body-copy">Operasional, SDM, Keuangan, dan AI. Saling terhubung tanpa perlu integrasi manual.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card c-ops">
+        <span class="count">8 MODUL</span>
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.6 20.6 7.3v9.4L12 21.4 3.4 16.7V7.3z"/>
+            <path d="M3.4 7.3 12 12l8.6-4.7"/>
+            <path d="M12 12v9.4"/>
+          </svg>
+        </div>
+        <div class="cat">Operasional</div>
+        <div class="mods">
+          <div><i></i>Inventory</div>
+          <div><i></i>POS &amp; Retail</div>
+          <div><i></i>Purchasing</div>
+          <div><i></i>Manufacturing</div>
+        </div>
+      </div>
+
+      <div class="card c-ppl">
+        <span class="count">6 MODUL</span>
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="8" r="3.6"/>
+            <path d="M2.6 20.2c0-3.9 2.9-6.2 6.4-6.2s6.4 2.3 6.4 6.2"/>
+            <circle cx="17.6" cy="8.4" r="2.6"/>
+            <path d="M16.6 14.2c2.9.2 4.8 2.2 4.8 5.6"/>
+          </svg>
+        </div>
+        <div class="cat">People</div>
+        <div class="mods">
+          <div><i></i>HRIS &amp; Payroll</div>
+          <div><i></i>Absensi</div>
+          <div><i></i>LMS</div>
+          <div><i></i>Telemarketing</div>
+        </div>
+      </div>
+
+      <div class="card c-fin">
+        <span class="count">7 MODUL</span>
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3.4 3.6v16.8h17.2"/>
+            <path d="M7.4 16.4v-4.2"/>
+            <path d="M12 16.4V8.6"/>
+            <path d="M16.6 16.4V5.8"/>
+          </svg>
+        </div>
+        <div class="cat">Keuangan</div>
+        <div class="mods">
+          <div><i></i>Accounting</div>
+          <div><i></i>Payment</div>
+          <div><i></i>Invoicing</div>
+          <div><i></i>XRM</div>
+        </div>
+      </div>
+
+      <div class="card c-ai">
+        <span class="count">5 MODUL</span>
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11.4 3.2 13 8.6l5.4 1.6-5.4 1.6-1.6 5.4-1.6-5.4L4.4 10.2l5.4-1.6z"/>
+            <path d="M18.4 15.2l.7 2.3 2.3.7-2.3.7-.7 2.3-.7-2.3-2.3-.7 2.3-.7z"/>
+          </svg>
+        </div>
+        <div class="cat">AI</div>
+        <div class="mods">
+          <div><i></i>AI Automation</div>
+          <div><i></i>Analytics</div>
+          <div><i></i>Forecasting</div>
+          <div><i></i>Anomaly Alert</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-num">04 / 08</div>
+  </div>
+</body>
+</html>

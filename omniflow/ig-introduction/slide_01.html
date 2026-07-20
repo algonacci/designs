@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Omniflow Introduction — Slide 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Outfit', sans-serif; }
+
+    .canvas {
+      position: relative; width: 1080px; height: 1350px; overflow: hidden;
+      background: #0B1220;
+    }
+
+    .photo { position: absolute; inset: 0; z-index: 0; }
+    .photo img {
+      width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%;
+      filter: saturate(0.62) brightness(0.92) contrast(1.04);
+      opacity: 0.68;
+    }
+    .veil {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(11,18,32,0.72) 0%, rgba(11,18,32,0.34) 26%, rgba(11,18,32,0.88) 62%, #0B1220 88%);
+    }
+    .grid-overlay {
+      position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background-image: radial-gradient(rgba(147,197,253,0.07) 1px, transparent 1px);
+      background-size: 38px 38px;
+    }
+    .orb {
+      position: absolute; z-index: 2; border-radius: 50%; pointer-events: none;
+      width: 520px; height: 520px; top: -140px; right: -120px;
+      background: radial-gradient(circle, rgba(59,130,246,0.28), transparent 68%);
+    }
+
+    /* floating fragmented tool chips */
+    .chip {
+      position: absolute; z-index: 3;
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 22px; border-radius: 100px;
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.22);
+      backdrop-filter: blur(14px);
+      color: #E2E8F0; font-size: 21px; font-weight: 500;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+    }
+    .chip i { width: 9px; height: 9px; border-radius: 50%; background: #94A3B8; display: block; }
+    .chip.b i { background: #60A5FA; }
+    .chip.o i { background: #FB923C; }
+
+    .c1 { top: 232px; left: 78px;  transform: rotate(-5deg); }
+    .c2 { top: 318px; left: 448px; transform: rotate(4deg); }
+    .c3 { top: 424px; left: 152px; transform: rotate(3deg); }
+    .c4 { top: 208px; left: 690px; transform: rotate(6deg); }
+    .c5 { top: 508px; left: 566px; transform: rotate(-3deg); }
+    .c6 { top: 392px; left: 792px; transform: rotate(-7deg); }
+
+    .content {
+      position: absolute; z-index: 4; left: 80px; right: 80px; bottom: 132px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 9px 20px; border-radius: 100px; margin-bottom: 30px;
+      background: rgba(249,115,22,0.14); border: 1.5px solid rgba(249,115,22,0.4);
+      font-size: 14px; font-weight: 600; color: #FDBA74;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .headline {
+      font-size: 68px; font-weight: 700; color: #FFFFFF;
+      line-height: 1.06; letter-spacing: -0.025em; max-width: 840px;
+    }
+    .headline span { color: #FB923C; }
+    .rule { width: 76px; height: 4px; border-radius: 4px; background: #F97316; margin: 32px 0 26px; }
+    .body-copy {
+      font-size: 25px; color: #94A3B8; line-height: 1.5; font-weight: 400; max-width: 760px;
+    }
+
+    .brand {
+      position: absolute; z-index: 5; top: 78px; left: 80px;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .brand svg { width: 30px; height: 30px; }
+    .brand span { font-size: 18px; font-weight: 600; color: #FFFFFF; letter-spacing: -0.01em; }
+
+    .slide-num {
+      position: absolute; z-index: 5; bottom: 62px; right: 80px;
+      font-size: 18px; color: rgba(255,255,255,0.38); font-weight: 500; letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="photo">
+      <img src="img/hr-office-worker.jpg" alt="Pekerja kantor dengan banyak aplikasi">
+    </div>
+    <div class="veil"></div>
+    <div class="grid-overlay"></div>
+    <div class="orb"></div>
+
+    <div class="chip c1"><i></i>CRM</div>
+    <div class="chip c2 b"><i></i>Payroll</div>
+    <div class="chip c3"><i></i>Inventory</div>
+    <div class="chip c4 o"><i></i>Spreadsheet</div>
+    <div class="chip c5"><i></i>Akuntansi</div>
+    <div class="chip c6 b"><i></i>POS</div>
+
+    <div class="brand">
+      <svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><polygon fill="#FFFFFF" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg>
+      <span>omniflow.</span>
+    </div>
+
+    <div class="content">
+      <span class="badge">Hook</span>
+      <h1 class="headline">Bisnis Anda pakai berapa <span>tools</span> sekaligus?</h1>
+      <div class="rule"></div>
+      <p class="body-copy">CRM satu aplikasi. Payroll satu aplikasi. Inventory satu lagi. Masing-masing bicara sendiri-sendiri.</p>
+    </div>
+
+    <div class="slide-num">01 / 08</div>
+  </div>
+</body>
+</html>
