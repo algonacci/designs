@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omniflow E-commerce — Slide 3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+    html, body { width: 1080px; height: 1350px; overflow: hidden; font-family: 'Outfit', sans-serif; background: #1D4ED8; }
+
+    .canvas {
+      position: relative; width: 1080px; height: 1350px; overflow: hidden;
+      background: linear-gradient(155deg, #1D4ED8 0%, #2563EB 42%, #172F72 100%);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 80px;
+    }
+
+    .grid-overlay {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      background-image: radial-gradient(rgba(147,197,253,0.07) 1px, transparent 1px);
+      background-size: 38px 38px;
+    }
+
+    .orb {
+      position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
+    }
+    .orb.orb-1 {
+      top: -160px; left: -100px; width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(249,115,22,0.24), transparent 70%);
+    }
+    .orb.orb-2 {
+      bottom: -160px; right: -100px; width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(139,92,246,0.18), transparent 70%);
+    }
+
+    .eyebrow {
+      position: relative; z-index: 1;
+      font-size: 20px; font-weight: 600; color: #93C5FD;
+      text-transform: uppercase; letter-spacing: 0.18em;
+      margin-bottom: 36px;
+    }
+
+    .stat-row {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 60px;
+    }
+    .stat {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+    }
+    .stat-num {
+      font-size: 280px; font-weight: 700; line-height: 0.82; letter-spacing: -0.05em;
+      background: linear-gradient(160deg, #FFFFFF 0%, #DBEAFE 55%, #93C5FD 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .stat-num.zero {
+      background: linear-gradient(160deg, #FED7AA 0%, #FB923C 55%, #F97316 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .stat-divider {
+      font-size: 200px; font-weight: 300; color: rgba(255,255,255,0.25);
+      line-height: 0.82;
+    }
+    .stat-label {
+      font-size: 26px; font-weight: 600; color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+
+    .body-copy {
+      position: relative; z-index: 1;
+      margin-top: 56px; font-size: 24px; color: #DBEAFE;
+      line-height: 1.5; text-align: center; max-width: 760px;
+    }
+    .body-copy strong { color: #FFFFFF; font-weight: 600; }
+
+    .brand {
+      position: absolute; top: 50px; right: 80px; z-index: 2;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .brand svg { width: 30px; height: 30px; }
+    .brand span {
+      font-size: 18px; font-weight: 600; color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+
+    .slide-num {
+      position: absolute; top: 50px; left: 80px; z-index: 2;
+      font-family: 'JetBrains Mono', 'SF Mono', monospace;
+      font-size: 18px; color: rgba(255,255,255,0.38); font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="grid-overlay"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="brand">
+      <svg viewBox="0 0 1000 1000" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon fill="#FFFFFF" points="492.61 542.75 346.66 542.75 346.61 542.75 346.65 542.82 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 564.87 472.28 564.87 472.28 711.09 472.28 711.18 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 533.07 651.34 679.45 651.34 865.85 651.34 793.26 542.75 492.61 542.75"/></svg>
+      <span>omniflow.</span>
+    </div>
+    <div class="slide-num">03 / 08</div>
+    <div class="eyebrow">Omniflow Commerce</div>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="stat-num">1</div>
+        <div class="stat-label">platform</div>
+      </div>
+      <div class="stat-divider">/</div>
+      <div class="stat">
+        <div class="stat-num zero">0</div>
+        <div class="stat-label">plugin</div>
+      </div>
+    </div>
+    <p class="body-copy">Omniflow Commerce bukan plugin yang ditambahkan ke WordPress. Ini storefront yang lahir dari <strong>dalam ERP itu sendiri</strong>.</p>
+  </div>
+</body>
+</html>
