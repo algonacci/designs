@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoggleShare - Poster Anak</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+      --ink: #163064;
+      --soft-ink: #46608f;
+      --card: rgba(255, 255, 255, 0.8);
+      --cream: #fffdf4;
+      --sky: #84dbff;
+      --mint: #92efce;
+      --sun: #ffe38b;
+      --coral: #ff8e74;
+      --berry: #7f74ff;
+      --line: rgba(22, 48, 100, 0.12);
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #dff6ff;
+    }
+
+    .canvas {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 15%, rgba(255, 255, 255, 0.65) 0, transparent 20%),
+        radial-gradient(circle at 86% 14%, rgba(255, 255, 255, 0.4) 0, transparent 18%),
+        radial-gradient(circle at 84% 82%, rgba(255, 255, 255, 0.4) 0, transparent 16%),
+        linear-gradient(180deg, #74d5ff 0%, #9becc8 46%, #fff0a8 100%);
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 999px;
+      opacity: 0.65;
+      filter: blur(10px);
+    }
+
+    .blob.b1 {
+      top: 90px;
+      left: -80px;
+      width: 260px;
+      height: 180px;
+      background: rgba(255, 255, 255, 0.35);
+      transform: rotate(-16deg);
+    }
+
+    .blob.b2 {
+      top: 180px;
+      right: -40px;
+      width: 280px;
+      height: 200px;
+      background: rgba(255, 142, 116, 0.22);
+      transform: rotate(22deg);
+    }
+
+    .blob.b3 {
+      bottom: 120px;
+      left: -30px;
+      width: 220px;
+      height: 180px;
+      background: rgba(127, 116, 255, 0.18);
+    }
+
+    .shell {
+      position: absolute;
+      inset: 42px;
+      padding: 62px 58px 54px;
+      border-radius: 54px;
+      background: linear-gradient(180deg, rgba(255, 253, 244, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+      border: 3px solid rgba(255, 255, 255, 0.58);
+      box-shadow:
+        0 35px 70px rgba(42, 76, 130, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.55);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .headline {
+      display: grid;
+      grid-template-columns: 1fr 0.85fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .headline-copy h1 {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: 88px;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: var(--ink);
+    }
+
+    .headline-copy p {
+      margin: 22px 0 0;
+      max-width: 520px;
+      font-size: 32px;
+      line-height: 1.35;
+      color: var(--soft-ink);
+      font-weight: 700;
+    }
+
+    .mini-notes {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .mini-note {
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(132, 219, 255, 0.22);
+      border: 2px solid rgba(22, 48, 100, 0.08);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .phone-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 420px;
+      transform: translateX(-20px);
+    }
+
+    .phone {
+      position: relative;
+      width: 306px;
+      height: 545px;
+      border-radius: 44px;
+      padding: 18px;
+      background: #213c75;
+      box-shadow: 0 28px 60px rgba(22, 48, 100, 0.24);
+      transform: rotate(5deg);
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      width: 120px;
+      height: 18px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-50%);
+    }
+
+    .screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      border-radius: 32px;
+      background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.3) 2px, transparent 2px) 0 0 / 100px 100px,
+        linear-gradient(rgba(255, 255, 255, 0.28) 2px, transparent 2px) 0 0 / 100px 100px,
+        linear-gradient(180deg, #d7f2ff 0%, #b7efcf 100%);
+    }
+
+    .route-line {
+      position: absolute;
+      left: 66px;
+      top: 112px;
+      width: 180px;
+      height: 280px;
+      border: 8px dashed #ff8e74;
+      border-color: #ff8e74 transparent transparent transparent;
+      border-radius: 120px 120px 0 0;
+      transform: rotate(26deg);
+    }
+
+    .pin {
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 12px 24px rgba(22, 48, 100, 0.16);
+    }
+
+    .pin::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -14px;
+      width: 12px;
+      height: 20px;
+      background: inherit;
+      clip-path: polygon(50% 100%, 0 0, 100% 0);
+      transform: translateX(-50%);
+    }
+
+    .pin.p1 {
+      top: 100px;
+      left: 62px;
+      background: var(--berry);
+    }
+
+    .pin.p2 {
+      top: 238px;
+      right: 74px;
+      background: var(--coral);
+    }
+
+    .pin.p3 {
+      bottom: 126px;
+      left: 132px;
+      background: #2fc98e;
+    }
+
+    .place-pill {
+      position: absolute;
+      padding: 14px 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(22, 48, 100, 0.08);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+      box-shadow: 0 14px 26px rgba(22, 48, 100, 0.1);
+    }
+
+    .place-pill.a {
+      top: 46px;
+      right: 24px;
+    }
+
+    .place-pill.b {
+      top: 190px;
+      left: 26px;
+    }
+
+    .place-pill.c {
+      bottom: 42px;
+      right: 18px;
+    }
+
+    .feature-board {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      padding: 28px 28px 26px;
+      border-radius: 32px;
+      background: var(--card);
+      border: 2px solid rgba(22, 48, 100, 0.08);
+      box-shadow: 0 18px 28px rgba(22, 48, 100, 0.08);
+    }
+
+    .feature-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    .feature h3 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.05;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      color: var(--ink);
+    }
+
+    .feature p {
+      margin: 0;
+      font-size: 24px;
+      line-height: 1.35;
+      color: var(--soft-ink);
+      font-weight: 700;
+    }
+
+    .usage-panel {
+      padding: 32px 34px 36px;
+      border-radius: 36px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 249, 226, 0.95) 100%);
+      border: 2px solid rgba(22, 48, 100, 0.08);
+      box-shadow: 0 18px 28px rgba(22, 48, 100, 0.08);
+    }
+
+    .usage-panel h2 {
+      margin: 0 0 16px;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: 46px;
+      color: var(--ink);
+    }
+
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .use-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 18px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 2px solid rgba(22, 48, 100, 0.08);
+      box-shadow: 0 10px 18px rgba(22, 48, 100, 0.06);
+    }
+
+    .use-emoji {
+      flex-shrink: 0;
+      width: 54px;
+      height: 54px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      background: #fff;
+      box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .use-card strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.05;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .use-card span {
+      display: block;
+      margin-top: 5px;
+      font-size: 18px;
+      line-height: 1.2;
+      color: var(--soft-ink);
+      font-weight: 800;
+    }
+
+    .cta {
+      margin-top: auto;
+      padding: 34px 36px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #163064 0%, #2c57a9 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      box-shadow: 0 28px 40px rgba(22, 48, 100, 0.22);
+    }
+
+    .cta-copy h2 {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      font-size: 56px;
+      line-height: 0.95;
+      letter-spacing: -1px;
+    }
+
+    .cta-copy p {
+      margin: 14px 0 0;
+      max-width: 460px;
+      font-size: 24px;
+      line-height: 1.35;
+      color: rgba(255, 255, 255, 0.86);
+      font-weight: 700;
+    }
+
+    .qr-placeholder {
+      flex-shrink: 0;
+      width: 310px;
+      height: 310px;
+      padding: 20px;
+      border-radius: 30px;
+      background: #ffffff;
+      color: var(--ink);
+      text-align: center;
+      box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.08);
+      display: grid;
+      place-items: center;
+      border: 8px solid #fff4a8;
+    }
+
+    .qr-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="canvas">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+
+    <div class="shell">
+      <section class="headline">
+        <div class="headline-copy">
+          <h1>GoggleShare</h1>
+          <p>
+            Susun perjalananmu lebih mudah. Pilih beberapa tempat, simpan jadi daftar, lalu lihat rute yang lebih rapi di peta.
+          </p>
+          <div class="mini-notes">
+            <span class="mini-note">Pilih tempat</span>
+            <span class="mini-note">Atur tujuan</span>
+            <span class="mini-note">Cek rute</span>
+          </div>
+        </div>
+
+        <div class="phone-wrap">
+          <div class="phone">
+            <div class="screen">
+              <div class="route-line"></div>
+              <div class="pin p1"></div>
+              <div class="pin p2"></div>
+              <div class="pin p3"></div>
+              <div class="place-pill a">AEON BSD</div>
+              <div class="place-pill b">ICE BSD</div>
+              <div class="place-pill c">The Breeze</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-board">
+        <article class="feature">
+          <div class="feature-top">
+            <div class="feature-icon" style="background: linear-gradient(135deg, #84dbff, #67bfff);"></div>
+            <h3>Cari Tempat</h3>
+          </div>
+          <p>Ketik nama tempat atau pilih langsung dari peta.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-top">
+            <div class="feature-icon" style="background: linear-gradient(135deg, #92efce, #4bd5a4);"></div>
+            <h3>Tambah Tujuan</h3>
+          </div>
+          <p>Masukkan semua tempat yang ingin dikunjungi.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-top">
+            <div class="feature-icon" style="background: linear-gradient(135deg, #ffb796, #ff8e74);"></div>
+            <h3>Lihat Urutan</h3>
+          </div>
+          <p>Bantu perjalanan supaya tidak bolak-balik.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-top">
+            <div class="feature-icon" style="background: linear-gradient(135deg, #a799ff, #7f74ff);"></div>
+            <h3>Pakai Bareng</h3>
+          </div>
+          <p>Cocok untuk merencanakan tujuan bersama teman.</p>
+        </article>
+      </section>
+
+      <section class="usage-panel">
+        <h2>Bisa dipakai untuk apa?</h2>
+        <div class="use-grid">
+          <div class="use-card">
+            <div class="use-emoji">🏬</div>
+            <div>
+              <strong>Pergi ke mall</strong>
+              <span>pilih toko atau tempat makan</span>
+            </div>
+          </div>
+          <div class="use-card">
+            <div class="use-emoji">📚</div>
+            <div>
+              <strong>Tugas kelompok</strong>
+              <span>atur titik kumpul bersama</span>
+            </div>
+          </div>
+          <div class="use-card">
+            <div class="use-emoji">🎮</div>
+            <div>
+              <strong>Janjian main</strong>
+              <span>tentukan tujuan bareng teman</span>
+            </div>
+          </div>
+          <div class="use-card">
+            <div class="use-emoji">🚗</div>
+            <div>
+              <strong>Rencana keluarga</strong>
+              <span>susun beberapa tempat sekali jalan</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="cta-copy">
+          <h2>Scan untuk mulai</h2>
+          <p>Arahkan kamera ke QR code, buka GoggleShare, lalu coba susun tujuanmu sendiri.</p>
+        </div>
+        <div class="qr-placeholder" aria-label="QR code GoggleShare">
+          <img src="qr-bAB29.png" alt="QR code GoggleShare" />
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+
+</html>
