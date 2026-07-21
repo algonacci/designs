@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Analytics Shopee / 04</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1350px;
+        overflow: hidden;
+        background: #643dff;
+      }
+      .c {
+        position: relative;
+        width: 1080px;
+        height: 1350px;
+        overflow: hidden;
+        background: #643dff;
+        color: #fff;
+        font-family: Outfit, sans-serif;
+      }
+      .meta {
+        position: absolute;
+        top: 68px;
+        left: 72px;
+        right: 72px;
+        display: flex;
+        justify-content: space-between;
+        font:
+          600 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.12em;
+      }
+      .meta b {
+        color: #ffb44a;
+      }
+      .title {
+        position: absolute;
+        left: 70px;
+        top: 143px;
+        width: 920px;
+        font:
+          700 82px/0.94 Space Grotesk,
+          sans-serif;
+        letter-spacing: -0.052em;
+      }
+      .title span {
+        color: #ffb44a;
+      }
+      .heat {
+        position: absolute;
+        left: 73px;
+        right: 73px;
+        top: 408px;
+        height: 470px;
+        display: grid;
+        grid-template-columns: 75px repeat(6, 1fr);
+        grid-template-rows: 45px repeat(4, 1fr);
+        gap: 7px;
+      }
+      .heat div {
+        display: grid;
+        place-items: center;
+        font:
+          600 12px/1 IBM Plex Mono,
+          monospace;
+      }
+      .cell {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .l1 {
+        background: #8568ff;
+      }
+      .l2 {
+        background: #a290ff;
+      }
+      .l3 {
+        background: #ffb44a;
+        color: #171a1d;
+      }
+      .l4 {
+        background: #ff7a2f;
+      }
+      .selection {
+        position: absolute;
+        left: 554px;
+        top: 199px;
+        width: 295px;
+        height: 104px;
+        border: 6px solid #f8f9f5;
+      }
+      .selection:after {
+        content: "PEAK 19 / 21";
+        position: absolute;
+        right: -6px;
+        top: -35px;
+        padding: 8px 10px;
+        background: #f8f9f5;
+        color: #643dff;
+        font:
+          600 11px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.08em;
+      }
+      .finding {
+        position: absolute;
+        left: 73px;
+        right: 73px;
+        top: 925px;
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        gap: 26px;
+        border-top: 3px solid #fff;
+        padding-top: 26px;
+      }
+      .finding strong {
+        font:
+          700 32px/1 Space Grotesk,
+          sans-serif;
+        color: #ffb44a;
+      }
+      .finding p {
+        font-size: 24px;
+        line-height: 1.35;
+      }
+      .next {
+        position: absolute;
+        right: 72px;
+        bottom: 157px;
+        font:
+          600 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.1em;
+        color: #ffb44a;
+      }
+      .foot {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 61px;
+        padding-top: 18px;
+        border-top: 2px solid #fff;
+        display: flex;
+        justify-content: space-between;
+        font:
+          500 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.11em;
+      }
+      .brand-logo{display:flex;align-items:center;gap:7px;color:#643dff;font:600 15px/1 Outfit,sans-serif;letter-spacing:0}.brand-logo svg{width:25px;height:25px;fill:currentColor}
+      .brand-logo{gap:9px!important;font-size:21px!important}.brand-logo svg{width:38px!important;height:38px!important}
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>TIME HEATMAP / ORDER COUNT</span><b>24 HOUR WINDOW</b>
+      </div>
+      <h1 class="title">ORDER TIDAK DATANG<br /><span>SECARA MERATA.</span></h1>
+      <section class="heat">
+        <div></div>
+        <div>SEN</div>
+        <div>SEL</div>
+        <div>RAB</div>
+        <div>KAM</div>
+        <div>JUM</div>
+        <div>SAB</div>
+        <div>09</div>
+        <div class="cell l1"></div>
+        <div class="cell"></div>
+        <div class="cell l1"></div>
+        <div class="cell"></div>
+        <div class="cell l2"></div>
+        <div class="cell l2"></div>
+        <div>13</div>
+        <div class="cell l1"></div>
+        <div class="cell l2"></div>
+        <div class="cell l2"></div>
+        <div class="cell l1"></div>
+        <div class="cell l2"></div>
+        <div class="cell l2"></div>
+        <div>19</div>
+        <div class="cell l3"></div>
+        <div class="cell l4"></div>
+        <div class="cell l3"></div>
+        <div class="cell l4"></div>
+        <div class="cell l4"></div>
+        <div class="cell l3"></div>
+        <div>21</div>
+        <div class="cell l3"></div>
+        <div class="cell l3"></div>
+        <div class="cell l4"></div>
+        <div class="cell l3"></div>
+        <div class="cell l3"></div>
+        <div class="cell l4"></div>
+        <div class="selection"></div>
+      </section>
+      <section class="finding">
+        <strong>FORENSIC<br />NOTE 04</strong>
+        <p>
+          Puncak order muncul pukul 19.00 sampai 21.00. Jadwal campaign dan
+          kesiapan operasional dapat mengikuti pola ini.
+        </p>
+      </section>
+      <div class="next">NEXT / SEGMENT CUSTOMER →</div>
+      <footer class="foot">
+        <span>04 / 08</span><span class="brand-logo"><svg viewBox="0 0 1000 1000"><polygon points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"/></svg>omniflow.</span><span>CONTOH DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

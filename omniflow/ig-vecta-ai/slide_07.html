@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vecta AI / 07</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .title {
+        font-family: "Barlow Condensed", sans-serif !important;
+        font-size: 96px !important;
+        line-height: 0.9 !important;
+        letter-spacing: -0.018em !important;
+      }
+      .profile dd,
+      .action strong {
+        font-family: "Barlow Condensed", sans-serif !important;
+        letter-spacing: 0 !important;
+      }
+      .pulse {
+        display: none !important;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1350px;
+        overflow: hidden;
+        background: #101416;
+      }
+      .c {
+        position: relative;
+        width: 1080px;
+        height: 1350px;
+        overflow: hidden;
+        background: #101416;
+        color: #f4f1e9;
+        font-family: Outfit, sans-serif;
+      }
+      .meta {
+        position: absolute;
+        top: 68px;
+        left: 73px;
+        right: 73px;
+        display: flex;
+        justify-content: space-between;
+        font:
+          600 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.12em;
+      }
+      .meta b {
+        color: #38c878;
+      }
+      .title {
+        position: absolute;
+        left: 70px;
+        top: 143px;
+        width: 930px;
+        font:
+          800 84px/0.92 Syne,
+          sans-serif;
+        letter-spacing: -0.057em;
+      }
+      .title span {
+        color: #38c878;
+      }
+      .lead {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 422px;
+        height: 590px;
+        border: 3px solid #f4f1e9;
+        padding: 40px;
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 27px;
+        border-bottom: 2px solid #4b5154;
+      }
+      .head small {
+        font:
+          600 12px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.11em;
+        color: #667077;
+      }
+      .ready {
+        padding: 12px 15px;
+        background: #38c878;
+        color: #101416;
+        font:
+          700 12px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.09em;
+      }
+      .profile {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 14px;
+        margin-top: 32px;
+      }
+      .profile dt {
+        font:
+          600 12px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.09em;
+        color: #667077;
+      }
+      .profile dd {
+        font:
+          700 26px/1.05 Syne,
+          sans-serif;
+      }
+      .route {
+        margin-top: 32px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .route b {
+        padding: 15px 17px;
+        border: 2px solid #667077;
+        font:
+          600 12px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.08em;
+      }
+      .route b.active {
+        background: #e64ba8;
+        border-color: #e64ba8;
+      }
+      .route i {
+        height: 4px;
+        flex: 1;
+        background: #2855ff;
+      }
+      .action {
+        position: absolute;
+        left: 40px;
+        right: 40px;
+        bottom: 40px;
+        padding: 24px 28px;
+        background: #2855ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .action strong {
+        font:
+          700 28px/1 Syne,
+          sans-serif;
+      }
+      .action span {
+        font:
+          600 12px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.09em;
+        color: #dce3ff;
+      }
+      .pulse {
+        position: absolute;
+        left: -3px;
+        right: -3px;
+        top: 300px;
+        height: 8px;
+        background: linear-gradient(90deg, #38c878, #2855ff, #e64ba8);
+      }
+      .note {
+        position: absolute;
+        left: 73px;
+        bottom: 158px;
+        width: 720px;
+        font-size: 24px;
+        line-height: 1.35;
+        color: #bdc3c1;
+      }
+      .next {
+        position: absolute;
+        right: 73px;
+        bottom: 162px;
+        font:
+          600 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.1em;
+        color: #38c878;
+      }
+      .foot {
+        position: absolute;
+        left: 73px;
+        right: 73px;
+        bottom: 61px;
+        padding-top: 18px;
+        border-top: 2px solid #f4f1e9;
+        display: flex;
+        justify-content: space-between;
+        font:
+          500 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.11em;
+      }
+      .foot>span:nth-child(2){gap:9px!important;font-size:21px!important}.foot>span:nth-child(2) svg{width:38px!important;height:38px!important}
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>SALES HANDOFF / LEAD 0816</span><b>PROFILE COMPLETE</b>
+      </div>
+      <h1 class="title">
+        DATA MINIMUM LENGKAP.<br /><span>LEAD SIAP DITINDAKLANJUTI.</span>
+      </h1>
+      <section class="lead">
+        <div class="head">
+          <small>WHATSAPP LEAD / CONTOH</small>
+          <div class="ready">READY FOR DEMO</div>
+        </div>
+        <dl class="profile">
+          <dt>NAME</dt>
+          <dd>Dimas</dd>
+          <dt>COMPANY</dt>
+          <dd>PT Ruang Tumbuh</dd>
+          <dt>EMAIL</dt>
+          <dd>dimas@example.test</dd>
+          <dt>INTENT</dt>
+          <dd>Meeting Request</dd>
+        </dl>
+        <div class="route">
+          <b>AWAITING</b><i></i><b>QUALIFIED</b><i></i
+          ><b class="active">DEMO REQUESTED</b>
+        </div>
+        <div class="pulse"></div>
+        <div class="action">
+          <strong>SCHEDULE DEMO</strong><span>NEXT ACTION / OWNER: SALES</span>
+        </div>
+      </section>
+      <p class="note">
+        AI tidak berhenti saat profil lengkap. Status dan next action diteruskan
+        sebagai bahan follow-up tim sales.
+      </p>
+      <div class="next">NEXT / JAGA KONTINUITAS →</div>
+      <footer class="foot">
+        <span>07 / 08</span><span style="display:flex;align-items:center;gap:7px;font:600 15px/1 Outfit,sans-serif;letter-spacing:0"><svg width="25" height="25" viewBox="0 0 1000 1000"><polygon fill="currentColor" points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"/></svg>omniflow.</span><span>IDENTITAS FIKTIF</span>
+      </footer>
+    </main>
+  </body>
+</html>

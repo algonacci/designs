@@ -17,6 +17,8 @@ Tujuan dokumen ini:
 | HRIS | Selesai | `ig-hris` |
 | Ecommerce | Selesai | `ig-ecommerce` |
 | Event Ticketing | Selesai, menunggu final approval | `ig-event-ticketing` |
+| Profilex HR Mastery | Selesai, menunggu final approval | `ig-profilex` |
+| Analytics Shopee | Selesai, menunggu final approval | `ig-analytics-shopee` |
 | Modul lain | Backlog | Belum dibuat |
 
 ## Prinsip Visual
@@ -159,6 +161,8 @@ Elemen yang harus berubah per seri:
 
 **Design style:** Style 7, `Data Forensics`
 
+**Status:** Sudah diproduksi di `ig-analytics-shopee`.
+
 **Repository sumber:**
 
 - `Omniflow-Analytics`
@@ -228,6 +232,8 @@ Elemen yang harus berubah per seri:
 ## 6. Vecta AI
 
 **Design style:** Style 9, `Conversation Signal`
+
+**Status:** Sudah diproduksi di `ig-vecta-ai`.
 
 **Repository sumber:**
 

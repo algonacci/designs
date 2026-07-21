@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Analytics Shopee / 08</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1350px;
+        overflow: hidden;
+        background: #1f8f5f;
+      }
+      .c {
+        position: relative;
+        width: 1080px;
+        height: 1350px;
+        overflow: hidden;
+        background: #1f8f5f;
+        color: #fff;
+        font-family: Outfit, sans-serif;
+      }
+      .grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+        background-size: 54px 54px;
+      }
+      .meta {
+        position: absolute;
+        top: 68px;
+        left: 72px;
+        right: 72px;
+        display: flex;
+        justify-content: space-between;
+        font:
+          600 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.12em;
+      }
+      .meta b {
+        color: #ffcc6b;
+      }
+      .title {
+        position: absolute;
+        left: 70px;
+        top: 143px;
+        width: 920px;
+        font:
+          700 84px/0.92 Space Grotesk,
+          sans-serif;
+        letter-spacing: -0.055em;
+      }
+      .title span {
+        color: #ffcc6b;
+      }
+      .history {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 420px;
+        height: 520px;
+      }
+      .report {
+        position: absolute;
+        width: 760px;
+        height: 190px;
+        padding: 27px 31px;
+        background: #f8f9f5;
+        color: #171a1d;
+        border: 3px solid #171a1d;
+        box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.22);
+      }
+      .r1 {
+        left: 0;
+        top: 0;
+      }
+      .r2 {
+        left: 82px;
+        top: 154px;
+      }
+      .r3 {
+        left: 164px;
+        top: 308px;
+        border-color: #643dff;
+      }
+      .report small {
+        font:
+          600 11px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.1em;
+        color: #676d6a;
+      }
+      .report strong {
+        display: block;
+        margin-top: 16px;
+        font:
+          700 31px/1 Space Grotesk,
+          sans-serif;
+      }
+      .report p {
+        margin-top: 12px;
+        font:
+          500 14px/1.35 IBM Plex Mono,
+          monospace;
+        color: #636966;
+      }
+      .status {
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        padding: 9px 11px;
+        background: #1f8f5f;
+        color: #fff;
+        font:
+          600 11px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.08em;
+      }
+      .r3 .status {
+        background: #643dff;
+      }
+      .selection {
+        position: absolute;
+        left: 140px;
+        top: 282px;
+        width: 808px;
+        height: 240px;
+        border: 8px solid #ff7a2f;
+      }
+      .loop {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 1002px;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        font:
+          600 13px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.08em;
+      }
+      .loop b {
+        padding: 12px 15px;
+        background: #171a1d;
+      }
+      .loop i {
+        height: 3px;
+        flex: 1;
+        background: #ffcc6b;
+      }
+      .identity {
+        position: absolute;
+        left: 72px;
+        bottom: 149px;
+        font:
+          700 35px/1 Space Grotesk,
+          sans-serif;
+      }
+      .identity span {
+        color: #ffcc6b;
+      }
+      .action {
+        position: absolute;
+        right: 72px;
+        bottom: 154px;
+        font:
+          600 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.1em;
+        color: #ffcc6b;
+      }
+      .foot {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        bottom: 61px;
+        padding-top: 18px;
+        border-top: 2px solid #fff;
+        display: flex;
+        justify-content: space-between;
+        font:
+          500 14px/1 IBM Plex Mono,
+          monospace;
+        letter-spacing: 0.11em;
+      }
+      .brand-logo{display:flex;align-items:center;gap:7px;color:#38c878;font:600 15px/1 Outfit,sans-serif;letter-spacing:0}.brand-logo svg{width:25px;height:25px;fill:currentColor}
+      .brand-logo{gap:9px!important;font-size:21px!important}.brand-logo svg{width:38px!important;height:38px!important}
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>REPORT HISTORY / SOURCE SHOPEE</span><b>REOPEN ANYTIME</b>
+      </div>
+      <h1 class="title">
+        SEKALI DIANALISIS.<br /><span>TIDAK HILANG SETELAH DIBACA.</span>
+      </h1>
+      <section class="history">
+        <article class="report r1">
+          <small>REPORT / MAY 2026</small
+          ><strong>Shopee Order Analytics</strong>
+          <p>1.031 ORDERS / RP148,2JT / 762 CUSTOMERS</p>
+          <span class="status">COMPLETED</span>
+        </article>
+        <article class="report r2">
+          <small>REPORT / JUN 2026</small
+          ><strong>Shopee Order Analytics</strong>
+          <p>1.112 ORDERS / RP166,8JT / 841 CUSTOMERS</p>
+          <span class="status">COMPLETED</span>
+        </article>
+        <article class="report r3">
+          <small>REPORT / JUL 2026</small
+          ><strong>Shopee Order Analytics</strong>
+          <p>1.248 ORDERS / RP186,4JT / 936 CUSTOMERS</p>
+          <span class="status">SELECTED</span>
+        </article>
+        <div class="selection"></div>
+      </section>
+      <div class="loop">
+        <b>UPLOAD</b><i></i><b>PARSE</b><i></i><b>ANALYZE</b><i></i
+        ><b>REOPEN</b>
+      </div>
+      <div class="identity">OMNIFLOW <span>ANALYTICS</span></div>
+      <div class="action">LINK IN BIO ↑</div>
+      <footer class="foot">
+        <span>08 / 08</span><span class="brand-logo"><svg viewBox="0 0 1000 1000"><polygon points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"/></svg>omniflow.</span><span>DATA FORENSICS</span>
+      </footer>
+    </main>
+  </body>
+</html>
