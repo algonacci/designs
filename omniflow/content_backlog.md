@@ -22,6 +22,7 @@ Tujuan dokumen ini:
 | Vecta AI | Selesai, menunggu final approval | `ig-vecta-ai` |
 | SIMKlinik | Selesai, menunggu final approval | `ig-simklinik` |
 | LMS Adaptive Learning | Selesai, menunggu final approval | `ig-lms-adaptive` |
+| DealDesk | Selesai, menunggu final approval | `ig-dealdesk` |
 | Modul lain | Backlog | Belum dibuat |
 
 ## Prinsip Visual
@@ -351,6 +352,8 @@ Elemen yang harus berubah per seri:
 ## 9. DealDesk
 
 **Design style:** Style 12, `Pricing Desk`
+
+**Status:** Sudah diproduksi di `ig-dealdesk`.
 
 **Repository sumber:** `Omniflow-DealDesk`
 

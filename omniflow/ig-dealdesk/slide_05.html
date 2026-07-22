@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>DealDesk / 05</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Libre+Franklin:wght@700;800;900&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #b89545;
+        color: #172a46;
+      }
+      .title {
+        font-size: 81px;
+      }
+      .plates {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 410px;
+        height: 585px;
+        display: grid;
+        grid-template-columns: 1fr 85px 1fr;
+        align-items: center;
+      }
+      .plate {
+        height: 450px;
+        padding: 38px;
+        background: #f7f4ec;
+        border: 3px solid #172a46;
+      }
+      .plate small {
+        font:
+          600 11px/1 "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.1em;
+        color: #8b9098;
+      }
+      .plate h2 {
+        margin-top: 25px;
+        font:
+          900 37px/1 "Libre Franklin",
+          sans-serif;
+      }
+      .plate dl {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: 105px 1fr;
+        gap: 17px;
+      }
+      .plate dt {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #8b9098;
+      }
+      .plate dd {
+        font-size: 18px;
+      }
+      .switch {
+        text-align: center;
+        font:
+          900 35px/1 "Libre Franklin",
+          sans-serif;
+      }
+      .selected {
+        margin-top: 35px;
+        padding: 13px 16px;
+        background: #2e63ff;
+        color: #fff;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+        display: inline-block;
+      }
+      .red-price {
+        right: 84px;
+        top: 1022px;
+      }
+      .next {
+        color: #172a46;
+      }
+      .brand {
+        color: #172a46;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>MASTER DATA / COMMERCIAL IDENTITY</span><b>SELECT / 05</b>
+      </div>
+      <h1 class="title">CUSTOMER DIPILIH.<br /><em>PENERBITNYA JUGA.</em></h1>
+      <section class="plates">
+        <article class="plate">
+          <small>CUSTOMER / SIMULASI</small>
+          <h2>PT Ruang Tumbuh</h2>
+          <dl>
+            <dt>PIC</dt>
+            <dd>Dimas Arta</dd>
+            <dt>EMAIL</dt>
+            <dd>dimas@example.test</dd>
+            <dt>ADDRESS</dt>
+            <dd>Jakarta, Indonesia</dd>
+          </dl>
+          <span class="selected">CUSTOMER SELECTED</span>
+        </article>
+        <div class="switch">↔</div>
+        <article class="plate">
+          <small>ISSUING COMPANY / SIMULASI</small>
+          <h2>PT Omni Digital</h2>
+          <dl>
+            <dt>TAX ID</dt>
+            <dd>00.000.000.0-000.000</dd>
+            <dt>BANK</dt>
+            <dd>Account ending 2048</dd>
+            <dt>SIGNER</dt>
+            <dd>Commercial Director</dd>
+          </dl>
+          <span class="selected">ISSUER SELECTED</span>
+        </article>
+      </section>
+      <div class="red-price">RP142.000.000</div>
+      <p class="note">
+        Satu DealDesk dapat menempatkan customer dan badan usaha penerbit yang
+        tepat pada dokumen.
+      </p>
+      <div class="next">NEXT / BENTUK NOMOR →</div>
+      <footer class="foot">
+        <span>05 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>IDENTITAS FIKTIF</span>
+      </footer>
+    </main>
+  </body>
+</html>
