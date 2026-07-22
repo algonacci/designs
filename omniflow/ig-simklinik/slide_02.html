@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SIMKlinik / 02</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@700;800&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 82px;
+      }
+      .ticket {
+        right: 74px;
+        top: 300px;
+      }
+      .board {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 410px;
+        height: 600px;
+        border: 3px solid #234e70;
+        background: #fff;
+        padding: 42px;
+      }
+      .fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .field {
+        padding: 23px 25px;
+        border: 2px solid #a9b7bf;
+        background: #f7f6f0;
+      }
+      .field small {
+        font:
+          600 11px/1 "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.1em;
+        color: #567086;
+      }
+      .field strong {
+        display: block;
+        margin-top: 12px;
+        font:
+          800 28px/1.05 Manrope,
+          sans-serif;
+      }
+      .slots {
+        margin-top: 34px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 13px;
+      }
+      .slot {
+        padding: 18px 10px;
+        text-align: center;
+        border: 2px solid #234e70;
+        font:
+          700 16px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .slot.active {
+        background: #3366ff;
+        color: #fff;
+      }
+      .slot.busy {
+        background: #dfe4e6;
+        color: #87969e;
+        border-color: #a9b7bf;
+        text-decoration: line-through;
+      }
+      .journey {
+        left: 117px;
+        top: 936px;
+        width: 720px;
+      }
+      .note {
+        position: absolute;
+        left: 74px;
+        bottom: 155px;
+        width: 710px;
+        font-size: 24px;
+        line-height: 1.35;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>APPOINTMENT GRID / PATIENT JOURNEY</span><b>BOOK / 02</b>
+      </div>
+      <h1 class="title">PILIH PASIEN.<br />DOKTER. LAYANAN. <em>WAKTU.</em></h1>
+      <div class="ticket">BOOKING<strong>A-017</strong></div>
+      <section class="board">
+        <div class="fields">
+          <div class="field">
+            <small>PATIENT / SIMULASI</small><strong>Nadia Pratama</strong>
+          </div>
+          <div class="field">
+            <small>DOCTOR</small><strong>dr. Maya Putri</strong>
+          </div>
+          <div class="field">
+            <small>SERVICE</small><strong>Konsultasi Umum</strong>
+          </div>
+          <div class="field">
+            <small>DATE</small><strong>24 Juli 2026</strong>
+          </div>
+        </div>
+        <div class="slots">
+          <div class="slot busy">09:00</div>
+          <div class="slot">09:30</div>
+          <div class="slot active">10:00</div>
+          <div class="slot">10:30</div>
+          <div class="slot">11:00</div>
+        </div>
+      </section>
+      <div class="journey"></div>
+      <p class="note">
+        Appointment menyatukan empat konteks sebelum slot disimpan, bukan
+        sekadar menulis nama di kalender.
+      </p>
+      <div class="next">NEXT / VALIDASI SLOT →</div>
+      <footer class="foot">
+        <span>02 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>CLINICAL FLOWBOARD</span>
+      </footer>
+    </main>
+  </body>
+</html>

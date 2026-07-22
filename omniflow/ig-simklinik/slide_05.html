@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SIMKlinik / 05</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@700;800&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #3366ff;
+        color: #fff;
+      }
+      .meta b {
+        color: #f6c945;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #f6c945;
+      }
+      .ticket {
+        right: 74px;
+        top: 302px;
+      }
+      .ticket:before,
+      .ticket:after {
+        background: #3366ff;
+      }
+      .board {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 425px;
+        height: 560px;
+        background: #f7f6f0;
+        color: #234e70;
+        padding: 42px;
+        border: 4px solid #234e70;
+      }
+      .columns {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        height: 100%;
+      }
+      .col {
+        position: relative;
+        padding: 22px 17px;
+        border: 2px solid #b6c1c7;
+      }
+      .col h2 {
+        font:
+          700 12px/1 "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.09em;
+      }
+      .col strong {
+        display: block;
+        margin-top: 18px;
+        font:
+          800 35px/1 Manrope,
+          sans-serif;
+      }
+      .col p {
+        margin-top: 11px;
+        font-size: 16px;
+        color: #567086;
+      }
+      .col:nth-child(1) {
+        border-top: 13px solid #f6c945;
+      }
+      .col:nth-child(2) {
+        border-top: 13px solid #e9614f;
+      }
+      .col:nth-child(3) {
+        border-top: 13px solid #3366ff;
+      }
+      .col:nth-child(4) {
+        border-top: 13px solid #4d9b72;
+      }
+      .pulse {
+        position: absolute;
+        left: 95px;
+        right: 95px;
+        top: 810px;
+        height: 8px;
+        background: linear-gradient(
+          90deg,
+          #f6c945 0 25%,
+          #e9614f 25% 50%,
+          #3366ff 50% 75%,
+          #4d9b72 75%
+        );
+      }
+      .note {
+        position: absolute;
+        left: 74px;
+        bottom: 155px;
+        width: 700px;
+        font-size: 24px;
+        line-height: 1.35;
+        color: #e2e9ff;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand {
+        color: #f6c945;
+      }
+      .next {
+        color: #f6c945;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>DAILY STATUS BOARD / QUEUE A-017</span><b>MOVE / 05</b>
+      </div>
+      <h1 class="title">
+        MENUNGGU.<br />DIPANGGIL. PERIKSA. <em>SELESAI.</em>
+      </h1>
+      <div class="ticket">ACTIVE<strong>A-017</strong></div>
+      <section class="board">
+        <div class="columns">
+          <article class="col">
+            <h2>WAITING</h2>
+            <strong>A-018</strong>
+            <p>Check-in 09:51</p>
+          </article>
+          <article class="col">
+            <h2>CALLED</h2>
+            <strong>A-017</strong>
+            <p>Room 02</p>
+          </article>
+          <article class="col">
+            <h2>IN CONSULT</h2>
+            <strong>A-016</strong>
+            <p>dr. Maya</p>
+          </article>
+          <article class="col">
+            <h2>COMPLETED</h2>
+            <strong>A-015</strong>
+            <p>Visit closed</p>
+          </article>
+        </div>
+        <div class="pulse"></div>
+      </section>
+      <p class="note">
+        Status menunjukkan posisi pasien saat ini dan tindakan operasional
+        berikutnya.
+      </p>
+      <div class="next">NEXT / CATAT KUNJUNGAN →</div>
+      <footer class="foot">
+        <span>05 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>STATUS BOARD</span>
+      </footer>
+    </main>
+  </body>
+</html>

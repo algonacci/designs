@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SIMKlinik / 04</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@700;800&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 88px;
+      }
+      .counter {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 410px;
+        height: 565px;
+        background: #f6c945;
+        border: 4px solid #234e70;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .info {
+        padding: 55px;
+      }
+      .info small {
+        font:
+          600 12px/1 "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.1em;
+      }
+      .info h2 {
+        margin-top: 30px;
+        font:
+          800 60px/0.95 Manrope,
+          sans-serif;
+        letter-spacing: -0.05em;
+      }
+      .info dl {
+        margin-top: 42px;
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 16px;
+        font-size: 20px;
+      }
+      .info dt {
+        font:
+          600 11px/1 "IBM Plex Mono",
+          monospace;
+        color: #567086;
+      }
+      .big-ticket {
+        position: relative;
+        border-left: 4px dashed #234e70;
+        display: grid;
+        place-items: center;
+      }
+      .big-ticket:before,
+      .big-ticket:after {
+        content: "";
+        position: absolute;
+        left: -23px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #f7f6f0;
+        border: 4px solid #234e70;
+      }
+      .big-ticket:before {
+        top: -23px;
+      }
+      .big-ticket:after {
+        bottom: -23px;
+      }
+      .number {
+        text-align: center;
+      }
+      .number small {
+        font:
+          700 15px/1 "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.14em;
+      }
+      .number strong {
+        display: block;
+        margin-top: 25px;
+        font:
+          800 126px/0.8 Manrope,
+          sans-serif;
+        letter-spacing: -0.07em;
+      }
+      .number b {
+        display: inline-block;
+        margin-top: 32px;
+        padding: 12px 17px;
+        background: #234e70;
+        color: #fff;
+        font:
+          700 13px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .note {
+        position: absolute;
+        left: 74px;
+        bottom: 155px;
+        width: 700px;
+        font-size: 24px;
+        line-height: 1.35;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>ARRIVAL DESK / APPOINTMENT MATCHED</span><b>CHECK-IN / 04</b>
+      </div>
+      <h1 class="title">PASIENT DATANG.<br /><em>ANTRIAN TERBENTUK.</em></h1>
+      <section class="counter">
+        <div class="info">
+          <small>CHECK-IN CONFIRMED / 09:47</small>
+          <h2>Appointment<br />ditemukan.</h2>
+          <dl>
+            <dt>PATIENT</dt>
+            <dd>Nadia Pratama</dd>
+            <dt>DOCTOR</dt>
+            <dd>dr. Maya Putri</dd>
+            <dt>SERVICE</dt>
+            <dd>Konsultasi Umum</dd>
+          </dl>
+        </div>
+        <div class="big-ticket">
+          <div class="number">
+            <small>NOMOR ANTRIAN</small><strong>A-017</strong
+            ><b>STATUS / WAITING</b>
+          </div>
+        </div>
+      </section>
+      <p class="note">
+        Check-in menghubungkan kedatangan pasien dengan appointment dan antrean
+        hari itu.
+      </p>
+      <div class="next">NEXT / GERAKKAN STATUS →</div>
+      <footer class="foot">
+        <span>04 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>QUEUE TICKET</span>
+      </footer>
+    </main>
+  </body>
+</html>

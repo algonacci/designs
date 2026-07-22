@@ -19,6 +19,8 @@ Tujuan dokumen ini:
 | Event Ticketing | Selesai, menunggu final approval | `ig-event-ticketing` |
 | Profilex HR Mastery | Selesai, menunggu final approval | `ig-profilex` |
 | Analytics Shopee | Selesai, menunggu final approval | `ig-analytics-shopee` |
+| Vecta AI | Selesai, menunggu final approval | `ig-vecta-ai` |
+| SIMKlinik | Selesai, menunggu final approval | `ig-simklinik` |
 | Modul lain | Backlog | Belum dibuat |
 
 ## Prinsip Visual
@@ -275,6 +277,8 @@ Elemen yang harus berubah per seri:
 ## 7. SIMKlinik
 
 **Design style:** Style 10, `Clinical Flowboard`
+
+**Status:** Sudah diproduksi di `ig-simklinik`.
 
 **Repository sumber:** `Omniflow-SIMKlinik`
 

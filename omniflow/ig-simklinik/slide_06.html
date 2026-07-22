@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SIMKlinik / 06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Manrope:wght@700;800&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .photo {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 430px;
+        height: 500px;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 48% 42%;
+      }
+      .photo:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, #f7f6f0, transparent 55%),
+          linear-gradient(0deg, #f7f6f0, transparent 40%);
+      }
+      .title {
+        width: 760px;
+        font-size: 82px;
+      }
+      .ticket {
+        right: 75px;
+        top: 330px;
+      }
+      .record {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 466px;
+        height: 544px;
+        background: #fff;
+        border: 3px solid #234e70;
+        padding: 38px;
+      }
+      .record-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 24px;
+        border-bottom: 2px solid #b6c1c7;
+      }
+      .record-head strong {
+        font:
+          800 27px/1 Manrope,
+          sans-serif;
+      }
+      .fields {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 1fr;
+        gap: 16px;
+        margin-top: 25px;
+      }
+      .field {
+        min-height: 132px;
+        padding: 19px;
+        border: 2px solid #b6c1c7;
+      }
+      .field.wide {
+        grid-column: span 2;
+      }
+      .field small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        letter-spacing: 0.1em;
+        color: #567086;
+      }
+      .field p {
+        margin-top: 12px;
+        font-size: 19px;
+        line-height: 1.3;
+      }
+      .vitals {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .vitals b {
+        padding: 9px;
+        background: #e9eef0;
+        font:
+          600 12px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .stamp {
+        position: absolute;
+        right: 38px;
+        bottom: 28px;
+        color: #4d9b72;
+      }
+      .note {
+        position: absolute;
+        left: 74px;
+        bottom: 155px;
+        width: 690px;
+        font-size: 24px;
+        line-height: 1.35;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="photo">
+        <img
+          src="../../Bahan_Konten_Designs/clinic-doctor-patient.jpg"
+          alt="Konsultasi dokter dan pasien"
+        />
+      </div>
+      <div class="meta">
+        <span>VISIT RECORD / CONSULTATION ROOM 02</span><b>RECORD / 06</b>
+      </div>
+      <h1 class="title">BUKAN CUMA HADIR.<br /><em>KUNJUNGAN DICATAT.</em></h1>
+      <div class="ticket">VISIT<strong>A-017</strong></div>
+      <section class="record">
+        <div class="record-head">
+          <strong>Nadia Pratama / 24 Jul 2026</strong
+          ><span class="kicker">CONTOH DATA SIMULASI</span>
+        </div>
+        <div class="fields">
+          <div class="field wide">
+            <small>CHIEF COMPLAINT</small>
+            <p>Pusing sejak dua hari, memburuk setelah kurang tidur.</p>
+          </div>
+          <div class="field">
+            <small>VITALS</small>
+            <div class="vitals"><b>120/80</b><b>36.7 C</b><b>72 BPM</b></div>
+          </div>
+          <div class="field">
+            <small>ASSESSMENT</small>
+            <p>Observasi dan evaluasi lanjutan.</p>
+          </div>
+          <div class="field">
+            <small>ACTION</small>
+            <p>Konsultasi, edukasi, dan pencatatan.</p>
+          </div>
+          <div class="field">
+            <small>FOLLOW-UP</small>
+            <p>Kontrol bila keluhan berlanjut.</p>
+          </div>
+        </div>
+        <div class="stamp">VISIT RECORDED</div>
+      </section>
+      <p class="note">
+        Keluhan, vital, assessment, tindakan, dan tindak lanjut berada pada satu
+        record kunjungan.
+      </p>
+      <div class="next">NEXT / BUKA RIWAYAT →</div>
+      <footer class="foot">
+        <span>06 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>
