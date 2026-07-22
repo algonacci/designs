@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LMS Adaptive / 08</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;0,900;1,900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #3568ff;
+        color: #fff;
+      }
+      .meta b {
+        color: #c7f34a;
+      }
+      .title {
+        font-size: 74px;
+      }
+      .title em {
+        color: #c7f34a;
+      }
+      .resolved {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 430px;
+        height: 580px;
+        border: 3px solid #fff;
+        padding: 42px;
+      }
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 12px;
+        align-items: center;
+      }
+      .cell {
+        height: 132px;
+        padding: 19px 14px;
+        border: 2px solid rgba(255, 255, 255, 0.7);
+      }
+      .cell small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #dce5ff;
+      }
+      .cell strong {
+        display: block;
+        margin-top: 13px;
+        font:
+          800 20px/1 "DM Sans",
+          sans-serif;
+      }
+      .cell.active {
+        background: #c7f34a;
+        color: #2d173a;
+        border-color: #c7f34a;
+      }
+      .cell.active small {
+        color: #2d173a;
+      }
+      .arrow {
+        text-align: center;
+        font:
+          900 24px/1 "DM Sans",
+          sans-serif;
+      }
+      .mapline {
+        position: relative;
+        margin-top: 55px;
+        height: 240px;
+      }
+      .mapline:before {
+        content: "";
+        position: absolute;
+        left: 30px;
+        right: 30px;
+        top: 104px;
+        height: 8px;
+        background: #fff;
+      }
+      .dot {
+        position: absolute;
+        top: 77px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #3568ff;
+        border: 7px solid #fff;
+      }
+      .d1 {
+        left: 40px;
+      }
+      .d2 {
+        left: 230px;
+      }
+      .d3 {
+        left: 420px;
+        background: #ff6658;
+      }
+      .d4 {
+        left: 610px;
+        background: #c7f34a;
+      }
+      .d5 {
+        right: 40px;
+        background: #2d173a;
+      }
+      .maplabel {
+        position: absolute;
+        top: 158px;
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        text-align: center;
+        width: 130px;
+      }
+      .m1 {
+        left: 5px;
+      }
+      .m2 {
+        left: 195px;
+      }
+      .m3 {
+        left: 385px;
+      }
+      .m4 {
+        left: 575px;
+      }
+      .m5 {
+        right: 5px;
+      }
+      .closing {
+        margin-top: 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+      }
+      .closing h2 {
+        font:
+          900 37px/1 "DM Sans",
+          sans-serif;
+      }
+      .closing p {
+        width: 390px;
+        font-size: 19px;
+        line-height: 1.35;
+        color: #dce5ff;
+      }
+      .scan {
+        left: 790px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(199, 243, 74, 0.75),
+          transparent
+        );
+      }
+      .reg {
+        right: 74px;
+        top: 388px;
+        color: #c7f34a;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #c7f34a;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>RESOLVED LEARNING MAP / NEXT CYCLE</span><b>REASSESS / 08</b>
+      </div>
+      <h1 class="title">
+        NILAI MENJELASKAN HASIL.<br /><em>ADAPTASI MENENTUKAN LANGKAH.</em>
+      </h1>
+      <section class="resolved">
+        <div class="flow">
+          <div class="cell"><small>RESULT</small><strong>78 / 100</strong></div>
+          <div class="arrow">→</div>
+          <div class="cell"><small>GAP</small><strong>Application</strong></div>
+          <div class="arrow">→</div>
+          <div class="cell active">
+            <small>NEXT</small><strong>Scenario Practice</strong>
+          </div>
+          <div class="arrow">→</div>
+        </div>
+        <div class="mapline">
+          <div class="dot d1"></div>
+          <div class="dot d2"></div>
+          <div class="dot d3"></div>
+          <div class="dot d4"></div>
+          <div class="dot d5"></div>
+          <span class="maplabel m1">ANSWER</span
+          ><span class="maplabel m2">SCORE</span
+          ><span class="maplabel m3">GAP</span
+          ><span class="maplabel m4">ADAPT</span
+          ><span class="maplabel m5">REASSESS</span>
+        </div>
+        <div class="closing">
+          <h2>Belajar menjadi<br />siklus yang terbaca.</h2>
+          <p>Dari evidence menuju langkah berikutnya, lalu kembali diukur.</p>
+        </div>
+      </section>
+      <div class="scan"></div>
+      <div class="reg"></div>
+      <div class="next">OMNIFLOW LMS / LINK IN BIO ↑</div>
+      <footer class="foot">
+        <span>08 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>ADAPTIVE LEARNING</span>
+      </footer>
+    </main>
+  </body>
+</html>

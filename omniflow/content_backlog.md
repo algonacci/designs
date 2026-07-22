@@ -21,6 +21,7 @@ Tujuan dokumen ini:
 | Analytics Shopee | Selesai, menunggu final approval | `ig-analytics-shopee` |
 | Vecta AI | Selesai, menunggu final approval | `ig-vecta-ai` |
 | SIMKlinik | Selesai, menunggu final approval | `ig-simklinik` |
+| LMS Adaptive Learning | Selesai, menunggu final approval | `ig-lms-adaptive` |
 | Modul lain | Backlog | Belum dibuat |
 
 ## Prinsip Visual
@@ -311,6 +312,8 @@ Elemen yang harus berubah per seri:
 ## 8. LMS Adaptive Learning
 
 **Design style:** Style 11, `Learning Anatomy`
+
+**Status:** Sudah diproduksi di `ig-lms-adaptive`.
 
 **Repository sumber:**
 

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LMS Adaptive / 06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,700;0,900;1,900&family=IBM+Plex+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #2d173a;
+        color: #f2eee4;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #c7f34a;
+      }
+      .route {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 430px;
+        height: 570px;
+      }
+      .path {
+        position: absolute;
+        left: 90px;
+        right: 90px;
+        top: 260px;
+        height: 10px;
+        background: #725f7c;
+      }
+      .path:before {
+        content: "";
+        position: absolute;
+        left: 33%;
+        right: 0;
+        top: 0;
+        height: 10px;
+        background: #c7f34a;
+      }
+      .node {
+        position: absolute;
+        top: 182px;
+        width: 180px;
+        text-align: center;
+      }
+      .node:after {
+        content: "";
+        display: block;
+        width: 58px;
+        height: 58px;
+        margin: 25px auto 0;
+        border-radius: 50%;
+        background: #2d173a;
+        border: 8px solid #725f7c;
+        outline: 3px solid #f2eee4;
+      }
+      .node strong {
+        font:
+          900 24px/1 "DM Sans",
+          sans-serif;
+      }
+      .node small {
+        display: block;
+        margin-top: 9px;
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #c9bccf;
+      }
+      .n1 {
+        left: 8px;
+      }
+      .n2 {
+        left: 255px;
+      }
+      .n3 {
+        left: 502px;
+      }
+      .n4 {
+        right: 8px;
+      }
+      .n1:after {
+        background: #3568ff;
+        border-color: #3568ff;
+      }
+      .n2:after,
+      .n3:after,
+      .n4:after {
+        border-color: #c7f34a;
+      }
+      .branch {
+        position: absolute;
+        left: 345px;
+        top: 328px;
+        width: 280px;
+        padding: 22px;
+        border: 2px solid #ff6658;
+        background: #3a2247;
+        transform: rotate(4deg);
+      }
+      .branch small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #ff9a91;
+      }
+      .branch strong {
+        display: block;
+        margin-top: 11px;
+        font:
+          800 22px/1.1 "DM Sans",
+          sans-serif;
+      }
+      .scan {
+        left: 603px;
+      }
+      .reg {
+        left: 74px;
+        top: 392px;
+        color: #ff6658;
+      }
+      .note {
+        color: #d8cfe0;
+      }
+      .foot {
+        color: #f2eee4;
+      }
+      .brand,
+      .next {
+        color: #c7f34a;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>ADAPTIVE ROUTE / LEARNER 204</span><b>ADAPT / 06</b>
+      </div>
+      <h1 class="title">RUTE TIDAK DIULANG.<br /><em>RUTE DISESUAIKAN.</em></h1>
+      <section class="route">
+        <div class="path"></div>
+        <div class="node n1">
+          <strong>Concept</strong><small>COMPLETED</small>
+        </div>
+        <div class="node n2">
+          <strong>Example</strong><small>REVISIT</small>
+        </div>
+        <div class="node n3"><strong>Scenario</strong><small>NEXT</small></div>
+        <div class="node n4">
+          <strong>Reassess</strong><small>LOCKED</small>
+        </div>
+        <div class="branch">
+          <small>ROUTE CHANGED</small
+          ><strong>Tambahkan practice sebelum reassessment.</strong>
+        </div>
+      </section>
+      <div class="scan"></div>
+      <div class="reg"></div>
+      <p class="note">
+        Peserta yang lemah di penerapan mendapat latihan tambahan sebelum
+        melanjutkan.
+      </p>
+      <div class="next">NEXT / HUBUNGKAN AKTIVITAS →</div>
+      <footer class="foot">
+        <span>06 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>ADAPTIVE ROUTE</span>
+      </footer>
+    </main>
+  </body>
+</html>
