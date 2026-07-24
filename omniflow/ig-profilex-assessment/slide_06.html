@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profilex Assessment / 06</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700;800&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 70px;
+      }
+      .matrix {
+        display: grid;
+        grid-template-columns: 170px repeat(4, 1fr);
+        border: 2px solid #26232c;
+      }
+      .matrix > * {
+        padding: 20px 14px;
+        border-right: 1px solid #aaa5ad;
+        border-bottom: 1px solid #aaa5ad;
+        text-align: center;
+      }
+      .matrix > *:nth-child(5n) {
+        border-right: 0;
+      }
+      .matrix b {
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .matrix span {
+        font:
+          700 22px/1 "DM Sans",
+          sans-serif;
+      }
+      .matrix .high {
+        background: #78d8c5;
+      }
+      .matrix .mid {
+        background: #f0b34f;
+      }
+      .matrix .low {
+        background: #e15b5b;
+        color: #fff;
+      }
+      .legend {
+        margin-top: 28px;
+        display: flex;
+        gap: 15px;
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .legend i {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        margin-right: 6px;
+      }
+      .token {
+        position: absolute;
+        right: 100px;
+        top: 920px;
+        background: #f0b34f;
+        color: #26232c;
+      }
+      .note {
+        width: 690px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>SCORING MATRIX / RESPONSE PX-003</span><b>SCORE / 06</b>
+      </div>
+      <h1 class="title">
+        RESPONS MENJADI DIMENSI.<br /><em>BELUM MENJADI DIAGNOSIS.</em>
+      </h1>
+      <section class="console">
+        <div class="matrix">
+          <b>DIMENSION</b><b>RAW</b><b>NORM</b><b>BAND</b><b>STATE</b
+          ><b>STRUCTURE</b><span>42</span><span>68</span><span>MED</span
+          ><span class="mid">READY</span><b>PACE</b><span>51</span
+          ><span>82</span><span>HIGH</span><span class="high">READY</span
+          ><b>ADAPTABILITY</b><span>28</span><span>44</span><span>LOW</span
+          ><span class="low">REVIEW</span><b>COLLABORATION</b><span>47</span
+          ><span>75</span><span>HIGH</span><span class="high">READY</span>
+        </div>
+        <div class="legend">
+          <span><i style="background: #78d8c5"></i>READY</span
+          ><span><i style="background: #f0b34f"></i>CHECK</span
+          ><span><i style="background: #e15b5b"></i>REVIEW</span>
+        </div>
+      </section>
+      <span class="token">SCORING / PX-003</span>
+      <p class="note">
+        Scoring key mengubah respons menjadi dimensi terstruktur untuk ditinjau
+        secara profesional.
+      </p>
+      <div class="next">NEXT / REVIEW INTERPRETASI →</div>
+      <footer class="foot">
+        <span>06 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>SKOR SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profilex Assessment / 05</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700;800&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #26232c;
+        color: #fff;
+      }
+      .title {
+        font-size: 83px;
+      }
+      .title em {
+        color: #78d8c5;
+      }
+      .monitor {
+        background: #35313b;
+        border-color: #eee9e2;
+      }
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .metric {
+        padding: 25px;
+        border: 2px solid #68626e;
+      }
+      .metric small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #aaa5ad;
+      }
+      .metric strong {
+        display: block;
+        margin-top: 13px;
+        font:
+          700 37px/1 "DM Sans",
+          sans-serif;
+      }
+      .responses {
+        margin-top: 28px;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 145px 1fr 140px;
+        align-items: center;
+        padding: 17px 0;
+        border-bottom: 1px solid #68626e;
+      }
+      .row small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #aaa5ad;
+      }
+      .track {
+        height: 13px;
+        background: #55505b;
+      }
+      .fill {
+        height: 100%;
+        background: #78d8c5;
+      }
+      .row b {
+        text-align: right;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .token {
+        position: absolute;
+        right: 100px;
+        top: 925px;
+        background: #78d8c5;
+        color: #26232c;
+      }
+      .note {
+        color: #cbc7d0;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #78d8c5;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>RESPONSE MONITOR / SESSION PX-0726</span><b>RESPOND / 05</b>
+      </div>
+      <h1 class="title">
+        RESPONS TERSIMPAN<br /><em>SEBAGAI SESI YANG DIPANTAU.</em>
+      </h1>
+      <section class="console monitor">
+        <div class="summary">
+          <div class="metric"><small>INVITED</small><strong>24</strong></div>
+          <div class="metric"><small>IN PROGRESS</small><strong>7</strong></div>
+          <div class="metric"><small>COMPLETED</small><strong>15</strong></div>
+        </div>
+        <div class="responses">
+          <div class="row">
+            <small>PX-001</small>
+            <div class="track">
+              <div class="fill" style="width: 100%"></div>
+            </div>
+            <b>COMPLETED</b>
+          </div>
+          <div class="row">
+            <small>PX-002</small>
+            <div class="track"><div class="fill" style="width: 72%"></div></div>
+            <b>72%</b>
+          </div>
+          <div class="row">
+            <small>PX-003</small>
+            <div class="track"><div class="fill" style="width: 44%"></div></div>
+            <b>44%</b>
+          </div>
+          <div class="row">
+            <small>PX-004</small>
+            <div class="track"><div class="fill" style="width: 0%"></div></div>
+            <b>NOT STARTED</b>
+          </div>
+        </div>
+      </section>
+      <span class="token">RESPONSE / PX-003</span>
+      <p class="note">
+        Administrator melihat progres sesi tanpa membuka isi hasil psikologis
+        peserta.
+      </p>
+      <div class="next">NEXT / HITUNG DIMENSI →</div>
+      <footer class="foot">
+        <span>05 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

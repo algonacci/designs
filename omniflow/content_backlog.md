@@ -26,6 +26,7 @@ Tujuan dokumen ini:
 | DMS + KMS | Selesai, menunggu final approval | `ig-dms-kms` |
 | PoS + Payment Gateway | Selesai, menunggu final approval | `ig-pos-payment` |
 | Supply Chain | Selesai, menunggu final approval | `ig-supply-chain` |
+| Profilex Psychological Assessment | Selesai, menunggu final approval | `ig-profilex-assessment` |
 | Modul lain | Backlog | Belum dibuat |
 
 ## Prinsip Visual
@@ -519,35 +520,37 @@ Elemen yang harus berubah per seri:
 
 ---
 
-## 13. Profilex TES D
+## 13. Profilex Psychological Assessment
 
-**Design style:** Style 16, `Boardroom Simulation`
+**Design style:** Style 16, `Assessment Console`
+
+**Status:** Sudah diproduksi di `ig-profilex-assessment`.
 
 **Repository sumber:** `Omniflow-Profilex`
 
-**Angle utama:** Apakah eksekutif siap menentukan arah bisnis?
+**Angle utama:** Alat tes psikologi menjadi sistem assessment yang terstruktur.
 
 **Hook:**
 
-> Top management tidak cukup diuji dengan pilihan ganda biasa.
+> Menjalankan assessment bukan cuma membagikan link tes.
 
 **Narasi delapan slide:**
 
-1. Keputusan strategis tidak memiliki jawaban sederhana.
-2. TES D menguji orientasi eksekutif.
-3. Dilema strategis menguji trade-off.
-4. Board simulation menguji keputusan dalam konteks.
-5. Matriks impact dan urgency memaksa prioritas.
-6. Strategic fit dan risk menguji konsistensi.
-7. Hasil membentuk readiness dan arah bisnis dominan.
-8. Assessment menjadi rehearsal sebelum keputusan nyata.
+1. Pilih alat tes dari katalog assessment.
+2. Konfigurasi sesi, peserta, waktu, dan instruksi.
+3. Undangan dan token akses dibagikan secara terkontrol.
+4. Respons peserta tersimpan sebagai sesi yang dapat dipantau.
+5. Scoring mengubah respons menjadi dimensi terstruktur.
+6. Psikolog meninjau hasil dan interpretasi sebelum final.
+7. Laporan menyatukan skor, profil, catatan, dan rekomendasi.
+8. Riwayat assessment tersimpan untuk kebutuhan organisasi.
 
-**Bahasa visual:** `Boardroom Simulation`
+**Bahasa visual:** `Assessment Console`
 
-- Meja boardroom dilihat dari atas sebagai decision map.
-- Folder kasus, voting token, risk marker, dan strategy matrix.
-- Deep mahogany, warm gray, white, cobalt, dan signal red.
-- Tipografi seperti executive briefing, bukan HR report.
+- Lembar alat tes berubah menjadi session console dan profile matrix.
+- Session token menjadi signature device antar-slide.
+- Deep plum, warm gray, white, cobalt, dan diagnostic coral.
+- Hindari klaim diagnosis otomatis; review profesional harus terlihat.
 
 ---
 
@@ -628,7 +631,7 @@ Elemen yang harus berubah per seri:
 7. DMS + KMS
 8. PoS + Payment Gateway
 9. Supply Chain
-10. Profilex TES D
+10. Profilex Psychological Assessment
 11. Analytics Cashflow BCA
 12. Analytics Platform
 13. Event Ticketing Promo Analytics

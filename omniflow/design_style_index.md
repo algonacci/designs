@@ -21,7 +21,7 @@ Library 20 bahasa visual untuk website asset dan carousel Omniflow.
 | 13 | Archive to Atlas | File Tab | DMS, KMS, enterprise knowledge |
 | 14 | Transaction Trail | Thermal Trail | PoS, payment, retail, refunds |
 | 15 | Ledger and Route Control | Segmented Route | Purchasing, inventory, shipping |
-| 16 | Boardroom Simulation | Decision Token | Executive assessment and strategy |
+| 16 | Assessment Console | Session Token | Psychological assessment systems |
 | 17 | Input Lab | Sample Cartridge | Multi-source analytics and parser platform |
 | 18 | Campaign Control Room | Ticker Counter | Promo, campaign, conversion analytics |
 | 19 | Spatial Registry | Coordinate Frame | Property, asset, facility, habitat |
@@ -85,7 +85,7 @@ Dalam empat carousel berturut-turut:
 | DMS + KMS | 13 |
 | PoS + Payment Gateway | 14 |
 | Supply Chain | 15 |
-| Profilex TES D | 16 |
+| Profilex Psychological Assessment | 16 |
 | Analytics Platform | 17 |
 | Event Promo Analytics | 18 |
 | Property / Asset / Habitat | 19 |

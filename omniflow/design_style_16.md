@@ -1,14 +1,14 @@
-# Omniflow Design Style 16: Boardroom Simulation
+# Omniflow Design Style 16: Assessment Console
 
-**Cocok untuk:** TES D, executive assessment, strategic planning, leadership readiness.
+**Cocok untuk:** Profilex, psychological assessment, test administration, scoring, reporting.
 
 ## Creative Thesis
 
-Kesiapan eksekutif terlihat saat prioritas saling bertabrakan. Desain memperlakukan assessment seperti simulasi meja keputusan, bukan laporan HR.
+Assessment psikologi adalah sistem terkontrol dari alat tes sampai laporan. Desain memperlihatkan konfigurasi, sesi, respons, scoring, review profesional, dan riwayat tanpa menyederhanakan hasil menjadi diagnosis otomatis.
 
 ## Signature Device
 
-**Decision Token:** token berpindah di atas board dan berubah fungsi menjadi vote, risk marker, strategic priority, trade-off, dan final direction.
+**Session Token:** token akses berpindah antar-slide dan berubah menjadi session ID, response state, scoring key, review marker, report seal, dan history record.
 
 ## Palette
 
@@ -27,41 +27,41 @@ Kesiapan eksekutif terlihat saat prioritas saling bertabrakan. Desain memperlaku
 
 ## Material Grammar
 
-- top-view board table;
-- case folders;
-- voting tokens;
-- strategy matrices;
-- risk chips;
-- confidential briefing tabs;
-- direction compass.
+- assessment sheets;
+- instrument catalog tabs;
+- session tokens;
+- response grids;
+- profile matrices;
+- professional review stamps;
+- report and history index.
 
 ## Scene Types
 
-1. Executive Brief
-2. Strategic Dilemma
-3. Board Simulation
-4. Impact Urgency Matrix
-5. Fit Risk Matrix
-6. Priority Ranking
-7. Readiness Reading
-8. Direction Resolution
+1. Instrument Catalog
+2. Session Configuration
+3. Access Distribution
+4. Response Monitor
+5. Scoring Matrix
+6. Professional Review
+7. Assessment Report
+8. Assessment History
 
 ## Narrative Sequence
 
-`READ → CHOOSE → DEBATE → PRIORITIZE → WEIGH → RANK → INTERPRET → DIRECT`
+`SELECT → CONFIGURE → INVITE → RESPOND → SCORE → REVIEW → REPORT → HISTORY`
 
 ## Avoid
 
-- Foto board meeting stok.
-- Trophy atau crown untuk leadership.
-- Personality test aesthetic Style 6.
-- Klaim seseorang layak/tidak layak tanpa konteks.
+- Robot atau brain icon.
+- Klaim diagnosis otomatis.
+- Hasil assessment individu nyata.
+- Satu skor sebagai kesimpulan final.
 - Matrix kecil yang tidak terbaca.
 
 ## QA
 
-- [ ] Decision Token berpindah dengan alasan visual.
-- [ ] Trade-off terlihat pada minimal tiga slide.
-- [ ] Matrix memiliki direct labels.
-- [ ] Readiness diposisikan sebagai hasil assessment.
-- [ ] Closing menunjukkan arah, bukan ranking manusia.
+- [ ] Session Token berpindah dengan fungsi yang jelas.
+- [ ] Scoring dipisahkan dari interpretasi profesional.
+- [ ] Semua profil dan identitas adalah simulasi.
+- [ ] Matrix memiliki label langsung dan cukup besar.
+- [ ] Closing menunjukkan riwayat sistem, bukan diagnosis manusia.

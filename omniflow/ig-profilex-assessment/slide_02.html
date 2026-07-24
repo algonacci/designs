@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Profilex Assessment / 02</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700;800&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 84px;
+      }
+      .catalog {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .tool {
+        height: 365px;
+        padding: 27px;
+        border: 3px solid #26232c;
+        position: relative;
+      }
+      .tool:nth-child(2) {
+        background: #3559d9;
+        color: #fff;
+      }
+      .tool:nth-child(3) {
+        background: #78d8c5;
+      }
+      .tool small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .tool h2 {
+        margin-top: 23px;
+        font:
+          700 34px/1 "DM Sans",
+          sans-serif;
+      }
+      .tool p {
+        margin-top: 18px;
+        font-size: 17px;
+        line-height: 1.4;
+      }
+      .tool b {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .token {
+        position: absolute;
+        right: 110px;
+        top: 910px;
+      }
+      .note {
+        width: 690px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>INSTRUMENT CATALOG / ASSESSMENT TOOLS</span><b>SELECT / 02</b>
+      </div>
+      <h1 class="title">
+        SATU SISTEM.<br /><em>BEBERAPA ALAT ASSESSMENT.</em>
+      </h1>
+      <section class="console catalog">
+        <article class="tool">
+          <small>INSTRUMENT A</small>
+          <h2>Personality Profile</h2>
+          <p>Item, opsi respons, dimensi, dan scoring key.</p>
+          <b>AVAILABLE</b>
+        </article>
+        <article class="tool">
+          <small>INSTRUMENT B / SELECTED</small>
+          <h2>Work Style Inventory</h2>
+          <p>Konfigurasi skala dan interpretasi terstruktur.</p>
+          <b>SELECTED</b>
+        </article>
+        <article class="tool">
+          <small>INSTRUMENT C</small>
+          <h2>Competency Assessment</h2>
+          <p>Domain, indikator, dan level hasil.</p>
+          <b>AVAILABLE</b>
+        </article>
+      </section>
+      <span class="token">TOOL / WSI-01</span>
+      <p class="note">
+        Katalog menyimpan struktur alat tes tanpa mencampur instrumen, scoring,
+        dan laporan.
+      </p>
+      <div class="next">NEXT / KONFIGURASI SESI →</div>
+      <footer class="foot">
+        <span>02 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>CONTOH INSTRUMEN</span>
+      </footer>
+    </main>
+  </body>
+</html>
