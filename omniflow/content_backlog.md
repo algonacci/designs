@@ -23,6 +23,9 @@ Tujuan dokumen ini:
 | SIMKlinik | Selesai, menunggu final approval | `ig-simklinik` |
 | LMS Adaptive Learning | Selesai, menunggu final approval | `ig-lms-adaptive` |
 | DealDesk | Selesai, menunggu final approval | `ig-dealdesk` |
+| DMS + KMS | Selesai, menunggu final approval | `ig-dms-kms` |
+| PoS + Payment Gateway | Selesai, menunggu final approval | `ig-pos-payment` |
+| Supply Chain | Selesai, menunggu final approval | `ig-supply-chain` |
 | Modul lain | Backlog | Belum dibuat |
 
 ## Prinsip Visual
@@ -392,6 +395,8 @@ Elemen yang harus berubah per seri:
 
 **Design style:** Style 13, `Archive to Atlas`
 
+**Status:** Sudah diproduksi di `ig-dms-kms`.
+
 **Repository sumber:**
 
 - `Omniflow-DMS`
@@ -431,6 +436,8 @@ Elemen yang harus berubah per seri:
 ## 11. PoS + Payment Gateway
 
 **Design style:** Style 14, `Transaction Trail`
+
+**Status:** Sudah diproduksi di `ig-pos-payment`.
 
 **Repository sumber:**
 
@@ -472,6 +479,8 @@ Elemen yang harus berubah per seri:
 ## 12. Supply Chain
 
 **Design style:** Style 15, `Ledger and Route Control`
+
+**Status:** Sudah diproduksi di `ig-supply-chain`.
 
 **Repository sumber:**
 

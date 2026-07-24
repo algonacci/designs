@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PoS + Payment / 07</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #f05e5e;
+        color: #111315;
+      }
+      .meta b {
+        color: #111315;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #f3f1e9;
+      }
+      .reverse {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 420px;
+        height: 580px;
+        background: #111315;
+        color: #f3f1e9;
+        padding: 40px;
+      }
+      .original,
+      .refund {
+        height: 190px;
+        padding: 28px;
+        border: 3px solid #f3f1e9;
+        display: grid;
+        grid-template-columns: 170px 1fr 180px;
+        align-items: center;
+      }
+      .original {
+        opacity: 0.58;
+        text-decoration: line-through;
+        text-decoration-color: #f05e5e;
+        text-decoration-thickness: 5px;
+      }
+      .refund {
+        margin-top: 25px;
+        border-color: #f05e5e;
+      }
+      .reverse small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #8e979c;
+      }
+      .reverse strong {
+        font:
+          700 31px/1 "League Spartan",
+          sans-serif;
+      }
+      .reverse span {
+        text-align: right;
+        font:
+          600 15px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .arrow {
+        position: absolute;
+        left: 50%;
+        top: 235px;
+        transform: translateX(-50%);
+        padding: 9px 17px;
+        background: #f05e5e;
+        color: #111315;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .stockback {
+        margin-top: 25px;
+        padding: 21px;
+        background: #a6e34f;
+        color: #111315;
+        display: flex;
+        justify-content: space-between;
+        font:
+          700 15px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .status {
+        position: absolute;
+        right: 88px;
+        top: 944px;
+        background: #f3f1e9;
+      }
+      .thermal {
+        left: 50%;
+        top: 400px;
+        background: #111315;
+      }
+      .thermal:after {
+        border-color: #f05e5e;
+      }
+      .note {
+        width: 690px;
+      }
+      .foot {
+        color: #111315;
+      }
+      .brand,
+      .next {
+        color: #111315;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>REFUND REVERSAL / ORDER 0817</span><b>REVERSE / 07</b>
+      </div>
+      <h1 class="title">
+        REFUND BUKAN DELETE.<br /><em>IA MEMBALIKKAN JEJAK.</em>
+      </h1>
+      <section class="reverse">
+        <article class="original">
+          <small>ORIGINAL / 14:32</small><strong>SALE / TOTE-NV-01</strong
+          ><span>STOCK -1<br />PAYMENT +149.000</span>
+        </article>
+        <div class="arrow">REVERSAL / 16:08</div>
+        <article class="refund">
+          <small>REFUND / REF-0817</small><strong>RETURN / TOTE-NV-01</strong
+          ><span>STOCK +1<br />PAYMENT -149.000</span>
+        </article>
+        <div class="stockback">
+          <span>OUTLET-01</span><span>11 → 12 UNIT</span><span>RESTORED</span>
+        </div>
+      </section>
+      <span class="status">REFUND / STOCK +1</span>
+      <div class="thermal"></div>
+      <p class="note">
+        Refund membuat transaksi pembalik, mengembalikan stok, dan
+        mempertahankan referensi asal.
+      </p>
+      <div class="next">NEXT / TUTUP SHIFT →</div>
+      <footer class="foot">
+        <span>07 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>REVERSAL SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

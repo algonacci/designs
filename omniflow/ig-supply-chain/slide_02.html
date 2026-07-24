@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Supply Chain / 02</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 84px;
+      }
+      .lane {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 35px;
+      }
+      .step {
+        height: 240px;
+        padding: 27px;
+        border: 3px solid #1b3147;
+      }
+      .step:nth-child(2) {
+        background: #d89a32;
+      }
+      .step:nth-child(3) {
+        background: #3e8a67;
+        color: #fff;
+      }
+      .step small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .step h2 {
+        margin-top: 23px;
+        font:
+          900 31px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .step p {
+        margin-top: 19px;
+        font-size: 17px;
+      }
+      .po {
+        margin-top: 30px;
+        padding: 25px;
+        background: #1b3147;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        font:
+          700 15px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .route {
+        top: 1010px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>PO APPROVAL LANE / 24 BOX</span><b>APPROVE / 02</b>
+      </div>
+      <h1 class="title">
+        REQUEST MENJADI PO.<br /><em>APPROVALNYA TETAP TERLIHAT.</em>
+      </h1>
+      <section class="panel">
+        <span class="label">PURCHASING / DECISION CHECKPOINTS</span>
+        <div class="lane">
+          <article class="step">
+            <small>08:42 / REQUEST</small>
+            <h2>Submitted</h2>
+            <p>24 BOX / WH-JKT-01</p>
+          </article>
+          <article class="step">
+            <small>09:05 / REVIEW</small>
+            <h2>Budget checked</h2>
+            <p>Within monthly allocation</p>
+          </article>
+          <article class="step">
+            <small>09:18 / APPROVE</small>
+            <h2>PO released</h2>
+            <p>Supplier notified</p>
+          </article>
+        </div>
+        <div class="po">
+          <span>PO-2026-0724-018</span><span>24 BOX</span><span>APPROVED</span>
+        </div>
+      </section>
+      <div class="route"></div>
+      <p class="note">
+        PO menyimpan siapa yang meminta, memeriksa, menyetujui, dan kapan
+        supplier menerima order.
+      </p>
+      <div class="next">NEXT / TERIMA BARANG →</div>
+      <footer class="foot">
+        <span>02 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>PO SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

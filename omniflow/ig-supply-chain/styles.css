@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+}
+.c {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: #e5e1d6;
+  color: #1b3147;
+  font-family: Outfit, sans-serif;
+}
+.meta {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 61px;
+  display: flex;
+  justify-content: space-between;
+  font:
+    600 14px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.meta b {
+  color: #d89a32;
+}
+.title {
+  position: absolute;
+  left: 70px;
+  top: 135px;
+  width: 940px;
+  font:
+    900 88px/0.9 "Roboto Condensed",
+    sans-serif;
+  letter-spacing: -0.045em;
+}
+.title em {
+  color: #3e8a67;
+  font-style: normal;
+}
+.route {
+  position: absolute;
+  left: 90px;
+  right: 90px;
+  top: 1020px;
+  height: 9px;
+  background: #697680;
+}
+.route:after {
+  content: "";
+  position: absolute;
+  right: -15px;
+  top: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #3e8a67;
+  border: 4px solid #1b3147;
+}
+.checkpoint {
+  display: inline-block;
+  padding: 11px 14px;
+  border: 3px solid currentColor;
+  font:
+    700 11px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.09em;
+}
+.panel {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 410px;
+  height: 570px;
+  border: 3px solid #1b3147;
+  background: #f4f1e9;
+  padding: 38px;
+}
+.label {
+  font:
+    600 10px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  color: #697680;
+}
+.next {
+  position: absolute;
+  right: 73px;
+  bottom: 154px;
+  font:
+    600 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  color: #3e8a67;
+}
+.foot {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  bottom: 54px;
+  height: 53px;
+  padding-top: 12px;
+  border-top: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font:
+    500 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #3e8a67;
+  font:
+    600 21px/1 Outfit,
+    sans-serif;
+  letter-spacing: 0;
+}
+.brand img {
+  width: 38px;
+  height: 38px;
+}
+.note {
+  position: absolute;
+  left: 74px;
+  bottom: 154px;
+  width: 700px;
+  font-size: 24px;
+  line-height: 1.35;
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(27, 49, 71, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27, 49, 71, 0.055) 1px, transparent 1px);
+  background-size: 54px 54px;
+}

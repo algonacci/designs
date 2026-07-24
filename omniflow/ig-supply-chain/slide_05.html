@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Supply Chain / 05</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #1b3147;
+        color: #e5e1d6;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #d89a32;
+      }
+      .map {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 410px;
+        height: 570px;
+        border: 3px solid #e5e1d6;
+        padding: 42px;
+      }
+      .warehouse {
+        position: absolute;
+        top: 125px;
+        width: 280px;
+        height: 230px;
+        padding: 31px;
+        border: 3px solid #e5e1d6;
+      }
+      .from {
+        left: 48px;
+      }
+      .to {
+        right: 48px;
+        background: #3e8a67;
+      }
+      .warehouse small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #aeb8bd;
+      }
+      .warehouse h2 {
+        margin-top: 23px;
+        font:
+          900 38px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .warehouse p {
+        margin-top: 20px;
+        font:
+          600 13px/1.5 "IBM Plex Mono",
+          monospace;
+      }
+      .segment {
+        position: absolute;
+        left: 330px;
+        right: 330px;
+        top: 235px;
+        height: 11px;
+        background: #d89a32;
+      }
+      .segment:before,
+      .segment:after {
+        content: "";
+        position: absolute;
+        top: -11px;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        background: #e5e1d6;
+        border: 5px solid #1b3147;
+      }
+      .segment:before {
+        left: -16px;
+      }
+      .segment:after {
+        right: -16px;
+      }
+      .manifest {
+        position: absolute;
+        left: 50%;
+        top: 380px;
+        transform: translateX(-50%);
+        padding: 24px 34px;
+        background: #e5e1d6;
+        color: #1b3147;
+        font:
+          700 13px/1.6 "IBM Plex Mono",
+          monospace;
+      }
+      .route {
+        background: #e5e1d6;
+      }
+      .route:after {
+        border-color: #1b3147;
+      }
+      .note {
+        color: #cbd2d5;
+      }
+      .foot {
+        color: #e5e1d6;
+      }
+      .brand,
+      .next {
+        color: #d89a32;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>TRANSFER MANIFEST / TRF-027</span><b>MOVE / 05</b>
+      </div>
+      <h1 class="title">
+        STOK TIDAK HILANG.<br /><em>IA BERPINDAH LOKASI.</em>
+      </h1>
+      <section class="map">
+        <article class="warehouse from">
+          <small>ORIGIN</small>
+          <h2>WH-JKT-01</h2>
+          <p>A-03-12<br />44 BOX → 32 BOX</p>
+        </article>
+        <div class="segment"></div>
+        <article class="warehouse to">
+          <small>DESTINATION</small>
+          <h2>WH-BDG-02</h2>
+          <p>B-07-04<br />18 BOX → 30 BOX</p>
+        </article>
+        <div class="manifest">
+          TRF-2026-027 / 12 BOX<br />DISPATCH 15:42 / RECEIVED 19:08
+        </div>
+      </section>
+      <div class="route"></div>
+      <p class="note">
+        Transfer mengurangi saldo origin dan menambah destination melalui satu
+        manifest yang sama.
+      </p>
+      <div class="next">NEXT / HITUNG FISIK →</div>
+      <footer class="foot">
+        <span>05 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>TRANSFER SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

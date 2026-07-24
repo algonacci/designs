@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PoS + Payment / 06</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #f3f1e9;
+        color: #111315;
+      }
+      .meta b {
+        color: #111315;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #31c9d5;
+      }
+      .split {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 420px;
+        height: 580px;
+        border: 3px solid #111315;
+        padding: 40px;
+      }
+      .total {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 25px;
+        border-bottom: 4px solid #111315;
+        font:
+          700 30px/1 "League Spartan",
+          sans-serif;
+      }
+      .payments {
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .payment {
+        height: 260px;
+        padding: 30px;
+        border: 3px solid #111315;
+      }
+      .payment.cash {
+        background: #f6b83f;
+      }
+      .payment.qr {
+        background: #111315;
+        color: #f3f1e9;
+      }
+      .payment small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .payment strong {
+        display: block;
+        margin-top: 22px;
+        font:
+          700 42px/1 "League Spartan",
+          sans-serif;
+      }
+      .payment dl {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 12px;
+        font:
+          500 12px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .balance {
+        margin-top: 25px;
+        padding: 20px;
+        background: #a6e34f;
+        display: flex;
+        justify-content: space-between;
+        font:
+          700 16px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .thermal {
+        left: 50%;
+        top: 400px;
+        background: #111315;
+      }
+      .thermal:after {
+        border-color: #f3f1e9;
+      }
+      .status {
+        position: absolute;
+        right: 90px;
+        top: 940px;
+      }
+      .note {
+        width: 680px;
+      }
+      .foot {
+        color: #111315;
+      }
+      .brand {
+        color: #111315;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>PAYMENT SPLIT / ORDER 0818</span><b>TRACE / 06</b>
+      </div>
+      <h1 class="title">SATU TAGIHAN.<br /><em>DUA METODE. SATU JEJAK.</em></h1>
+      <section class="split">
+        <div class="total"><span>GRAND TOTAL</span><span>RP509.000</span></div>
+        <div class="payments">
+          <article class="payment cash">
+            <small>PAYMENT 01 / CASH</small><strong>RP200.000</strong>
+            <dl>
+              <dt>RECEIVED</dt>
+              <dd>RP250.000</dd>
+              <dt>CHANGE</dt>
+              <dd>RP50.000</dd>
+            </dl>
+          </article>
+          <article class="payment qr">
+            <small>PAYMENT 02 / QR</small><strong>RP309.000</strong>
+            <dl>
+              <dt>STATUS</dt>
+              <dd>PAID</dd>
+              <dt>REF</dt>
+              <dd>PAY-0818-B</dd>
+            </dl>
+          </article>
+        </div>
+        <div class="balance">
+          <span>ALLOCATED</span><span>509.000 / 509.000</span
+          ><span>BALANCE 0</span>
+        </div>
+      </section>
+      <span class="status">SPLIT PAID</span>
+      <div class="thermal"></div>
+      <p class="note">
+        Setiap metode, jumlah, reference, kembalian, dan balance tercatat
+        terpisah.
+      </p>
+      <div class="next">NEXT / REVERSE TRANSAKSI →</div>
+      <footer class="foot">
+        <span>06 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Supply Chain / 08</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #1b3147;
+        color: #e5e1d6;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #d89a32;
+      }
+      .control {
+        position: absolute;
+        left: 72px;
+        right: 72px;
+        top: 410px;
+        height: 580px;
+        border: 3px solid #e5e1d6;
+        padding: 40px;
+      }
+      .track {
+        position: absolute;
+        left: 70px;
+        right: 70px;
+        top: 275px;
+        height: 10px;
+        background: #697680;
+      }
+      .track:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 76%;
+        height: 10px;
+        background: #3e8a67;
+      }
+      .stage {
+        position: absolute;
+        top: 175px;
+        width: 135px;
+        text-align: center;
+      }
+      .stage:after {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 45px;
+        margin: 23px auto 0;
+        border-radius: 50%;
+        background: #3e8a67;
+        border: 6px solid #1b3147;
+        outline: 3px solid #e5e1d6;
+      }
+      .stage strong {
+        font:
+          900 20px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .stage small {
+        display: block;
+        margin-top: 8px;
+        font:
+          600 8px/1 "IBM Plex Mono",
+          monospace;
+        color: #aeb8bd;
+      }
+      .s1 {
+        left: 5px;
+      }
+      .s2 {
+        left: 150px;
+      }
+      .s3 {
+        left: 295px;
+      }
+      .s4 {
+        left: 440px;
+      }
+      .s5 {
+        left: 585px;
+      }
+      .s6 {
+        right: 5px;
+      }
+      .s6:after {
+        background: #d89a32;
+      }
+      .summary {
+        position: absolute;
+        left: 70px;
+        right: 70px;
+        bottom: 60px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .summary div {
+        padding: 22px;
+        border: 2px solid #697680;
+      }
+      .summary small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #aeb8bd;
+      }
+      .summary strong {
+        display: block;
+        margin-top: 12px;
+        font:
+          900 24px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .closing {
+        position: absolute;
+        left: 74px;
+        bottom: 150px;
+        font:
+          900 31px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .closing span {
+        color: #d89a32;
+      }
+      .foot {
+        color: #e5e1d6;
+      }
+      .brand,
+      .next {
+        color: #d89a32;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>SUPPLY CONTROL MAP / END TO END</span><b>DELIVER / 08</b>
+      </div>
+      <h1 class="title">
+        SATU BARANG.<br /><em>TIGA KEPUTUSAN OPERASIONAL.</em>
+      </h1>
+      <section class="control">
+        <div class="track"></div>
+        <div class="stage s1">
+          <strong>REQUEST</strong><small>24 BOX</small>
+        </div>
+        <div class="stage s2">
+          <strong>APPROVE</strong><small>PO-018</small>
+        </div>
+        <div class="stage s3">
+          <strong>RECEIVE</strong><small>+24 BOX</small>
+        </div>
+        <div class="stage s4"><strong>STORE</strong><small>A-03-12</small></div>
+        <div class="stage s5"><strong>COUNT</strong><small>-1 VAR</small></div>
+        <div class="stage s6">
+          <strong>DELIVER</strong><small>192 KG</small>
+        </div>
+        <div class="summary">
+          <div><small>PURCHASING</small><strong>PO approved</strong></div>
+          <div><small>INVENTORY</small><strong>Ledger traced</strong></div>
+          <div><small>SHIPPING</small><strong>Route selected</strong></div>
+        </div>
+      </section>
+      <div class="closing">OMNIFLOW <span>SUPPLY CHAIN</span></div>
+      <div class="next">LEDGER + ROUTE / COMPLETE ↑</div>
+      <footer class="foot">
+        <span>08 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

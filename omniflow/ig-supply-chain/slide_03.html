@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Supply Chain / 03</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #3e8a67;
+        color: #fff;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #d89a32;
+      }
+      .receive {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .manifest,
+      .check {
+        padding: 35px;
+        border: 3px solid #1b3147;
+        background: #e5e1d6;
+        color: #1b3147;
+        height: 460px;
+      }
+      .check {
+        background: #1b3147;
+        color: #fff;
+      }
+      .receive h2 {
+        margin-top: 25px;
+        font:
+          900 37px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .receive dl {
+        margin-top: 32px;
+        display: grid;
+        grid-template-columns: 125px 1fr;
+        gap: 18px;
+        font:
+          600 13px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .check b {
+        display: block;
+        margin-top: 30px;
+        padding: 17px;
+        background: #3e8a67;
+        text-align: center;
+        font:
+          700 12px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .route {
+        background: #fff;
+      }
+      .route:after {
+        border-color: #3e8a67;
+      }
+      .note {
+        color: #e2eee8;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand {
+        color: #fff;
+      }
+      .next {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>RECEIVING CHECKPOINT / PO-018</span><b>RECEIVE / 03</b>
+      </div>
+      <h1 class="title">
+        SUPPLIER MENGIRIM.<br /><em>GUDANG MEMVERIFIKASI.</em>
+      </h1>
+      <section class="panel receive">
+        <article class="manifest">
+          <span class="label">DELIVERY MANIFEST</span>
+          <h2>Packaging Material</h2>
+          <dl>
+            <dt>ORDERED</dt>
+            <dd>24 BOX</dd>
+            <dt>DELIVERED</dt>
+            <dd>24 BOX</dd>
+            <dt>WEIGHT</dt>
+            <dd>192 KG</dd>
+            <dt>DOCK</dt>
+            <dd>JKT-A03</dd>
+          </dl>
+        </article>
+        <article class="check">
+          <span class="label">RECEIVING CHECK</span>
+          <h2>Quantity matched.</h2>
+          <dl>
+            <dt>PO</dt>
+            <dd>PO-018</dd>
+            <dt>TIME</dt>
+            <dd>11:24 WIB</dd>
+            <dt>RECEIVER</dt>
+            <dd>Warehouse Team</dd>
+            <dt>RESULT</dt>
+            <dd>NO VARIANCE</dd>
+          </dl>
+          <b>RECEIPT POSTED / STOCK +24 BOX</b>
+        </article>
+      </section>
+      <div class="route"></div>
+      <p class="note">
+        Penerimaan baru menambah stok setelah quantity, berat, lokasi dock, dan
+        PO cocok.
+      </p>
+      <div class="next">NEXT / POST KE LEDGER →</div>
+      <footer class="foot">
+        <span>03 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

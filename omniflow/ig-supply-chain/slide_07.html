@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Supply Chain / 07</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #d89a32;
+        color: #1b3147;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #fff;
+      }
+      .rates {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .rate {
+        height: 350px;
+        padding: 27px;
+        border: 3px solid #1b3147;
+        background: #e5e1d6;
+      }
+      .rate.selected {
+        background: #3e8a67;
+        color: #fff;
+      }
+      .rate small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .rate h2 {
+        margin-top: 20px;
+        font:
+          900 30px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .rate strong {
+        display: block;
+        margin-top: 30px;
+        font:
+          900 39px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .rate dl {
+        margin-top: 25px;
+        display: grid;
+        grid-template-columns: 85px 1fr;
+        gap: 12px;
+        font:
+          600 11px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .rate b {
+        display: block;
+        margin-top: 25px;
+        padding: 11px;
+        text-align: center;
+        border: 2px solid currentColor;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .scale {
+        margin-top: 28px;
+        padding: 22px;
+        background: #1b3147;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        font:
+          700 13px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .route {
+        background: #1b3147;
+      }
+      .route:after {
+        border-color: #d89a32;
+      }
+      .note {
+        color: #273d50;
+      }
+      .foot {
+        color: #1b3147;
+      }
+      .brand,
+      .next {
+        color: #1b3147;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>RATE COMPARISON / SHIPMENT 041</span><b>ROUTE / 07</b>
+      </div>
+      <h1 class="title">
+        BERATNYA SAMA.<br /><em>RUTE DAN TARIFNYA BERBEDA.</em>
+      </h1>
+      <section class="panel">
+        <div class="rates">
+          <article class="rate">
+            <small>SERVICE A</small>
+            <h2>Same Day</h2>
+            <strong>RP840K</strong>
+            <dl>
+              <dt>ETA</dt>
+              <dd>8 HOURS</dd>
+              <dt>ZONE</dt>
+              <dd>JKT-BDG</dd>
+            </dl>
+            <b>FASTEST</b>
+          </article>
+          <article class="rate selected">
+            <small>SERVICE B / SELECTED</small>
+            <h2>Next Day</h2>
+            <strong>RP576K</strong>
+            <dl>
+              <dt>ETA</dt>
+              <dd>1 DAY</dd>
+              <dt>ZONE</dt>
+              <dd>JKT-BDG</dd>
+            </dl>
+            <b>BALANCED</b>
+          </article>
+          <article class="rate">
+            <small>SERVICE C</small>
+            <h2>Economy</h2>
+            <strong>RP432K</strong>
+            <dl>
+              <dt>ETA</dt>
+              <dd>3 DAYS</dd>
+              <dt>ZONE</dt>
+              <dd>JKT-BDG</dd>
+            </dl>
+            <b>LOWEST RATE</b>
+          </article>
+        </div>
+        <div class="scale">
+          <span>24 BOX</span><span>192 KG</span><span>DEST / WH-BDG-02</span
+          ><span>RATE SIMULASI</span>
+        </div>
+      </section>
+      <div class="route"></div>
+      <p class="note">
+        Shipping membandingkan tarif dan ETA menggunakan quantity, berat, serta
+        tujuan yang sama.
+      </p>
+      <div class="next">NEXT / LIHAT ALIRAN UTUH →</div>
+      <footer class="foot">
+        <span>07 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>RATE SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

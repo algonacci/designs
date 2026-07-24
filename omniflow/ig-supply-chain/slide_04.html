@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Supply Chain / 04</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 87px;
+      }
+      .ledger {
+        padding: 0;
+      }
+      .head,
+      .row {
+        display: grid;
+        grid-template-columns: 160px 1fr 150px 150px;
+        padding: 22px 28px;
+        border-bottom: 2px solid #aeb5b5;
+        align-items: center;
+      }
+      .head {
+        background: #1b3147;
+        color: #fff;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .row {
+        font:
+          600 14px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .row b {
+        color: #3e8a67;
+      }
+      .row strong {
+        font:
+          900 25px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .balance {
+        margin: 30px;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px;
+        background: #d89a32;
+        font:
+          700 17px/1 "IBM Plex Mono",
+          monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>STOCK LEDGER / WH-JKT-01</span><b>STORE / 04</b>
+      </div>
+      <h1 class="title">
+        BARANG DITERIMA.<br /><em>SALDONYA DAPAT DITELUSURI.</em>
+      </h1>
+      <section class="panel ledger">
+        <div class="head">
+          <span>TIME</span><span>MOVEMENT</span><span>QTY</span
+          ><span>BALANCE</span>
+        </div>
+        <div class="row">
+          <span>08:00</span><strong>OPENING</strong><span>0 BOX</span
+          ><span>40 BOX</span>
+        </div>
+        <div class="row">
+          <span>11:24</span><strong>PO RECEIPT</strong><b>+24 BOX</b
+          ><span>64 BOX</span>
+        </div>
+        <div class="row">
+          <span>13:10</span><strong>ISSUE PROD</strong><span>-8 BOX</span
+          ><span>56 BOX</span>
+        </div>
+        <div class="row">
+          <span>15:42</span><strong>TRANSFER</strong><span>-12 BOX</span
+          ><span>44 BOX</span>
+        </div>
+        <div class="balance">
+          <span>SKU / PKG-BOX-01</span><span>ON HAND / 44 BOX</span
+          ><span>COORD / A-03-12</span>
+        </div>
+      </section>
+      <div class="route"></div>
+      <p class="note">
+        Setiap penerimaan, pemakaian, dan transfer mengubah saldo dengan
+        referensi mutasi.
+      </p>
+      <div class="next">NEXT / TRANSFER LOKASI →</div>
+      <footer class="foot">
+        <span>04 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>LEDGER SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

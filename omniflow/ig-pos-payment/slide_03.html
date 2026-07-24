@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PoS + Payment / 03</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=League+Spartan:wght@600;700;800&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 88px;
+      }
+      .tape {
+        left: 190px;
+        top: 410px;
+        width: 700px;
+        height: 610px;
+        padding: 38px;
+      }
+      .tape:before,
+      .tape:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 18px;
+        background: linear-gradient(135deg, transparent 8px, #111315 9px) 0
+          0/18px 18px;
+      }
+      .tape:before {
+        top: -18px;
+      }
+      .tape:after {
+        bottom: -18px;
+        transform: rotate(180deg);
+      }
+      .line {
+        display: grid;
+        grid-template-columns: 1fr 150px;
+        gap: 15px;
+        padding: 18px 0;
+        border-bottom: 1px dashed #8e979c;
+        font:
+          500 16px/1.2 "IBM Plex Mono",
+          monospace;
+      }
+      .line span:last-child {
+        text-align: right;
+      }
+      .line.discount {
+        color: #31a24a;
+      }
+      .line.tax {
+        color: #9f6d10;
+      }
+      .total {
+        margin-top: 27px;
+        padding-top: 25px;
+        border-top: 4px solid #111315;
+        display: flex;
+        justify-content: space-between;
+        font:
+          700 29px/1 "League Spartan",
+          sans-serif;
+      }
+      .formula {
+        margin-top: 25px;
+        font:
+          500 11px/1.6 "IBM Plex Mono",
+          monospace;
+        color: #687176;
+      }
+      .status {
+        position: absolute;
+        right: 72px;
+        top: 950px;
+      }
+      .thermal {
+        left: 50%;
+        top: 390px;
+        z-index: 1;
+      }
+      .note {
+        width: 690px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>CART TALLY / ORDER DRAFT</span><b>CALCULATE / 03</b>
+      </div>
+      <h1 class="title">CART MENGHITUNG<br /><em>LEBIH DARI SUBTOTAL.</em></h1>
+      <section class="receipt tape">
+        <div class="line">
+          <span>Canvas Tote / Navy × 1</span><span>149.000</span>
+        </div>
+        <div class="line">
+          <span>Basic Tee / Sand × 2</span><span>358.000</span>
+        </div>
+        <div class="line discount">
+          <span>PROMO / BUNDLE10</span><span>-50.700</span>
+        </div>
+        <div class="line tax"><span>TAX / 11%</span><span>50.193</span></div>
+        <div class="line"><span>PAYMENT FEE</span><span>2.500</span></div>
+        <div class="line"><span>ROUNDING</span><span>+7</span></div>
+        <div class="total"><span>GRAND TOTAL</span><span>509.000</span></div>
+        <div class="formula">SUBTOTAL - PROMO + TAX + FEE + ROUNDING</div>
+      </section>
+      <span class="status">TOTAL READY</span>
+      <div class="thermal"></div>
+      <p class="note">
+        Promo, pajak, fee, dan rounding memiliki komponen yang dapat ditelusuri.
+      </p>
+      <div class="next">NEXT / PILIH PEMBAYARAN →</div>
+      <footer class="foot">
+        <span>03 / 08</span
+        ><span class="brand"
+          ><svg viewBox="0 0 1000 1000">
+            <polygon
+              points="492.61 542.75 346.66 542.75 318.1 695.74 301.39 695.74 271.57 660.3 328.84 342.73 375.84 302.78 558 302.78 588.41 339.71 584.15 363.7 361.89 363.7 434.48 472.28 881.98 472.28 809.39 363.7 730.42 363.7 742.84 293.6 644.45 174.96 312.4 174.96 193.96 276.34 118.02 705.47 216.38 825.04 550.2 825.04 665.99 727.28 674.5 679.26 506.15 679.26 484.45 695.74 464.17 695.74 472.43 651.34 865.85 651.34 793.26 542.75"
+            /></svg
+          >omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

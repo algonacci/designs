@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+}
+.c {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: #f6f2e8;
+  color: #294e40;
+  font-family: Outfit, sans-serif;
+}
+.meta {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 61px;
+  display: flex;
+  justify-content: space-between;
+  font:
+    600 14px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.12em;
+  z-index: 9;
+}
+.meta b {
+  color: #7a3145;
+}
+.title {
+  position: absolute;
+  left: 70px;
+  top: 135px;
+  width: 940px;
+  font:
+    700 91px/0.91 Newsreader,
+    serif;
+  letter-spacing: -0.055em;
+  z-index: 5;
+}
+.title em {
+  color: #315cdb;
+  font-style: italic;
+}
+.file-tab {
+  position: absolute;
+  padding: 17px 24px;
+  background: #f2d34f;
+  color: #294e40;
+  border: 3px solid #294e40;
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+  font:
+    700 12px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.09em;
+  z-index: 8;
+}
+.card {
+  position: absolute;
+  background: #f6f2e8;
+  border: 3px solid #294e40;
+  box-shadow: 12px 12px 0 rgba(41, 78, 64, 0.14);
+}
+.citation {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 13px;
+  background: #f2d34f;
+  color: #294e40;
+  font:
+    700 10px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.08em;
+}
+.citation b {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #294e40;
+  color: #f2d34f;
+}
+.next {
+  position: absolute;
+  right: 73px;
+  bottom: 154px;
+  font:
+    600 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  color: #315cdb;
+}
+.foot {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  bottom: 54px;
+  height: 53px;
+  padding-top: 12px;
+  border-top: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font:
+    500 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  z-index: 10;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #315cdb;
+  font:
+    600 21px/1 Outfit,
+    sans-serif;
+  letter-spacing: 0;
+}
+.brand svg {
+  width: 38px;
+  height: 38px;
+  fill: currentColor;
+}
+.note {
+  position: absolute;
+  left: 74px;
+  bottom: 154px;
+  width: 700px;
+  font-size: 24px;
+  line-height: 1.35;
+}
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(41, 78, 64, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(41, 78, 64, 0.055) 1px, transparent 1px);
+  background-size: 54px 54px;
+}

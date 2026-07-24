@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Supply Chain / 06</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Roboto+Condensed:wght@700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 85px;
+      }
+      .count {
+        display: grid;
+        grid-template-columns: 1fr 100px 1fr;
+        align-items: center;
+      }
+      .sheet {
+        height: 400px;
+        padding: 35px;
+        border: 3px solid #1b3147;
+      }
+      .sheet small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #697680;
+      }
+      .sheet strong {
+        display: block;
+        margin-top: 28px;
+        font:
+          900 90px/0.8 "Roboto Condensed",
+          sans-serif;
+      }
+      .sheet p {
+        margin-top: 30px;
+        font:
+          600 14px/1.5 "IBM Plex Mono",
+          monospace;
+      }
+      .physical {
+        background: #1b3147;
+        color: #fff;
+      }
+      .versus {
+        text-align: center;
+        font:
+          900 44px/1 "Roboto Condensed",
+          sans-serif;
+      }
+      .variance {
+        position: absolute;
+        left: 270px;
+        right: 270px;
+        bottom: 35px;
+        padding: 17px;
+        background: #d9513c;
+        color: #fff;
+        text-align: center;
+        font:
+          700 13px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .route:before {
+        content: "VARIANCE / DECISION REQUIRED";
+        position: absolute;
+        left: 315px;
+        top: -15px;
+        padding: 8px 12px;
+        background: #d9513c;
+        color: #fff;
+        font:
+          700 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .route:after {
+        background: #d9513c;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="grid"></div>
+      <div class="meta">
+        <span>PHYSICAL COUNT / WH-JKT-01</span><b>COUNT / 06</b>
+      </div>
+      <h1 class="title">
+        SISTEM BERKATA 32.<br /><em>FISIK MENUNJUKKAN 31.</em>
+      </h1>
+      <section class="panel count">
+        <article class="sheet">
+          <small>SYSTEM BALANCE</small><strong>32</strong>
+          <p>BOX / PKG-BOX-01<br />COORD / A-03-12</p>
+        </article>
+        <div class="versus">≠</div>
+        <article class="sheet physical">
+          <small>PHYSICAL COUNT</small><strong>31</strong>
+          <p>BOX / COUNTED 16:20<br />COUNTER / TEAM A</p>
+        </article>
+        <div class="variance">VARIANCE / -1 BOX / INVESTIGATE</div>
+      </section>
+      <div class="route"></div>
+      <p class="note">
+        Merah hanya muncul ketika opname menemukan selisih yang perlu ditinjau
+        dan disesuaikan.
+      </p>
+      <div class="next">NEXT / PILIH RUTE →</div>
+      <footer class="foot">
+        <span>06 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>OPNAME SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>
