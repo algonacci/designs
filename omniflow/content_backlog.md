@@ -20,6 +20,7 @@ Tujuan dokumen ini:
 | Profilex HR Mastery | Selesai, menunggu final approval | `ig-profilex` |
 | Analytics Shopee | Selesai, menunggu final approval | `ig-analytics-shopee` |
 | Analytics / Cashflow BCA Feature | Selesai, menunggu final approval | `ig-analytics-cashflow-bca` |
+| Analytics Platform | Selesai, menunggu final approval | `ig-analytics-platform` |
 | Vecta AI | Selesai, menunggu final approval | `ig-vecta-ai` |
 | SIMKlinik | Selesai, menunggu final approval | `ig-simklinik` |
 | LMS Adaptive Learning | Selesai, menunggu final approval | `ig-lms-adaptive` |
@@ -562,6 +563,8 @@ Elemen yang harus berubah per seri:
 ## 14. Analytics Platform
 
 **Design style:** Style 17, `Input Lab`
+
+**Status:** Sudah diproduksi di `ig-analytics-platform`.
 
 **Repository sumber:**
 

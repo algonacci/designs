@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Platform / 08</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Urbanist:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #262a2d;
+        color: #fff;
+      }
+      .title {
+        font-size: 83px;
+      }
+      .title em {
+        color: #27d1c8;
+      }
+      .slots {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        background: #34393c;
+        border-color: #70777a;
+      }
+      .slot {
+        height: 370px;
+        padding: 28px;
+        border: 3px solid #70777a;
+        position: relative;
+      }
+      .slot.live {
+        border-color: #27a8a2;
+      }
+      .slot.future {
+        border-style: dashed;
+      }
+      .slot small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #aab0b2;
+      }
+      .slot h2 {
+        margin-top: 22px;
+        font:
+          900 28px/1 Urbanist,
+          sans-serif;
+      }
+      .slot p {
+        margin-top: 18px;
+        font-size: 17px;
+        line-height: 1.4;
+        color: #d4d8d9;
+      }
+      .slot b {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        padding: 11px 13px;
+        font:
+          700 9px/1 "IBM Plex Mono",
+          monospace;
+        background: #70777a;
+      }
+      .slot.live b {
+        background: #27a8a2;
+        color: #262a2d;
+      }
+      .architecture {
+        position: absolute;
+        left: 110px;
+        right: 110px;
+        bottom: 45px;
+        padding: 21px;
+        background: #f4f6f4;
+        color: #262a2d;
+        display: flex;
+        justify-content: space-between;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .tray {
+        background: linear-gradient(90deg, #27a8a2, #315cff, #8056d9);
+      }
+      .closing {
+        position: absolute;
+        left: 74px;
+        bottom: 150px;
+        font:
+          900 30px/1 Urbanist,
+          sans-serif;
+      }
+      .closing span {
+        color: #27d1c8;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #27d1c8;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>EXPANDABLE INPUT LAB / PARSER SLOTS</span><b>EXPAND / 08</b>
+      </div>
+      <h1 class="title">
+        PARSER BERTAMBAH.<br /><em>WORKSPACE TETAP SAMA.</em>
+      </h1>
+      <section class="lab slots">
+        <article class="slot live">
+          <small>LIVE SOURCE</small>
+          <h2>Shopee</h2>
+          <p>Order analytics parser.</p>
+          <b>SRC-SHP-01 / LIVE</b>
+        </article>
+        <article class="slot live">
+          <small>LIVE SOURCE</small>
+          <h2>Cashflow BCA</h2>
+          <p>Bank statement parser feature.</p>
+          <b>SRC-BCA-01 / LIVE</b>
+        </article>
+        <article class="slot future">
+          <small>FUTURE SLOT</small>
+          <h2>New source</h2>
+          <p>Parser dapat ditambahkan tanpa mengganti workspace.</p>
+          <b>AVAILABLE FOR PARSER</b>
+        </article>
+        <div class="architecture">
+          <span>SOURCE PARSER</span><span>→ NORMALIZED DATA</span
+          ><span>→ ANALYTICS WORKSPACE</span>
+        </div>
+      </section>
+      <div class="tray"></div>
+      <div class="closing">OMNIFLOW <span>ANALYTICS</span></div>
+      <div class="next">MULTI-SOURCE WORKSPACE ↑</div>
+      <footer class="foot">
+        <span>08 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>INPUT LAB</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Platform / 07</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Urbanist:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #8056d9;
+        color: #fff;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #fff;
+      }
+      .shelf {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        background: #f4f6f4;
+        color: #262a2d;
+      }
+      .record {
+        height: 430px;
+        padding: 28px;
+        border: 3px solid #262a2d;
+        position: relative;
+      }
+      .record:nth-child(2) {
+        background: #e4f8f5;
+      }
+      .record:nth-child(3) {
+        background: #e9e4f8;
+      }
+      .record small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #70777a;
+      }
+      .record h2 {
+        margin-top: 21px;
+        font:
+          900 27px/1 Urbanist,
+          sans-serif;
+      }
+      .record dl {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 75px 1fr;
+        gap: 15px;
+        font:
+          500 11px/1.4 "IBM Plex Mono",
+          monospace;
+      }
+      .record b {
+        position: absolute;
+        left: 25px;
+        bottom: 25px;
+        padding: 11px 13px;
+        background: #262a2d;
+        color: #fff;
+        font:
+          700 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .tray {
+        background: #fff;
+      }
+      .note {
+        color: #eeeafd;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>HISTORY SHELF / SAVED READINGS</span><b>STORE / 07</b>
+      </div>
+      <h1 class="title">
+        SELESAI DIPROSES.<br /><em>TIDAK HILANG SETELAH DIBACA.</em>
+      </h1>
+      <section class="lab shelf">
+        <article class="record">
+          <small>REPORT / MAY</small>
+          <h2>Shopee Orders</h2>
+          <dl>
+            <dt>SOURCE</dt>
+            <dd>SRC-SHP-01</dd>
+            <dt>ROWS</dt>
+            <dd>7.820</dd>
+            <dt>STATE</dt>
+            <dd>COMPLETED</dd>
+          </dl>
+          <b>REOPEN</b>
+        </article>
+        <article class="record">
+          <small>REPORT / JUN</small>
+          <h2>Cashflow BCA</h2>
+          <dl>
+            <dt>SOURCE</dt>
+            <dd>SRC-BCA-01</dd>
+            <dt>TXN</dt>
+            <dd>428</dd>
+            <dt>STATE</dt>
+            <dd>COMPLETED</dd>
+          </dl>
+          <b>REOPEN</b>
+        </article>
+        <article class="record">
+          <small>REPORT / JUL</small>
+          <h2>Shopee Orders</h2>
+          <dl>
+            <dt>SOURCE</dt>
+            <dd>SRC-SHP-01</dd>
+            <dt>ROWS</dt>
+            <dd>8.421</dd>
+            <dt>STATE</dt>
+            <dd>SELECTED</dd>
+          </dl>
+          <b>OPEN NOW</b>
+        </article>
+      </section>
+      <div class="tray"></div>
+      <p class="note">
+        History menyimpan source, parser, waktu, dataset, dan hasil agar dapat
+        dibuka kembali.
+      </p>
+      <div class="next">NEXT / TAMBAH PARSER →</div>
+      <footer class="foot">
+        <span>07 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>HISTORY SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

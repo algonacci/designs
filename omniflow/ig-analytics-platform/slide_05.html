@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Platform / 05</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Urbanist:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #262a2d;
+        color: #fff;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #27d1c8;
+      }
+      .metrics {
+        background: #34393c;
+        border-color: #70777a;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .metric {
+        height: 205px;
+        padding: 27px;
+        border: 2px solid #70777a;
+      }
+      .metric small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #aab0b2;
+      }
+      .metric strong {
+        display: block;
+        margin-top: 17px;
+        font:
+          900 31px/1 Urbanist,
+          sans-serif;
+      }
+      .chart {
+        margin-top: 30px;
+        height: 220px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        align-items: end;
+        gap: 9px;
+        border-bottom: 2px solid #70777a;
+      }
+      .chart i {
+        height: var(--h);
+        background: #27a8a2;
+      }
+      .chart i:nth-child(3n) {
+        background: #8056d9;
+      }
+      .det {
+        margin-top: 22px;
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #27d1c8;
+      }
+      .tray {
+        background: #27a8a2;
+      }
+      .note {
+        color: #d2d7d8;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #27d1c8;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>METRIC READING / DETERMINISTIC</span><b>ANALYZE / 05</b>
+      </div>
+      <h1 class="title">DATA BERSIH.<br /><em>METRIK DIHITUNG.</em></h1>
+      <section class="lab metrics">
+        <div class="cards">
+          <article class="metric">
+            <small>TOTAL REVENUE</small><strong>RP186,4JT</strong>
+          </article>
+          <article class="metric">
+            <small>TOTAL ORDERS</small><strong>1.248</strong>
+          </article>
+          <article class="metric">
+            <small>UNIQUE BUYERS</small><strong>936</strong>
+          </article>
+        </div>
+        <div class="chart">
+          <i style="--h: 35%"></i><i style="--h: 48%"></i
+          ><i style="--h: 57%"></i><i style="--h: 42%"></i
+          ><i style="--h: 66%"></i><i style="--h: 72%"></i
+          ><i style="--h: 55%"></i><i style="--h: 80%"></i
+          ><i style="--h: 68%"></i><i style="--h: 92%"></i
+          ><i style="--h: 75%"></i><i style="--h: 88%"></i>
+        </div>
+        <div class="det">
+          CALCULATED FROM NORMALIZED DATASET / NO AI REQUIRED
+        </div>
+      </section>
+      <div class="tray"></div>
+      <p class="note">
+        Dashboard menghitung insight deterministik dari dataset yang sudah
+        dinormalisasi.
+      </p>
+      <div class="next">NEXT / TAMBAHKAN INTERPRETASI →</div>
+      <footer class="foot">
+        <span>05 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>ANGKA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

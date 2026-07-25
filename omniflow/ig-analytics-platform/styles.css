@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+}
+.c {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: #f4f6f4;
+  color: #262a2d;
+  font-family: Outfit, sans-serif;
+}
+.meta {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 61px;
+  display: flex;
+  justify-content: space-between;
+  font:
+    600 14px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.meta b {
+  color: #315cff;
+}
+.title {
+  position: absolute;
+  left: 70px;
+  top: 135px;
+  width: 940px;
+  font:
+    900 88px/0.9 Urbanist,
+    sans-serif;
+  letter-spacing: -0.055em;
+}
+.title em {
+  color: #8056d9;
+  font-style: normal;
+}
+.lab {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 410px;
+  height: 580px;
+  border: 3px solid #262a2d;
+  background: #fff;
+  padding: 38px;
+}
+.cartridge {
+  position: relative;
+  padding: 28px;
+  border: 3px solid #262a2d;
+  background: #f4f6f4;
+}
+.cartridge:before {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--source);
+}
+.cartridge small {
+  font:
+    600 9px/1 "IBM Plex Mono",
+    monospace;
+  color: #70777a;
+}
+.cartridge h2 {
+  margin-top: 18px;
+  font:
+    900 29px/1 Urbanist,
+    sans-serif;
+}
+.cartridge p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+.code {
+  display: inline-block;
+  margin-top: 21px;
+  padding: 10px 12px;
+  background: var(--source);
+  color: #fff;
+  font:
+    700 10px/1 "IBM Plex Mono",
+    monospace;
+}
+.tray {
+  position: absolute;
+  left: 90px;
+  right: 90px;
+  top: 1020px;
+  height: 10px;
+  background: linear-gradient(90deg, #315cff, #27a8a2, #8056d9);
+}
+.next {
+  position: absolute;
+  right: 73px;
+  bottom: 154px;
+  font:
+    600 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  color: #315cff;
+}
+.foot {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  bottom: 54px;
+  height: 53px;
+  padding-top: 12px;
+  border-top: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font:
+    500 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #315cff;
+  font:
+    600 21px/1 Outfit,
+    sans-serif;
+  letter-spacing: 0;
+}
+.brand img {
+  width: 38px;
+  height: 38px;
+}
+.note {
+  position: absolute;
+  left: 74px;
+  bottom: 154px;
+  width: 700px;
+  font-size: 24px;
+  line-height: 1.35;
+}

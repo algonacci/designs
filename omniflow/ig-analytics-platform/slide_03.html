@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Platform / 03</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Urbanist:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #315cff;
+        color: #fff;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #27e0d5;
+      }
+      .parsers {
+        display: grid;
+        grid-template-columns: 1fr 100px 1fr;
+        align-items: center;
+        background: #f4f6f4;
+        color: #262a2d;
+      }
+      .parser {
+        height: 410px;
+        padding: 31px;
+        border: 3px solid #262a2d;
+      }
+      .parser small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #70777a;
+      }
+      .parser h2 {
+        margin-top: 20px;
+        font:
+          900 31px/1 Urbanist,
+          sans-serif;
+      }
+      .parser ul {
+        margin: 25px 0 0 20px;
+        font:
+          500 14px/1.65 "IBM Plex Mono",
+          monospace;
+      }
+      .arrow {
+        text-align: center;
+        font:
+          900 42px/1 Urbanist,
+          sans-serif;
+        color: #315cff;
+      }
+      .calibration {
+        margin-top: 28px;
+        height: 17px;
+        background: linear-gradient(90deg, #27a8a2 0 92%, #d4d8d7 92%);
+      }
+      .tray {
+        background: #fff;
+      }
+      .note {
+        color: #dce3ff;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #27e0d5;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>PARSER SELECTION / SOURCE-SPECIFIC</span><b>IDENTIFY / 03</b>
+      </div>
+      <h1 class="title">BUKAN SATU PARSER<br /><em>UNTUK SEMUA FORMAT.</em></h1>
+      <section class="lab parsers">
+        <article class="parser">
+          <small>INPUT / SRC-SHP-01</small>
+          <h2>Marketplace Parser</h2>
+          <ul>
+            <li>Read order rows</li>
+            <li>Map product columns</li>
+            <li>Normalize currency</li>
+            <li>Parse order timestamp</li>
+          </ul>
+          <div class="calibration"></div>
+        </article>
+        <div class="arrow">→</div>
+        <article class="parser">
+          <small>OUTPUT / SCHEMA</small>
+          <h2>Order Dataset</h2>
+          <ul>
+            <li>order_id</li>
+            <li>product_name</li>
+            <li>buyer_id</li>
+            <li>total_payment</li>
+            <li>created_at</li>
+          </ul>
+          <span class="code" style="--source: #315cff">PARSER / SHP-V1</span>
+        </article>
+      </section>
+      <div class="tray"></div>
+      <p class="note">
+        Parser membaca struktur source secara deterministik sebelum analytics
+        atau AI bekerja.
+      </p>
+      <div class="next">NEXT / NORMALISASI DATA →</div>
+      <footer class="foot">
+        <span>03 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>SCHEMA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

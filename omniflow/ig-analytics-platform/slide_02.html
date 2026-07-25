@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Platform / 02</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Urbanist:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 85px;
+      }
+      .sources {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .cartridge {
+        height: 385px;
+      }
+      .cartridge.selected {
+        background: #262a2d;
+        color: #fff;
+      }
+      .upload {
+        position: absolute;
+        left: 38px;
+        right: 38px;
+        bottom: 38px;
+        padding: 18px;
+        border: 2px dashed #70777a;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+        text-align: center;
+      }
+      .selected .upload {
+        border-color: #27a8a2;
+        color: #27a8a2;
+      }
+      .tray:after {
+        content: "INSERT / SRC-SHP-01";
+        position: absolute;
+        left: 50%;
+        top: -32px;
+        transform: translateX(-50%);
+        font:
+          700 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #315cff;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>SOURCE INTAKE / WORKSPACE 0726</span><b>INSERT / 02</b>
+      </div>
+      <h1 class="title">
+        PILIH SOURCE.<br /><em>UPLOAD FILE YANG SESUAI.</em>
+      </h1>
+      <section class="lab sources">
+        <article class="cartridge selected" style="--source: #27a8a2">
+          <small>SELECTED / MARKETPLACE</small>
+          <h2>Shopee Orders</h2>
+          <p>
+            Expected: XLSX with order, product, buyer, total, and time columns.
+          </p>
+          <span class="code">SRC-SHP-01</span>
+          <div class="upload">Order.all.2026.xlsx / READY</div>
+        </article>
+        <article class="cartridge" style="--source: #315cff">
+          <small>AVAILABLE / BANK</small>
+          <h2>Cashflow BCA</h2>
+          <p>
+            Expected: PDF statement with debit, credit, date, description, and
+            balance.
+          </p>
+          <span class="code">SRC-BCA-01</span>
+          <div class="upload">NO FILE INSERTED</div>
+        </article>
+      </section>
+      <div class="tray"></div>
+      <p class="note">
+        Source menentukan format file dan instrumen parser yang akan digunakan.
+      </p>
+      <div class="next">NEXT / IDENTIFIKASI STRUKTUR →</div>
+      <footer class="foot">
+        <span>02 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>FILE SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

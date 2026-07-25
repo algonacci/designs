@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Platform / 04</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Urbanist:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 84px;
+      }
+      .chamber {
+        display: grid;
+        grid-template-columns: 1fr 90px 1fr;
+        align-items: center;
+      }
+      .data {
+        height: 420px;
+        padding: 28px;
+        border: 3px solid #262a2d;
+      }
+      .data.raw {
+        background: #fff2e8;
+      }
+      .data.clean {
+        background: #e4f8f5;
+      }
+      .data h2 {
+        font:
+          900 28px/1 Urbanist,
+          sans-serif;
+      }
+      .row {
+        margin-top: 20px;
+        padding: 15px;
+        border: 1px solid #aab0b2;
+        font:
+          500 11px/1.5 "IBM Plex Mono",
+          monospace;
+      }
+      .row b {
+        color: #f2783d;
+      }
+      .clean .row b {
+        color: #16847f;
+      }
+      .channel {
+        text-align: center;
+        font:
+          900 35px/1 Urbanist,
+          sans-serif;
+        color: #315cff;
+      }
+      .rules {
+        margin-top: 27px;
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+      .rules span {
+        padding: 9px;
+        background: #262a2d;
+        color: #fff;
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>NORMALIZATION CHAMBER / DATA QUALITY</span><b>NORMALIZE / 04</b>
+      </div>
+      <h1 class="title">
+        NAMA KOLOM BERBEDA.<br /><em>BAHASA DATA DISAMAKAN.</em>
+      </h1>
+      <section class="lab chamber">
+        <article class="data raw">
+          <h2>Raw source</h2>
+          <div class="row">
+            No. Pesanan: <b>2407-A81</b><br />Subtotal Pesanan: <b>Rp149.000</b>
+          </div>
+          <div class="row">
+            Waktu Pesanan: <b>24/07/26 19:42</b><br />Username: <b>buyer_01</b>
+          </div>
+          <div class="rules">
+            <span>TRIM</span><span>PARSE</span><span>VALIDATE</span>
+          </div>
+        </article>
+        <div class="channel">→</div>
+        <article class="data clean">
+          <h2>Normalized</h2>
+          <div class="row">
+            order_id: <b>2407-A81</b><br />total_payment: <b>149000.00</b>
+          </div>
+          <div class="row">
+            created_at: <b>2026-07-24T19:42</b><br />buyer_id: <b>buyer_01</b>
+          </div>
+          <div class="rules">
+            <span>TYPED</span><span>CANONICAL</span><span>READY</span>
+          </div>
+        </article>
+      </section>
+      <div class="tray"></div>
+      <p class="note">
+        Cleaning dan normalization membuat data source siap dihitung secara
+        konsisten.
+      </p>
+      <div class="next">NEXT / BACA METRIK →</div>
+      <footer class="foot">
+        <span>04 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>
