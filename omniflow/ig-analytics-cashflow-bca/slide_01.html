@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Cashflow BCA / 01</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #17191d;
+        color: #eee9dd;
+      }
+      .title {
+        top: 205px;
+        font-size: 96px;
+      }
+      .title em {
+        color: #5ed6a1;
+      }
+      .photo {
+        position: absolute;
+        inset: 0;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(0.35) saturate(0.55) contrast(1.12);
+      }
+      .photo:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(23, 25, 29, 0.98) 0 57%,
+            rgba(23, 25, 29, 0.25)
+          ),
+          linear-gradient(0deg, #17191d 0, transparent 43%);
+      }
+      .statement {
+        position: absolute;
+        left: 72px;
+        top: 680px;
+        width: 700px;
+        height: 300px;
+        padding: 34px;
+        background: #eee9dd;
+        color: #17191d;
+        border-left: 9px solid #1647a8;
+      }
+      .statement h2 {
+        margin-top: 19px;
+        font:
+          800 35px/1 Sora,
+          sans-serif;
+      }
+      .statement p {
+        margin-top: 18px;
+        font-size: 19px;
+        line-height: 1.4;
+      }
+      .source {
+        position: absolute;
+        right: 75px;
+        top: 875px;
+        padding: 14px 17px;
+        background: #1647a8;
+        color: #fff;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .horizon {
+        background: #5ed6a1;
+      }
+      .horizon:after {
+        border-color: #17191d;
+      }
+      .note {
+        color: #cdd0d2;
+      }
+      .foot {
+        color: #eee9dd;
+      }
+      .brand,
+      .next {
+        color: #5ed6a1;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="photo">
+        <img
+          src="../../Bahan_Konten_Designs/finance-cashflow-analysis.jpg"
+          alt="Analisis arus kas"
+        />
+      </div>
+      <div class="meta">
+        <span>OMNIFLOW ANALYTICS / CASHFLOW</span
+        ><b>SOURCE FEATURE: BCA / 01</b>
+      </div>
+      <h1 class="title">SALDO AKHIR<br /><em>BUKAN SELURUH CERITA.</em></h1>
+      <section class="statement">
+        <span class="label">PDF REKENING KORAN / DATA SIMULASI</span>
+        <h2>Statement_July_2026.pdf</h2>
+        <p>
+          Mutasi debit, kredit, tanggal, deskripsi, dan saldo masuk sebagai
+          source untuk dianalisis.
+        </p>
+      </section>
+      <div class="source">SOURCE PARSER / BCA</div>
+      <div class="horizon"></div>
+      <p class="note">
+        Cashflow BCA adalah fitur source parser di dalam Omniflow Analytics,
+        bukan modul standalone.
+      </p>
+      <div class="next">NEXT / REKONSTRUKSI MUTASI →</div>
+      <footer class="foot">
+        <span>01 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>TIDAK TERAFILIASI BANK</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -19,6 +19,7 @@ Tujuan dokumen ini:
 | Event Ticketing | Selesai, menunggu final approval | `ig-event-ticketing` |
 | Profilex HR Mastery | Selesai, menunggu final approval | `ig-profilex` |
 | Analytics Shopee | Selesai, menunggu final approval | `ig-analytics-shopee` |
+| Analytics / Cashflow BCA Feature | Selesai, menunggu final approval | `ig-analytics-cashflow-bca` |
 | Vecta AI | Selesai, menunggu final approval | `ig-vecta-ai` |
 | SIMKlinik | Selesai, menunggu final approval | `ig-simklinik` |
 | LMS Adaptive Learning | Selesai, menunggu final approval | `ig-lms-adaptive` |
@@ -202,16 +203,20 @@ Elemen yang harus berubah per seri:
 
 ---
 
-## 5. Analytics: Cashflow BCA
+## 5. Analytics / Cashflow BCA Feature
 
 **Design style:** Style 8, `Cashflow Seismograph`
+
+**Status:** Sudah diproduksi di `ig-analytics-cashflow-bca`.
 
 **Repository sumber:**
 
 - `Omniflow-Analytics`
 - `Omniflow-Analytics-AI`
 
-**Angle utama:** Dari rekening koran menjadi peta kesehatan cashflow.
+**Posisi produk:** Fitur source parser dan cashflow analysis di dalam modul Omniflow Analytics, bukan modul standalone.
+
+**Angle utama:** Dari rekening koran menjadi peta kesehatan cashflow di Omniflow Analytics.
 
 **Hook:**
 

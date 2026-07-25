@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Cashflow BCA / 03</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #1647a8;
+        color: #fff;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #5ed6a1;
+      }
+      .reading {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .metric {
+        height: 225px;
+        padding: 29px;
+        border: 3px solid #fff;
+      }
+      .metric small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .metric strong {
+        display: block;
+        margin-top: 23px;
+        font:
+          800 33px/1 Sora,
+          sans-serif;
+      }
+      .metric.in strong {
+        color: #5ed6a1;
+      }
+      .metric.out strong {
+        color: #ff8b8b;
+      }
+      .wave {
+        position: relative;
+        margin-top: 38px;
+        height: 205px;
+        border: 2px solid #8ca7e4;
+      }
+      .zero {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 2px;
+        background: #fff;
+      }
+      .bar {
+        position: absolute;
+        width: 35px;
+        left: var(--x);
+        bottom: 50%;
+        height: var(--h);
+        background: #5ed6a1;
+      }
+      .bar.down {
+        top: 50%;
+        bottom: auto;
+        background: #f04d4d;
+      }
+      .horizon {
+        background: #fff;
+      }
+      .horizon:after {
+        border-color: #1647a8;
+      }
+      .note {
+        color: #dce5fa;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #5ed6a1;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>CASHFLOW READING / JULY 2026</span><b>TRACE / 03</b>
+      </div>
+      <h1 class="title">
+        ARUS MASUK. ARUS KELUAR.<br /><em>NET CASHFLOW.</em>
+      </h1>
+      <section class="panel">
+        <div class="reading">
+          <article class="metric in">
+            <small>INFLOW / CREDIT</small><strong>RP417,0JT</strong>
+          </article>
+          <article class="metric out">
+            <small>OUTFLOW / DEBIT</small><strong>RP352,5JT</strong>
+          </article>
+          <article class="metric">
+            <small>NET CASHFLOW</small><strong>+RP64,5JT</strong>
+          </article>
+        </div>
+        <div class="wave">
+          <div class="zero"></div>
+          <i class="bar" style="--x: 8%; --h: 80px"></i
+          ><i class="bar down" style="--x: 22%; --h: 55px"></i
+          ><i class="bar down" style="--x: 36%; --h: 90px"></i
+          ><i class="bar" style="--x: 50%; --h: 110px"></i
+          ><i class="bar down" style="--x: 64%; --h: 42px"></i
+          ><i class="bar" style="--x: 78%; --h: 68px"></i
+          ><i class="bar down" style="--x: 90%; --h: 75px"></i>
+        </div>
+      </section>
+      <div class="horizon"></div>
+      <p class="note">
+        Saldo akhir dilengkapi pembacaan inflow, outflow, dan net movement
+        selama periode.
+      </p>
+      <div class="next">NEXT / PETAKAN PIHAK →</div>
+      <footer class="foot">
+        <span>03 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>ANGKA SIMULASI / IDR</span>
+      </footer>
+    </main>
+  </body>
+</html>

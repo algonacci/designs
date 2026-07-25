@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+}
+.c {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background: #eee9dd;
+  color: #17191d;
+  font-family: Outfit, sans-serif;
+}
+.meta {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 61px;
+  display: flex;
+  justify-content: space-between;
+  font:
+    600 14px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.12em;
+}
+.meta b {
+  color: #1647a8;
+}
+.title {
+  position: absolute;
+  left: 70px;
+  top: 135px;
+  width: 940px;
+  font:
+    800 87px/0.91 Sora,
+    sans-serif;
+  letter-spacing: -0.06em;
+}
+.title em {
+  color: #1647a8;
+  font-style: normal;
+}
+.horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1020px;
+  height: 8px;
+  background: #1647a8;
+}
+.horizon:after {
+  content: "";
+  position: absolute;
+  right: 72px;
+  top: -13px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #5ed6a1;
+  border: 5px solid #17191d;
+}
+.panel {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  top: 410px;
+  height: 580px;
+  border: 3px solid #17191d;
+  background: #f8f5ed;
+  padding: 38px;
+}
+.label {
+  font:
+    600 10px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  color: #686d73;
+}
+.next {
+  position: absolute;
+  right: 73px;
+  bottom: 154px;
+  font:
+    600 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+  color: #1647a8;
+}
+.foot {
+  position: absolute;
+  left: 72px;
+  right: 72px;
+  bottom: 54px;
+  height: 53px;
+  padding-top: 12px;
+  border-top: 2px solid currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font:
+    500 13px/1 "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.1em;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #1647a8;
+  font:
+    600 21px/1 Outfit,
+    sans-serif;
+  letter-spacing: 0;
+}
+.brand img {
+  width: 38px;
+  height: 38px;
+}
+.note {
+  position: absolute;
+  left: 74px;
+  bottom: 154px;
+  width: 700px;
+  font-size: 24px;
+  line-height: 1.35;
+}

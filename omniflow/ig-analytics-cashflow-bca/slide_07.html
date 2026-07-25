@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Cashflow BCA / 07</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #f04d4d;
+        color: #17191d;
+      }
+      .title {
+        font-size: 84px;
+      }
+      .title em {
+        color: #fff;
+      }
+      .shock {
+        position: absolute;
+        background: #17191d;
+        color: #eee9dd;
+      }
+      .axis {
+        position: absolute;
+        left: 60px;
+        right: 60px;
+        top: 270px;
+        height: 3px;
+        background: #686d73;
+      }
+      .normal {
+        position: absolute;
+        width: 14px;
+        height: var(--h);
+        left: var(--x);
+        bottom: 308px;
+        background: #5ed6a1;
+      }
+      .anomaly {
+        position: absolute;
+        left: 62%;
+        top: 80px;
+        width: 170px;
+        height: 360px;
+        border: 6px solid #f5c84c;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        text-align: center;
+      }
+      .anomaly strong {
+        font:
+          800 35px/1 Sora,
+          sans-serif;
+        color: #f5c84c;
+      }
+      .anomaly small {
+        display: block;
+        margin-top: 13px;
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .signal {
+        position: absolute;
+        left: 55px;
+        bottom: 35px;
+        right: 55px;
+        padding: 19px;
+        border: 3px solid #f5c84c;
+        color: #f5c84c;
+        font:
+          700 11px/1.5 "IBM Plex Mono",
+          monospace;
+      }
+      .horizon {
+        background: #17191d;
+      }
+      .horizon:after {
+        background: #f5c84c;
+        border-color: #f04d4d;
+      }
+      .foot {
+        color: #17191d;
+      }
+      .brand,
+      .next {
+        color: #17191d;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>ANOMALY SHOCK / STATISTICAL SIGNAL</span><b>SIGNAL / 07</b>
+      </div>
+      <h1 class="title">
+        NOMINAL TIDAK BIASA<br /><em>DIBERI SINYAL, BUKAN VONIS.</em>
+      </h1>
+      <section class="panel shock">
+        <div class="axis"></div>
+        <i class="normal" style="--x: 8%; --h: 65px"></i
+        ><i class="normal" style="--x: 18%; --h: 90px"></i
+        ><i class="normal" style="--x: 30%; --h: 55px"></i
+        ><i class="normal" style="--x: 42%; --h: 105px"></i
+        ><i class="normal" style="--x: 52%; --h: 72px"></i
+        ><i class="normal" style="--x: 82%; --h: 88px"></i
+        ><i class="normal" style="--x: 91%; --h: 50px"></i>
+        <div class="anomaly">
+          <div>
+            <strong>-RP117JT</strong
+            ><small>Z-SCORE / 3.2<br />24 JUL / SIMULASI</small>
+          </div>
+        </div>
+        <div class="signal">
+          STATISTICAL SIGNAL / REVIEW DESCRIPTION, COUNTERPARTY, AND BUSINESS
+          CONTEXT. NOT A FRAUD CLAIM.
+        </div>
+      </section>
+      <div class="horizon"></div>
+      <p class="note">
+        Nominal di luar pola diberi sinyal statistik untuk diperiksa bersama
+        konteks bisnis.
+      </p>
+      <div class="next">NEXT / RANGKUM KEPUTUSAN →</div>
+      <footer class="foot">
+        <span>07 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>BUKAN KLAIM FRAUD</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Cashflow BCA / 05</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #17191d;
+        color: #eee9dd;
+      }
+      .title {
+        font-size: 72px;
+      }
+      .title em {
+        color: #5ed6a1;
+      }
+      .rhythm {
+        position: absolute;
+        height: 580px;
+      }
+      .axis {
+        position: absolute;
+        left: 45px;
+        right: 45px;
+        top: 245px;
+        height: 3px;
+        background: #eee9dd;
+      }
+      .pulse {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        width: 16px;
+        height: var(--h);
+        background: var(--c);
+      }
+      .pulse:after {
+        content: "";
+        position: absolute;
+        left: -7px;
+        top: -7px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 3px solid var(--c);
+      }
+      .event {
+        position: absolute;
+        width: 210px;
+        padding: 18px;
+        border: 2px solid #686d73;
+      }
+      .e1 {
+        left: 40px;
+        top: 30px;
+      }
+      .e2 {
+        left: 365px;
+        bottom: 30px;
+      }
+      .e3 {
+        right: 35px;
+        top: 30px;
+      }
+      .event small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #aeb3b6;
+      }
+      .event strong {
+        display: block;
+        margin-top: 11px;
+        font:
+          700 20px/1 Sora,
+          sans-serif;
+      }
+      .horizon {
+        background: #eee9dd;
+      }
+      .horizon:after {
+        border-color: #17191d;
+      }
+      .note {
+        color: #cdd0d2;
+      }
+      .foot {
+        color: #eee9dd;
+      }
+      .brand,
+      .next {
+        color: #5ed6a1;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>RECURRING RHYTHM / PERIODIC EVENTS</span><b>REPEAT / 05</b>
+      </div>
+      <h1 class="title">
+        TRANSAKSI BERULANG<br /><em>MEMBENTUK RITME KAS.</em>
+      </h1>
+      <section class="panel rhythm">
+        <div class="axis"></div>
+        <i
+          class="pulse"
+          style="--x: 12%; --y: 195px; --h: 100px; --c: #f04d4d"
+        ></i
+        ><i
+          class="pulse"
+          style="--x: 30%; --y: 170px; --h: 125px; --c: #5ed6a1"
+        ></i
+        ><i
+          class="pulse"
+          style="--x: 48%; --y: 195px; --h: 100px; --c: #f04d4d"
+        ></i
+        ><i
+          class="pulse"
+          style="--x: 66%; --y: 170px; --h: 125px; --c: #5ed6a1"
+        ></i
+        ><i
+          class="pulse"
+          style="--x: 84%; --y: 195px; --h: 100px; --c: #f04d4d"
+        ></i>
+        <article class="event e1">
+          <small>MONTHLY / OUTFLOW</small><strong>Payroll / 25–27</strong>
+        </article>
+        <article class="event e2">
+          <small>WEEKLY / OUTFLOW</small><strong>Vendor settlement</strong>
+        </article>
+        <article class="event e3">
+          <small>BIWEEKLY / INFLOW</small><strong>Customer transfer</strong>
+        </article>
+      </section>
+      <div class="horizon"></div>
+      <p class="note">
+        Frekuensi dan jarak waktu membantu memisahkan pola rutin dari kejadian
+        satu kali.
+      </p>
+      <div class="next">NEXT / UKUR KONSENTRASI →</div>
+      <footer class="foot">
+        <span>05 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>POLA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

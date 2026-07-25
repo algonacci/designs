@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Analytics Cashflow BCA / 06</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 83px;
+      }
+      .pressure {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .concentration,
+      .balance {
+        padding: 32px;
+        border: 3px solid #17191d;
+        height: 500px;
+      }
+      .concentration h2,
+      .balance h2 {
+        margin-top: 20px;
+        font:
+          800 31px/1 Sora,
+          sans-serif;
+      }
+      .stack {
+        margin-top: 32px;
+        height: 220px;
+        display: flex;
+      }
+      .stack i {
+        height: 100%;
+        display: grid;
+        place-items: center;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+        writing-mode: vertical-rl;
+      }
+      .p1 {
+        width: 40%;
+        background: #1647a8;
+        color: #fff;
+      }
+      .p2 {
+        width: 27%;
+        background: #5ed6a1;
+      }
+      .p3 {
+        width: 18%;
+        background: #f5c84c;
+      }
+      .p4 {
+        width: 15%;
+        background: #adb0b3;
+      }
+      .balance-chart {
+        position: relative;
+        margin-top: 35px;
+        height: 230px;
+        border-left: 2px solid #17191d;
+        border-bottom: 2px solid #17191d;
+      }
+      .balance-chart svg {
+        width: 100%;
+        height: 100%;
+      }
+      .warning {
+        margin-top: 25px;
+        padding: 14px;
+        background: #f5c84c;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>CONCENTRATION PRESSURE / BALANCE HORIZON</span
+        ><b>CONCENTRATE / 06</b>
+      </div>
+      <h1 class="title">
+        SALDO BERGERAK.<br /><em>KETERGANTUNGAN IKUT TERLIHAT.</em>
+      </h1>
+      <section class="panel pressure">
+        <article class="concentration">
+          <span class="label">INFLOW CONCENTRATION</span>
+          <h2>67,2% dari dua pihak</h2>
+          <div class="stack">
+            <i class="p1">PARTY A / 40%</i><i class="p2">PARTY B / 27%</i
+            ><i class="p3">OTHERS / 18%</i><i class="p4">LONG TAIL / 15%</i>
+          </div>
+          <div class="warning">CONCENTRATION SIGNAL / REVIEW DEPENDENCY</div>
+        </article>
+        <article class="balance">
+          <span class="label">DAILY CLOSING BALANCE</span>
+          <h2>RP163JT → RP227JT</h2>
+          <div class="balance-chart">
+            <svg viewBox="0 0 400 220">
+              <polyline
+                points="0,160 45,135 90,185 135,110 180,140 225,65 270,98 315,42 360,72 400,30"
+                fill="none"
+                stroke="#1647A8"
+                stroke-width="8"
+              />
+              <line
+                x1="0"
+                y1="110"
+                x2="400"
+                y2="110"
+                stroke="#ADB0B3"
+                stroke-dasharray="8 8"
+              />
+            </svg>
+          </div>
+        </article>
+      </section>
+      <div class="horizon"></div>
+      <p class="note">
+        Konsentrasi inflow dan pergerakan saldo memberi konteks pada ketahanan
+        arus kas.
+      </p>
+      <div class="next">NEXT / DETEKSI SINYAL →</div>
+      <footer class="foot">
+        <span>06 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>ANGKA SIMULASI / IDR</span>
+      </footer>
+    </main>
+  </body>
+</html>
