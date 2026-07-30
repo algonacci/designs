@@ -17,6 +17,7 @@ Tujuan dokumen ini:
 | HRIS | Selesai | `ig-hris` |
 | Ecommerce | Selesai | `ig-ecommerce` |
 | Event Ticketing | Selesai, menunggu final approval | `ig-event-ticketing` |
+| Event Promo Analytics | Selesai, menunggu final approval | `ig-event-promo-analytics` |
 | Profilex HR Mastery | Selesai, menunggu final approval | `ig-profilex` |
 | Analytics Shopee | Selesai, menunggu final approval | `ig-analytics-shopee` |
 | Analytics / Cashflow BCA Feature | Selesai, menunggu final approval | `ig-analytics-cashflow-bca` |
@@ -600,6 +601,8 @@ Elemen yang harus berubah per seri:
 ## 15. Event Ticketing: Promo Analytics
 
 **Design style:** Style 18, `Campaign Control Room`
+
+**Status:** Sudah diproduksi di `ig-event-promo-analytics`.
 
 **Repository sumber:** `Omniflow-Event-Ticketing`
 

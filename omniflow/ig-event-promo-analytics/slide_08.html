@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Promo Analytics / 08</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #3457e8;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #f3de3e;
+      }
+      .experiment {
+        display: grid;
+        grid-template-columns: 1fr 120px 1fr;
+        align-items: center;
+      }
+      .current,
+      .next-test {
+        height: 430px;
+        padding: 34px;
+        border: 3px solid #fff;
+      }
+      .next-test {
+        background: #f3de3e;
+        color: #121212;
+      }
+      .experiment small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .experiment h2 {
+        margin-top: 22px;
+        font:
+          400 40px/1 Anton,
+          sans-serif;
+      }
+      .experiment dl {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 16px;
+        font:
+          600 12px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .arrow {
+        text-align: center;
+        font:
+          400 50px/1 Anton,
+          sans-serif;
+      }
+      .next-test b {
+        display: block;
+        margin-top: 30px;
+        padding: 13px;
+        background: #121212;
+        color: #f3de3e;
+        text-align: center;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .ticker {
+        color: #121212;
+      }
+      .closing {
+        position: absolute;
+        left: 74px;
+        bottom: 150px;
+        font:
+          400 31px/1 Anton,
+          sans-serif;
+      }
+      .closing span {
+        color: #f3de3e;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #f3de3e;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>NEXT EXPERIMENT / CAMPAIGN ITERATION</span><b>ITERATE / 08</b>
+      </div>
+      <h1 class="title">
+        BUKAN GIMMICK.<br /><em>PROMO MENJADI EKSPERIMEN.</em>
+      </h1>
+      <section class="control experiment">
+        <article class="current">
+          <small>TEST 01 / COMPLETED</small>
+          <h2>MASUK20</h2>
+          <dl>
+            <dt>DISCOUNT</dt>
+            <dd>20%</dd>
+            <dt>CONVERSION</dt>
+            <dd>7,1%</dd>
+            <dt>NET</dt>
+            <dd>RP18,79JT</dd>
+          </dl>
+        </article>
+        <div class="arrow">→</div>
+        <article class="next-test">
+          <small>TEST 02 / PROPOSED</small>
+          <h2>MASUK15</h2>
+          <dl>
+            <dt>DISCOUNT</dt>
+            <dd>15%</dd>
+            <dt>AUDIENCE</dt>
+            <dd>SAME SPLIT</dd>
+            <dt>GOAL</dt>
+            <dd>NET / VISITOR</dd>
+          </dl>
+          <b>NEXT HYPOTHESIS / LOWER COST</b>
+        </article>
+      </section>
+      <div class="ticker">
+        <span>TEST 01 / COMPLETE</span><span>VERDICT / REVIEWED</span
+        ><strong>NEXT / MASUK15</strong>
+      </div>
+      <div class="closing">OMNIFLOW EVENT <span>/ PROMO ANALYTICS</span></div>
+      <div class="next">CAMPAIGN CONTROL ROOM ↑</div>
+      <footer class="foot">
+        <span>08 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>EXPERIMENT SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Promo Analytics / 06</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 85px;
+      }
+      .board {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .group {
+        height: 450px;
+        padding: 34px;
+        border: 3px solid #f8f5ea;
+      }
+      .group.test {
+        background: #3457e8;
+      }
+      .group small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .group h2 {
+        margin-top: 20px;
+        font:
+          400 40px/1 Anton,
+          sans-serif;
+      }
+      .rate {
+        margin-top: 38px;
+        font:
+          400 105px/0.8 Anton,
+          sans-serif;
+      }
+      .group dl {
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 15px;
+        font:
+          600 12px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .lift {
+        margin-top: 25px;
+        padding: 15px;
+        background: #52c893;
+        color: #121212;
+        text-align: center;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>CONVERSION BOARD / CONTROL VS TEST</span><b>CONVERT / 06</b>
+      </div>
+      <h1 class="title">
+        RAMAI DIPAKAI.<br /><em>APAKAH LEBIH BANYAK MEMBELI?</em>
+      </h1>
+      <section class="control board">
+        <article class="group">
+          <small>GROUP A / CONTROL</small>
+          <h2>NO PROMO</h2>
+          <div class="rate">5,2%</div>
+          <dl>
+            <dt>VISITORS</dt>
+            <dd>1.020</dd>
+            <dt>ORDERS</dt>
+            <dd>53</dd>
+          </dl>
+        </article>
+        <article class="group test">
+          <small>GROUP B / MASUK20</small>
+          <h2>PROMO TEST</h2>
+          <div class="rate">7,1%</div>
+          <dl>
+            <dt>VISITORS</dt>
+            <dd>980</dd>
+            <dt>ORDERS</dt>
+            <dd>70</dd>
+          </dl>
+          <div class="lift">CONVERSION LIFT / +1,9 PT</div>
+        </article>
+      </section>
+      <div class="ticker">
+        <span>CONTROL / 5,2%</span><span>TEST / 7,1%</span
+        ><strong>LIFT / +1,9 PT</strong>
+      </div>
+      <p class="note">
+        Conversion membandingkan order terhadap audience, bukan hanya menghitung
+        kode yang dipakai.
+      </p>
+      <div class="next">NEXT / UKUR REVENUE →</div>
+      <footer class="foot">
+        <span>06 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

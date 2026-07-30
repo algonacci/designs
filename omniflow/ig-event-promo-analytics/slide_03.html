@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Promo Analytics / 03</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #3457e8;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #f3de3e;
+      }
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 120px 1fr;
+        align-items: center;
+      }
+      .group {
+        height: 420px;
+        padding: 34px;
+        border: 3px solid #fff;
+      }
+      .group.control-group {
+        background: #121212;
+      }
+      .group.promo-group {
+        background: #f3de3e;
+        color: #121212;
+      }
+      .group small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .group h2 {
+        margin-top: 22px;
+        font:
+          400 43px/1 Anton,
+          sans-serif;
+      }
+      .group dl {
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 17px;
+        font:
+          600 12px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .divider {
+        text-align: center;
+        font:
+          400 37px/1 Anton,
+          sans-serif;
+      }
+      .ticker {
+        color: #121212;
+      }
+      .note {
+        color: #e0e5fa;
+      }
+      .foot {
+        color: #fff;
+      }
+      .brand,
+      .next {
+        color: #f3de3e;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>AUDIENCE SPLIT / TEST DESIGN</span><b>LAUNCH / 03</b>
+      </div>
+      <h1 class="title">PROMO DIPAKAI.<br /><em>PEMBANDING TETAP ADA.</em></h1>
+      <section class="control split">
+        <article class="group control-group">
+          <small>GROUP A / CONTROL</small>
+          <h2>No promo</h2>
+          <dl>
+            <dt>VISITORS</dt>
+            <dd>1.020</dd>
+            <dt>EXPOSURE</dt>
+            <dd>STANDARD PRICE</dd>
+            <dt>SOURCE</dt>
+            <dd>ORGANIC</dd>
+          </dl>
+        </article>
+        <div class="divider">A/B</div>
+        <article class="group promo-group">
+          <small>GROUP B / TEST</small>
+          <h2>MASUK20</h2>
+          <dl>
+            <dt>VISITORS</dt>
+            <dd>980</dd>
+            <dt>EXPOSURE</dt>
+            <dd>PROMO SHOWN</dd>
+            <dt>SOURCE</dt>
+            <dd>CAMPAIGN</dd>
+          </dl>
+        </article>
+      </section>
+      <div class="ticker">
+        <span>EXPOSURE / 2.000</span><span>CONTROL / 1.020</span
+        ><strong>TEST / 980</strong>
+      </div>
+      <p class="note">
+        Audience split memberi pembanding agar penggunaan promo tidak dibaca
+        sendirian.
+      </p>
+      <div class="next">NEXT / HITUNG REDEMPTION →</div>
+      <footer class="foot">
+        <span>03 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>AUDIENCE SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

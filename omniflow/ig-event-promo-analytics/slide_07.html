@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Promo Analytics / 07</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .c {
+        background: #52c893;
+        color: #121212;
+      }
+      .meta b {
+        color: #121212;
+      }
+      .title {
+        font-size: 86px;
+      }
+      .title em {
+        color: #f8f5ea;
+      }
+      .verdict {
+        background: #121212;
+        color: #fff;
+      }
+      .gauge {
+        position: relative;
+        height: 230px;
+        margin-top: 30px;
+        border: 3px solid #777;
+      }
+      .gross,
+      .discount,
+      .net {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        display: grid;
+        place-items: center;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .gross {
+        left: 0;
+        width: 100%;
+        background: #3457e8;
+      }
+      .discount {
+        right: 0;
+        width: 12%;
+        background: #f04b3a;
+      }
+      .net {
+        left: 0;
+        width: 88%;
+        background: #52c893;
+        color: #121212;
+        z-index: 2;
+      }
+      .numbers {
+        margin-top: 35px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .numbers div {
+        padding: 25px;
+        border: 2px solid #777;
+      }
+      .numbers small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+        color: #aaa;
+      }
+      .numbers strong {
+        display: block;
+        margin-top: 14px;
+        font:
+          400 35px/1 Anton,
+          sans-serif;
+      }
+      .decision {
+        margin-top: 25px;
+        padding: 16px;
+        background: #f3de3e;
+        color: #121212;
+        font:
+          700 11px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .ticker {
+        background: #121212;
+        color: #52c893;
+      }
+      .foot {
+        color: #121212;
+      }
+      .brand,
+      .next {
+        color: #121212;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>REVENUE VERDICT / CAMPAIGN MASUK20</span><b>MEASURE / 07</b>
+      </div>
+      <h1 class="title">
+        DISKON MENGURANGI HARGA.<br /><em>REVENUE TETAP HARUS DIBACA.</em>
+      </h1>
+      <section class="control verdict">
+        <span class="label">REVENUE AFTER DISCOUNT / SIMULASI</span>
+        <div class="gauge">
+          <div class="gross">GROSS SALES / 21,35JT</div>
+          <div class="net">NET AFTER DISCOUNT / 18,79JT</div>
+          <div class="discount">COST</div>
+        </div>
+        <div class="numbers">
+          <div><small>GROSS SALES</small><strong>21,35JT</strong></div>
+          <div><small>DISCOUNT COST</small><strong>2,56JT</strong></div>
+          <div><small>NET REVENUE</small><strong>18,79JT</strong></div>
+        </div>
+        <div class="decision">
+          VERDICT / CONVERSION NAIK, NET REVENUE PER VISITOR PERLU DIBANDINGKAN
+          LAGI.
+        </div>
+      </section>
+      <div class="ticker">
+        <span>COST / 2,56JT</span><span>CONVERSION / 7,1%</span
+        ><strong>NET / 18,79JT</strong>
+      </div>
+      <p class="note">
+        Verdict menyatukan conversion, biaya diskon, dan revenue setelah diskon.
+      </p>
+      <div class="next">NEXT / RANCANG TEST BERIKUTNYA →</div>
+      <footer class="foot">
+        <span>07 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>ANGKA SIMULASI / IDR</span>
+      </footer>
+    </main>
+  </body>
+</html>

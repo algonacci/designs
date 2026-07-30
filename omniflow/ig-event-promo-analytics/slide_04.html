@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Promo Analytics / 04</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .title {
+        font-size: 87px;
+      }
+      .live {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+      }
+      .counter-wall,
+      .pulse {
+        padding: 35px;
+        border: 3px solid #f8f5ea;
+        height: 480px;
+      }
+      .counter-wall {
+        background: #f04b3a;
+      }
+      .counter-wall small,
+      .pulse small {
+        font:
+          600 9px/1 "IBM Plex Mono",
+          monospace;
+      }
+      .counter-wall strong {
+        display: block;
+        margin-top: 35px;
+        font:
+          400 150px/0.8 Anton,
+          sans-serif;
+      }
+      .counter-wall p {
+        margin-top: 30px;
+        font:
+          600 13px/1.5 "IBM Plex Mono",
+          monospace;
+      }
+      .bars {
+        margin-top: 35px;
+        height: 270px;
+        display: flex;
+        align-items: end;
+        gap: 12px;
+      }
+      .bars i {
+        flex: 1;
+        height: var(--h);
+        background: #f3de3e;
+      }
+      .pulse b {
+        display: block;
+        margin-top: 25px;
+        padding: 13px;
+        background: #52c893;
+        color: #121212;
+        text-align: center;
+        font:
+          700 10px/1 "IBM Plex Mono",
+          monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="meta">
+        <span>LIVE REDEMPTION / CAMPAIGN MASUK20</span><b>COUNT / 04</b>
+      </div>
+      <h1 class="title">
+        SETIAP TRANSAKSI<br /><em>MENGGERAKKAN COUNTER.</em>
+      </h1>
+      <section class="control live">
+        <article class="counter-wall">
+          <small>VALID REDEMPTION</small><strong>064</strong>
+          <p>64 / 100 usage limit<br />Last event / 18:42:09</p>
+        </article>
+        <article class="pulse">
+          <small>REDEMPTION BY HOUR</small>
+          <div class="bars">
+            <i style="--h: 25%"></i><i style="--h: 40%"></i
+            ><i style="--h: 62%"></i><i style="--h: 85%"></i
+            ><i style="--h: 70%"></i><i style="--h: 48%"></i>
+          </div>
+          <b>USAGE COUNT +1 / SERVER CONFIRMED</b>
+        </article>
+      </section>
+      <div class="ticker">
+        <span>CAMPAIGN / LIVE</span><span>VALID / 64</span
+        ><strong>USAGE 064 / 100</strong>
+      </div>
+      <p class="note">
+        Usage count bergerak hanya setelah promo valid dan transaksi tersimpan.
+      </p>
+      <div class="next">NEXT / HITUNG BIAYA DISKON →</div>
+      <footer class="foot">
+        <span>04 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Event Promo Analytics / 01</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .photo {
+        position: absolute;
+        inset: 0;
+      }
+      .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: grayscale(0.2) saturate(0.75) contrast(1.1);
+      }
+      .photo:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(18, 18, 18, 0.98) 0 58%,
+            rgba(18, 18, 18, 0.3)
+          ),
+          linear-gradient(0deg, #121212, transparent 43%);
+      }
+      .title {
+        top: 205px;
+        font-size: 98px;
+      }
+      .wall {
+        position: absolute;
+        left: 72px;
+        top: 680px;
+        width: 690px;
+        padding: 34px;
+        border: 3px solid #f8f5ea;
+        background: rgba(18, 18, 18, 0.82);
+      }
+      .wall small {
+        font:
+          600 10px/1 "IBM Plex Mono",
+          monospace;
+        color: #f3de3e;
+      }
+      .wall h2 {
+        margin-top: 18px;
+        font:
+          400 43px/1 Anton,
+          sans-serif;
+      }
+      .wall p {
+        margin-top: 18px;
+        font-size: 19px;
+        line-height: 1.4;
+      }
+      .counter {
+        position: absolute;
+        right: 75px;
+        top: 840px;
+        padding: 20px;
+        background: #f04b3a;
+        font:
+          700 12px/1 "IBM Plex Mono",
+          monospace;
+        text-align: center;
+      }
+      .counter strong {
+        display: block;
+        margin-top: 10px;
+        font:
+          400 52px/1 Anton,
+          sans-serif;
+      }
+      .ticker {
+        top: 1010px;
+      }
+      .note {
+        color: #d4d2cc;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="c">
+      <div class="photo">
+        <img
+          src="../../Bahan_Konten_Designs/event-concert-crowd.jpg"
+          alt="Atmosfer event dan penonton"
+        />
+      </div>
+      <div class="meta">
+        <span>OMNIFLOW EVENT / PROMO ANALYTICS</span><b>DEFINE / 01</b>
+      </div>
+      <h1 class="title">
+        KODE PROMO RAMAI DIPAKAI.<br /><em>TAPI APAKAH MENAMBAH REVENUE?</em>
+      </h1>
+      <section class="wall">
+        <small>CAMPAIGN / SIMULASI</small>
+        <h2>MASUK20</h2>
+        <p>Diskon 20% untuk General Pass selama periode campaign.</p>
+      </section>
+      <div class="counter">USAGE COUNT<strong>000</strong></div>
+      <div class="ticker">
+        <span>CAMPAIGN / MASUK20</span><span>STATUS / DRAFT</span
+        ><strong>USAGE 000</strong>
+      </div>
+      <p class="note">
+        Promo diperlakukan sebagai eksperimen dengan rule, biaya diskon,
+        conversion, dan revenue.
+      </p>
+      <div class="next">NEXT / DEFINISIKAN RULE →</div>
+      <footer class="foot">
+        <span>01 / 08</span
+        ><span class="brand"><img src="logo.svg" />omniflow.</span
+        ><span>DATA SIMULASI</span>
+      </footer>
+    </main>
+  </body>
+</html>
