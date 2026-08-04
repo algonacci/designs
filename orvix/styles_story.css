@@ -1,0 +1,22 @@
+/* =============================================================
+   Orvix — STORY overrides (1080 x 1920, 9:16)
+   ============================================================= */
+
+html, body { height: 1920px; }
+.canvas { height: 1920px; }
+.frame { padding: 96px 80px 180px; }
+
+.s-main {
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: center; gap: 70px; margin-top: var(--sp-4);
+}
+
+.s-hero {
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center; gap: var(--sp-5);
+}
+.s-hero .headline { font-size: 88px; letter-spacing: -3px; }
+.s-hero .subhead { max-width: 740px; font-size: 30px; }
+.s-hero .chips { justify-content: center; }
+
+.cta { align-self: center; }
