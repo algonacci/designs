@@ -1,0 +1,125 @@
+# Orvix.id OG banner data — single source of truth.
+# One [banners.KEY] section per route. Regenerate after editing:
+#   cd designs
+#   bun run orvix/seo/generate.ts && bun run orvix/seo/render.ts --force && bun run orvix/seo/convert.ts --force
+#
+# Fields:
+#   key       unique id, also the filename: banner_{key}.html / .png / .webp
+#   page      <title> of the generated HTML (debug only, never rendered)
+#   tag       small uppercase pill above the headline
+#   headline  main line. <grad>...</grad> marks the gradient span, <br> forces a
+#             line break. Set both by hand — auto-wrapping strands single words.
+#   subtitle  grey supporting line, keep to two rendered lines
+#   accent    hex — drives the glow, badge, headline gradient, accent line.
+#             KEEP INSIDE THE ORVIX RAMP (cyan #4de4ff -> blue #5b8cff ->
+#             purple #9b72ff). Warm hues like amber tint the whole canvas brown
+#             and the banner stops looking like Orvix.
+#   url_path  appended to "orvix.id/" at the bottom. Empty for the home page.
+
+[banners.home]
+key      = "home"
+page     = "Beranda"
+tag      = "Orvix Cloud Platform"
+headline = "Bangun dan deploy,<br><grad>tanpa ngurus server</grad>"
+subtitle = "Managed database, AI gateway, storage, dan deployment dalam satu dashboard."
+accent   = "#4de4ff"
+url_path = ""
+
+[banners.services]
+key      = "services"
+page     = "Enterprise Solutions"
+tag      = "Enterprise Solutions"
+headline = "Untuk workload yang butuh<br><grad>penanganan langsung</grad>"
+subtitle = "Server internal, arsitektur hybrid, migrasi bertahap, dan setup di luar platform standar."
+accent   = "#5b8cff"
+url_path = "services"
+
+[banners.about]
+key      = "about"
+page     = "Tentang"
+tag      = "Tentang Orvix"
+headline = "Infrastruktur yang <grad>sederhana dipakai</grad>,<br>solid dijalankan"
+subtitle = "Tim di balik Orvix Cloud Platform dan layanan enterprise-nya."
+accent   = "#9b72ff"
+url_path = "about"
+
+[banners.contact]
+key      = "contact"
+page     = "Kontak"
+tag      = "Kontak"
+headline = "Diskusikan kebutuhan<br><grad>infrastruktur Anda</grad>"
+subtitle = "Ceritakan aplikasi, workload, dan kendala yang sedang berjalan."
+accent   = "#4de4ff"
+url_path = "contact"
+
+[banners.service-managed-cloud]
+key      = "service-managed-cloud"
+page     = "Managed Cloud"
+tag      = "Enterprise / Managed Cloud"
+headline = "Server dan cloud<br>yang <grad>dikelola rapi</grad>"
+subtitle = "Provisioning, hardening, patching, monitoring, dan operasional rutin workload bisnis."
+accent   = "#22d3ee"
+url_path = "services/managed-cloud"
+
+[banners.service-cloud-migration]
+key      = "service-cloud-migration"
+page     = "Cloud Migration"
+tag      = "Enterprise / Migration"
+headline = "Migrasi tanpa<br><grad>drama downtime</grad>"
+subtitle = "Website, aplikasi, database, dan file dipindahkan bertahap dengan cutover terencana."
+accent   = "#6366f1"
+url_path = "services/cloud-migration"
+
+[banners.service-managed-hosting]
+key      = "service-managed-hosting"
+page     = "Managed Hosting"
+tag      = "Enterprise / Hosting"
+headline = "Hosting bisnis<br>yang <grad>benar-benar terurus</grad>"
+subtitle = "Domain, DNS, SSL, mail routing, backup, dan deployment website perusahaan."
+accent   = "#38bdf8"
+url_path = "services/managed-hosting"
+
+[banners.service-devops-cicd]
+key      = "service-devops-cicd"
+page     = "DevOps & CI/CD"
+tag      = "Enterprise / DevOps"
+headline = "Release yang <grad>konsisten</grad>,<br>bukan manual"
+subtitle = "Pipeline deployment, staging, container workflow, dan proses rilis yang tertata."
+accent   = "#8b5cf6"
+url_path = "services/devops-cicd"
+
+[banners.service-backup-disaster-recovery]
+key      = "service-backup-disaster-recovery"
+page     = "Backup & Disaster Recovery"
+tag      = "Enterprise / Backup"
+headline = "Backup yang benar-benar<br><grad>bisa direstore</grad>"
+subtitle = "Retensi lokal dan offsite, verifikasi restore berkala, serta dasar disaster recovery plan."
+accent   = "#818cf8"
+url_path = "services/backup-disaster-recovery"
+
+[banners.service-monitoring-security]
+key      = "service-monitoring-security"
+page     = "Monitoring & Security"
+tag      = "Enterprise / Security"
+headline = "Masalah <grad>terlihat lebih cepat</grad>,<br>eksposur terkontrol"
+subtitle = "Uptime dan resource monitoring, alerting, log collection, hardening, dan access review."
+accent   = "#a78bfa"
+url_path = "services/monitoring-security"
+
+[banners.service-private-hybrid-cloud]
+key      = "service-private-hybrid-cloud"
+page     = "Private / Hybrid Cloud"
+tag      = "Enterprise / Hybrid Cloud"
+headline = "Kontrol penuh atas<br><grad>data dan resource lokal</grad>"
+subtitle = "Virtualisasi, private cloud berbasis Proxmox, dan integrasi ke server on-premise."
+accent   = "#2dd4bf"
+url_path = "services/private-hybrid-cloud"
+
+[banners.service-ai-saas-infrastructure]
+key      = "service-ai-saas-infrastructure"
+page     = "AI & SaaS Infrastructure"
+tag      = "Enterprise / AI Infrastructure"
+headline = "Fondasi teknis untuk<br><grad>aplikasi AI dan SaaS</grad>"
+subtitle = "Compute, database, storage, queue, dan observability yang disiapkan sesuai beban kerja."
+accent   = "#7c9dff"
+url_path = "services/ai-saas-infrastructure"
