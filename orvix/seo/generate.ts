@@ -14,6 +14,9 @@ interface Banner {
   accent: string;
   tag: string;
   url_path: string;
+  // Optional. Defaults to the compro's domain; set it for banners that belong
+  // to another host, such as the platform on platform.orvix.id.
+  domain?: string;
 }
 
 function parseToml(src: string): Banner[] {
@@ -129,7 +132,8 @@ function renderBanner(b: Banner): string {
   // Small hue step only. A wide shift walks the gradient out of the Orvix
   // cyan-blue-purple ramp and the banner stops reading as Orvix.
   const accent2 = shiftHue(b.accent, 26);
-  const url = b.url_path ? "orvix.id/" + b.url_path : "orvix.id";
+  const host = b.domain || "orvix.id";
+  const url = b.url_path ? host + "/" + b.url_path : host;
 
   return `<!doctype html>
 <html lang="id">

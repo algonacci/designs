@@ -14,7 +14,9 @@
 #             KEEP INSIDE THE ORVIX RAMP (cyan #4de4ff -> blue #5b8cff ->
 #             purple #9b72ff). Warm hues like amber tint the whole canvas brown
 #             and the banner stops looking like Orvix.
-#   url_path  appended to "orvix.id/" at the bottom. Empty for the home page.
+#   url_path  appended to the domain at the bottom. Empty for the home page.
+#   domain    optional. Defaults to "orvix.id". Set it for banners belonging to
+#             another host, e.g. "platform.orvix.id".
 
 [banners.home]
 key      = "home"
@@ -123,3 +125,25 @@ headline = "Fondasi teknis untuk<br><grad>aplikasi AI dan SaaS</grad>"
 subtitle = "Compute, database, storage, queue, dan observability yang disiapkan sesuai beban kerja."
 accent   = "#7c9dff"
 url_path = "services/ai-saas-infrastructure"
+
+# ---------------------------------------------------------------------------
+# Orvix Cloud Platform — platform.orvix.id
+#
+# One entry, not twelve. Every platform route except /login sits behind
+# RequireAuth and redirects to /login, so a per-route banner would be rendered,
+# shipped, and never once served to a scraper. The one link anybody can share
+# is the sign-in page, and this is the card it gets.
+#
+# Convert with `--platform` so it lands in orvix-project/platform/public/
+# rather than the compro's public directory.
+# ---------------------------------------------------------------------------
+
+[banners.platform]
+key      = "platform"
+page     = "Orvix Cloud Platform"
+tag      = "Orvix Cloud Platform"
+headline = "Satu API untuk<br><grad>semua model AI</grad>"
+subtitle = "Akses Claude, GPT, DeepSeek, dan lainnya lewat satu endpoint. Kredit, usage, dan API key dalam satu dashboard."
+accent   = "#5b8cff"
+url_path = ""
+domain   = "platform.orvix.id"
