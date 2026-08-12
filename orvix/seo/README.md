@@ -100,3 +100,27 @@ tint the entire canvas brown — the banner stops looking like Orvix at a glance
 Set `<grad>` and `<br>` by hand in `data.toml`. Auto-wrapping at 50 px reliably
 strands a single word on the last line, which looks broken in a feed preview.
 Two lines is the target; three overflows the safe area.
+
+## The platform banner
+
+`banner_platform` belongs to a different site — the app on
+**platform.orvix.id**, which lives in `orvix-project/platform`. It is excluded
+from the normal convert path and shipped separately:
+
+```bash
+cd designs
+bun run orvix/seo/generate.ts
+bun run orvix/seo/render.ts
+bun run orvix/seo/convert.ts --platform --force
+```
+
+That writes a single `platform/public/og.jpg`. JPEG only, no WebP and no `og/`
+directory: the compro can ship WebP because it also ships an og.jpg fallback,
+and a one-banner site has nothing to fall back to.
+
+**One banner is the right number.** Every platform route except `/login` sits
+behind auth and redirects, so a scraper can only ever reach the sign-in page.
+Per-route banners there would be rendered, shipped, and never requested.
+
+The `domain` field in `data.toml` is what keeps the bottom URL line honest —
+without it every banner claims `orvix.id`, including ones pointing elsewhere.
