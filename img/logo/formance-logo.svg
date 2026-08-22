@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Formance">
+  <title>Formance</title>
+  <defs>
+    <linearGradient id="formance-brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8C4DFF"/>
+      <stop offset="48%" stop-color="#6545F4"/>
+      <stop offset="100%" stop-color="#286DF3"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#formance-brand)"/>
+  <!-- A four-point spark with concave edges: drawn rather than borrowed, so
+       the mark is ours. The curves pull the waist in, which keeps the points
+       legible when the whole thing is 16 pixels wide. -->
+  <path d="M32 11 Q35.5 27 53 32 Q35.5 37 32 53 Q28.5 37 11 32 Q28.5 27 32 11 Z"
+        fill="#fff"/>
+</svg>
