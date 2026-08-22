@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Aurona OG Image</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* Aurona OG banner — 1200x630.
+       Colors, type scale and shapes follow aurona-frontend/DESIGN_STYLE.md.
+       Manrope loads from Google Fonts and falls back to the system sans stack,
+       exactly like the app does. */
+
+    * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #faf8f5;
+      font-family: "Manrope", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+      color: #24212a;
+    }
+
+    .canvas {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #faf8f5;
+    }
+
+    /* Decorative brand-gradient washes: sky, lavender, peach. Restrained. */
+    .wash {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      z-index: 0;
+    }
+
+    .wash-lavender {
+      width: 620px;
+      height: 620px;
+      top: -290px;
+      right: -130px;
+      background: rgba(185, 167, 245, 0.40);
+    }
+
+    .wash-sky {
+      width: 520px;
+      height: 520px;
+      bottom: -310px;
+      right: 200px;
+      background: rgba(185, 221, 244, 0.38);
+    }
+
+    .wash-peach {
+      width: 460px;
+      height: 460px;
+      bottom: -290px;
+      left: -170px;
+      background: rgba(248, 216, 189, 0.45);
+    }
+
+    .hairline {
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 5px;
+      background: linear-gradient(90deg, #b9ddf4 0%, #b9a7f5 52%, #f8d8bd 100%);
+      z-index: 3;
+    }
+
+    .inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 56px;
+      width: 100%;
+      height: 100%;
+      padding: 0 72px;
+    }
+
+    /* LEFT ------------------------------------------------------------- */
+    .left {
+      display: flex;
+      flex-direction: column;
+      width: 596px;
+      flex-shrink: 0;
+    }
+
+    .logo {
+      width: 168px;
+      height: 50px;
+      margin: 0 0 30px -4px;
+    }
+
+    .eyebrow {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8067d8;
+    }
+
+    .headline {
+      margin: 16px 0 0;
+      font-size: 55px;
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 520px;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: #6f6978;
+    }
+
+    .chips {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px 9px 13px;
+      border: 1px solid #e9e4ec;
+      border-radius: 999px;
+      background: #ffffff;
+      font-size: 14px;
+      font-weight: 700;
+      color: #24212a;
+    }
+
+    .chip svg {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+    }
+
+    .chip-violet svg { color: #8067d8; }
+    .chip-blue svg { color: #39759a; }
+    .chip-coral svg { color: #b75f4d; }
+
+    .footer-line {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 34px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #24212a;
+    }
+
+    .footer-sep {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #b9a7f5;
+    }
+
+    .footer-note {
+      font-weight: 400;
+      color: #6f6978;
+    }
+
+    /* RIGHT ------------------------------------------------------------ */
+    .preview {
+      position: relative;
+      width: 404px;
+      flex-shrink: 0;
+      padding: 26px;
+      border: 1px solid #e9e4ec;
+      border-radius: 32px;
+      background: #ffffff;
+      box-shadow: 0 20px 60px rgba(51, 42, 68, 0.09);
+    }
+
+    .preview-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e9e4ec;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #b9ddf4 0%, #b9a7f5 52%, #f8d8bd 100%);
+      flex-shrink: 0;
+    }
+
+    .preview-title {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+
+    .preview-sub {
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #6f6978;
+    }
+
+    .bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 20px 0 18px;
+    }
+
+    .bubble {
+      max-width: 300px;
+      padding: 14px 16px;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .bubble-user {
+      align-self: flex-end;
+      border: 1px solid #e9e4ec;
+      border-radius: 18px 18px 6px 18px;
+      background: #faf8f5;
+    }
+
+    .bubble-aurona {
+      align-self: flex-start;
+      border-radius: 18px 18px 18px 6px;
+      background: #f1edf9;
+    }
+
+    .stats {
+      display: flex;
+      gap: 10px;
+      padding-top: 18px;
+      border-top: 1px solid #e9e4ec;
+    }
+
+    .stat {
+      flex: 1;
+      padding: 12px 14px;
+      border-radius: 16px;
+    }
+
+    .stat-mood { background: #f5f2fc; }
+    .stat-theme { background: #eff7fb; }
+
+    .stat-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6f6978;
+    }
+
+    .stat-value {
+      margin-top: 4px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="canvas">
+    <div class="wash wash-lavender"></div>
+    <div class="wash wash-sky"></div>
+    <div class="wash wash-peach"></div>
+    <div class="hairline"></div>
+
+    <div class="inner">
+      <!-- LEFT -->
+      <div class="left">
+        <img class="logo" src="../img/logo/aurona-logo.svg" alt="Aurona" />
+
+        <p class="eyebrow">Emotional companion</p>
+        <h1 class="headline">A space to talk,<br />reflect, and feel<br />understood.</h1>
+        <p class="lead">
+          A private AI companion for talking things through, noticing your
+          patterns, and preparing for professional support when you want it.
+        </p>
+
+        <div class="chips">
+          <span class="chip chip-violet">
+            <!-- lucide: lock -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            Private by design
+          </span>
+          <span class="chip chip-blue">
+            <!-- lucide: message-circle -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
+            </svg>
+            Judgment-free
+          </span>
+          <span class="chip chip-coral">
+            <!-- lucide: shield-check -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+            Human handoff
+          </span>
+        </div>
+
+        <div class="footer-line">
+          <span>aurona.syncloud.my.id</span>
+          <span class="footer-sep"></span>
+          <span class="footer-note">Not a replacement for licensed care</span>
+        </div>
+      </div>
+
+      <!-- RIGHT: conversation preview -->
+      <div class="preview">
+        <div class="preview-head">
+          <div class="avatar"></div>
+          <div>
+            <div class="preview-title">Reflect with Aurona</div>
+            <div class="preview-sub">A private conversation</div>
+          </div>
+        </div>
+
+        <div class="bubbles">
+          <div class="bubble bubble-user">I feel overwhelmed, but I don't know where to start.</div>
+          <div class="bubble bubble-aurona">You don't have to explain everything at once. What feels heaviest today?</div>
+        </div>
+
+        <div class="stats">
+          <div class="stat stat-mood">
+            <div class="stat-label">Mood</div>
+            <div class="stat-value">Low energy</div>
+          </div>
+          <div class="stat stat-theme">
+            <div class="stat-label">Common theme</div>
+            <div class="stat-value">Work pressure</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
