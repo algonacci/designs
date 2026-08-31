@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=2400, initial-scale=1" />
+  <title>AI Under the Hood — Identity Exploration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="board">
+
+  <!-- ═══ MASTHEAD ═══════════════════════════════════════════════════════ -->
+  <header class="masthead">
+    <div class="mast-meta">
+      <span><b>ALGONACCI®</b></span>
+      <span>IDENTITY STUDY / 2026 / SERIES 002</span>
+      <span>EXPLORATION 01—08</span>
+    </div>
+
+    <div class="mast-body">
+      <div class="mast-title">
+        <h1>AI<br>UNDER<br>THE HOOD</h1>
+        <p class="sub">An identity study for an editorial series about what actually happens
+          inside a machine learning system. The working principle for every direction below is
+          the same: <b>make invisible computation visible.</b> Not robots, not brains, not
+          networks of glowing dots — the arithmetic itself, drawn the way a laboratory would
+          draw it.</p>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipe-label"><span>CHARACTERS</span><span>TOKENS</span><span>VECTOR</span><span>DISTRIBUTION</span></div>
+        <div class="pipe-row pipe-char" id="pipeChar"></div>
+        <div class="pipe-row pipe-tok" id="pipeTok"></div>
+        <div class="pipe-row pipe-vec" id="pipeVec"></div>
+        <div class="pipe-row pipe-dist" id="pipeDist"></div>
+      </div>
+    </div>
+
+    <div class="mast-foot">
+      <div class="hypotheses">
+        <span class="hyp-item"><i class="sw s1"></i>H1 SODIUM</span>
+        <span class="hyp-item"><i class="sw s2"></i>H2 SPECTRAL</span>
+        <span class="hyp-item"><i class="sw s3"></i>H3 AQUA</span>
+        <span class="hyp-item"><i class="sw s4"></i>H4 BIPOLAR</span>
+        <span class="hyp-item"><i class="sw s5"></i>H5 ACHROMATIC</span>
+      </div>
+      <span>NONE LOCKED · NO LIME — THAT IS SYSTEMS AT SCALE</span>
+    </div>
+  </header>
+
+  <!-- ═══ CONTACT SHEET ══════════════════════════════════════════════════ -->
+  <section class="sheet">
+
+    <!-- ─── 01 SEGMENTATION ─────────────────────────────────────────── -->
+    <article class="dir d1">
+      <header class="dir-head">
+        <span class="num">01</span>
+        <h2>SEGMENTATION</h2>
+        <em>TEXT → ⟦ TOKENS ⟧</em>
+        <span class="tag">H1 SODIUM</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark"><div class="seg-mark"><i></i><i></i><i></i><i></i></div></div>
+        <div class="lock-title">
+          <div class="tok-title">
+            <span class="tk"><b>AI</b><s>32</s></span>
+            <span class="tk on"><b><span class="sp">·</span>UN</b><s>1428</s></span>
+            <span class="tk"><b>DER</b><s>1094</s></span>
+            <span class="tk"><b><span class="sp">·</span>THE</b><s>279</s></span>
+            <span class="tk"><b><span class="sp">·</span>HO</b><s>5184</s></span>
+            <span class="tk"><b>OD</b><s>378</s></span>
+          </div>
+          <div class="cap">THE TITLE IS SET THE WAY A TOKENISER WOULD CUT IT — UNEQUAL WIDTHS, LEADING-SPACE MARKS, IDS BELOW</div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div class="ribbon" id="ribbon"></div>
+        <div class="note up" style="left:0px; top:184px; --len:64px"><span class="dot" style="color:var(--h1)"></span>SIX WORDS · <b>NINE TOKENS</b></div>
+        <div class="note up" style="left:238px; top:238px; --len:98px">SUBWORD SPLIT — <b>"BROWN" COSTS TWO</b></div>
+        <div class="note up" style="left:520px; top:184px; --len:46px">THE ID IS AN INDEX,<br>NOT A MEANING</div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><div class="seg-mark" style="gap:1px"><i style="width:5px;height:6px"></i><i style="width:2px;height:6px"></i><i style="width:6px;height:6px"></i><i style="width:3px;height:6px"></i></div></div>
+          <div class="bug64"><div class="seg-mark" style="gap:2px"><i style="width:20px;height:24px"></i><i style="width:9px;height:24px"></i><i style="width:24px;height:24px"></i><i style="width:12px;height:24px"></i></div></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><div class="seg-mark" style="gap:1px"><i style="width:3px;height:5px"></i><i style="width:2px;height:5px"></i><i style="width:4px;height:5px"></i></div></div>
+          <div class="fser">AI UNDER THE HOOD / 001</div>
+          <div class="fhead">WHY "STRAWBERRY"<br>HAS THREE R's<br>AND THE MODEL<br>CANNOT SEE THEM</div>
+          <div class="fbody"><div style="display:flex;gap:2px;align-items:flex-end">
+            <b style="font:400 8px 'IBM Plex Mono';border:1px solid #353644;border-bottom:2px solid #ffa524;padding:5px 4px">STR</b>
+            <b style="font:400 8px 'IBM Plex Mono';border:1px solid #353644;border-bottom:2px solid #ffa524;padding:5px 4px">AW</b>
+            <b style="font:400 8px 'IBM Plex Mono';border:1px solid #353644;border-bottom:2px solid #ffa524;padding:5px 4px">BERRY</b>
+          </div></div>
+          <div class="ffoot">EP 001 · TOKENISATION</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><div class="seg-mark" style="gap:2px;height:100%"><i style="width:15px;height:22px;background:#14141a"></i><i style="width:7px;height:22px;background:#ffa524"></i><i style="width:20px;height:22px;background:#14141a"></i><i style="width:11px;height:22px;background:#14141a"></i></div></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — CUT.</b> A single unbroken bar snaps into unequal segments left to right, one cut per beat, no easing on the cut itself. The IDs settle in afterwards. What must read is that the boundaries are <b>not</b> where a human would put them.</span>
+        <span>MARK 01.1</span>
+      </footer>
+    </article>
+
+    <!-- ─── 02 WEIGHT FIELD ─────────────────────────────────────────── -->
+    <article class="dir d2">
+      <header class="dir-head">
+        <span class="num">02</span>
+        <h2>WEIGHT FIELD</h2>
+        <em>WHO LOOKS AT WHOM</em>
+        <span class="tag">H2 SPECTRAL</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark"><div class="mx" id="markMx"></div></div>
+        <div class="lock-title wf-title">
+          <div class="t">AI UNDER<br>THE HOOD</div>
+          <div class="cap">MARK IS A CAUSAL ATTENTION MASK — THE TRIANGLE IS NOT A STYLING CHOICE, IT IS THE CONSTRAINT</div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div style="display:flex;align-items:flex-start;padding-left:34px">
+          <div class="mx big" id="bigMx"></div>
+          <div class="rowsum" id="rowSum"></div>
+        </div>
+        <div class="note left" style="left:812px; top:126px; --len:44px">QUERY ROW · <b>Σ = 1.00</b><br>ALWAYS, AT EVERY DEPTH</div>
+        <div class="note up" style="left:34px; top:258px; --len:20px">EMPTY IS <b>NOT ZERO ATTENTION</b> — IT IS THE FUTURE, MASKED OUT</div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><div class="mx b16" id="bugMx"></div></div>
+          <div class="bug64"><div class="mx" id="bug64Mx" style="grid-template-columns:repeat(4,15px);grid-auto-rows:15px;gap:1px"></div></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><div class="mx" id="frameMx" style="grid-template-columns:repeat(4,2px);grid-auto-rows:2px;gap:1px"></div></div>
+          <div class="fser">AI UNDER THE HOOD / 004</div>
+          <div class="fhead">A MODEL DOES<br>NOT READ LEFT<br>TO RIGHT. IT<br>WEIGHS.</div>
+          <div class="fbody"><div class="mx mini" id="frameMxBig"></div></div>
+          <div class="ffoot">EP 004 · ATTENTION</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><div class="mx" id="lightMx" style="grid-template-columns:repeat(5,11px);grid-auto-rows:11px;gap:1px"></div></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — REDISTRIBUTE.</b> A query row lights; its weights move under a hard constraint that the row still totals 1.00, so density leaves one cell exactly as it arrives in another. Nothing fades in. The mask never animates — it is structure, not state.</span>
+        <span>MARK 02.1</span>
+      </footer>
+    </article>
+
+    <!-- ─── 03 COORDINATE ───────────────────────────────────────────── -->
+    <article class="dir d3">
+      <header class="dir-head">
+        <span class="num">03</span>
+        <h2>COORDINATE</h2>
+        <em>MEANING AS POSITION</em>
+        <span class="tag">H3 AQUA</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark">
+          <svg viewBox="0 0 132 132" width="132" height="132">
+            <path class="axis" d="M12 108H120M24 120V16"/>
+            <path class="tick" d="M46 104v8M68 104v8M90 104v8M20 84h8M20 60h8M20 36h8"/>
+            <path class="dline" d="M90 36V108M24 36H90"/>
+            <circle class="pt acc" cx="90" cy="36" r="7"/>
+          </svg>
+        </div>
+        <div class="lock-title coord-title">
+          <div style="flex:1">
+            <div class="t">AI UNDER<br>THE HOOD</div>
+            <div class="cap">TITLE IS A PLOTTED OBJECT — IT SITS AT A POSITION, AND THE POSITION IS PRINTED</div>
+          </div>
+          <div class="num">x&nbsp;&nbsp;+0.42<br>y&nbsp;&nbsp;−0.17<br><span style="color:var(--faint)">4096 → 2</span></div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div class="plot">
+          <svg viewBox="0 0 1068 236" width="1068" height="236">
+            <path class="axis" d="M60 202H1010M120 226V10"/>
+            <g class="tick">
+              <path d="M240 198v8M400 198v8M560 198v8M720 198v8M880 198v8"/>
+              <path d="M116 164h8M116 124h8M116 84h8M116 44h8"/>
+            </g>
+            <path class="hull" d="M250 54 320 34 396 50 402 96 336 116 262 96Z"/>
+            <path class="hull" d="M540 122 618 102 690 126 674 168 578 172Z"/>
+            <path class="hull" d="M790 48 866 36 924 68 900 110 812 106Z"/>
+            <g id="ptGroup"></g>
+            <path class="vecline" d="M120 202 328 76"/>
+            <circle class="pt acc" cx="328" cy="76" r="6"/>
+            <circle class="pt acc" cx="612" cy="138" r="6"/>
+            <path class="dline" d="M328 76 612 138"/>
+            <text class="plabel" x="252" y="22">UNITS OF TIME</text>
+            <text class="plabel" x="556" y="206">PHYSICAL PLACES</text>
+            <text class="plabel" x="800" y="22">ACTS OF SPEECH</text>
+            <text class="plabel" x="398" y="96" fill="#35e3c4">d = 0.31</text>
+          </svg>
+        </div>
+        <div class="note up" style="left:60px; top:286px; --len:52px">PROJECTED. <b>4096 DIMENSIONS DRAWN AS 2</b> — DISTANCE SURVIVES ONLY APPROXIMATELY</div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><svg viewBox="0 0 16 16" width="16" height="16"><path class="axis" d="M2 13h12M4 15V2"/><circle class="pt acc" cx="11" cy="5" r="2"/></svg></div>
+          <div class="bug64"><svg viewBox="0 0 16 16" width="64" height="64"><path class="axis" d="M2 13h12M4 15V2"/><circle class="pt acc" cx="11" cy="5" r="2"/></svg></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><svg viewBox="0 0 16 16" width="11" height="11"><path class="axis" d="M2 13h12M4 15V2"/><circle class="pt acc" cx="11" cy="5" r="2"/></svg></div>
+          <div class="fser">AI UNDER THE HOOD / 003</div>
+          <div class="fhead">"KING" AND<br>"QUEEN" ARE<br>NEIGHBOURS.<br>NOBODY TOLD<br>THE MODEL.</div>
+          <div class="fbody"><svg viewBox="0 0 96 76" width="96" height="76"><path class="axis" d="M8 66h82M18 72V8"/><path class="hull" d="M34 22 54 16 66 30 50 42 34 38Z"/><circle class="pt acc" cx="44" cy="28" r="3"/><circle class="pt" cx="60" cy="24" r="2"/><circle class="pt" cx="38" cy="34" r="2"/></svg></div>
+          <div class="ffoot">EP 003 · EMBEDDINGS</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><svg viewBox="0 0 16 16" width="58" height="58"><path d="M2 13h12M4 15V2" stroke="#14141a" stroke-width="1" fill="none"/><circle cx="11" cy="5" r="2.4" fill="#14141a"/></svg></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — PROJECT.</b> Points arrive as a vertical column of raw numbers, then are thrown onto the plane; axes draw first, points land, cluster outlines close last. The camera never moves. Only the data does, because only the data can.</span>
+        <span>MARK 03.1</span>
+      </footer>
+    </article>
+
+    <!-- ─── 04 LONG TAIL ────────────────────────────────────────────── -->
+    <article class="dir d4">
+      <header class="dir-head">
+        <span class="num">04</span>
+        <h2>LONG TAIL</h2>
+        <em>SAMPLE, NOT LOOK UP</em>
+        <span class="tag">H2 SPECTRAL</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark"><div class="step-mark"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <div class="lock-title">
+          <div class="lt-title">
+            <span class="w"><b>AI</b><i style="width:100%"></i><s>0.61</s></span>
+            <span class="w"><b>UNDER</b><i style="width:44%"></i><s>0.22</s></span>
+            <span class="w"><b>THE</b><i style="width:22%"></i><s>0.11</s></span>
+            <span class="w"><b>HOOD</b><i style="width:11%"></i><s>0.06</s></span>
+          </div>
+          <div class="cap">EVERY WORD OF THE TITLE CARRIES THE PROBABILITY THAT IT WAS THE ONE CHOSEN</div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div style="display:flex;gap:184px;align-items:flex-start">
+          <div class="dist" id="distList"></div>
+          <div class="temps">
+            <div class="temp"><div class="tbars" id="t02"></div><div class="tcap">T = 0.2<br>RIGID</div></div>
+            <div class="temp"><div class="tbars" id="t08"></div><div class="tcap">T = 0.8<br>SHIPPED</div></div>
+            <div class="temp"><div class="tbars" id="t15"></div><div class="tcap">T = 1.5<br>UNHINGED</div></div>
+          </div>
+        </div>
+        <div style="position:absolute;left:130px;top:196px;width:560px">
+          <div class="tail" id="tail"></div>
+        </div>
+        <div class="note up" style="left:130px; top:256px; --len:16px">AND <b>49 984 MORE</b> — EVERY ONE OF THEM POSSIBLE</div>
+        <div class="note left" style="left:404px; top:66px; --len:26px"><b>THE THIRD ONE WON.</b><br>NOT THE FAVOURITE.</div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><div class="step-mark" style="gap:1px"><i style="width:2px;height:12px"></i><i style="width:2px;height:8px"></i><i style="width:2px;height:5px"></i><i style="width:2px;height:3px"></i><i style="width:2px;height:2px"></i></div></div>
+          <div class="bug64"><div class="step-mark" style="gap:3px"><i style="width:9px;height:48px"></i><i style="width:9px;height:32px"></i><i style="width:9px;height:20px"></i><i style="width:9px;height:12px"></i><i style="width:9px;height:6px"></i></div></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><div class="step-mark" style="gap:1px"><i style="width:2px;height:9px"></i><i style="width:2px;height:6px"></i><i style="width:2px;height:4px"></i><i style="width:2px;height:2px"></i></div></div>
+          <div class="fser">AI UNDER THE HOOD / 007</div>
+          <div class="fhead">ASK IT TWICE.<br>GET TWO<br>ANSWERS.<br>NEITHER IS<br>A BUG.</div>
+          <div class="fbody"><div style="display:flex;flex-direction:column;gap:3px;width:88px">
+            <div style="display:flex;gap:4px;align-items:center"><i style="display:block;height:5px;width:58px;background:#f2efe9"></i></div>
+            <div style="display:flex;gap:4px;align-items:center"><i style="display:block;height:5px;width:30px;background:#f2efe9"></i></div>
+            <div style="display:flex;gap:4px;align-items:center"><i style="display:block;height:5px;width:18px;background:#ff4a2b"></i></div>
+            <div style="display:flex;gap:4px;align-items:center"><i style="display:block;height:5px;width:11px;background:#4a4a55"></i></div>
+            <div style="display:flex;gap:4px;align-items:center"><i style="display:block;height:5px;width:6px;background:#4a4a55"></i></div>
+          </div></div>
+          <div class="ffoot">EP 007 · SAMPLING</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><div class="step-mark" style="gap:2px;height:100%"><i style="width:8px;height:42px;background:#ff4a2b"></i><i style="width:8px;height:28px;background:#14141a"></i><i style="width:8px;height:17px;background:#14141a"></i><i style="width:8px;height:10px;background:#14141a"></i><i style="width:8px;height:5px;background:#14141a"></i></div></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — SAMPLE.</b> Bars sort into rank, the tail unrolls to the right, then a cursor walks the cumulative sum and stops <b>inside</b> a bar that is not the first. Temperature is one continuous control, so it animates as one: the tail rises and the head collapses together.</span>
+        <span>MARK 04.1</span>
+      </footer>
+    </article>
+
+    <!-- ─── 05 RESIDUAL STREAM ──────────────────────────────────────── -->
+    <article class="dir d5">
+      <header class="dir-head">
+        <span class="num">05</span>
+        <h2>RESIDUAL STREAM</h2>
+        <em>ADD, DON'T REPLACE</em>
+        <span class="tag">H4 BIPOLAR</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark">
+          <svg viewBox="0 0 132 132" width="132" height="132" fill="none">
+            <path d="M40 6V126" stroke="#f2efe9" stroke-width="7"/>
+            <path d="M43 44H96V80H43" stroke="#353644" stroke-width="3"/>
+            <rect x="33" y="72" width="15" height="15" fill="none" stroke="#ff4a2b" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="lock-title">
+          <div class="rs-title">
+            <div class="row"><b style="border-left:6px solid var(--ink);padding-left:22px">AI UNDER</b><em>+Δ</em></div>
+            <div class="row"><b style="border-left:6px solid var(--ink);padding-left:22px">THE HOOD</b><em>+Δ</em></div>
+          </div>
+          <div class="cap" style="margin-top:20px">THE SPINE PASSES THROUGH THE TITLE. NOTHING REPLACES IT; THINGS ARE ADDED TO IT</div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div class="stream">
+          <div class="spine"></div>
+          <div class="caliper" style="top:14px;height:46px"></div>
+          <div class="caliper" style="top:224px;height:46px"></div>
+          <div class="arm" style="top:36px"></div><div class="join" style="top:28px"></div>
+          <div class="block" style="top:14px">ATTENTION <span class="d">+Δ</span></div>
+          <div class="arm" style="top:106px"></div><div class="join" style="top:98px"></div>
+          <div class="block" style="top:84px">MLP <span class="d">+Δ</span></div>
+          <div class="arm" style="top:176px"></div><div class="join neg" style="top:168px"></div>
+          <div class="block neg" style="top:154px">ATTENTION <span class="d">−Δ</span></div>
+          <div class="arm" style="top:246px"></div><div class="join" style="top:238px"></div>
+          <div class="block" style="top:224px">MLP <span class="d">+Δ</span></div>
+          <div class="note right" style="left:452px; top:26px; --len:22px">96 LAYERS. <b>THE SAME MOVE, NINETY-SIX TIMES</b></div>
+          <div class="note right" style="left:452px; top:230px; --len:22px">A LAYER MAY <b>SUBTRACT</b> — THE PAIR OF ACCENTS IS SIGN, NOT DECORATION</div>
+          <div class="note left" style="left:36px; top:130px; --len:0px"><span style="color:var(--h3)">d = 4096 · UNCHANGED</span></div>
+        </div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M5 1V15" stroke="#f2efe9" stroke-width="3"/><path d="M6 6H12V10H6" stroke="#f2efe9" stroke-width="1.5" fill="none"/></svg></div>
+          <div class="bug64"><svg viewBox="0 0 16 16" width="64" height="64"><path d="M5 1V15" stroke="#f2efe9" stroke-width="3"/><path d="M6 6H12V10H6" stroke="#f2efe9" stroke-width="1.5" fill="none"/></svg></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><svg viewBox="0 0 16 16" width="11" height="11"><path d="M5 1V15" stroke="#f2efe9" stroke-width="3"/><path d="M6 6H12V10H6" stroke="#f2efe9" stroke-width="1.5" fill="none"/></svg></div>
+          <div class="fser">AI UNDER THE HOOD / 009</div>
+          <div class="fhead">A TRANSFORMER<br>IS ONE LONG<br>ADDITION.</div>
+          <div class="fbody"><svg viewBox="0 0 70 84" width="70" height="84" fill="none">
+            <path d="M18 4V80" stroke="#f2efe9" stroke-width="3"/>
+            <path d="M20 16H50V26H20M20 40H50V50H20M20 64H50V74H20" stroke="#353644" stroke-width="1.5"/>
+            <rect x="14" y="22" width="8" height="8" stroke="#ff4a2b" stroke-width="1.5"/>
+            <rect x="14" y="46" width="8" height="8" stroke="#35e3c4" stroke-width="1.5"/>
+            <rect x="14" y="70" width="8" height="8" stroke="#ff4a2b" stroke-width="1.5"/>
+          </svg></div>
+          <div class="ffoot">EP 009 · TRANSFORMER BLOCKS</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><svg viewBox="0 0 16 16" width="58" height="58" fill="none"><path d="M5 1V15" stroke="#14141a" stroke-width="3"/><path d="M6 6H12V10H6" stroke="#14141a" stroke-width="1.5"/></svg></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — ADD.</b> The delta detaches, travels the excursion, and merges back. The spine's weight grows by exactly the amount merged, never more. Layers run in strict order and two excursions are never in flight at once, because in the real thing they aren't.</span>
+        <span>MARK 05.1</span>
+      </footer>
+    </article>
+
+    <!-- ─── 06 APERTURE ─────────────────────────────────────────────── -->
+    <article class="dir d6">
+      <header class="dir-head">
+        <span class="num">06</span>
+        <h2>APERTURE</h2>
+        <em>INSIDE / OUTSIDE</em>
+        <span class="tag">H1 SODIUM</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark"><div class="ap-mark"><div class="b" id="markBand"></div><div class="fr"></div></div></div>
+        <div class="lock-title">
+          <div class="ap-title">
+            <div class="ghost">… ALGONACCI PRESENTS · SERIES TWO · EPISODE</div>
+            <div class="win"><b>AI UNDER THE HOOD</b></div>
+            <div class="ghost">TOKENISATION · ATTENTION · SAMPLING · AGENTS …</div>
+          </div>
+          <div class="cap">WHAT FALLS OUTSIDE THE WINDOW IS STILL DRAWN. THAT IS THE ENTIRE POINT</div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div style="position:relative;padding-top:56px">
+          <div class="band" id="ctxBand"></div>
+        </div>
+        <div class="note down" style="left:466px; top:6px; --len:0px"><b>128 000 TOKENS</b> · EVERYTHING THE MODEL CAN SEE AT ONCE</div>
+        <div class="note up" style="left:0px; top:190px; --len:34px">EVICTED — <b>WAS READ, IS GONE</b></div>
+        <div class="note up" style="left:880px; top:190px; --len:34px">NOT YET ARRIVED</div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><div style="position:relative;width:16px;height:16px"><div style="display:flex;gap:1px;align-items:center;height:16px"><i style="display:block;width:1px;height:5px;background:#4a4a55"></i><i style="display:block;width:1px;height:5px;background:#4a4a55"></i><i style="display:block;width:1px;height:11px;background:#f2efe9"></i><i style="display:block;width:1px;height:11px;background:#f2efe9"></i><i style="display:block;width:1px;height:11px;background:#f2efe9"></i><i style="display:block;width:1px;height:5px;background:#4a4a55"></i><i style="display:block;width:1px;height:5px;background:#4a4a55"></i></div><div style="position:absolute;left:4px;top:2px;width:9px;height:12px;border:1px solid #ffa524"></div></div></div>
+          <div class="bug64"><div style="position:relative;width:64px;height:64px"><div style="display:flex;gap:4px;align-items:center;height:64px"><i style="display:block;width:4px;height:20px;background:#4a4a55"></i><i style="display:block;width:4px;height:20px;background:#4a4a55"></i><i style="display:block;width:4px;height:44px;background:#f2efe9"></i><i style="display:block;width:4px;height:44px;background:#f2efe9"></i><i style="display:block;width:4px;height:44px;background:#f2efe9"></i><i style="display:block;width:4px;height:20px;background:#4a4a55"></i><i style="display:block;width:4px;height:20px;background:#4a4a55"></i></div><div style="position:absolute;left:14px;top:8px;width:36px;height:48px;border:3px solid #ffa524"></div></div></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><div style="position:relative;width:11px;height:11px"><div style="display:flex;gap:1px;align-items:center;height:11px"><i style="display:block;width:1px;height:4px;background:#4a4a55"></i><i style="display:block;width:1px;height:8px;background:#f2efe9"></i><i style="display:block;width:1px;height:8px;background:#f2efe9"></i><i style="display:block;width:1px;height:4px;background:#4a4a55"></i></div><div style="position:absolute;left:1px;top:1px;width:7px;height:9px;border:1px solid #ffa524"></div></div></div>
+          <div class="fser">AI UNDER THE HOOD / 011</div>
+          <div class="fhead">IT DIDN'T<br>FORGET.<br>IT NEVER<br>HAD IT.</div>
+          <div class="fbody"><div style="position:relative;width:98px"><div style="display:flex;gap:1px;align-items:center;height:34px">
+            <i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i>
+            <i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i><i style="display:block;width:1px;height:26px;background:#f2efe9"></i>
+            <i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i><i style="display:block;width:1px;height:9px;background:#4a4a55"></i>
+          </div><div style="position:absolute;left:15px;top:0;width:25px;height:34px;border:1px solid #ffa524"></div></div></div>
+          <div class="ffoot">EP 011 · CONTEXT WINDOW</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><div style="position:relative;width:58px;height:58px"><div style="display:flex;gap:3px;align-items:center;height:58px"><i style="display:block;width:3px;height:18px;background:#9a9aa2"></i><i style="display:block;width:3px;height:18px;background:#9a9aa2"></i><i style="display:block;width:3px;height:40px;background:#14141a"></i><i style="display:block;width:3px;height:40px;background:#14141a"></i><i style="display:block;width:3px;height:40px;background:#14141a"></i><i style="display:block;width:3px;height:18px;background:#9a9aa2"></i><i style="display:block;width:3px;height:18px;background:#9a9aa2"></i></div><div style="position:absolute;left:11px;top:6px;width:33px;height:46px;border:2px solid #14141a"></div></div></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — SLIDE.</b> The band moves left through a fixed aperture. Nothing fades: a token is full height on one side of the edge and dim on the other, in a single frame. Eviction has to feel like a hard boundary, because that is what it is.</span>
+        <span>MARK 06.1</span>
+      </footer>
+    </article>
+
+    <!-- ─── 07 FOUR STATES ──────────────────────────────────────────── -->
+    <article class="dir d7">
+      <header class="dir-head">
+        <span class="num">07</span>
+        <h2>FOUR STATES</h2>
+        <em>ONE WORD, FOUR FORMS</em>
+        <span class="tag">H3 AQUA</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark"><div class="quad">
+          <div class="qa">HO</div>
+          <div class="qb">5184</div>
+          <div class="qc" id="quadVec"></div>
+          <div class="qd" id="quadDist"></div>
+        </div></div>
+        <div class="lock-title fs-title">
+          <div class="t">AI UNDER<br>THE HOOD<small>GLYPH · ID · VECTOR · DISTRIBUTION</small></div>
+          <div class="cap" style="margin-top:14px">THE MARK IS A ROSETTA STONE — THE SAME WORD IN FOUR MACHINE FORMS AT ONCE</div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div class="states">
+          <div class="state"><span class="sname">01 GLYPH</span><span class="sval">HOOD</span><span class="sop">WHAT YOU TYPED</span></div>
+          <div class="state"><span class="sname">02 TOKEN ID</span><span class="sval m">5184 · 378</span><span class="sop">← LOOKUP</span></div>
+          <div class="state on"><span class="sname">03 VECTOR</span><span class="svec" id="stateVec"></span><span class="sop">← EMBED · 8 OF 4096 SHOWN</span></div>
+          <div class="state"><span class="sname">04 DISTRIBUTION</span><span class="svec" id="stateDist"></span><span class="sop">← TRANSFORM · PROJECT · SOFTMAX</span></div>
+        </div>
+        <div class="note up" style="left:0px; top:252px; --len:14px">AFTER ROW 01, <b>NOTHING HERE IS A WORD</b></div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><div class="quad" style="gap:1px"><div style="border-width:1px"></div><div style="border-width:1px;background:#35e3c4;border-color:#35e3c4"></div><div style="border-width:1px;background:#f2efe9;border-color:#f2efe9"></div><div style="border-width:1px"></div></div></div>
+          <div class="bug64"><div class="quad" style="gap:2px"><div></div><div style="background:#35e3c4;border-color:#35e3c4"></div><div style="background:#f2efe9;border-color:#f2efe9"></div><div></div></div></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><div class="quad" style="gap:1px"><div style="border-width:1px"></div><div style="border-width:1px;background:#35e3c4;border-color:#35e3c4"></div><div style="border-width:1px;background:#f2efe9;border-color:#f2efe9"></div><div style="border-width:1px"></div></div></div>
+          <div class="fser">AI UNDER THE HOOD / 002</div>
+          <div class="fhead">THE MODEL HAS<br>NEVER SEEN<br>A WORD IN<br>ITS LIFE.</div>
+          <div class="fbody"><div style="display:flex;flex-direction:column;gap:5px;font:400 7px 'IBM Plex Mono';color:#82828f;text-align:center">
+            <span style="color:#f2efe9;font:700 11px Archivo">HOOD</span>
+            <span>↓</span><span style="color:#35e3c4">5184 · 378</span>
+            <span>↓</span><span>[ 0.41, −0.09, … ]</span>
+          </div></div>
+          <div class="ffoot">EP 002 · REPRESENTATION</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><div class="quad" style="gap:2px"><div style="border-color:#c9c6be"></div><div style="background:#14141a;border-color:#14141a"></div><div style="background:#14141a;border-color:#14141a"></div><div style="border-color:#c9c6be"></div></div></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — CONVERT.</b> One row at a time takes the next form while the previous stays on screen, so the chain accumulates instead of replacing itself. The accent bar marks the current state. The chain is the content; the container never moves.</span>
+        <span>MARK 07.1</span>
+      </footer>
+    </article>
+
+    <!-- ─── 08 RULE COMPOUND ────────────────────────────────────────── -->
+    <article class="dir d8">
+      <header class="dir-head">
+        <span class="num">08</span>
+        <h2>RULE COMPOUND</h2>
+        <em>SIMPLE → COMPLEX</em>
+        <span class="tag">H5 ACHROMATIC</span>
+      </header>
+
+      <div class="lockup">
+        <div class="mark"><div class="ca mark-ca" id="markCa"></div></div>
+        <div class="lock-title rc-title">
+          <div class="t">AI UNDER<br>THE HOOD<em>ONE CELL · EIGHT RULES · NO EXCEPTIONS</em></div>
+          <div class="cap" style="margin-top:16px">THE FIELD BEHIND THE TITLE IS COMPUTED, NOT DRAWN — RULE 110 FROM A SINGLE SEED</div>
+        </div>
+      </div>
+
+      <div class="canvas">
+        <div style="display:flex;gap:40px;align-items:flex-start">
+          <div class="ca big" id="bigCa"></div>
+          <div>
+            <div class="rules" id="ruleCases"></div>
+            <div class="note" style="position:static;margin-top:18px;white-space:normal;width:190px">THE COMPLETE RULE. <b>EIGHT CASES, ZERO RANDOMNESS.</b> EVERYTHING TO THE LEFT FOLLOWS FROM IT.</div>
+          </div>
+        </div>
+        <div class="note up" style="left:0px; top:252px; --len:14px">NO ONE PUT THE TRIANGLES THERE</div>
+      </div>
+
+      <div class="apps">
+        <div class="app"><div class="bug-set">
+          <div class="bug16"><div class="ca b16" id="bugCa"></div></div>
+          <div class="bug64"><div class="ca" id="bug64Ca" style="grid-template-columns:repeat(7,9px);grid-auto-rows:9px;gap:0"></div></div>
+        </div><span class="app-cap">CORNER BUG · 16 PX TRUE SIZE / 4× STUDY</span></div>
+
+        <div class="app"><div class="frame">
+          <div class="fbug"><div class="ca" id="frameCa" style="grid-template-columns:repeat(7,1.5px);grid-auto-rows:1.5px;gap:0"></div></div>
+          <div class="fser">AI UNDER THE HOOD / 016</div>
+          <div class="fhead">NOBODY<br>PROGRAMMED<br>IT TO DO<br>THAT.</div>
+          <div class="fbody"><div class="ca" id="frameCaBig" style="grid-template-columns:repeat(23,4px);grid-auto-rows:3px;gap:0"></div></div>
+          <div class="ffoot">EP 016 · EMERGENCE</div>
+        </div><span class="app-cap">EPISODE FRAME · 1080×1920 AT 1∕9</span></div>
+
+        <div class="app"><div class="light-app">
+          <div class="lmark"><div class="ca" id="lightCa" style="grid-template-columns:repeat(11,5px);grid-auto-rows:5px;gap:0"></div></div>
+          <div><div class="ltxt">AI UNDER<br>THE HOOD</div><div class="lsub">ALGONACCI / 002</div></div>
+        </div><span class="app-cap">LIGHT APPLICATION</span></div>
+      </div>
+
+      <footer>
+        <span class="mo"><b>MOTION — ITERATE.</b> One generation per beat, top to bottom, constant rate, no easing and no fade. The rule bar stays on screen unchanged the whole time, so the viewer can verify that nothing new is ever introduced. That verification <b>is</b> the idea.</span>
+        <span>MARK 08.1</span>
+      </footer>
+    </article>
+
+  </section>
+
+  <footer class="board-footer">
+    <span>ALGONACCI / AI UNDER THE HOOD</span>
+    <span>IDENTITY EXPLORATION — NOT FINAL ARTWORK — NO DIRECTION SELECTED</span>
+    <span>BOARD 01 / 01</span>
+  </footer>
+</main>
+
+<script>
+/* Every field on this board is computed rather than drawn by hand — a board
+   about computation should not fake its own diagrams. The PRNG is seeded so
+   two renders are byte-identical. */
+const rnd = (function (a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+})(20260831);
+
+const el = (id) => document.getElementById(id);
+const add = (p, tag, cls, style) => {
+  const n = document.createElement(tag || "i");
+  if (cls) n.className = cls;
+  if (style) n.setAttribute("style", style);
+  p.appendChild(n);
+  return n;
+};
+
+/* ── masthead pipeline ───────────────────────────────────────────────── */
+"ATTENTION IS ALL YOU NEED".split("").forEach(() => add(el("pipeChar")));
+[104, 62, 148, 88, 126, 70, 168, 96].forEach((w) => add(el("pipeTok"), "i", null, "width:" + w + "px"));
+for (let i = 0; i < 62; i++) {
+  add(el("pipeVec"), "i", null, "height:" + (6 + rnd() * 84).toFixed(1) + "px");
+}
+for (let i = 0; i < 62; i++) {
+  const h = 92 * Math.exp(-i / 9) + rnd() * 4;
+  add(el("pipeDist"), "i", i === 2 ? "pick" : null, "height:" + Math.max(2, h).toFixed(1) + "px");
+}
+
+/* ── 01 · ribbon ─────────────────────────────────────────────────────── */
+const RIBBON = [
+  ["THE", "279", 0], ["·QUICK", "4062", 0], ["·BRO", "1808", 1], ["WN", "776", 1],
+  ["·FOX", "39935", 0], ["·JUMP", "18045", 1], ["S", "82", 1], ["·OVER", "1072", 0], ["·IT", "433", 0]
+];
+RIBBON.forEach(([t, id, split], i) => {
+  const r = add(el("ribbon"), "span", "r" + (split ? " split" : ""));
+  add(r, "b").textContent = t;
+  add(r, "s").textContent = String(i).padStart(2, "0") + " · " + id;
+});
+
+/* ── 02 · attention matrices ─────────────────────────────────────────── */
+function matrix(node, cols, rows, queryRow) {
+  if (!node) return;
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < cols; x++) {
+      if (x > y) { add(node, "i", "void"); continue; }
+      /* Attention concentrates on the diagonal and on the first token — the
+         well-documented attention sink. Faking a flat random field would be a
+         prettier picture of a thing that does not happen. */
+      let w = Math.exp(-(y - x) / 2.4) + (x === 0 ? 0.55 : 0) + rnd() * 0.16;
+      w = Math.min(1, w / 1.7);
+      const q = y === queryRow;
+      add(node, "i", q ? "q" : null, "opacity:" + (0.1 + w * 0.9).toFixed(2));
+    }
+  }
+}
+matrix(el("markMx"), 6, 6, -1);
+matrix(el("bigMx"), 14, 14, 8);
+matrix(el("bugMx"), 4, 4, -1);
+matrix(el("bug64Mx"), 4, 4, -1);
+matrix(el("frameMx"), 4, 4, -1);
+matrix(el("frameMxBig"), 5, 5, 3);
+matrix(el("lightMx"), 5, 5, -1);
+el("lightMx").querySelectorAll("i").forEach((n) => {
+  n.style.background = n.classList.contains("void") ? "transparent" : "#14141a";
+  if (n.classList.contains("void")) n.style.border = "1px solid #cbc8c0";
+});
+for (let y = 0; y < 14; y++) {
+  add(el("rowSum"), "i", y === 8 ? "q" : null, "width:" + (18 + rnd() * 44).toFixed(0) + "px");
+}
+
+/* ── 03 · scatter ───────────────────────────────────────────────────── */
+const HULLS = [[326, 92, 66, 40], [614, 168, 66, 34], [858, 92, 54, 38]];
+HULLS.forEach(([cx, cy, rx, ry]) => {
+  for (let i = 0; i < 13; i++) {
+    const a = rnd() * Math.PI * 2, r = Math.sqrt(rnd());
+    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    c.setAttribute("cx", (cx + Math.cos(a) * rx * r).toFixed(1));
+    c.setAttribute("cy", (cy + Math.sin(a) * ry * r).toFixed(1));
+    c.setAttribute("r", "3.2");
+    c.setAttribute("class", "pt");
+    c.setAttribute("opacity", (0.4 + rnd() * 0.5).toFixed(2));
+    el("ptGroup").appendChild(c);
+  }
+});
+
+/* ── 04 · distribution ──────────────────────────────────────────────── */
+const CAND = [
+  ["·the", 0.312], ["·a", 0.184], ["·its", 0.121], ["·their", 0.086],
+  ["·our", 0.061], ["·this", 0.044], ["·every", 0.031], ["·no", 0.022]
+];
+CAND.forEach(([t, p], i) => {
+  const row = add(el("distList"), "div", "row" + (i === 2 ? " picked" : ""));
+  add(row, "span", "lab").textContent = t;
+  add(row, "i", "bar", "width:" + (p * 640).toFixed(0) + "px");
+  add(row, "span", "p").textContent = p.toFixed(3);
+});
+for (let i = 0; i < 176; i++) {
+  add(el("tail"), "i", null, "height:" + Math.max(1, 40 * Math.exp(-i / 26)).toFixed(1) + "px");
+}
+[[0.2, "t02"], [0.8, "t08"], [1.5, "t15"]].forEach(([T, id]) => {
+  const logits = [3.1, 2.5, 2.1, 1.7, 1.3, 0.9, 0.5, 0.1];
+  const ex = logits.map((l) => Math.exp(l / T));
+  const s = ex.reduce((a, b) => a + b, 0);
+  ex.forEach((v) => add(el(id), "i", null, "height:" + Math.min(60, Math.max(2, (v / s) * 60 * 1.55)).toFixed(1) + "px"));
+});
+
+/* ── 06 · context band ──────────────────────────────────────────────── */
+function band(node, n, from, to, edges) {
+  for (let i = 0; i < n; i++) {
+    const inside = i >= from && i < to;
+    if (edges && (i === from || i === to - 1)) { add(node, "i", "edge"); continue; }
+    add(node, "i", inside ? "in" : null);
+  }
+}
+band(el("ctxBand"), 250, 96, 172, true);
+band(el("markBand"), 21, 7, 14, false);
+
+/* ── 07 · vectors ───────────────────────────────────────────────────── */
+function bars(node, n, mode) {
+  if (!node) return;
+  for (let i = 0; i < n; i++) {
+    if (mode === "dist") {
+      const h = 34 * Math.exp(-i / 2.6) + rnd() * 2;
+      add(node, "i", i === 1 ? "pk" : null, "height:" + Math.max(2, h).toFixed(1) + "px");
+    } else {
+      const v = rnd() * 2 - 1;
+      add(node, "i", v < 0 ? "n" : null, "height:" + (5 + Math.abs(v) * 29).toFixed(1) + "px");
+    }
+  }
+}
+bars(el("quadVec"), 6);
+bars(el("quadDist"), 6, "dist");
+bars(el("stateVec"), 8);
+bars(el("stateDist"), 8, "dist");
+
+/* ── 08 · rule 110 ──────────────────────────────────────────────────── */
+/* Chosen because it is provably Turing-complete: the strongest available
+   evidence that trivial local rules can compound into arbitrary behaviour. */
+const RULE = 110;
+function ca(node, w, gens, seedClass) {
+  if (!node) return;
+  let row = new Array(w).fill(0);
+  row[w - 2] = 1;
+  for (let g = 0; g < gens; g++) {
+    for (let i = 0; i < w; i++) {
+      const cls = row[i] ? (g === 0 && seedClass ? "seed" : "on") : null;
+      add(node, "i", cls);
+    }
+    const next = new Array(w).fill(0);
+    for (let i = 0; i < w; i++) {
+      const l = row[(i - 1 + w) % w], c = row[i], r = row[(i + 1) % w];
+      next[i] = (RULE >> ((l << 2) | (c << 1) | r)) & 1;
+    }
+    row = next;
+  }
+}
+ca(el("bigCa"), 40, 26, true);
+ca(el("markCa"), 11, 11);
+ca(el("bugCa"), 7, 7);
+ca(el("bug64Ca"), 7, 7);
+ca(el("frameCa"), 7, 7);
+ca(el("frameCaBig"), 23, 13);
+ca(el("lightCa"), 11, 11);
+el("lightCa").querySelectorAll("i").forEach((n) => {
+  n.style.background = n.classList.contains("on") ? "#14141a" : "#dedbd3";
+});
+
+/* the eight cases of rule 110, drawn as the rule itself */
+for (let n = 7; n >= 0; n--) {
+  const rc = add(el("ruleCases"), "div", "rulecase");
+  const top = add(rc, "div", "top");
+  [(n >> 2) & 1, (n >> 1) & 1, n & 1].forEach((b) => add(top, "i", b ? "on" : null));
+  const out = add(rc, "div", "out");
+  add(out, "i", ((RULE >> n) & 1) ? "on" : null);
+}
+</script>
+</body>
+</html>

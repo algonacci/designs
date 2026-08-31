@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 06 Next Token</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  .head-line { font-size: var(--t-head); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; }
+  .prompt { font-family: var(--mono); font-size: 28px; color: var(--ink-4); }
+  .prompt b { color: var(--ink-2); font-weight: 400; }
+
+  /* MACRO FIELD — the whole vocabulary, 800 buckets over 50 257 tokens. */
+  .macro-field { position: relative; display: flex; align-items: flex-end; height: 78px; }
+  .macro-field i { display: block; width: 1px; background: var(--ink-4); flex: none; }
+
+  /* MAGNIFIED VIEW — the same eight candidates, at ×6 300. */
+  .zoom { display: flex; align-items: flex-end; gap: 10px; height: 172px; }
+  .zoom .col { display: flex; flex-direction: column; align-items: center; flex: none; width: 90px; }
+  .zoom .bar { width: 90px; background: var(--ink); }
+  .zoom .col.sampled .bar { background: var(--selected); }
+  .zoom .col.cut .bar { background: var(--ink-4); }
+  .zlabels { display: flex; gap: 10px; margin-top: 12px; }
+  .zlabels div {
+    width: 90px; flex: none; text-align: center;
+    font-family: var(--mono); font-size: 15px; color: var(--ink-3);
+  }
+  .zlabels div.sampled { color: var(--selected); }
+  .zlabels div.cut { color: var(--ink-4); }
+  .zlabels div s { display: block; text-decoration: none; font-size: 12px; color: var(--ink-4); margin-top: 5px; }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>AI UNDER THE HOOD<b> · 007</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+
+    <div class="section-mark">04 · LONG TAIL · MAGNIFIED</div>
+
+    <div class="head-line" style="margin-top:var(--u3)">IT DOES NOT LOOK UP<br>THE ANSWER. IT DRAWS ONE.</div>
+
+    <div class="prompt" style="margin-top:var(--u3)">"The quick brown fox jumps over <b>▮</b>"</div>
+
+    <!-- MAGNIFICATION / INSET.
+         Top-k = 8 of 50 257 is 0.13 px wide at this scale. Widening it so that
+         it reads would falsify the ratio, which this series does not do. The
+         true aperture stays at its correct width, is drawn at the 1 px
+         rendering floor, says so, and the magnified view is fanned out beneath
+         it with the factor printed. -->
+    <div class="magnify" style="margin-top:var(--u4)">
+
+      <div class="macro" style="position:relative;display:inline-block">
+        <div class="macro-field" id="macro"></div>
+        <div class="aperture" id="trueAp" style="position:absolute;top:-10px;bottom:-10px;padding:0"></div>
+      </div>
+
+      <div style="position:relative;height:64px">
+        <div class="note up" id="nTrue" style="top:22px;--len:26px">
+          <em>TRUE APERTURE · TOP-K = 8 OF 50 257</em><br>0.13 PX WIDE — DRAWN AT THE 1 PX RENDERING FLOOR</div>
+      </div>
+
+      <svg class="fan" id="fan" width="912" height="86" style="position:relative;display:block"></svg>
+
+      <div style="position:relative;display:inline-block;margin-top:var(--u2)">
+        <div>
+          <div class="zoom" id="zoom"></div>
+          <div class="zlabels" id="zlabels"></div>
+        </div>
+        <div class="aperture" style="position:absolute;left:-14px;right:-14px;top:-12px;bottom:44px;padding:0"></div>
+      </div>
+
+    </div>
+
+    <div style="position:relative;height:104px;margin-top:var(--u2)">
+      <div class="note up" style="left:0;top:24px;--len:24px">
+        <span class="mag-factor">MAGNIFIED ×6 300</span> · THE RATIO IS UNCHANGED</div>
+      <div class="note up" style="left:0;top:74px;--len:0px">
+        <span class="sq" style="color:var(--selected)"></span><b>RANK 3 WAS SAMPLED.</b> THE FAVOURITE LOST, AND NOTHING IS BROKEN.</div>
+    </div>
+
+    <div class="readout" style="margin-top:var(--u2)">
+      <span class="k">T</span> <span class="v">0.80</span>
+      &nbsp;&nbsp;<span class="k">TOP-P</span> <span class="v">0.92</span>
+      &nbsp;&nbsp;<span class="k">SAMPLED</span> <span class="v" style="color:var(--selected)">RANK 3</span>
+    </div>
+
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>007</b></span>
+    <span>SAMPLING</span>
+  </footer>
+
+</div>
+<script>
+const VOCAB = 50257, K = 8, BUCKETS = 800;
+
+/* Macro field: 800 buckets over the whole vocabulary, one pixel each.
+   Bucket height is the probability mass falling in it, so the strip is a real
+   histogram of the distribution and not a decorative gradient. */
+const macro = document.getElementById("macro");
+for (let i = 0; i < BUCKETS; i++) {
+  const b = document.createElement("i");
+  b.style.height = Math.max(1, 74 * Math.exp(-i / 34)).toFixed(2) + "px";
+  macro.appendChild(b);
+}
+
+/* True aperture, at its mathematically correct width. */
+const trueW = (K / VOCAB) * BUCKETS;         /* ≈ 0.127 px */
+const drawnW = Math.max(1, trueW);            /* the rendering floor, declared */
+const ap = document.getElementById("trueAp");
+ap.style.left = "0px";
+ap.style.right = (BUCKETS - drawnW) + "px";
+ap.style.setProperty("--ap-edge", "1px");
+document.getElementById("nTrue").style.left = "0px";
+
+/* The eight candidates, magnified. */
+const CAND = [
+  ["·the",   0.284, ""],
+  ["·a",     0.171, ""],
+  ["·its",   0.126, "sampled"],
+  ["·their", 0.094, ""],
+  ["·his",   0.061, ""],
+  ["·every", 0.043, ""],
+  ["·some",  0.029, "cut"],
+  ["·no",    0.021, "cut"]
+];
+const zoom = document.getElementById("zoom");
+const zlabels = document.getElementById("zlabels");
+CAND.forEach(([t, p, cls]) => {
+  const col = document.createElement("div");
+  col.className = "col" + (cls ? " " + cls : "");
+  const bar = document.createElement("div");
+  bar.className = "bar";
+  bar.style.height = (p * 560).toFixed(0) + "px";
+  col.appendChild(bar);
+  zoom.appendChild(col);
+
+  const lab = document.createElement("div");
+  if (cls) lab.className = cls;
+  lab.innerHTML = t + "<s>" + p.toFixed(3) + "</s>";
+  zlabels.appendChild(lab);
+});
+
+/* Fan lines: from the true aperture's two edges out to the inset's two edges.
+   Structure, so hairline ink-4 — never sodium, which belongs to the edges the
+   fan connects. */
+const ZW = CAND.length * 90 + (CAND.length - 1) * 10;
+const fan = document.getElementById("fan");
+fan.setAttribute("viewBox", "0 0 912 86");
+[[0, -14], [drawnW, ZW + 14]].forEach(([x0, x1]) => {
+  const l = document.createElementNS("http://www.w3.org/2000/svg", "line");
+  l.setAttribute("x1", x0.toFixed(2));
+  l.setAttribute("y1", "0");
+  l.setAttribute("x2", x1);
+  l.setAttribute("y2", "86");
+  fan.appendChild(l);
+});
+</script>
+</body>
+</html>

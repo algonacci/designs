@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 08 Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  .statement {
+    font-size: var(--t-statement);
+    font-weight: 700;
+    line-height: .92;
+    letter-spacing: var(--track-title);
+  }
+  /* The last word of the statement is set inside the aperture and tokenised
+     beneath it. The frame is quiet, but the system is still running — and the
+     joke is true: "words." is not one word to a model. */
+  .last {
+    display: inline-block;
+    position: relative;
+    padding: 0 22px;
+  }
+  .last::before, .last::after {
+    content: "";
+    position: absolute;
+    top: -6px; bottom: -6px;
+    width: var(--w-edge);
+    background: var(--sodium);
+  }
+  .last::before { left: 0; }
+  .last::after { right: 0; }
+  .seq.small .g { font-size: var(--t-note); padding: 10px 9px; }
+  .seq.small .id { font-size: 13px; margin-top: 7px; }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>AI UNDER THE HOOD<b> · 002</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+
+    <div class="statement">
+      THE MODEL<br>
+      DOESN'T SEE<br>
+      <span class="last">WORDS.</span>
+    </div>
+
+    <div class="seq small" id="seq" style="margin-top:var(--u4);margin-left:22px"></div>
+
+    <div style="position:relative;height:96px">
+      <div class="note up" style="left:22px;top:48px;--len:32px">
+        SIX CHARACTERS · <b>TWO TOKENS</b> · NEITHER OF THEM A WORD</div>
+    </div>
+
+    <div style="height:var(--u6)"></div>
+
+    <div style="position:relative;display:inline-block">
+      <div class="band" id="band"></div>
+      <div class="aperture" id="ap" style="position:absolute;top:-10px;bottom:-10px;padding:0"></div>
+    </div>
+
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>002</b></span>
+    <span>REPRESENTATION</span>
+  </footer>
+
+</div>
+<script>
+[["·words", "2456"], [".", "13"]].forEach(([g, id]) => {
+  const t = document.createElement("div");
+  t.className = "tok";
+  t.innerHTML =
+    '<div class="g">' + (g.startsWith("·") ? '<span class="sp">·</span>' + g.slice(1) : g) + '</div>' +
+    '<div class="id">' + id + "</div>";
+  document.getElementById("seq").appendChild(t);
+});
+
+const N = 128, FROM = 20, TO = 34, TICK = 3, GAP = 3, STEP = TICK + GAP;
+const band = document.getElementById("band");
+for (let i = 0; i < N; i++) {
+  const n = document.createElement("i");
+  if (i >= FROM && i < TO) n.className = "in";
+  band.appendChild(n);
+}
+const x0 = FROM * STEP, x1 = (TO - 1) * STEP + TICK, W = (N - 1) * STEP + TICK;
+const ap = document.getElementById("ap");
+ap.style.left = (x0 - 10) + "px";
+ap.style.right = (W - x1 - 10) + "px";
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 01 Series Identity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  /* The identity frame is the one place the aperture is allowed to be the
+     whole composition rather than the container for a diagram. */
+  .id-block { display: flex; flex-direction: column; gap: var(--u3); }
+  .id-title { font-size: 132px; font-weight: 700; line-height: .84; letter-spacing: var(--track-title); }
+  .principle {
+    font-family: var(--mono);
+    font-size: var(--t-note);
+    letter-spacing: var(--track-micro);
+    color: var(--ink-2);
+  }
+  .big-band { height: 150px; }
+  .big-band i { width: 4px; height: 40px; }
+  .big-band i.in { height: 118px; }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>ALGONACCI<b> · SERIES 002</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+    <div class="id-block">
+
+      <div class="ghost">… ALGONACCI PRESENTS · SERIES TWO · EPISODE</div>
+
+      <div class="aperture fit" style="--ap-top:-14px;--ap-bottom:-14px;padding:0 44px">
+        <div class="id-title">AI<br>UNDER<br>THE HOOD</div>
+      </div>
+
+      <div class="ghost">TOKENISATION · ATTENTION · SAMPLING · AGENTS …</div>
+
+      <div class="principle">MAKE INVISIBLE COMPUTATION VISIBLE</div>
+
+      <div style="position:relative;margin-top:var(--u4);display:inline-block">
+        <div class="band big-band" id="band"></div>
+        <div class="aperture" id="bandAp" style="position:absolute;top:-12px;bottom:-12px;padding:0"></div>
+      </div>
+
+      <div style="position:relative;height:96px" id="bandNotes">
+        <div class="note up" style="left:0;top:56px;--len:38px">OUTSIDE — <b>STILL DRAWN</b></div>
+        <div class="note up" id="nIn" style="top:56px;--len:38px"><em>IN VIEW</em></div>
+        <div class="note up" id="nOut" style="top:56px;--len:38px">NOT YET ARRIVED</div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>000</b></span>
+    <span>SERIES IDENTITY</span>
+  </footer>
+
+</div>
+<script>
+/* The aperture is positioned FROM the band rather than guessed at, so the
+   edges can never drift off the tokens they are supposed to be bracketing. */
+const N = 128, FROM = 54, TO = 76, TICK = 4, GAP = 3, STEP = TICK + GAP;
+const band = document.getElementById("band");
+for (let i = 0; i < N; i++) {
+  const n = document.createElement("i");
+  if (i >= FROM && i < TO) n.className = "in";
+  band.appendChild(n);
+}
+const x0 = FROM * STEP, x1 = (TO - 1) * STEP + TICK, W = (N - 1) * STEP + TICK;
+const ap = document.getElementById("bandAp");
+ap.style.left = (x0 - 14) + "px";
+ap.style.right = (W - x1 - 14) + "px";
+document.getElementById("nIn").style.left = (x0 - 12) + "px";
+document.getElementById("nOut").style.left = (x1 + 24) + "px";
+</script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 06 Temperature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  .head-line { font-size: var(--t-head); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; }
+  .logits {
+    font-family: var(--mono);
+    font-size: var(--t-note);
+    letter-spacing: .04em;
+    color: var(--ink-2);
+    font-variant-numeric: tabular-nums;
+  }
+  .panel { margin-top: var(--u4); }
+  .hist { display: flex; align-items: flex-end; gap: 8px; height: 190px; }
+  .hist i { display: block; width: 96px; background: var(--ink); flex: none; }
+  .tlabel {
+    display: flex;
+    align-items: baseline;
+    gap: var(--u2);
+    font-family: var(--mono);
+    font-size: var(--t-data);
+    letter-spacing: var(--track-mono);
+    color: var(--ink-2);
+    margin-bottom: var(--u2);
+  }
+  /* Not sodium: a temperature value is not an aperture concept, and
+     sodium is reserved. */
+  .tlabel b { color: var(--ink); font-weight: 500; }
+  .tlabel span { color: var(--ink-4); font-size: var(--t-note); }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>AI UNDER THE HOOD<b> · 008</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+
+    <div class="section-mark">04 · LONG TAIL / TEMPERATURE</div>
+
+    <div class="head-line" style="margin-top:var(--u3)">SAME NUMBERS.<br>THREE DIFFERENT SHAPES.</div>
+
+    <div class="readout" style="margin-top:var(--u3)">
+      <span class="k">LOGITS</span>
+      <span class="logits" id="logits"></span>
+    </div>
+    <div class="note" style="position:static;margin-top:var(--u);color:var(--ink-4)">
+      IDENTICAL IN ALL THREE PANELS. ONLY THE DIVISOR CHANGES.
+    </div>
+
+    <div id="panels"></div>
+
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>008</b></span>
+    <span>TEMPERATURE</span>
+  </footer>
+
+</div>
+<script>
+const LOGITS = [3.10, 2.50, 2.10, 1.70, 1.30, 0.90, 0.50, 0.10];
+document.getElementById("logits").textContent = LOGITS.map(v => v.toFixed(2)).join("  ");
+
+const BAR = 96, GAP = 8, STEP = BAR + GAP, H = 190;
+
+function softmax(T) {
+  const ex = LOGITS.map(l => Math.exp(l / T));
+  const s = ex.reduce((a, b) => a + b, 0);
+  return ex.map(v => v / s);
+}
+
+/* The aperture marks the smallest set of candidates holding 90% of the mass.
+   It is computed, not chosen — so the widening is evidence, not illustration. */
+function coverage(p, target) {
+  let acc = 0, n = 0;
+  for (const v of p) { acc += v; n++; if (acc >= target) break; }
+  return n;
+}
+
+const panels = document.getElementById("panels");
+[[0.2, "RIGID"], [0.8, "SHIPPED"], [1.5, "UNHINGED"]].forEach(([T, word]) => {
+  const p = softmax(T);
+  const k = coverage(p, 0.9);
+
+  const wrap = document.createElement("div");
+  wrap.className = "panel";
+  wrap.innerHTML =
+    '<div class="tlabel">T = <b>' + T.toFixed(1) + '</b><span>' + word + '</span></div>' +
+    '<div style="position:relative;display:inline-block">' +
+      '<div class="hist"></div>' +
+      '<div class="aperture" style="position:absolute;top:-12px;bottom:-12px;padding:0"></div>' +
+    '</div>' +
+    '<div style="position:relative;height:62px">' +
+      '<div class="note up" style="left:0;top:34px;--len:22px">' +
+        '<em>90% OF THE MASS</em> LIVES IN <b>' + k + (k === 1 ? ' TOKEN' : ' TOKENS') + '</b></div>' +
+    '</div>';
+
+  const hist = wrap.querySelector(".hist");
+  p.forEach((v, i) => {
+    const b = document.createElement("i");
+    b.style.height = Math.max(2, v * H * 1.05).toFixed(1) + "px";
+    if (i >= k) b.style.background = "var(--ink-4)";
+    hist.appendChild(b);
+  });
+
+  const ap = wrap.querySelector(".aperture");
+  const x1 = (k - 1) * STEP + BAR;
+  const W = (LOGITS.length - 1) * STEP + BAR;
+  ap.style.left = "-12px";
+  ap.style.right = (W - x1 + 12) + "px";
+
+  panels.appendChild(wrap);
+});
+</script>
+</body>
+</html>

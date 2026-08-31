@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 05 Representation · Beat B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  .head-line { font-size: var(--t-head); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; }
+
+  /* A reduced echo of Beat A's vector, so the two beats visibly describe the
+     same object. Continuity is carried by the artefact, not by a caption. */
+  .vecho { position: relative; height: 44px; }
+  .vecho .ax { position: absolute; left: 0; right: 0; top: 22px; height: 1px; background: var(--negative); }
+  .vecho i { position: absolute; width: 6px; background: var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>AI UNDER THE HOOD<b> · 003</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+
+    <div class="section-mark">BEAT B · VECTOR → SPACE</div>
+
+    <div class="head-line" style="margin-top:var(--u3)">MEANING IS A POSITION.<br>DISTANCE IS THE MEANING.</div>
+
+    <!-- No aperture in this frame's body, deliberately. Nothing here is hidden,
+         masked or out of view, and the canonical rule forbids using the device
+         where it would not mean anything. Series recognition is carried by the
+         section marker and the corner bug. -->
+    <div style="display:flex;align-items:center;gap:var(--u3);margin-top:var(--u4)">
+      <span style="font-family:var(--mono);font-size:var(--t-note);letter-spacing:var(--track-micro);color:var(--ink-4);white-space:nowrap">THE SAME VECTOR</span>
+      <div class="vecho" id="vecho"></div>
+    </div>
+
+    <div class="plot" style="position:relative;margin-top:var(--u3)">
+      <svg viewBox="0 0 912 470" width="912" height="470">
+        <path class="ax" d="M40 420H890M96 448V22"/>
+        <g class="ax">
+          <path d="M220 416v8M400 416v8M580 416v8M760 416v8"/>
+          <path d="M92 340h8M92 262h8M92 184h8M92 106h8"/>
+        </g>
+        <path class="hull" d="M206 112 300 74 396 106 402 190 300 224 208 190Z"/>
+        <path class="hull" d="M452 272 556 238 660 274 636 364 500 372Z"/>
+        <path class="hull" d="M700 100 800 68 872 122 842 202 722 196Z"/>
+        <g id="pts"></g>
+        <path class="vec" d="M96 420 300 148"/>
+        <circle class="pt sel" cx="300" cy="148" r="10"/>
+        <circle class="pt sel" cx="556" cy="304" r="10"/>
+        <path class="dline" d="M300 148 556 304"/>
+        <text class="plab" x="208" y="52" fill="#6E6C73">ANIMALS</text>
+        <text class="plab" x="458" y="410" fill="#6E6C73">PLACES</text>
+        <text class="plab" x="700" y="50" fill="#6E6C73">ACTIONS</text>
+        <text class="plab" x="368" y="242" fill="#FF2D6F">d = 0.31</text>
+        <text class="plab" x="300" y="130" text-anchor="middle" fill="#F2EFE9">fox</text>
+        <text class="plab" x="556" y="286" text-anchor="middle" fill="#F2EFE9">barn</text>
+      </svg>
+      <div class="note up" style="left:40px;top:500px;--len:44px">
+        PROJECTED — <b>4 096 DIMENSIONS DRAWN AS 2.</b><br>DISTANCE SURVIVES ONLY APPROXIMATELY.</div>
+    </div>
+
+    <div class="readout" style="margin-top:110px">
+      <span class="k">METRIC</span> <span class="v">COSINE</span>
+      &nbsp;&nbsp;<span class="k">d(fox, barn)</span> <span class="v" style="color:var(--selected)">0.31</span>
+      &nbsp;&nbsp;<span class="k">PROJECTION</span> <span class="v">4096 → 2</span>
+    </div>
+
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>003</b></span>
+    <span>REPRESENTATION · B</span>
+  </footer>
+
+</div>
+<script>
+const rnd = (function (a) { return function () {
+  a |= 0; a = (a + 0x6D2B79F5) | 0;
+  let t = Math.imul(a ^ (a >>> 15), 1 | a);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}; })(20260902);
+
+/* Same seed and same draw order as Beat A, so this really is the same vector. */
+const D = 24, BW = 6, BG = 5, STEP = BW + BG, AXIS = 22;
+const ve = document.getElementById("vecho");
+const ax = document.createElement("div");
+ax.className = "ax";
+ve.appendChild(ax);
+for (let i = 0; i < D; i++) {
+  const v = rnd() * 2 - 1;
+  const h = Math.max(3, Math.abs(v) * 19);
+  const b = document.createElement("i");
+  b.style.left = (i * STEP) + "px";
+  b.style.height = h.toFixed(1) + "px";
+  b.style.top = (v < 0 ? AXIS + 1 : AXIS - h).toFixed(1) + "px";
+  ve.appendChild(b);
+}
+ve.style.width = ((D - 1) * STEP + BW) + "px";
+
+const HULLS = [[300, 150, 92, 56], [556, 304, 92, 52], [786, 134, 80, 54]];
+const g = document.getElementById("pts");
+HULLS.forEach(([cx, cy, rx, ry]) => {
+  for (let i = 0; i < 18; i++) {
+    const a = rnd() * Math.PI * 2, r = Math.sqrt(rnd());
+    const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    c.setAttribute("cx", (cx + Math.cos(a) * rx * r).toFixed(1));
+    c.setAttribute("cy", (cy + Math.sin(a) * ry * r).toFixed(1));
+    c.setAttribute("r", "5");
+    c.setAttribute("class", "pt");
+    c.setAttribute("opacity", (0.5 + rnd() * 0.5).toFixed(2));
+    g.appendChild(c);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 07 Residual</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  .head-line { font-size: var(--t-head); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; }
+
+  /* The residual stream is drawn HORIZONTALLY. Every transformer diagram in
+     circulation runs top to bottom; running it along the reading axis lets the
+     aperture bracket "which layers you are looking at" using the same
+     horizontal device as everywhere else in the series. */
+  .stream { position: relative; height: 470px; }
+  .spine { left: 0; right: 0; top: 231px; height: 8px; width: auto; }
+  .rblock { transform: translateX(-50%); }
+  .arm { width: 1px; background: var(--ink-4); }
+  .join { transform: translate(-50%, -50%); }
+  .caliper {
+    position: absolute;
+    height: 40px;
+    border-left: 1px solid var(--negative);
+    border-right: 1px solid var(--negative);
+  }
+  .caliper::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    height: 1px;
+    background: var(--negative);
+  }
+  .layers { display: flex; align-items: center; gap: 3px; height: 40px; }
+  .layers i { display: block; width: 4px; height: 12px; background: var(--ink-4); flex: none; }
+  .layers i.in { height: 32px; background: var(--ink-2); }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>AI UNDER THE HOOD<b> · 009</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+
+    <div class="section-mark">05 · RESIDUAL STREAM</div>
+
+    <div class="head-line" style="margin-top:var(--u3)">NOTHING IS REPLACED.<br>THINGS ARE ADDED.</div>
+
+    <div style="height:var(--u4)"></div>
+
+    <div class="stream" id="stream">
+      <div class="spine"></div>
+      <div class="caliper" style="left:0;top:215px;width:40px"></div>
+      <div class="caliper" style="right:0;top:215px;width:40px"></div>
+    </div>
+
+    <div style="position:relative;height:96px">
+      <div class="note up" style="left:0;top:34px;--len:26px">
+        <span class="sq" style="color:var(--negative)"></span><b>d = 4 096</b> AT BOTH ENDS. THE WIDTH NEVER CHANGES.</div>
+      <div class="note up" style="left:0;top:82px;--len:0px">
+        <span class="sq" style="color:var(--negative)"></span>CYAN Δ = THIS LAYER <b>SUBTRACTED</b>. SIGN, NOT DECORATION.</div>
+    </div>
+
+    <!-- Same aperture logic as every other frame: five layers in view, ninety-one
+         still there. -->
+    <div style="position:relative;display:inline-block;margin-top:var(--u3)">
+      <div class="layers" id="layers"></div>
+      <div class="aperture" id="ap" style="position:absolute;top:-10px;bottom:-10px;padding:0"></div>
+    </div>
+
+    <div style="position:relative;height:70px">
+      <div class="note up" style="left:0;top:44px;--len:26px"><em>LAYERS 12—16</em> OF <b>96</b></div>
+    </div>
+
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>009</b></span>
+    <span>TRANSFORMER BLOCKS</span>
+  </footer>
+
+</div>
+<script>
+/* Five layers, evenly spaced, kept clear of the frame edge: a block is
+   centred on its join, so the outermost centres cannot sit closer than half a
+   block width to the margin. */
+const BLOCKS = [
+  { x:  92, side: -1, name: "ATTN", d: "+Δ", sub: false },
+  { x: 275, side:  1, name: "MLP",  d: "+Δ", sub: false },
+  { x: 458, side: -1, name: "ATTN", d: "−Δ", sub: true  },
+  { x: 641, side:  1, name: "MLP",  d: "+Δ", sub: false },
+  { x: 820, side: -1, name: "ATTN", d: "+Δ", sub: false }
+];
+
+const stream = document.getElementById("stream");
+const SPINE_Y = 235;
+
+BLOCKS.forEach(({ x, side, name, d, sub }) => {
+  const blockY = side < 0 ? SPINE_Y - 150 : SPINE_Y + 76;
+
+  const arm = document.createElement("div");
+  arm.className = "arm";
+  arm.style.left = x + "px";
+  arm.style.top = (side < 0 ? blockY + 74 : SPINE_Y) + "px";
+  arm.style.height = "76px";
+  stream.appendChild(arm);
+
+  const b = document.createElement("div");
+  b.className = "rblock" + (sub ? " sub" : "");
+  b.style.left = x + "px";
+  b.style.top = blockY + "px";
+  b.innerHTML = name + ' <span class="d">' + d + "</span>";
+  stream.appendChild(b);
+
+  const j = document.createElement("div");
+  j.className = "join" + (sub ? " sub" : "");
+  j.style.left = x + "px";
+  j.style.top = (SPINE_Y + 4) + "px";
+  stream.appendChild(j);
+});
+
+/* Layer ticks: 96 of them, five bright. */
+const L = 96, FROM = 12, TO = 17, TICK = 4, GAP = 3, STEP = TICK + GAP;
+const layers = document.getElementById("layers");
+for (let i = 0; i < L; i++) {
+  const n = document.createElement("i");
+  if (i >= FROM && i < TO) n.className = "in";
+  layers.appendChild(n);
+}
+const x0 = FROM * STEP, x1 = (TO - 1) * STEP + TICK, W = (L - 1) * STEP + TICK;
+const ap = document.getElementById("ap");
+ap.style.left = (x0 - 10) + "px";
+ap.style.right = (W - x1 - 10) + "px";
+</script>
+</body>
+</html>

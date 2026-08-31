@@ -1,0 +1,98 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AI UNDER THE HOOD — CANONICAL DESIGN TOKENS
+   Candidate. Not final. Series 002, Algonacci.
+
+   Every value below is referenced by name in system.css and in the frames.
+   Nothing in a frame should hardcode a colour or a size that exists here.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── GROUND ────────────────────────────────────────────────────────────
+     Near-black, very slightly cool. Not pure #000: pure black clips in
+     video encodes and kills the hairline structure the diagrams depend on. */
+  --ground:        #0A0A0D;
+  --ground-raised: #101016;   /* panels, inset frames */
+  --ground-sunk:   #07070A;   /* the region outside the aperture */
+
+  /* ── INK ───────────────────────────────────────────────────────────────
+     Warm white, shared with Systems at Scale. This is deliberate: the two
+     series belong to one publication and should share a paper colour. */
+  --ink:      #F2EFE9;
+  --ink-2:    #A8A69F;   /* secondary reading */
+  --ink-3:    #6E6C73;   /* annotation */
+  --ink-4:    #3E3E48;   /* structure, ticks, inactive sequence */
+  --hairline: #22232C;   /* grid, cell edges, table rules */
+
+  /* ── SIGNATURE ─────────────────────────────────────────────────────────
+     SODIUM. One colour carries the series. It marks the aperture and
+     nothing else may borrow it: if sodium is on screen, it is describing
+     what is currently in view.
+
+     Chosen over the magenta and aqua hypotheses because the aperture is the
+     device that repeats in every single frame, so the signature has to be
+     the aperture's colour or the series has no signature at all. */
+  --sodium:      #FFA524;
+  --sodium-dim:  #8A5A16;   /* aperture edge at rest / de-emphasised */
+  --sodium-wash: #241a08;   /* interior tint, barely there */
+
+  /* ── SEMANTIC ──────────────────────────────────────────────────────────
+     Two supporting hues, each with exactly one job. Adding a third would
+     make this a rainbow visualisation. */
+  --selected:  #FF2D6F;   /* the one candidate actually sampled. Rare. */
+  --negative:  #35E3C4;   /* sign: a subtracted delta, a negative component */
+
+  /* Uncertainty is texture, not hue — see .hatch in system.css.
+     Masking is absence, not colour — a masked cell is never filled. */
+  --invalid:   #FF4A2B;   /* reserved: genuinely invalid state only */
+
+  /* ── PAPER (light application) ─────────────────────────────────────────── */
+  --paper:      #F2EFE9;
+  --paper-ink:  #101016;
+  --paper-ink2: #5E5C64;
+  --paper-rule: #C9C6BE;
+
+  /* ── TYPE ──────────────────────────────────────────────────────────────
+     Archivo for editorial voice, IBM Plex Mono for anything a machine
+     produced. The split is a rule, not a preference: if the value on screen
+     came out of a computation, it is set in mono. */
+  --sans: Archivo, Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  /* Type scale for a 1080-wide frame. */
+  --t-statement: 108px;  /* editorial statement */
+  --t-title:     92px;   /* series title */
+  --t-head:      40px;   /* frame heading */
+  --t-lead:      30px;   /* lead body */
+  --t-data:      26px;   /* values inside diagrams */
+  --t-note:      20px;   /* annotation */
+  --t-micro:     16px;   /* serial, footer, axis ticks */
+
+  --track-title: -.055em;
+  --track-mono:  .1em;
+  --track-micro: .14em;
+
+  /* ── STROKE ────────────────────────────────────────────────────────────
+     Three weights only. A fourth weight makes diagrams look accidental. */
+  --w-hair:    1px;   /* structure: grid, cell edges, axes */
+  --w-mark:    2px;   /* data: bars, plotted marks, table rules */
+  --w-edge:    4px;   /* the aperture edge, and only the aperture edge */
+
+  /* ── SPACE ─────────────────────────────────────────────────────────────
+     12px base. Frame margin is 7 units. */
+  --u:   12px;
+  --u2:  24px;
+  --u3:  36px;
+  --u4:  48px;
+  --u6:  72px;
+  --u7:  84px;
+  --u8:  96px;
+
+  --frame-margin: 84px;
+
+  /* ── APERTURE GEOMETRY ─────────────────────────────────────────────────
+     The aperture is horizontal-only: two vertical rules, open top and
+     bottom. It constrains a sequence, and a sequence has no vertical
+     extent, so a closed box would be a lie about what it means. */
+  --ap-edge: var(--w-edge);
+  --ap-inset: 0px;
+}

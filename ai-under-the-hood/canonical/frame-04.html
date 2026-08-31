@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 04 Representation · Beat A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  .head-line { font-size: var(--t-head); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; }
+
+  /* A vector drawn from a centre axis. Sign is encoded by SIDE — which is what
+     sign is — so cyan can stay a mark instead of becoming a second brand
+     colour. Cyan appears here as the axis and a 3px cap, nothing more. */
+  .vfield { position: relative; height: 128px; }
+  .vaxis { position: absolute; left: 0; right: 0; top: 64px; height: 1px; background: var(--negative); }
+  .vfield i { position: absolute; width: 16px; background: var(--ink); }
+  .vfield i.neg { background: var(--ink-3); }
+  .vfield i.neg::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0;
+    height: 3px; background: var(--negative);
+  }
+  .state.tall { height: 104px; }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>AI UNDER THE HOOD<b> · 002</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+
+    <div class="section-mark">BEAT A · TEXT → VECTOR</div>
+
+    <div class="head-line" style="margin-top:var(--u3)">A MODEL HAS NEVER<br>SEEN A WORD.</div>
+
+    <div style="height:var(--u4)"></div>
+
+    <div class="states">
+      <div class="state tall"><span class="n">01 GLYPH</span><span class="v">fox</span><span class="op">WHAT YOU TYPED</span></div>
+      <div class="state tall"><span class="n">02 TOKEN ID</span><span class="v m">21831</span><span class="op">← LOOKUP · AN INDEX, NOT A MEANING</span></div>
+    </div>
+
+    <!-- The aperture is doing real work: it marks the 24 components of 4 096
+         that fit on the screen. Same device, same meaning as everywhere else —
+         what is outside is not absent, only out of view. -->
+    <div style="display:grid;grid-template-columns:210px 1fr;gap:var(--u2);align-items:center;height:168px;border-bottom:1px solid var(--hairline)">
+      <span style="font-family:var(--mono);font-size:var(--t-note);letter-spacing:var(--track-micro);color:var(--ink-2)">03 VECTOR</span>
+      <div style="position:relative;display:inline-block">
+        <div class="vfield" id="vec"></div>
+        <div class="aperture" id="vecAp" style="position:absolute;top:-10px;bottom:-10px;padding:0"></div>
+      </div>
+    </div>
+
+    <div style="position:relative;height:120px">
+      <div class="note up" style="left:210px;top:26px;--len:38px"><em>24 OF 4 096 SHOWN</em> — THE OTHER 4 072 ARE STILL THERE</div>
+      <div class="note up" style="left:210px;top:80px;--len:0px"><span class="sq" style="color:var(--negative)"></span>BELOW THE LINE = NEGATIVE. SIGN, NOT DECORATION.</div>
+    </div>
+
+    <div class="readout" style="margin-top:var(--u2)">
+      <span class="k">d_model</span> <span class="v">4096</span>
+      &nbsp;&nbsp;<span class="k">SHOWN</span> <span class="v">24</span>
+      &nbsp;&nbsp;<span class="k">NEXT</span> <span class="v">BEAT B — WHERE IT SITS</span>
+    </div>
+
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>002</b></span>
+    <span>REPRESENTATION · A</span>
+  </footer>
+
+</div>
+<script>
+const rnd = (function (a) { return function () {
+  a |= 0; a = (a + 0x6D2B79F5) | 0;
+  let t = Math.imul(a ^ (a >>> 15), 1 | a);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+  return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+}; })(20260902);
+
+const D = 24, BW = 16, BG = 12, STEP = BW + BG, AXIS = 64;
+const vec = document.getElementById("vec");
+const axis = document.createElement("div");
+axis.className = "vaxis";
+vec.appendChild(axis);
+for (let i = 0; i < D; i++) {
+  const v = rnd() * 2 - 1;
+  const h = Math.max(5, Math.abs(v) * 56);
+  const b = document.createElement("i");
+  b.style.left = (i * STEP) + "px";
+  b.style.height = h.toFixed(1) + "px";
+  if (v < 0) { b.className = "neg"; b.style.top = (AXIS + 1) + "px"; }
+  else { b.style.top = (AXIS - h).toFixed(1) + "px"; }
+  vec.appendChild(b);
+}
+vec.style.width = ((D - 1) * STEP + BW) + "px";
+const ap = document.getElementById("vecAp");
+ap.style.left = "-14px";
+ap.style.right = "-14px";
+</script>
+</body>
+</html>

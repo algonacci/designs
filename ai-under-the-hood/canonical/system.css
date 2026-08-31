@@ -1,0 +1,491 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   AI UNDER THE HOOD — CANONICAL VISUAL SYSTEM
+   Layer 1: series identity (aperture).
+   Layer 2: computational primitives (weight field, long tail, segmentation,
+            coordinate, residual, four states).
+
+   THE RULE THAT KEEPS THE TWO LAYERS FROM FIGHTING
+   ------------------------------------------------
+   The aperture is always at the EDGE of the content and always sodium.
+   The diagram is always INSIDE the aperture and never sodium.
+
+   The aperture answers "what is in view". The diagram answers "what is being
+   computed". They occupy different territory and different colour, so they
+   can share a frame without competing. A diagram that reaches for sodium, or
+   an aperture that wanders into the middle of a matrix, has broken the system.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+/* ─── FRAME CHROME ───────────────────────────────────────────────────────
+   Every episode frame is 1080×1920 with one header baseline and one footer
+   baseline. Systems at Scale settled on a single shared baseline after
+   production; this inherits that discipline rather than re-deriving it. */
+
+.frame {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  padding: var(--frame-margin);
+  background: var(--ground);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Plotting-paper grid. Present but almost subliminal — it establishes that
+   everything on screen is measured. */
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.019) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.019) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.f-head {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-micro);
+  color: var(--ink-3);
+  padding-bottom: var(--u2);
+  border-bottom: var(--w-hair) solid var(--hairline);
+}
+
+.f-body {
+  position: relative;
+  flex: 1;
+  padding: var(--u4) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.f-foot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-micro);
+  color: var(--ink-3);
+  padding-top: var(--u2);
+  border-top: var(--w-hair) solid var(--hairline);
+}
+
+.f-foot b, .f-head b { color: var(--ink-2); font-weight: 400; }
+
+/* ═══ LAYER 1 — SERIES IDENTITY ═══════════════════════════════════════════ */
+
+/* ─── THE MARK ───────────────────────────────────────────────────────────
+   A sequence of ticks running past two sodium edges. Inside: full height,
+   warm white. Outside: short, dim, and STILL DRAWN. The whole idea of the
+   series is in that last clause. */
+
+.mark {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--mk-gap, 4px);
+  height: var(--mk-h, 64px);
+  width: var(--mk-w, 64px);
+}
+.mark i {
+  display: block;
+  flex: none;
+  width: var(--mk-tick, 4px);
+  height: var(--mk-out, 20px);
+  background: var(--ink-4);
+}
+.mark i.in { height: var(--mk-in, 44px); background: var(--ink); }
+.mark .edge {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--mk-edge, 3px);
+  background: var(--sodium);
+}
+
+/* Monochrome variant: the edges become ink, the outside stays recessive by
+   value alone. The mark must survive with no colour at all. */
+.mark.mono i { background: var(--ink-4); }
+.mark.mono i.in { background: var(--ink-2); }
+.mark.mono .edge { background: var(--ink); }
+.mark.on-paper i { background: var(--paper-rule); }
+.mark.on-paper i.in { background: var(--paper-ink2); }
+.mark.on-paper .edge { background: var(--paper-ink); }
+
+/* ─── THE APERTURE ───────────────────────────────────────────────────────
+   Two vertical rules, open top and bottom, spanning the content zone.
+   Never a closed rectangle. */
+
+.aperture {
+  position: relative;
+  padding: 0 var(--u3);
+}
+.aperture.fit { display: inline-block; align-self: flex-start; }
+.aperture::before,
+.aperture::after {
+  content: "";
+  position: absolute;
+  top: var(--ap-top, 0);
+  bottom: var(--ap-bottom, 0);
+  width: var(--ap-edge);
+  background: var(--sodium);
+}
+.aperture::before { left: 0; }
+.aperture::after { right: 0; }
+
+/* Edge states. The trailing edge is where information is lost, so it is
+   allowed to be dimmer — but never dashed, never soft. An aperture edge is
+   a hard boundary or it is teaching the wrong thing. */
+.aperture.trailing-dim::before { background: var(--sodium-dim); }
+.aperture.mono::before, .aperture.mono::after { background: var(--ink); }
+.aperture.on-paper::before, .aperture.on-paper::after { background: var(--paper-ink); }
+
+/* Ghost context: real series text placed outside the aperture, dimmed.
+   Proves that what is outside still exists. */
+.ghost {
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-4);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ─── TITLE TREATMENT ────────────────────────────────────────────────────
+   The title sits inside the aperture. This is the canonical lockup: the
+   series name is literally the thing currently in view. */
+
+.title-lockup { display: flex; flex-direction: column; gap: var(--u2); }
+
+.title {
+  font-size: var(--t-title);
+  font-weight: 700;
+  line-height: .88;
+  letter-spacing: var(--track-title);
+  color: var(--ink);
+}
+.title.stacked { line-height: .84; }
+
+/* Publication identifier — parallel in construction to Systems at Scale's
+   ALG / SYS·SCALE / 001, because they are volumes of one publication. */
+.pubid {
+  font-family: var(--mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-micro);
+  color: var(--ink-3);
+}
+.pubid b { color: var(--ink-2); font-weight: 400; }
+
+/* ─── SECTION MARKER ─────────────────────────────────────────────────────
+   The aperture, shrunk to hold a number. Same device, different scale. */
+.section-mark {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: var(--u);
+  padding: 6px var(--u);
+  border-left: var(--w-edge) solid var(--sodium);
+  border-right: var(--w-edge) solid var(--sodium);
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-2);
+}
+
+/* ═══ SHARED DIAGRAM SYNTAX ═══════════════════════════════════════════════
+   These four rules are what stop the six borrowed grammars from reading as
+   six unrelated mini-identities. Every primitive below obeys all of them. */
+
+/* 1. ANNOTATION — hairline leader, terminal square, mono caps. */
+.note {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  letter-spacing: var(--track-mono);
+  line-height: 1.45;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.note b { color: var(--ink); font-weight: 400; }
+.note em { font-style: normal; color: var(--sodium); }
+.note::before {
+  content: "";
+  position: absolute;
+  background: var(--ink-4);
+}
+.note.up::before    { left: 0; bottom: 100%; margin-bottom: 10px; width: 1px; height: var(--len, 28px); }
+.note.down::before  { left: 0; top: 100%; margin-top: 10px; width: 1px; height: var(--len, 28px); }
+.note.left::before  { right: 100%; top: 10px; margin-right: 12px; height: 1px; width: var(--len, 36px); }
+.note.right::before { left: 100%; top: 10px; margin-left: 12px; height: 1px; width: var(--len, 36px); }
+.note .sq {
+  display: inline-block;
+  width: 8px; height: 8px;
+  background: currentColor;
+  margin-right: 10px;
+  vertical-align: 1px;
+}
+
+/* 2. READOUT — any number a machine produced, in a fixed slot. */
+.readout {
+  font-family: var(--mono);
+  font-size: var(--t-data);
+  letter-spacing: .04em;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.readout .k { color: var(--ink-3); }
+.readout .v { color: var(--ink); }
+
+/* 3. AXIS — hairline line, ticks outside, mono labels. */
+.axis-line { background: var(--ink-4); }
+.tick-label {
+  font-family: var(--mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-4);
+}
+
+/* 4. UNCERTAINTY — hatch, never hue. */
+.hatch {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--ink-4) 0 1px,
+    transparent 1px 7px
+  );
+}
+
+/* ═══ LAYER 2 — COMPUTATIONAL PRIMITIVES ══════════════════════════════════ */
+
+/* ─── SEQUENCE (from 01 SEGMENTATION) ────────────────────────────────────
+   Unequal widths are mandatory. Equal blocks would be a grid, and a grid is
+   a lie about how a tokeniser cuts text. */
+
+.seq { display: flex; align-items: flex-end; gap: 6px; }
+.tok { display: flex; flex-direction: column; }
+.tok .g {
+  font-family: var(--mono);
+  font-size: var(--t-data);
+  line-height: 1;
+  padding: 16px 12px;
+  border: var(--w-hair) solid var(--ink-4);
+  border-bottom: var(--w-mark) solid var(--ink-2);
+  color: var(--ink);
+  text-align: center;
+  white-space: pre;
+}
+.tok .id {
+  font-family: var(--mono);
+  font-size: var(--t-micro);
+  letter-spacing: .06em;
+  color: var(--ink-4);
+  text-align: center;
+  margin-top: 10px;
+  font-variant-numeric: tabular-nums;
+}
+/* A token that continues the previous word rather than starting a new one. */
+.tok.cont .g { border-bottom-style: dashed; border-bottom-color: var(--ink-2); }
+.tok.out .g  { border-color: var(--hairline); border-bottom-color: var(--ink-4); color: var(--ink-4); }
+.tok .sp { color: var(--ink-2); }
+
+/* Tick band: the same sequence at sequence-scale, where individual tokens
+   are too many to draw as boxes. */
+.band { display: flex; align-items: center; gap: 3px; }
+.band i { display: block; width: 3px; height: 22px; background: var(--ink-4); flex: none; }
+.band i.in { height: 56px; background: var(--ink); }
+
+/* ─── WEIGHT FIELD (from 02) ─────────────────────────────────────────────
+   Density is weight. Empty is not zero — it is masked, and it is never
+   filled with anything, including a very dark grey. */
+
+.mx { display: grid; gap: 3px; }
+.mx i { display: block; background: var(--ink); }
+.mx i.masked { background: transparent; border: var(--w-hair) solid var(--hairline); }
+.mx i.q { background: var(--selected) !important; }
+
+.rowsum { display: flex; flex-direction: column; gap: 3px; }
+.rowsum i { display: block; background: var(--ink-4); }
+.rowsum i.q { background: var(--selected); }
+
+/* ─── COORDINATE (from 03) ───────────────────────────────────────────────
+   Meaning is a distance you can print. The projection always declares that
+   it is lossy. */
+
+.plot { position: relative; }
+.plot svg { display: block; }
+.ax     { stroke: var(--ink-4); stroke-width: 1; fill: none; }
+.hull   { stroke: var(--ink-4); stroke-width: 1; fill: none; stroke-dasharray: 6 6; }
+.pt     { fill: var(--ink-2); }
+.pt.sel { fill: var(--selected); }
+.vec    { stroke: var(--ink); stroke-width: 2; fill: none; }
+.dline  { stroke: var(--selected); stroke-width: 1; stroke-dasharray: 4 4; fill: none; }
+.plab {
+  font-family: var(--mono);
+  font-size: var(--t-micro);
+  letter-spacing: var(--track-mono);
+  fill: var(--ink-4);
+}
+
+/* Vector as bars — the honest picture of an embedding: signed components. */
+.vbar { display: flex; align-items: center; gap: 3px; }
+.vbar i { display: block; width: 10px; background: var(--ink); }
+.vbar i.neg { background: var(--negative); }
+
+/* ─── LONG TAIL (from 04) ────────────────────────────────────────────────
+   Ranked bars plus the tail. The tail is not decoration: it is the argument. */
+
+.dist { display: flex; flex-direction: column; gap: 10px; }
+.dist .row { display: flex; align-items: center; gap: 16px; }
+.dist .lab {
+  width: 190px;
+  text-align: right;
+  font-family: var(--mono);
+  font-size: var(--t-data);
+  color: var(--ink-2);
+  white-space: pre;
+}
+.dist .bar { height: 22px; background: var(--ink); flex: none; }
+.dist .p {
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  color: var(--ink-4);
+  font-variant-numeric: tabular-nums;
+}
+.dist .row.sampled .lab { color: var(--selected); }
+.dist .row.sampled .bar { background: var(--selected); }
+.dist .row.sampled .p   { color: var(--selected); }
+.dist .row.cut  .lab, .dist .row.cut .p { color: var(--ink-4); }
+.dist .row.cut  .bar { background: var(--ink-4); }
+
+.tail { display: flex; align-items: flex-end; gap: 2px; }
+.tail i { display: block; width: 3px; background: var(--ink-4); flex: none; }
+
+/* ─── RESIDUAL STREAM (from 05) ──────────────────────────────────────────
+   One spine, never replaced, only added to. Dimension never changes. */
+
+.stream { position: relative; }
+.spine {
+  position: absolute;
+  width: 8px;
+  background: var(--ink);
+}
+.rblock {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: var(--u2);
+  padding: 0 var(--u2);
+  height: 74px;
+  border: var(--w-hair) solid var(--ink-4);
+  background: var(--ground-raised);
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-2);
+}
+.rblock .d { color: var(--ink); }
+.rblock.sub .d { color: var(--negative); }
+.arm { position: absolute; height: 1px; background: var(--ink-4); }
+.join {
+  position: absolute;
+  width: 22px; height: 22px;
+  border: var(--w-mark) solid var(--ink);
+  background: var(--ground);
+}
+.join.sub { border-color: var(--negative); }
+
+/* ─── FOUR STATES (from 07) ──────────────────────────────────────────────
+   The same word in every machine form at once. */
+
+.states { display: flex; flex-direction: column; }
+.state {
+  display: grid;
+  grid-template-columns: 210px 1fr auto;
+  align-items: center;
+  gap: var(--u2);
+  height: 92px;
+  border-bottom: var(--w-hair) solid var(--hairline);
+}
+.state .n {
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  letter-spacing: var(--track-micro);
+  color: var(--ink-4);
+}
+.state .v { font-size: 34px; font-weight: 700; letter-spacing: -.02em; }
+.state .v.m { font-family: var(--mono); font-size: var(--t-data); font-weight: 400; }
+.state .op {
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  letter-spacing: var(--track-mono);
+  color: var(--ink-3);
+  text-align: right;
+}
+.state.active { border-left: var(--w-edge) solid var(--sodium); padding-left: var(--u2); margin-left: calc(-1 * var(--u2) - var(--w-edge)); }
+
+/* ═══ APPLICATIONS ════════════════════════════════════════════════════════ */
+
+.on-paper-panel {
+  background: var(--paper);
+  color: var(--paper-ink);
+}
+.on-paper-panel .ghost { color: var(--paper-rule); }
+.on-paper-panel .pubid { color: var(--paper-ink2); }
+
+/* ─── MAGNIFICATION / INSET ──────────────────────────────────────────────
+   CANONICAL. Solves the extreme-ratio problem without lying about it.
+
+   Some apertures are mathematically tiny — top-k = 8 out of a 50 000-token
+   vocabulary is a sliver two pixels wide. The temptation is to widen it so it
+   reads. That is forbidden: a widened aperture is a falsified ratio, and this
+   series does not falsify ratios.
+
+   Instead the true aperture stays at its correct width and a magnified view is
+   drawn beneath it, connected by two fan lines running from the true edges to
+   the inset edges. The inset is itself an aperture — the same two sodium rules
+   at a different scale — because that is exactly what it is. The magnification
+   factor is always printed.
+
+       MACRO FIELD          the whole population, drawn honestly
+          ▌▐                TRUE APERTURE, geometrically correct
+         ╱  ╲               fan lines
+     ▌ ────── ▐             MAGNIFIED VIEW, ×N printed
+*/
+
+.magnify { position: relative; }
+
+.macro { position: relative; }
+
+/* The fan is structure, not data: hairline, ink-4, never sodium. Sodium is
+   reserved for the two edges it connects. */
+.fan { position: absolute; overflow: visible; pointer-events: none; }
+.fan line { stroke: var(--ink-4); stroke-width: 1; }
+
+.inset { position: relative; }
+
+.mag-factor {
+  font-family: var(--mono);
+  font-size: var(--t-note);
+  letter-spacing: var(--track-mono);
+  color: var(--sodium);
+}

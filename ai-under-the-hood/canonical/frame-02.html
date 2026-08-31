@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, initial-scale=1" />
+<title>AUTH — 02 Tokenisation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  .head-line { font-size: var(--t-head); font-weight: 700; letter-spacing: -.03em; line-height: 1.06; }
+  .raw {
+    font-family: var(--mono);
+    font-size: 44px;
+    letter-spacing: .02em;
+    color: var(--ink-4);
+  }
+  .rule-gap { height: 1px; background: var(--hairline); margin: var(--u4) 0; }
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <header class="f-head">
+    <span>AI UNDER THE HOOD<b> · 001</b></span>
+    <span class="mark" style="--mk-w:52px;--mk-h:30px;--mk-tick:3px;--mk-gap:3px;--mk-out:9px;--mk-in:24px;--mk-edge:3px">
+      <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+      <span class="edge" style="left:15px"></span><span class="edge" style="left:34px"></span>
+    </span>
+  </header>
+
+  <main class="f-body">
+
+    <div class="section-mark">01 · SEGMENTATION</div>
+
+    <div class="head-line" style="margin-top:var(--u3)">THE BOUNDARIES ARE NOT<br>WHERE YOU WOULD PUT THEM.</div>
+
+    <div class="rule-gap"></div>
+
+    <!-- what you typed -->
+    <div class="raw">"… lazy dog. <span style="color:var(--ink-2)">The quick brown fox</span> jumps over …"</div>
+
+    <!-- what the model receives. The aperture marks the span currently being
+         read; the sequence itself is never sodium. -->
+    <div style="position:relative;display:inline-block;margin-top:var(--u4)">
+      <div class="seq" id="seqA"></div>
+      <div class="aperture" id="apA" style="position:absolute;top:-18px;bottom:-14px;padding:0"></div>
+    </div>
+
+    <div style="position:relative;height:158px">
+      <div class="note up" id="nSpan" style="top:58px;--len:38px"><em>IN VIEW</em> · 4 WORDS · <b>4 TOKENS</b> · 19 CHARACTERS</div>
+      <div class="note up" style="left:0;top:112px;--len:0px">OUTSIDE THE APERTURE — <b>STILL IN THE PROMPT</b>, NOT UNDER EXAMINATION</div>
+    </div>
+
+    <div class="rule-gap"></div>
+
+    <!-- a word that genuinely splits -->
+    <div class="raw">"strawberry"</div>
+
+    <div style="position:relative;display:inline-block;margin-top:var(--u4)">
+      <div class="seq" id="seqB"></div>
+    </div>
+
+    <div style="position:relative;height:120px">
+      <div class="note up" style="left:0;top:60px;--len:40px">ONE WORD · <b>THREE TOKENS</b></div>
+      <div class="note up" id="nR" style="top:60px;--len:40px">IT CANNOT COUNT THE R's<br>IT NEVER RECEIVED THEM</div>
+    </div>
+
+  </main>
+
+  <footer class="f-foot">
+    <span class="pubid">ALG / UNDER·HOOD / <b>001</b></span>
+    <span>TOKENISATION</span>
+  </footer>
+
+</div>
+<script>
+/* Token widths are set by the glyphs themselves, so the row is unequal for the
+   same reason a real tokenised sequence is unequal — not because unequal was
+   drawn in on purpose. */
+function seq(node, items) {
+  items.forEach(([g, id, cls]) => {
+    const t = document.createElement("div");
+    t.className = "tok" + (cls ? " " + cls : "");
+    const b = document.createElement("div");
+    b.className = "g";
+    b.innerHTML = g.startsWith("·") ? '<span class="sp">·</span>' + g.slice(1) : g;
+    const s = document.createElement("div");
+    s.className = "id";
+    s.textContent = id;
+    t.appendChild(b); t.appendChild(s);
+    node.appendChild(t);
+  });
+}
+seq(document.getElementById("seqA"), [
+  ["·dog", "3290", "out"], [".", "13", "out"],
+  ["The", "464"], ["·quick", "4062"], ["·brown", "7586"], ["·fox", "21831"],
+  ["·jumps", "18045", "out"], ["·over", "625", "out"]
+]);
+seq(document.getElementById("seqB"), [
+  ["str", "1256"], ["aw", "707", "cont"], ["berry", "19772", "cont"]
+]);
+
+/* Aperture placed from the measured sequence, never guessed. */
+/* Aperture measured from the four tokens under examination, so the edges can
+   never drift off the span they name. */
+const seqA = document.getElementById("seqA");
+const boxes = seqA.querySelectorAll(".tok");
+const a0 = boxes[2].offsetLeft;
+const a1 = boxes[5].offsetLeft + boxes[5].offsetWidth;
+const ap = document.getElementById("apA");
+/* The edge is centred in the 6px inter-token gap so it never crosses a box. */
+ap.style.left = (a0 - 5) + "px";
+ap.style.right = (seqA.offsetWidth - a1 - 5) + "px";
+document.getElementById("nSpan").style.left = (a0 - 14) + "px";
+document.getElementById("nR").style.left = "400px";
+</script>
+</body>
+</html>

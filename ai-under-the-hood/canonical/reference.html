@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=2400, initial-scale=1" />
+<title>AI Under the Hood — Canonical Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="system.css">
+<style>
+  html, body { width: 2400px; height: 6260px; }
+  .board { position: relative; width: 2400px; height: 6260px; padding: 70px 76px 44px; background: var(--ground); }
+  .board::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .mast { border-top: 6px solid var(--sodium); padding-top: 22px; }
+  .mast-meta, .board-foot {
+    display: flex; justify-content: space-between;
+    font-family: var(--mono); font-size: 17px; letter-spacing: .08em; color: var(--ink-3);
+  }
+  .mast-meta b { color: var(--sodium); font-weight: 400; }
+  .mast-body { display: flex; justify-content: space-between; align-items: flex-start; gap: 80px; padding: 40px 0 34px; }
+  .mast-body h1 { margin: 0; font-size: 124px; font-weight: 700; line-height: .84; letter-spacing: -.075em; }
+  .mast-body p { margin: 26px 0 0; max-width: 700px; font-size: 21px; line-height: 1.55; color: var(--ink-2); }
+
+  .law {
+    width: 800px; padding: 34px 36px;
+    border-left: var(--w-edge) solid var(--sodium);
+    border-right: var(--w-edge) solid var(--sodium);
+    background: var(--ground-raised);
+  }
+  .law h4 { margin: 0 0 20px; font-family: var(--mono); font-size: 14px; letter-spacing: var(--track-micro); color: var(--sodium); font-weight: 400; }
+  .law .q { font-size: 34px; font-weight: 700; line-height: 1.18; letter-spacing: -.025em; }
+  .law p { margin: 20px 0 0; font-family: var(--mono); font-size: 15px; line-height: 1.65; color: var(--ink-3); }
+
+  h2.sec {
+    margin: 54px 0 0; padding: 20px 0 16px;
+    border-top: 1px solid var(--ink-4);
+    font-family: var(--mono); font-size: 17px; font-weight: 400;
+    letter-spacing: var(--track-micro); color: var(--ink);
+    display: flex; justify-content: space-between;
+  }
+  h2.sec span { color: var(--ink-4); }
+
+  .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .panel { border: 1px solid var(--hairline); background: var(--ground-raised); padding: 28px 30px; }
+  .panel h3 {
+    margin: 0 0 20px; font-family: var(--mono); font-size: 14px; font-weight: 400;
+    letter-spacing: var(--track-micro); color: var(--sodium);
+  }
+  .spec {
+    display: grid; grid-template-columns: 1fr auto; gap: 16px;
+    padding: 10px 0; border-bottom: 1px solid var(--hairline);
+    font-family: var(--mono); font-size: 15px; color: var(--ink-2);
+  }
+  .spec:last-child { border-bottom: 0; }
+  .spec .v { color: var(--ink-4); text-align: right; }
+  .never { font-family: var(--mono); font-size: 14px; line-height: 1.6; color: var(--ink-3); margin-top: 18px; }
+  .never b { color: var(--selected); font-weight: 400; }
+
+  .swatch-row {
+    display: grid; grid-template-columns: 34px 150px 1fr auto; gap: 18px; align-items: center;
+    padding: 13px 0; border-bottom: 1px solid var(--hairline);
+    font-family: var(--mono); font-size: 15px;
+  }
+  .swatch-row:last-child { border-bottom: 0; }
+  .swatch-row i { width: 34px; height: 34px; display: block; }
+  .swatch-row .name { color: var(--ink); }
+  .swatch-row .role { color: var(--ink-2); }
+  .swatch-row .hex { color: var(--ink-4); font-size: 13px; }
+
+  .scale-ladder { display: flex; align-items: flex-end; gap: 46px; }
+  .scale-ladder figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .scale-ladder figcaption { font-family: var(--mono); font-size: 12px; color: var(--ink-4); }
+
+  .typespec { display: grid; grid-template-columns: 200px 1fr auto; gap: 22px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--hairline); }
+  .typespec:last-child { border-bottom: 0; }
+  .typespec .k { font-family: var(--mono); font-size: 14px; letter-spacing: var(--track-micro); color: var(--ink-4); }
+  .typespec .v { font-family: var(--mono); font-size: 13px; color: var(--ink-4); text-align: right; white-space: nowrap; }
+
+  .apps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; }
+  .app-shot img { display: block; width: 100%; border: 1px solid var(--hairline); }
+  .app-shot .cap {
+    display: flex; justify-content: space-between; gap: 8px; margin-top: 10px;
+    font-family: var(--mono); font-size: 12px; letter-spacing: .06em; color: var(--ink-4);
+  }
+  .app-shot .cap b { color: var(--ink); font-weight: 400; }
+
+  .surfaces { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 26px; }
+  .surface { border: 1px solid var(--hairline); background: var(--ground-raised); padding: 24px; height: 400px; display: flex; flex-direction: column; }
+  .surface .tcap { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--ink-4); margin-bottom: 18px; }
+  .surface .tbody { flex: 1; display: flex; align-items: center; justify-content: center; }
+  .crop { position: relative; overflow: hidden; border: 1px solid var(--hairline); }
+  .crop img { position: absolute; left: 0; }
+  .mini-title { font-size: 38px; font-weight: 700; line-height: .86; letter-spacing: var(--track-title); }
+
+  table.t { width: 100%; border-collapse: collapse; font-family: var(--mono); font-size: 15px; }
+  table.t th, table.t td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  table.t th { color: var(--ink-4); font-weight: 400; font-size: 13px; letter-spacing: var(--track-micro); }
+  table.t td.k { color: var(--ink); width: 190px; }
+  table.t td.a { color: var(--ink-3); }
+  table.t td.b { color: var(--ink-2); }
+
+  .board-foot { border-bottom: 6px solid var(--sodium); padding: 26px 0; margin-top: 46px; }
+</style>
+</head>
+<body>
+<main class="board">
+
+  <header class="mast">
+    <div class="mast-meta">
+      <span><b>ALGONACCI®</b></span>
+      <span>SERIES 002 · AI UNDER THE HOOD</span>
+      <span>CANONICAL SYSTEM · LOCKED</span>
+    </div>
+
+    <div class="mast-body">
+      <div>
+        <h1>AI UNDER<br>THE HOOD</h1>
+        <p>This is the system. Not a study, not a set of options — the locked visual
+          specification for an editorial series about what actually happens inside a machine
+          learning system. Every diagram on this sheet is computed from the real rules with a
+          fixed seed. Ratios are never adjusted to make a picture read.</p>
+      </div>
+
+      <div class="law">
+        <h4>THE CANONICAL LAW</h4>
+        <div class="q">Aperture shows what is visible.<br>The diagram shows what is computed.</div>
+        <p>The aperture lives at the boundary of visible computational context and is always
+          sodium. Diagrams never take sodium as a primary data colour. Where a concept depends
+          on information being hidden, masked, excluded or out of view, that content stays
+          represented rather than cropped away.</p>
+      </div>
+    </div>
+  </header>
+
+  <h2 class="sec"><span>01</span> THE SERIES MARK <span>APERTURE TICK-BAND · LOCKED</span></h2>
+
+  <div class="cols2">
+    <div class="panel" style="display:flex;align-items:center;justify-content:center;padding:56px">
+      <span class="mark" style="--mk-w:330px;--mk-h:190px;--mk-tick:10px;--mk-gap:10px;--mk-out:56px;--mk-in:150px;--mk-edge:10px">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <span class="edge" style="left:106px"></span><span class="edge" style="left:284px"></span>
+      </span>
+    </div>
+
+    <div class="panel">
+      <h3>SPECIFICATION</h3>
+      <div class="spec"><span>Construction</span><span class="v">TICK FIELD THROUGH TWO SODIUM RULES</span></div>
+      <div class="spec"><span>Inside the aperture</span><span class="v">FULL HEIGHT · WARM WHITE</span></div>
+      <div class="spec"><span>Outside the aperture</span><span class="v">SHORT · SUPPRESSED · STILL PRESENT</span></div>
+      <div class="spec"><span>Edge geometry</span><span class="v">TWO VERTICAL RULES · OPEN TOP AND BOTTOM</span></div>
+      <div class="spec"><span>Edge weight</span><span class="v">4 PX AT 1080 · SCALES WITH THE MARK</span></div>
+      <div class="spec"><span>Tick ratio</span><span class="v">OUTSIDE ≈ 0.36 × INSIDE</span></div>
+      <div class="spec"><span>Minimum size</span><span class="v">16 PX</span></div>
+      <p class="never"><b>NEVER:</b> a closed rectangle · a dashed or softened edge · the causal
+        triangle as the series mark · sodium anywhere inside a diagram · an aperture that does
+        not mark something genuinely out of view.</p>
+    </div>
+  </div>
+
+  <div class="cols2" style="margin-top:40px">
+    <div class="panel">
+      <h3>SCALE LADDER · STATIC REDUCTION</h3>
+      <div class="scale-ladder" style="justify-content:center;padding:24px 0">
+        <figure><span class="mark" style="--mk-w:16px;--mk-h:16px;--mk-tick:1px;--mk-gap:1px;--mk-out:5px;--mk-in:12px;--mk-edge:1px">
+          <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+          <span class="edge" style="left:4px"></span><span class="edge" style="left:11px"></span></span>
+          <figcaption>16 · FLOOR</figcaption></figure>
+        <figure><span class="mark" style="--mk-w:24px;--mk-h:24px;--mk-tick:2px;--mk-gap:1px;--mk-out:8px;--mk-in:18px;--mk-edge:2px">
+          <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+          <span class="edge" style="left:6px"></span><span class="edge" style="left:16px"></span></span>
+          <figcaption>24</figcaption></figure>
+        <figure><span class="mark" style="--mk-w:44px;--mk-h:44px;--mk-tick:3px;--mk-gap:2px;--mk-out:14px;--mk-in:34px;--mk-edge:3px">
+          <i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i>
+          <span class="edge" style="left:9px"></span><span class="edge" style="left:28px"></span></span>
+          <figcaption>44 · CORNER BUG</figcaption></figure>
+        <figure><span class="mark" style="--mk-w:96px;--mk-h:72px;--mk-tick:4px;--mk-gap:4px;--mk-out:22px;--mk-in:58px;--mk-edge:4px">
+          <i></i><i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i><i></i>
+          <span class="edge" style="left:20px"></span><span class="edge" style="left:64px"></span></span>
+          <figcaption>96</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>PUBLICATION IDENTIFIER · SIBLING, NOT CLONE</h3>
+      <div style="padding:22px 0 8px">
+        <div class="pubid" style="font-size:26px;color:var(--ink-4)">ALG / SYS·SCALE / <b style="color:var(--ink-3)">001</b>
+          <span style="font-size:14px;margin-left:20px">SERIES 001</span></div>
+        <div class="pubid" style="font-size:26px;margin-top:18px;color:var(--ink-2)">ALG / UNDER·HOOD / <b style="color:var(--ink)">001</b>
+          <span style="font-size:14px;margin-left:20px;color:var(--sodium)">SERIES 002</span></div>
+      </div>
+      <div class="spec" style="margin-top:16px"><span>Structure</span><span class="v">ALG / {SERIES} / {EPISODE}</span></div>
+      <div class="spec"><span>Series token</span><span class="v">MIDDLE DOT, NEVER A HYPHEN</span></div>
+      <div class="spec"><span>Episode</span><span class="v">THREE DIGITS, ZERO PADDED</span></div>
+      <div class="spec"><span>Placement</span><span class="v">FOOTER LEFT · ONE BASELINE</span></div>
+      <div class="spec"><span>Size</span><span class="v">16 PX AT 1080 · MONO</span></div>
+      <p class="never">It is metadata, not a third logo. It never joins the mark into a
+        combined badge.</p>
+    </div>
+  </div>
+
+  <h2 class="sec"><span>02</span> COLOUR SEMANTICS <span>ONE SIGNATURE · TWO SEMANTICS · TWO NON-COLOURS</span></h2>
+
+  <div class="cols2">
+    <div class="panel">
+      <h3>LOCKED PALETTE</h3>
+      <div class="swatch-row"><i style="background:var(--sodium)"></i><span class="name">SODIUM</span><span class="role">APERTURE · IN-VIEW BOUNDARY · SERIES SIGNATURE</span><span class="hex">#FFA524</span></div>
+      <div class="swatch-row"><i style="background:var(--selected)"></i><span class="name">SELECTED</span><span class="role">SAMPLED OR SELECTED · MAX ONE PRIMARY OBJECT</span><span class="hex">#FF2D6F</span></div>
+      <div class="swatch-row"><i style="background:var(--negative)"></i><span class="name">SIGN</span><span class="role">AXIS · DIRECTION · NEGATIVE · ANNOTATION ONLY</span><span class="hex">#35E3C4</span></div>
+      <div class="swatch-row"><i style="background:var(--ink)"></i><span class="name">INK</span><span class="role">PRIMARY INFORMATION</span><span class="hex">#F2EFE9</span></div>
+      <div class="swatch-row"><i style="background:var(--ink-4)"></i><span class="name">SUPPRESSED</span><span class="role">CUT · OUTSIDE · INACTIVE</span><span class="hex">#3E3E48</span></div>
+      <div class="swatch-row"><i class="hatch" style="border:1px solid var(--ink-4)"></i><span class="name">UNCERTAIN</span><span class="role">HATCH · TEXTURE, NEVER HUE</span><span class="hex">—</span></div>
+      <div class="swatch-row"><i style="border:1px solid var(--hairline)"></i><span class="name">MASKED</span><span class="role">ABSENCE · OUTLINE ONLY, NEVER FILLED</span><span class="hex">—</span></div>
+    </div>
+
+    <div class="panel">
+      <h3>USAGE DISCIPLINE</h3>
+      <div class="spec"><span>Sodium may appear on</span><span class="v">APERTURE EDGES · SECTION MARK · IN-VIEW LABELS</span></div>
+      <div class="spec"><span>Sodium may never appear on</span><span class="v">BARS · CELLS · POINTS · SPINES · ANY DATUM</span></div>
+      <div class="spec"><span>Magenta budget</span><span class="v">ONE PRIMARY SELECTED OBJECT PER FRAME</span></div>
+      <div class="spec"><span>Cyan behaviour</span><span class="v">MARKS · NEVER FILLS AN AREA</span></div>
+      <div class="spec"><span>Sign encoding</span><span class="v">SIDE OF AXIS FIRST, COLOUR SECOND</span></div>
+      <div class="spec"><span>Additional brand colour</span><span class="v">FORBIDDEN</span></div>
+      <p class="never">Systems at Scale uses amber for <b>degraded / rerouting</b>. Sodium here
+        means <b>aperture / in-view boundary</b>. The two are separated by grammar and usage,
+        not by hue, and that separation is deliberate and sufficient. Lime remains the property
+        of Systems at Scale and never appears in this series.</p>
+      <p class="never" style="margin-top:14px">Cyan was demoted from fill to mark during
+        convergence: filling every negative vector component turned half a vector turquoise and
+        cyan stopped being a semantic. <b>Cyan marks, it never fills.</b></p>
+    </div>
+  </div>
+
+  <h2 class="sec"><span>03</span> TYPOGRAPHY HIERARCHY <span>ARCHIVO EDITORIAL · IBM PLEX MONO COMPUTATIONAL</span></h2>
+
+  <div class="panel">
+    <div class="typespec"><span class="k">STATEMENT</span><span style="font-size:54px;font-weight:700;letter-spacing:-.055em;line-height:1">THE MODEL DOESN'T SEE WORDS.</span><span class="v">ARCHIVO 700 · 108 / −.055em</span></div>
+    <div class="typespec"><span class="k">SERIES TITLE</span><span style="font-size:44px;font-weight:700;letter-spacing:-.055em;line-height:1">AI UNDER THE HOOD</span><span class="v">ARCHIVO 700 · 92 / −.055em</span></div>
+    <div class="typespec"><span class="k">FRAME HEADING</span><span style="font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1">IT DOES NOT READ LEFT TO RIGHT.</span><span class="v">ARCHIVO 700 · 40 / −.03em</span></div>
+    <div class="typespec"><span class="k">DATA VALUE</span><span style="font-family:var(--mono);font-size:26px;color:var(--ink-2)">21831&nbsp;&nbsp;0.284&nbsp;&nbsp;Σ 1.000</span><span class="v">PLEX MONO 400 · 26 · TABULAR</span></div>
+    <div class="typespec"><span class="k">ANNOTATION</span><span style="font-family:var(--mono);font-size:20px;letter-spacing:var(--track-mono);color:var(--ink-3)">EMPTY IS NOT ZERO. IT IS THE FUTURE, MASKED OUT.</span><span class="v">PLEX MONO 400 · 20 / .1em</span></div>
+    <div class="typespec"><span class="k">MICRO / IDENTIFIER</span><span class="pubid" style="font-size:16px">ALG / UNDER·HOOD / <b>001</b></span><span class="v">PLEX MONO 400 · 16 / .14em</span></div>
+    <p class="never" style="margin-top:20px">The split is a rule, not a preference: <b>if a value
+      came out of a computation it is set in mono.</b> Editorial voice is Archivo and never
+      carries machine output.</p>
+  </div>
+
+  <h2 class="sec"><span>04</span> CANONICAL APPLICATIONS <span>1080 × 1920 · ALL COMPUTED, SEED 2026·09</span></h2>
+
+  <section class="apps">
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-01.png" alt="">
+      <div class="cap"><b>01 IDENTITY</b><span>APERTURE</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-02.png" alt="">
+      <div class="cap"><b>02 TOKENISATION</b><span>SEQUENCE</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-03.png" alt="">
+      <div class="cap"><b>03 ATTENTION</b><span>WEIGHT FIELD</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-04.png" alt="">
+      <div class="cap"><b>04 REPRESENTATION A</b><span>TEXT → VECTOR</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-05.png" alt="">
+      <div class="cap"><b>05 REPRESENTATION B</b><span>VECTOR → SPACE</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-06.png" alt="">
+      <div class="cap"><b>06 PROBABILITY</b><span>MAGNIFIED</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-07.png" alt="">
+      <div class="cap"><b>07 TEMPERATURE</b><span>ONE DIVISOR</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-08.png" alt="">
+      <div class="cap"><b>08 RESIDUAL</b><span>ADD, NEVER REPLACE</span></div></div>
+    <div class="app-shot"><img src="../../output/ai-under-the-hood/canonical/frame-09.png" alt="">
+      <div class="cap"><b>09 EDITORIAL</b><span>QUIET</span></div></div>
+    <div class="app-shot" style="display:flex;flex-direction:column">
+      <div style="flex:1;border:1px solid var(--hairline);background:var(--ground-raised);display:flex;align-items:center;justify-content:center;padding:20px">
+        <div style="font-family:var(--mono);font-size:13px;line-height:1.9;color:var(--ink-3)">
+          <div style="color:var(--sodium);margin-bottom:14px">DENSITY RULE</div>
+          TEXT → TOKEN → VECTOR<br>
+          <span style="color:var(--ink-4)">IS BEAT A</span><br><br>
+          VECTOR → PROJECTION<br>
+          <span style="color:var(--ink-4)">IS BEAT B</span><br><br>
+          <span style="color:var(--ink-2)">NEVER ONE FRAME.</span>
+        </div>
+      </div>
+      <div class="cap"><b>PACING</b><span>04 + 05</span></div></div>
+  </section>
+
+  <h2 class="sec"><span>05</span> SMALL SIZE · SURFACES · CROP <span>SURVIVAL AT BOTH EXTREMES</span></h2>
+
+  <section class="surfaces">
+    <div class="surface">
+      <div class="tcap">MAGNIFICATION / INSET PRIMITIVE</div>
+      <div class="tbody">
+        <div style="font-family:var(--mono);font-size:15px;line-height:2;color:var(--ink-2)">
+          <span style="color:var(--sodium)">MACRO FIELD</span> — drawn honestly<br>
+          ↓<br>
+          <span style="color:var(--sodium)">TRUE APERTURE</span> — never widened<br>
+          ↓ <span style="color:var(--ink-4)">fan lines, hairline</span><br>
+          <span style="color:var(--sodium)">MAGNIFIED VIEW</span> — ×N printed
+          <div style="margin-top:20px;color:var(--ink-3);font-size:13px;line-height:1.7">
+            When the true aperture falls below the<br>
+            rendering floor it is drawn at 1 px and<br>
+            <span style="color:var(--ink)">says so</span>. The ratio is never adjusted.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="surface">
+      <div class="tcap">4:5 THUMBNAIL CROP</div>
+      <div class="tbody">
+        <div class="crop" style="width:216px;height:270px">
+          <img src="../../output/ai-under-the-hood/canonical/frame-01.png" style="width:216px;top:-57px">
+        </div>
+      </div>
+    </div>
+
+    <div class="surface">
+      <div class="tcap">MONOCHROME · TITLE ONLY</div>
+      <div class="tbody">
+        <div>
+          <span class="mark mono" style="--mk-w:124px;--mk-h:50px;--mk-tick:4px;--mk-gap:4px;--mk-out:15px;--mk-in:40px;--mk-edge:3px">
+            <i></i><i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i><i></i>
+            <span class="edge" style="left:22px"></span><span class="edge" style="left:86px"></span></span>
+          <div class="aperture mono fit" style="margin-top:22px;padding:0 16px;--ap-top:-6px;--ap-bottom:-6px">
+            <div class="mini-title">AI UNDER<br>THE HOOD</div>
+          </div>
+          <div class="pubid" style="margin-top:16px">ALG / UNDER·HOOD / <b>001</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="surface" style="background:var(--paper)">
+      <div class="tcap" style="color:var(--paper-ink2)">LIGHT APPLICATION</div>
+      <div class="tbody">
+        <div>
+          <span class="mark on-paper" style="--mk-w:124px;--mk-h:50px;--mk-tick:4px;--mk-gap:4px;--mk-out:15px;--mk-in:40px;--mk-edge:3px">
+            <i></i><i></i><i></i><i class="in"></i><i class="in"></i><i class="in"></i><i class="in"></i><i></i><i></i><i></i>
+            <span class="edge" style="left:22px"></span><span class="edge" style="left:86px"></span></span>
+          <div class="aperture on-paper fit" style="margin-top:22px;padding:0 16px;--ap-top:-6px;--ap-bottom:-6px">
+            <div class="mini-title" style="color:var(--paper-ink)">AI UNDER<br>THE HOOD</div>
+          </div>
+          <div class="pubid" style="margin-top:16px;color:var(--paper-ink2)">ALG / UNDER·HOOD / <b style="color:var(--paper-ink)">001</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="sec"><span>06</span> PRIMITIVE INVENTORY <span>FOR THE REMOTION IMPLEMENTATION</span></h2>
+
+  <div class="cols2">
+    <table class="t">
+      <tr><th>PRIMITIVE</th><th>PURPOSE</th><th>MOTION VERB</th></tr>
+      <tr><td class="k">aperture</td><td class="a">boundary of visible context</td><td class="b">OPEN · CLOSE · SCAN</td></tr>
+      <tr><td class="k">mark</td><td class="a">series identifier, tick band</td><td class="b">OPEN</td></tr>
+      <tr><td class="k">band</td><td class="a">long sequence at sequence scale</td><td class="b">SLIDE</td></tr>
+      <tr><td class="k">seq · tok</td><td class="a">tokens, IDs, boundaries</td><td class="b">CUT</td></tr>
+      <tr><td class="k">mx · rowsum</td><td class="a">attention, weights, causal mask</td><td class="b">REDISTRIBUTE</td></tr>
+      <tr><td class="k">plot · hull</td><td class="a">latent space, clusters, distance</td><td class="b">PROJECT</td></tr>
+    </table>
+
+    <table class="t">
+      <tr><th>PRIMITIVE</th><th>PURPOSE</th><th>MOTION VERB</th></tr>
+      <tr><td class="k">vfield</td><td class="a">signed vector from a centre axis</td><td class="b">RESOLVE</td></tr>
+      <tr><td class="k">dist · zoom</td><td class="a">ranked candidates, probability</td><td class="b">SAMPLE · RESHAPE</td></tr>
+      <tr><td class="k">macro · fan · inset</td><td class="a">magnification of an extreme ratio</td><td class="b">MAGNIFY</td></tr>
+      <tr><td class="k">stream · join</td><td class="a">residual layers, deltas</td><td class="b">ADD</td></tr>
+      <tr><td class="k">states</td><td class="a">representation forms</td><td class="b">CONVERT</td></tr>
+      <tr><td class="k">note · readout</td><td class="a">annotation and machine values</td><td class="b">SETTLE</td></tr>
+    </table>
+  </div>
+
+  <h2 class="sec"><span>07</span> DIFFERENTIATION <span>SAME PUBLICATION · DIFFERENT GRAMMAR</span></h2>
+
+  <table class="t">
+    <tr><th>DIMENSION</th><th>SYSTEMS AT SCALE</th><th>AI UNDER THE HOOD</th></tr>
+    <tr><td class="k">Subject</td><td class="a">topology · routing · infrastructure · flow · system state</td><td class="b">representation · selection · weight · probability · transformation · context</td></tr>
+    <tr><td class="k">Primary object</td><td class="a">a graph of machines connected to machines</td><td class="b">a field of numbers being reweighted</td></tr>
+    <tr><td class="k">Signature device</td><td class="a">fault planes — offset layers with an extension</td><td class="b">aperture — two rules bracketing a sequence that continues past them</td></tr>
+    <tr><td class="k">Signature colour</td><td class="a">lime · healthy / recovery</td><td class="b">sodium · aperture / in-view boundary</td></tr>
+    <tr><td class="k">Amber</td><td class="a">degraded / rerouting — a system state</td><td class="b">not used as a state; sodium is a boundary, not a condition</td></tr>
+    <tr><td class="k">Type pair</td><td class="a">Manrope + DM Mono</td><td class="b">Archivo + IBM Plex Mono</td></tr>
+    <tr><td class="k">Motion</td><td class="a">traffic moves along a route; a node fails; traffic reroutes</td><td class="b">weight redistributes under a constraint; a window slides; a cursor samples</td></tr>
+    <tr><td class="k">Shared on purpose</td><td class="b" colspan="2">warm-white ink on near-black · publication identifier in the corner · mono annotation with hairline leaders · one baseline per frame · technical honesty · nothing drawn that the underlying system does not do</td></tr>
+  </table>
+
+  <footer class="board-foot">
+    <span>ALGONACCI / AI UNDER THE HOOD</span>
+    <span>CANONICAL SYSTEM · SEE IDENTITY.MD FOR THE FULL SPECIFICATION</span>
+    <span>REFERENCE 01 / 01</span>
+  </footer>
+
+</main>
+</body>
+</html>
