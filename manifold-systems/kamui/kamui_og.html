@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kamui OG Image</title>
+  <style>
+    :root {
+      --bg: #1a1b26;
+      --terminal: #16161e;
+      --panel: #1f2335;
+      --element: #24283b;
+      --text: #c0caf5;
+      --muted: #737aa8;
+      --line: #414868;
+      --blue: #7aa2f7;
+      --cyan: #7dcfff;
+      --purple: #bb9af7;
+      --green: #9ece6a;
+      --amber: #e0af68;
+      --red: #f7768e;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 1200px;
+      height: 630px;
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .canvas {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 88% 16%, rgba(187, 154, 247, 0.12), transparent 31%),
+        radial-gradient(circle at 14% 88%, rgba(122, 162, 247, 0.09), transparent 34%),
+        var(--bg);
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(122, 162, 247, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(122, 162, 247, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.65) 60%, transparent);
+    }
+
+    .top-rule {
+      position: absolute;
+      inset: 0 0 auto;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--purple) 52%, var(--cyan));
+    }
+
+    .index {
+      position: absolute;
+      top: 34px;
+      right: 48px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--muted);
+      font: 11px var(--mono);
+      letter-spacing: 0.12em;
+    }
+
+    .index::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 500px 1fr;
+      gap: 62px;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 58px 62px 54px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 46px;
+    }
+
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border: 1px solid var(--purple);
+      color: var(--purple);
+      font: 700 20px var(--mono);
+      box-shadow: 7px 7px 0 rgba(187, 154, 247, 0.09);
+    }
+
+    .wordmark {
+      font-size: 21px;
+      font-weight: 750;
+      letter-spacing: 0.16em;
+    }
+
+    .brand-note {
+      height: 22px;
+      padding-left: 13px;
+      border-left: 1px solid var(--line);
+      color: var(--muted);
+      font: 10px/22px var(--mono);
+      letter-spacing: 0.04em;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 10px;
+      border: 1px solid var(--green);
+      color: var(--green);
+      font: 10px var(--mono);
+      letter-spacing: 0.11em;
+    }
+
+    .eyebrow i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    h1 {
+      margin: 24px 0 0;
+      font-size: 61px;
+      font-weight: 650;
+      line-height: 0.99;
+      letter-spacing: -0.055em;
+    }
+
+    h1 em {
+      color: var(--purple);
+      font-style: normal;
+    }
+
+    .lead {
+      max-width: 470px;
+      margin: 23px 0 0;
+      color: #9aa5ce;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+
+    .loop {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 37px;
+      color: var(--blue);
+      font: 10px var(--mono);
+      letter-spacing: 0.06em;
+    }
+
+    .loop span {
+      padding: 7px 9px;
+      border: 1px solid var(--line);
+      background: rgba(31, 35, 53, 0.72);
+    }
+
+    .loop b { color: var(--muted); font-weight: 400; }
+
+    .terminal-wrap { position: relative; }
+
+    .terminal-shadow {
+      position: absolute;
+      inset: 20px -20px -20px 20px;
+      background: #202438;
+    }
+
+    .terminal {
+      position: relative;
+      width: 514px;
+      border: 1px solid var(--line);
+      background: var(--terminal);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      height: 46px;
+      padding: 0 16px;
+      border-bottom: 1px solid #292e42;
+      color: var(--muted);
+      font: 10px var(--mono);
+    }
+
+    .dots { display: flex; gap: 7px; margin-right: 18px; }
+    .dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+    .dots i:nth-child(1) { background: var(--red); }
+    .dots i:nth-child(2) { background: var(--amber); }
+    .dots i:nth-child(3) { background: var(--green); }
+    .status { margin-left: auto; color: var(--green); }
+
+    .screen {
+      min-height: 400px;
+      padding: 27px 24px 24px;
+      font: 11px/2.05 var(--mono);
+    }
+
+    .line { white-space: nowrap; }
+    .prompt { margin-bottom: 8px; color: var(--text); font-weight: 700; }
+    .prompt strong { color: var(--purple); }
+    .muted { color: var(--muted); }
+    .muted code { color: var(--cyan); }
+    .plain { color: #a9b1d6; }
+    .warn { color: var(--amber); }
+    .success { color: var(--green); }
+
+    .cache {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #292e42;
+      color: var(--cyan);
+    }
+
+    .cursor {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--purple);
+    }
+
+    .cursor i { width: 7px; height: 14px; background: var(--purple); }
+
+    .terminal-label {
+      position: absolute;
+      right: -20px;
+      bottom: -46px;
+      color: var(--muted);
+      font: 9px var(--mono);
+      letter-spacing: 0.1em;
+    }
+
+    .footer {
+      position: absolute;
+      z-index: 2;
+      right: 62px;
+      bottom: 25px;
+      color: var(--muted);
+      font: 10px var(--mono);
+      letter-spacing: 0.06em;
+    }
+
+    .footer strong { color: var(--text); font-weight: 500; }
+  </style>
+</head>
+<body>
+  <main class="canvas">
+    <div class="grid"></div>
+    <div class="top-rule"></div>
+    <div class="index">MANIFOLD SYSTEMS / 01</div>
+
+    <div class="inner">
+      <section>
+        <div class="brand">
+          <div class="mark">K</div>
+          <div class="wordmark">KAMUI</div>
+          <div class="brand-note">terminal coding agent</div>
+        </div>
+
+        <div class="eyebrow"><i></i> OPEN SOURCE · BUILT IN RUST</div>
+        <h1>Your repository.<br><em>Under command.</em></h1>
+        <p class="lead">A repository-aware coding agent that reads the code, proposes exact patches, runs checks, and leaves an evidence trail.</p>
+
+        <div class="loop">
+          <span>inspect</span><b>→</b><span>patch</span><b>→</b><span>verify</span>
+        </div>
+      </section>
+
+      <section class="terminal-wrap" aria-label="Kamui terminal session">
+        <div class="terminal-shadow"></div>
+        <div class="terminal">
+          <div class="terminal-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span>kamui · ~/work/api</span>
+            <span class="status">BUILD</span>
+          </div>
+          <div class="screen">
+            <div class="line prompt"><strong>❯</strong> fix the failing auth test and verify the change</div>
+            <div class="line muted"><code>grep</code>&nbsp; refreshSession</div>
+            <div class="line muted"><code>read_file</code>&nbsp; src/auth/session.ts</div>
+            <div class="line plain">Found: expired sessions skip token rotation.</div>
+            <div class="line warn">patch_file&nbsp; src/auth/session.ts&nbsp; approve? ❯ y</div>
+            <div class="line muted"><code>run_command</code>&nbsp; npm test -- auth&nbsp; approve? ❯ y</div>
+            <div class="line success">PASS&nbsp; 42 tests · 0 failed</div>
+            <div class="line cache">Cached 25,216 / 25,438 input tokens · 99.1%</div>
+            <div class="cursor"><strong>❯</strong><i></i></div>
+          </div>
+        </div>
+        <div class="terminal-label">PROJECT-SCOPED · LOCAL STATE · EXACT APPROVALS</div>
+      </section>
+    </div>
+
+    <div class="footer"><strong>github.com/ManifoldSystems/kamui</strong>&nbsp; · &nbsp;MIT licensed</div>
+  </main>
+</body>
+</html>
