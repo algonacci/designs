@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">ORVIX BUILD WEEKEND</title>
+  <desc id="desc">Orvix social announcement for free coding tokens using orvix/glm-5.3-flash:free.</desc>
+  <defs>
+    <pattern id="grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#343941" stroke-width="1"/>
+    </pattern>
+    <pattern id="microgrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#0b0d10" stroke-opacity=".12" stroke-width="1"/>
+    </pattern>
+    <clipPath id="cyanPanel">
+      <path d="M1320 0H1920V1080H1112L1320 0Z"/>
+    </clipPath>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <!-- Base editorial grid -->
+  <rect width="1920" height="1080" fill="#0b0d10"/>
+  <rect width="1920" height="1080" fill="url(#grid)" opacity=".42"/>
+  <path d="M0 144H1920M0 936H1920M120 0V1080M1120 0V1080" fill="none" stroke="#343941" stroke-width="1"/>
+
+  <!-- High-contrast signal panel -->
+  <path d="M1320 0H1920V1080H1112L1320 0Z" fill="#53d7f4"/>
+  <g clip-path="url(#cyanPanel)">
+    <rect x="1080" width="840" height="1080" fill="url(#microgrid)"/>
+    <path d="M1390-70 1210 1150M1470-70 1290 1150M1550-70 1370 1150M1630-70 1450 1150M1710-70 1530 1150M1790-70 1610 1150M1870-70 1690 1150M1950-70 1770 1150" stroke="#0b0d10" stroke-opacity=".08" stroke-width="24"/>
+    <text x="1618" y="800" fill="#0b0d10" fill-opacity=".08" font-family="Inter, Arial, sans-serif" font-size="440" font-weight="900" text-anchor="middle">&gt;_</text>
+  </g>
+  <path d="M1320 0 1112 1080" stroke="#8275ff" stroke-width="18"/>
+
+  <!-- Masthead -->
+  <g transform="translate(120 68)">
+    <g transform="skewX(-7)">
+      <rect x="0" y="28" width="32" height="46" fill="#53d7f4"/>
+      <rect x="43" y="0" width="36" height="74" fill="#53d7f4"/>
+      <rect x="90" y="18" width="33" height="56" fill="#8275ff"/>
+    </g>
+    <text x="150" y="65" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-3">Orvix</text>
+  </g>
+  <g transform="translate(895 77)">
+    <rect width="297" height="54" rx="27" fill="#14171c" stroke="#343941"/>
+    <circle cx="27" cy="27" r="5" fill="#b8f36b"/>
+    <circle cx="27" cy="27" r="11" fill="#b8f36b" opacity=".2" filter="url(#softGlow)"/>
+    <text x="50" y="35" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2.5">WEEKEND DROP / 01</text>
+  </g>
+
+  <!-- Event headline -->
+  <text x="120" y="296" fill="#53d7f4" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="7">48 HOURS // SHIP SOMETHING</text>
+  <text x="112" y="430" fill="#f3f5f7" font-family="Arial Black, Inter, Arial, sans-serif" font-size="124" font-weight="900" letter-spacing="-7">ORVIX BUILD</text>
+  <text x="112" y="552" fill="#f3f5f7" font-family="Arial Black, Inter, Arial, sans-serif" font-size="124" font-weight="900" letter-spacing="-7">WEEKEND</text>
+  <rect x="120" y="594" width="102" height="9" fill="#b8f36b"/>
+  <rect x="234" y="594" width="44" height="9" fill="#8275ff"/>
+
+  <!-- Offer -->
+  <text x="120" y="694" fill="#b8f36b" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-1.5">Get free coding tokens</text>
+  <text x="122" y="741" fill="#9299a6" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="500">Prototype fast. Test the edge. Keep the momentum.</text>
+
+  <!-- Model identifier as editor UI -->
+  <g transform="translate(120 796)">
+    <rect width="930" height="104" rx="4" fill="#14171c" stroke="#343941" stroke-width="2"/>
+    <rect width="9" height="104" fill="#8275ff"/>
+    <circle cx="43" cy="38" r="5" fill="#ff6b78"/>
+    <circle cx="61" cy="38" r="5" fill="#f8ca62"/>
+    <circle cx="79" cy="38" r="5" fill="#b8f36b"/>
+    <text x="109" y="44" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2">MODEL_ID</text>
+    <text x="38" y="79" fill="#f3f5f7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="29" font-weight="700">orvix/glm-5.3-flash:<tspan fill="#b8f36b">free</tspan></text>
+    <path d="M898 37v30M883 52h30" stroke="#53d7f4" stroke-width="3"/>
+  </g>
+
+  <!-- CTA on the cyan panel -->
+  <g transform="translate(1370 298)">
+    <text x="0" y="0" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="800" letter-spacing="3">NO WAITLIST</text>
+    <path d="M0 31H390" stroke="#0b0d10" stroke-opacity=".4" stroke-width="2"/>
+    <text x="0" y="116" fill="#0b0d10" font-family="Arial Black, Inter, Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-5">Try now</text>
+    <g transform="translate(0 160)">
+      <rect width="390" height="116" rx="4" fill="#0b0d10"/>
+      <text x="34" y="72" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="800">START BUILDING</text>
+      <path d="M318 58H356M341 43l15 15-15 15" fill="none" stroke="#53d7f4" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
+    </g>
+    <text x="0" y="325" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700">platform.orvix.id</text>
+  </g>
+
+  <!-- Footer metadata -->
+  <text x="120" y="996" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2">BUILD / TEST / DEPLOY</text>
+  <text x="1030" y="996" fill="#f3f5f7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="800" text-anchor="end" letter-spacing="1.5">UNTIL MONDAY 09.00 WIB</text>
+  <text x="1830" y="996" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="800" text-anchor="end" letter-spacing="1">T&amp;C APPLY · WHILE TOKENS LAST</text>
+</svg>

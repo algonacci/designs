@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+  <title id="title">ORVIX BUILD WEEKEND</title>
+  <desc id="desc">Orvix Instagram story for free coding tokens using orvix/glm-5.3-flash:free.</desc>
+  <defs>
+    <pattern id="grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#343941" stroke-width="1"/>
+    </pattern>
+    <pattern id="microgrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#0b0d10" stroke-opacity=".12" stroke-width="1"/>
+    </pattern>
+    <clipPath id="cyanPanel">
+      <path d="M0 1260L1080 1136V1920H0Z"/>
+    </clipPath>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="1920" fill="#0b0d10"/>
+  <rect width="1080" height="1920" fill="url(#grid)" opacity=".42"/>
+  <path d="M0 250H1080M72 0V1920M1008 0V1920" fill="none" stroke="#343941" stroke-width="1"/>
+
+  <path d="M0 1260L1080 1136V1920H0Z" fill="#53d7f4"/>
+  <g clip-path="url(#cyanPanel)">
+    <rect y="1080" width="1080" height="840" fill="url(#microgrid)"/>
+    <path d="M-80 940 280 2260M40 940 400 2260M160 940 520 2260M280 940 640 2260M400 940 760 2260M520 940 880 2260M640 940 1000 2260M760 940 1120 2260M880 940 1240 2260M1000 940 1360 2260" stroke="#0b0d10" stroke-opacity=".08" stroke-width="24"/>
+    <text x="540" y="1788" fill="#0b0d10" fill-opacity=".08" font-family="Inter, Arial, sans-serif" font-size="400" font-weight="900" text-anchor="middle">&gt;_</text>
+  </g>
+  <path d="M0 1260 1080 1136" stroke="#8275ff" stroke-width="18"/>
+
+  <g transform="translate(400 268)">
+    <g transform="skewX(-7)">
+      <rect x="0" y="28" width="32" height="46" fill="#53d7f4"/>
+      <rect x="43" y="0" width="36" height="74" fill="#53d7f4"/>
+      <rect x="90" y="18" width="33" height="56" fill="#8275ff"/>
+    </g>
+    <text x="150" y="65" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-3">Orvix</text>
+  </g>
+  <g transform="translate(391.5 372)">
+    <rect width="297" height="54" rx="27" fill="#14171c" stroke="#343941"/>
+    <circle cx="27" cy="27" r="5" fill="#b8f36b"/>
+    <circle cx="27" cy="27" r="11" fill="#b8f36b" opacity=".2" filter="url(#softGlow)"/>
+    <text x="50" y="35" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2.5">WEEKEND DROP / 01</text>
+  </g>
+
+  <text x="540" y="520" fill="#53d7f4" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" letter-spacing="6" text-anchor="middle">48 HOURS // SHIP SOMETHING</text>
+  <text x="540" y="640" fill="#f3f5f7" font-family="Arial Black, Inter, Arial, sans-serif" font-size="108" font-weight="900" letter-spacing="-6" text-anchor="middle">ORVIX BUILD</text>
+  <text x="540" y="756" fill="#f3f5f7" font-family="Arial Black, Inter, Arial, sans-serif" font-size="108" font-weight="900" letter-spacing="-6" text-anchor="middle">WEEKEND</text>
+  <rect x="467" y="796" width="102" height="9" fill="#b8f36b"/>
+  <rect x="581" y="796" width="44" height="9" fill="#8275ff"/>
+
+  <text x="540" y="880" fill="#b8f36b" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="800" letter-spacing="-1" text-anchor="middle">Get free coding tokens</text>
+  <text x="540" y="928" fill="#9299a6" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500" text-anchor="middle">Prototype fast. Test the edge. Keep the momentum.</text>
+
+  <g transform="translate(72 968)">
+    <rect width="936" height="118" rx="4" fill="#14171c" stroke="#343941" stroke-width="2"/>
+    <rect width="9" height="118" fill="#8275ff"/>
+    <circle cx="43" cy="42" r="5" fill="#ff6b78"/>
+    <circle cx="61" cy="42" r="5" fill="#f8ca62"/>
+    <circle cx="79" cy="42" r="5" fill="#b8f36b"/>
+    <text x="109" y="48" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2">MODEL_ID</text>
+    <text x="38" y="88" fill="#f3f5f7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28" font-weight="700">orvix/glm-5.3-flash:<tspan fill="#b8f36b">free</tspan></text>
+    <path d="M890 44v30M875 59h30" stroke="#53d7f4" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(72 1316)">
+    <text x="468" y="0" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="800" letter-spacing="3" text-anchor="middle">NO WAITLIST</text>
+    <path d="M0 28H936" stroke="#0b0d10" stroke-opacity=".4" stroke-width="2"/>
+    <text x="468" y="124" fill="#0b0d10" font-family="Arial Black, Inter, Arial, sans-serif" font-size="88" font-weight="900" letter-spacing="-5" text-anchor="middle">Try now</text>
+    <g transform="translate(0 160)">
+      <rect width="936" height="116" rx="4" fill="#0b0d10"/>
+      <text x="468" y="72" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800" text-anchor="middle">START BUILDING</text>
+      <path d="M848 58H896M881 43l15 15-15 15" fill="none" stroke="#53d7f4" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
+    </g>
+    <text x="468" y="324" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700" text-anchor="middle">platform.orvix.id</text>
+  </g>
+
+  <text x="540" y="1710" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" letter-spacing="2" text-anchor="middle">BUILD / TEST / DEPLOY</text>
+  <text x="540" y="1750" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" font-weight="800" letter-spacing="1" text-anchor="middle">UNTIL MONDAY 09.00 WIB · T&amp;C APPLY · WHILE TOKENS LAST</text>
+</svg>
