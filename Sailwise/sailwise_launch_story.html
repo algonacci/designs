@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sailwise Public Beta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 1080px; height: 1920px; margin: 0; overflow: hidden; }
+    body { font-family: "Plus Jakarta Sans", sans-serif; color: #0f172a; background: #fff7ed; }
+    .canvas { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: radial-gradient(circle at 83% 10%, rgba(251,146,60,.38), transparent 31%), linear-gradient(180deg,#fff 0%,#fff7ed 58%,#ffedd5 100%); }
+    .grid { position:absolute; inset:0; opacity:.42; background-image:linear-gradient(rgba(148,163,184,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(148,163,184,.18) 1px,transparent 1px); background-size:48px 48px; mask-image:linear-gradient(to bottom,#000 0%,transparent 67%); }
+    .orb { position:absolute; border-radius:999px; filter:blur(60px); }
+    .orb.a { width:420px;height:420px;right:-150px;top:420px;background:rgba(249,115,22,.22); }
+    .orb.b { width:360px;height:360px;left:-180px;bottom:220px;background:rgba(251,146,60,.2); }
+    .frame { position:relative; z-index:2; height:100%; padding:88px 72px; display:flex; flex-direction:column; justify-content:center; gap:44px; }
+    header { display:flex; justify-content:space-between; align-items:center; }
+    .brand { display:flex; align-items:center; gap:15px; font-weight:800; font-size:30px; letter-spacing:-1px; }
+    .mark { display:grid; place-items:center; width:52px;height:52px;border-radius:17px;background:#f97316;color:white;font-size:23px;box-shadow:0 16px 35px rgba(249,115,22,.3); }
+    .beta { display:flex;align-items:center;gap:10px;border:1px solid rgba(249,115,22,.25);background:rgba(255,255,255,.72);border-radius:999px;padding:12px 18px;color:#c2410c;font-size:14px;font-weight:800;letter-spacing:1.6px; }
+    .dot { width:9px;height:9px;background:#22c55e;border-radius:99px;box-shadow:0 0 0 6px rgba(34,197,94,.12); }
+    main { display:flex; flex-direction:column; gap:48px; }
+    .hero { margin:0; }
+    .eyebrow { color:#ea580c;font-size:17px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin:0 0 24px; }
+    h1 { margin:0;max-width:900px;font-size:91px;line-height:.99;letter-spacing:-5.5px;font-weight:800; }
+    h1 span { color:#f97316; }
+    .sub { max-width:770px;margin:34px 0 0;color:#475569;font-size:27px;line-height:1.55;font-weight:500; }
+    .product { position:relative;margin:0;border-radius:38px;background:#0f172a;padding:18px;box-shadow:0 48px 100px -35px rgba(15,23,42,.55);transform:rotate(-1deg); }
+    .product:before { content:"";position:absolute;inset:-20px;border-radius:48px;background:linear-gradient(135deg,rgba(251,146,60,.32),transparent 55%);filter:blur(25px);z-index:-1; }
+    .bar { height:66px;padding:0 18px;display:flex;align-items:center;justify-content:space-between;color:#94a3b8;font-size:14px;font-weight:700; }
+    .bar strong {color:white;font-size:16px;}
+    .ready {color:#86efac;background:rgba(34,197,94,.11);padding:9px 14px;border-radius:999px;}
+    .dashboard { display:grid;grid-template-columns:1.15fr .85fr;gap:15px; }
+    .card { border-radius:28px;padding:27px;background:white; }
+    .ads { grid-row:span 2; }
+    .label {font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#f97316;}
+    .ads h2 {font-size:29px;margin:13px 0 23px;letter-spacing:-1.3px;}
+    .row {display:flex;align-items:center;justify-content:space-between;padding:15px 0;border-bottom:1px solid #f1f5f9;font-size:14px;font-weight:700;color:#94a3b8;}
+    .pill {padding:8px 11px;border-radius:10px;font-size:12px;letter-spacing:.5px;}
+    .scale {background:#ecfdf5;color:#047857}.keep{background:#eff6ff;color:#0369a1}.cut{background:#fffbeb;color:#b45309}.pause{background:#fff1f2;color:#be123c}
+    .orders { background:#f97316;color:white; }
+    .orders .label {color:#ffedd5}.orders h3 {font-size:28px;line-height:1.15;margin:15px 0 10px;}.orders p{font-size:14px;line-height:1.55;margin:0;color:#ffedd5;}
+    .ai {background:#111827;color:white;border:1px solid #334155}.ai .label{color:#c4b5fd}.ai h3{font-size:18px;line-height:1.45;margin:17px 0 9px}.ai p{margin:0;color:#94a3b8;font-size:13px;}
+    footer { margin:0;display:flex;flex-direction:column;align-items:center;gap:18px; }
+    .cta {display:flex;align-items:center;justify-content:center;gap:16px;background:#f97316;color:white;border-radius:999px;padding:26px 42px;font-size:26px;font-weight:800;letter-spacing:-.4px;box-shadow:0 24px 56px rgba(249,115,22,.42),0 0 0 10px rgba(249,115,22,.12);}
+    .cta svg {width:28px;height:28px;}
+    .mini {text-align:center;color:#64748b;font-size:16px;line-height:1.5;font-weight:600;}.mini strong{color:#0f172a;}
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="grid"></div><div class="orb a"></div><div class="orb b"></div>
+    <div class="frame">
+      <header><div class="brand"><span class="mark">S</span>Sailwise</div><div class="beta"><span class="dot"></span>PUBLIC BETA</div></header>
+      <main>
+        <section class="hero">
+          <p class="eyebrow">Shopee marketplace intelligence</p>
+          <h1>See what drives<br/>your <span>growth.</span></h1>
+          <p class="sub">Turn your Shopee orders and ads exports into clear, actionable next moves.</p>
+        </section>
+        <section class="product">
+          <div class="bar"><strong>Weekly command center</strong><span class="ready">● Report ready</span></div>
+          <div class="dashboard">
+            <article class="card ads"><div class="label">Ads triage</div><h2>Decide SKU by SKU.</h2><div class="row"><span class="pill scale">SCALE</span><span>Winner</span></div><div class="row"><span class="pill keep">KEEP</span><span>Stable</span></div><div class="row"><span class="pill cut">CUT BID</span><span>Leaking</span></div><div class="row"><span class="pill pause">PAUSE</span><span>No sale</span></div></article>
+            <article class="card orders"><div class="label">Orders</div><h3>Find your winners.</h3><p>Products, customers, peak hours, and buying patterns.</p></article>
+            <article class="card ai"><div class="label">● Sailwise AI</div><h3>“What should I prioritize next week?”</h3><p>Ask follow-up questions.</p></article>
+          </div>
+        </section>
+      </main>
+      <footer><div class="cta">sailwise.syncloud.my.id<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div><div class="mini"><strong>Upload. Analyze. Decide.</strong> · Orders + Ads + grounded AI</div></footer>
+    </div>
+  </div>
+</body>
+</html>
