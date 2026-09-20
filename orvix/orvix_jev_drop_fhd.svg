@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">TYPESAFE JEV ON ORVIX</title>
+  <desc id="desc">Orvix announcement: TypeSafe Jev evaluator is live at platform.orvix.id/evaluate.</desc>
+  <defs>
+    <pattern id="grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#343941" stroke-width="1"/>
+    </pattern>
+    <pattern id="microgrid" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M16 0H0V16" fill="none" stroke="#0b0d10" stroke-opacity=".12" stroke-width="1"/>
+    </pattern>
+    <clipPath id="magentaPanel">
+      <path d="M1320 0H1920V1080H1112L1320 0Z"/>
+    </clipPath>
+    <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="#0b0d10"/>
+  <rect width="1920" height="1080" fill="url(#grid)" opacity=".42"/>
+  <path d="M0 144H1920M0 936H1920M120 0V1080M1120 0V1080" fill="none" stroke="#343941" stroke-width="1"/>
+
+  <path d="M1320 0H1920V1080H1112L1320 0Z" fill="#ef3db5"/>
+  <g clip-path="url(#magentaPanel)">
+    <rect x="1080" width="840" height="1080" fill="url(#microgrid)"/>
+    <path d="M1390-70 1210 1150M1470-70 1290 1150M1550-70 1370 1150M1630-70 1450 1150M1710-70 1530 1150M1790-70 1610 1150M1870-70 1690 1150M1950-70 1770 1150" stroke="#0b0d10" stroke-opacity=".08" stroke-width="24"/>
+  </g>
+  <path d="M1320 0 1112 1080" stroke="#8275ff" stroke-width="18"/>
+
+  <g transform="translate(120 68)">
+    <g transform="skewX(-7)">
+      <rect x="0" y="28" width="32" height="46" fill="#53d7f4"/>
+      <rect x="43" y="0" width="36" height="74" fill="#53d7f4"/>
+      <rect x="90" y="18" width="33" height="56" fill="#8275ff"/>
+    </g>
+    <text x="150" y="65" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-3">Orvix</text>
+  </g>
+  <g transform="translate(860 77)">
+    <rect width="332" height="54" rx="27" fill="#14171c" stroke="#343941"/>
+    <circle cx="27" cy="27" r="5" fill="#ef3db5"/>
+    <circle cx="27" cy="27" r="11" fill="#ef3db5" opacity=".25" filter="url(#softGlow)"/>
+    <text x="50" y="35" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2.5">EVALUATOR DROP / 01</text>
+  </g>
+
+  <text x="120" y="296" fill="#53d7f4" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="800" letter-spacing="7">NOT CHAT // TYPED DECISIONS</text>
+  <text x="112" y="430" fill="#f3f5f7" font-family="Arial Black, Inter, Arial, sans-serif" font-size="124" font-weight="900" letter-spacing="-7">TYPESAFE</text>
+  <text x="112" y="552" fill="#f3f5f7" font-family="Arial Black, Inter, Arial, sans-serif" font-size="124" font-weight="900" letter-spacing="-7">JEV</text>
+  <rect x="120" y="594" width="102" height="9" fill="#ef3db5"/>
+  <rect x="234" y="594" width="44" height="9" fill="#8275ff"/>
+
+  <text x="120" y="694" fill="#ef3db5" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="800" letter-spacing="-1.5">Now live on Orvix</text>
+  <text x="122" y="741" fill="#9299a6" font-family="Inter, Arial, sans-serif" font-size="23" font-weight="500">Score, classify, and route. No generated prose.</text>
+
+  <g transform="translate(120 796)">
+    <rect width="930" height="104" rx="4" fill="#14171c" stroke="#343941" stroke-width="2"/>
+    <rect width="9" height="104" fill="#ef3db5"/>
+    <circle cx="43" cy="38" r="5" fill="#ff6b78"/>
+    <circle cx="61" cy="38" r="5" fill="#f8ca62"/>
+    <circle cx="79" cy="38" r="5" fill="#b8f36b"/>
+    <text x="109" y="44" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2">ENDPOINT</text>
+    <text x="38" y="79" fill="#f3f5f7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="29" font-weight="700">POST /v1/evaluate  ·  <tspan fill="#ef3db5">orvix/jev</tspan></text>
+  </g>
+
+  <g id="jev-mark">
+    <rect x="1368" y="236" width="400" height="400" rx="4" fill="#0b0d10"/>
+    <image x="1392" y="260" width="352" height="352" href="data:image/png;base64,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" xlink:href="data:image/png;base64,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"/>
+    <text x="1568" y="676" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" font-weight="800" letter-spacing="3" text-anchor="middle">TRY IT NOW</text>
+    <path d="M1368 698H1768" stroke="#0b0d10" stroke-opacity=".4" stroke-width="2"/>
+    <rect x="1368" y="720" width="400" height="116" rx="4" fill="#0b0d10"/>
+    <text x="1568" y="792" fill="#f3f5f7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" font-weight="700" text-anchor="middle">platform.orvix.id/evaluate</text>
+  </g>
+
+  <text x="120" y="996" fill="#9299a6" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" font-weight="700" letter-spacing="2">NOUL / CHOICE / SCORE</text>
+  <text x="1830" y="996" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="800" text-anchor="end" letter-spacing="1">TYPESAFE × ORVIX</text>
+</svg>
