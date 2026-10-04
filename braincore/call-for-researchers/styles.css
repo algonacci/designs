@@ -33,15 +33,15 @@ html, body { overflow: hidden; background: var(--bg); color: var(--white); font-
 .principles span + span::before { content: "/"; color: var(--cyan); margin: 0 .65em; }
 .intro { color: var(--muted); line-height: 1.55; }
 .intro strong { color: var(--white); }
-.event-info { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 1px solid rgba(34,211,238,.22); background: rgba(6,15,29,.52); }
+.event-info { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px solid rgba(34,211,238,.55); background: linear-gradient(135deg, rgba(34,211,238,.16), rgba(59,130,246,.12)); box-shadow: 0 0 0 1px rgba(255,255,255,.04) inset, 0 20px 60px rgba(0,0,0,.24), 0 0 42px rgba(34,211,238,.08); }
 .event-info > div:first-child { display: flex; flex-direction: column; align-items: center; }
 .event-label { color: var(--cyan); font-family: var(--mono); font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-.event-info strong { color: var(--white); }
+.event-info strong { color: var(--white); letter-spacing: -.02em; }
 .meet { display: flex; align-items: center; color: #dce7f5; font-weight: 700; white-space: nowrap; }
 .meet img { display: block; object-fit: contain; }
 .registration { display: flex; flex-direction: column; align-items: center; border-top: 1px solid var(--line); color: #dce7f5; }
 .registration span { color: var(--cyan); font-family: var(--mono); font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
-.registration strong { color: var(--white); font-family: var(--mono); }
+.registration strong { color: #67e8f9; font-family: var(--mono); }
 .areas { display: grid; }
 .area { display: flex; align-items: center; gap: 13px; color: #d8e4f3; border-bottom: 1px solid var(--line); font-weight: 600; }
 .area::before { content: ""; flex: 0 0 auto; width: 6px; height: 6px; border: 1px solid var(--cyan); transform: rotate(45deg); }
@@ -60,14 +60,14 @@ html, body { overflow: hidden; background: var(--bg); color: var(--white); font-
 .story .eyebrow { font-size: 21px; letter-spacing: .21em; margin-bottom: 27px; }
 .story .title { font-size: 104px; max-width: 900px; }
 .story .year { margin-top: 26px; color: #82dff0; font-size: 25px; font-weight: 700; }
-.story .event-info { flex: 0 0 auto; padding: 25px 28px; border-radius: 18px; }
-.story .event-label { margin-bottom: 8px; font-size: 14px; }
-.story .event-info > div:first-child strong { font-size: 24px; }
-.story .meet { margin-top: 15px; gap: 12px; font-size: 20px; }
-.story .meet img { width: 40px; height: 33px; }
-.story .registration { width: 100%; margin-top: 18px; padding-top: 17px; gap: 7px; }
-.story .registration span { font-size: 13px; }
-.story .registration strong { font-size: 22px; }
+.story .event-info { flex: 0 0 auto; padding: 30px 32px; border-radius: 20px; }
+.story .event-label { margin-bottom: 10px; font-size: 16px; }
+.story .event-info > div:first-child strong { font-size: 30px; }
+.story .meet { margin-top: 18px; gap: 13px; font-size: 24px; }
+.story .meet img { width: 46px; height: 38px; }
+.story .registration { width: 100%; margin-top: 21px; padding-top: 20px; gap: 8px; }
+.story .registration span { font-size: 15px; }
+.story .registration strong { color: #67e8f9; font-size: 25px; }
 .story .principles { margin-top: 32px; font-size: 25px; }
 .story .intro { margin-top: 31px; max-width: 850px; font-size: 24px; }
 .story .areas-wrap { margin-top: 42px; }
@@ -89,14 +89,14 @@ html, body { overflow: hidden; background: var(--bg); color: var(--white); font-
 .banner .eyebrow { font-size: 18px; margin-bottom: 24px; }
 .banner .title { font-size: 92px; max-width: 800px; }
 .banner .year { margin-top: 20px; color: #82dff0; font-size: 22px; font-weight: 700; }
-.banner .event-info { margin-top: 18px; width: 100%; padding: 15px 18px; border-radius: 13px; }
-.banner .event-label { margin-bottom: 4px; font-size: 10px; }
-.banner .event-info strong { font-size: 17px; }
-.banner .meet { margin-top: 10px; gap: 9px; font-size: 14px; }
-.banner .meet img { width: 30px; height: 25px; }
-.banner .registration { margin-top: 12px; padding-top: 11px; gap: 4px; }
-.banner .registration span { font-size: 10px; }
-.banner .registration strong { font-size: 14px; }
+.banner .event-info { margin-top: 18px; width: 100%; padding: 20px 22px; border-radius: 15px; }
+.banner .event-label { margin-bottom: 6px; font-size: 12px; }
+.banner .event-info > div:first-child strong { font-size: 22px; }
+.banner .meet { margin-top: 12px; gap: 10px; font-size: 17px; }
+.banner .meet img { width: 35px; height: 29px; }
+.banner .registration { width: 100%; margin-top: 14px; padding-top: 13px; gap: 5px; }
+.banner .registration span { font-size: 11px; }
+.banner .registration strong { color: #67e8f9; font-size: 17px; }
 .banner .principles { margin-top: 26px; font-size: 22px; }
 .banner .intro { margin-top: 26px; max-width: 720px; font-size: 20px; }
 .banner .right-panel { padding: 32px 36px 34px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(17,31,57,.75), rgba(8,17,34,.62)); box-shadow: 0 30px 80px rgba(0,0,0,.25); }
