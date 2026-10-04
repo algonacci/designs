@@ -1,0 +1,85 @@
+:root {
+  --bg: #070b12;
+  --panel: rgba(15, 27, 50, .72);
+  --white: #f8fafc;
+  --muted: #9fb0c8;
+  --blue: #3b82f6;
+  --cyan: #22d3ee;
+  --line: rgba(148, 163, 184, .18);
+  --font: "Plus Jakarta Sans", system-ui, sans-serif;
+  --mono: "Space Grotesk", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { overflow: hidden; background: var(--bg); color: var(--white); font-family: var(--font); }
+.canvas { position: relative; overflow: hidden; isolation: isolate; background: linear-gradient(145deg, #060a11 0%, #0a1428 57%, #102653 100%); }
+.canvas::before { content: ""; position: absolute; inset: 0; z-index: -3; background: radial-gradient(circle at 82% 12%, rgba(59,130,246,.25), transparent 35%), radial-gradient(circle at 13% 85%, rgba(34,211,238,.1), transparent 29%); }
+.grid { position: absolute; inset: 0; z-index: -2; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 60px 60px; mask-image: linear-gradient(135deg, #000, transparent 85%); }
+.glow { position: absolute; z-index: -1; width: 760px; height: 760px; border: 1px solid rgba(34,211,238,.11); border-radius: 50%; right: -370px; top: 330px; box-shadow: 0 0 100px rgba(59,130,246,.08), inset 0 0 90px rgba(34,211,238,.04); }
+.glow::before, .glow::after { content: ""; position: absolute; border: 1px solid rgba(59,130,246,.13); border-radius: 50%; inset: 100px; }
+.glow::after { inset: 220px; background: rgba(34,211,238,.035); }
+.node { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 20px var(--cyan); }
+.node--a { top: 20%; right: 13%; }.node--b { top: 49%; right: 6%; }.node--c { bottom: 16%; left: 9%; }
+.frame { width: 100%; height: 100%; display: flex; flex-direction: column; }
+.nav, .footer { display: flex; align-items: center; justify-content: space-between; }
+.logo { display: block; width: auto; }
+.lab-tag, .eyebrow, .year, .footer { font-family: var(--mono); text-transform: uppercase; letter-spacing: .12em; }
+.lab-tag { display: flex; align-items: center; gap: 12px; color: #b7c6da; font-weight: 700; }
+.lab-tag i { width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 7px rgba(34,211,238,.1), 0 0 18px var(--cyan); }
+.eyebrow { color: var(--cyan); font-weight: 700; }
+.title { font-weight: 800; letter-spacing: -.055em; line-height: .94; }
+.title .gradient { color: transparent; background: linear-gradient(110deg, #f8fafc 12%, #67e8f9 50%, #60a5fa 90%); background-clip: text; -webkit-background-clip: text; }
+.principles { display: flex; align-items: center; color: #dce7f5; font-family: var(--mono); font-weight: 600; }
+.principles span + span::before { content: "/"; color: var(--cyan); margin: 0 .65em; }
+.intro { color: var(--muted); line-height: 1.55; }
+.intro strong { color: var(--white); }
+.areas { display: grid; }
+.area { display: flex; align-items: center; gap: 13px; color: #d8e4f3; border-bottom: 1px solid var(--line); font-weight: 600; }
+.area::before { content: ""; flex: 0 0 auto; width: 6px; height: 6px; border: 1px solid var(--cyan); transform: rotate(45deg); }
+.cta { display: flex; align-items: center; justify-content: space-between; border: 1px solid rgba(34,211,238,.3); background: linear-gradient(115deg, rgba(34,211,238,.13), rgba(59,130,246,.08)); }
+.cta-label { color: var(--cyan); font-family: var(--mono); font-weight: 700; letter-spacing: .14em; }
+.cta-copy { font-weight: 700; }
+.arrow { display: grid; place-items: center; border-radius: 50%; color: #07111f; background: var(--cyan); font-weight: 800; }
+.footer { color: #7f91aa; border-top: 1px solid var(--line); }
+
+/* Story: 1080 x 1920 */
+.story { width: 1080px; height: 1920px; }
+.story .frame { padding: 250px 78px; }
+.story .logo { height: 59px; }
+.story .lab-tag { font-size: 17px; }
+.story main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 54px 0 42px; }
+.story .eyebrow { font-size: 21px; letter-spacing: .21em; margin-bottom: 27px; }
+.story .title { font-size: 104px; max-width: 900px; }
+.story .year { margin-top: 26px; color: #82dff0; font-size: 25px; font-weight: 700; }
+.story .principles { margin-top: 44px; font-size: 25px; }
+.story .intro { margin-top: 43px; max-width: 850px; font-size: 25px; }
+.story .areas-wrap { margin-top: 62px; }
+.story .areas-label { color: #7588a3; font: 700 16px var(--mono); letter-spacing: .18em; text-transform: uppercase; margin-bottom: 14px; }
+.story .areas { grid-template-columns: 1fr 1fr; column-gap: 38px; }
+.story .area { min-height: 63px; font-size: 18px; }
+.story .cta { margin-top: 48px; padding: 27px 28px 27px 32px; border-radius: 18px; }
+.story .cta-label { font-size: 14px; margin-bottom: 8px; }
+.story .cta-copy { font-size: 24px; }
+.story .arrow { width: 55px; height: 55px; font-size: 25px; }
+.story .footer { margin-top: 36px; padding-top: 24px; font-size: 14px; }
+
+/* FHD banner: 1920 x 1080 */
+.banner { width: 1920px; height: 1080px; }
+.banner .frame { padding: 65px 86px 54px; }
+.banner .logo { height: 58px; }
+.banner .lab-tag { font-size: 16px; }
+.banner main { flex: 1; display: grid; grid-template-columns: 1.05fr .95fr; gap: 100px; align-items: center; padding: 52px 0 36px; }
+.banner .eyebrow { font-size: 18px; margin-bottom: 24px; }
+.banner .title { font-size: 92px; max-width: 800px; }
+.banner .year { margin-top: 20px; color: #82dff0; font-size: 22px; font-weight: 700; }
+.banner .principles { margin-top: 34px; font-size: 22px; }
+.banner .intro { margin-top: 34px; max-width: 720px; font-size: 21px; }
+.banner .right-panel { padding: 32px 36px 34px; border: 1px solid var(--line); border-radius: 24px; background: linear-gradient(145deg, rgba(17,31,57,.75), rgba(8,17,34,.62)); box-shadow: 0 30px 80px rgba(0,0,0,.25); }
+.banner .areas-label { color: var(--cyan); font: 700 16px var(--mono); letter-spacing: .18em; text-transform: uppercase; margin-bottom: 16px; }
+.banner .areas { grid-template-columns: 1fr 1fr; column-gap: 30px; }
+.banner .area { min-height: 53px; font-size: 16px; }
+.banner .cta { margin-top: 30px; padding: 20px 22px 20px 25px; border-radius: 15px; }
+.banner .cta-label { font-size: 12px; margin-bottom: 5px; }
+.banner .cta-copy { font-size: 18px; }
+.banner .arrow { width: 45px; height: 45px; font-size: 20px; }
+.banner .footer { padding-top: 20px; font-size: 13px; }
