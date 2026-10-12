@@ -1,0 +1,190 @@
+/* ONNI homepage banners.
+   Desktop 1920x517 (the storefront crops banners to exactly this ratio at
+   >= 1024px) and mobile 1080x1080 (1:1 below that). Palette and type follow
+   the storefront: public/scss/abstracts/_variables.scss in ECommerce-ONNI-v2.
+
+   Safe area: the homepage intro card is pulled up 72px over the carousel.
+   That is fixed in CSS pixels, so the share of the banner it hides grows as
+   the banner shrinks: up to 140px of the desktop design (at 1024px wide) and
+   210px of the mobile one (at 375px wide). Keep copy, CTAs and photo tags
+   above those bottom bands. */
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --green: #284637;
+  --green-deep: #1d3328;
+  --cream: #f3efe9;
+  --soft-green: #ebf0e8;
+  --warm-light: #ded8d3;
+  --olive: #9e915c;
+  --earth: #826a3f;
+  --khaki-light: #c5bd9a;
+  --text: #2d261f;
+  --muted: #7a7268;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Hanken Grotesk", -apple-system, "Segoe UI", sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.banner.dark { background: var(--green); color: var(--cream); }
+
+/* ---------- shared pieces ---------- */
+
+.wordmark {
+  font-weight: 800;
+  letter-spacing: 0.42em;
+  font-size: 22px;
+  color: var(--green);
+}
+.dark .wordmark { color: var(--cream); }
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  background: var(--soft-green);
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.kicker::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--olive);
+}
+.dark .kicker { background: rgba(243, 239, 233, 0.12); color: var(--cream); }
+.dark .kicker::before { background: var(--khaki-light); }
+
+h1 {
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  color: var(--green);
+}
+h1 em { font-style: normal; color: var(--earth); }
+.dark h1 { color: var(--cream); }
+.dark h1 em { color: var(--khaki-light); }
+
+.sub { color: var(--muted); font-weight: 500; line-height: 1.45; }
+.dark .sub { color: rgba(243, 239, 233, 0.78); }
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 999px;
+  background: var(--green);
+  color: var(--cream);
+  font-weight: 700;
+}
+.cta .arrow { font-size: 1.15em; }
+.dark .cta { background: var(--cream); color: var(--green); }
+
+.photo {
+  position: absolute;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 30px 60px -28px rgba(45, 38, 31, 0.45);
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.tag {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px -10px rgba(45, 38, 31, 0.5);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--soft-green);
+}
+.dark .blob { background: rgba(243, 239, 233, 0.07); }
+
+.chips { display: flex; gap: 12px; flex-wrap: wrap; }
+.chip {
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(243, 239, 233, 0.28);
+  font-weight: 600;
+}
+.chip b { color: var(--khaki-light); font-weight: 700; margin-right: 6px; }
+
+/* ---------- desktop 1920x517 ---------- */
+
+.desktop .copy {
+  position: absolute;
+  left: 140px;
+  top: 0;
+  bottom: 140px;
+  width: 860px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+.desktop .head { display: flex; align-items: center; gap: 22px; }
+.desktop h1 { font-size: 60px; }
+.desktop .sub { font-size: 22px; max-width: 760px; }
+.desktop .cta { padding: 16px 32px; font-size: 19px; margin-top: 4px; align-self: flex-start; }
+.desktop .chip { font-size: 18px; }
+
+/* ---------- mobile 1080x1080 ---------- */
+
+.mobile .copy {
+  position: absolute;
+  left: 84px;
+  right: 84px;
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.mobile .head { display: flex; align-items: center; justify-content: space-between; }
+.mobile .wordmark { font-size: 30px; }
+.mobile .kicker { font-size: 20px; padding: 12px 22px; }
+.mobile h1 { font-size: 80px; }
+.mobile .sub { font-size: 30px; }
+.mobile .cta { padding: 22px 40px; font-size: 28px; align-self: flex-start; }
+.mobile .tag { font-size: 22px; padding: 10px 20px; left: 22px; bottom: 22px; }
+.mobile .photo { border-radius: 36px; }
+.mobile .chip { font-size: 24px; padding: 12px 22px; }
+
+/* Chips on the light background. */
+.banner:not(.dark) .chip { border-color: var(--warm-light); background: #fff; color: var(--text); }
+.banner:not(.dark) .chip b { color: var(--earth); }
+.note { font-weight: 600; color: var(--muted); }
+.dark .note { color: rgba(243, 239, 233, 0.7); }
+.desktop .note { font-size: 18px; }
+.mobile .note { font-size: 24px; }
