@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+  <title id="title">Orvix AI Plan — Reset tiap hari</title>
+  <desc id="desc">AI untuk sesi ringan dengan OpenClaw, Hermes, OpenCode, Pi, dan omp. Rp100rb untuk 30 hari. Fair use 20 juta token terhitung per hari.</desc>
+  <defs>
+    <pattern id="grid" width="96" height="96" patternUnits="userSpaceOnUse"><path d="M96 0H0V96" fill="none" stroke="#343941"/></pattern>
+    <pattern id="microgrid" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M16 0H0V16" fill="none" stroke="#0b0d10" stroke-opacity=".09"/></pattern>
+    <clipPath id="panel"><path d="M0 1240L1080 1140V1920H0Z"/></clipPath>
+  </defs>
+  <rect width="1080" height="1920" fill="#0b0d10"/>
+  <rect width="1080" height="1920" fill="url(#grid)" opacity=".28"/>
+  <path d="M72 0V1920M1008 0V1920" stroke="#343941" opacity=".6"/>
+
+  <g transform="translate(400 185)">
+    <g transform="skewX(-7)">
+      <rect y="28" width="32" height="46" fill="#53d7f4"/>
+      <rect x="43" width="36" height="74" fill="#53d7f4"/>
+      <rect x="90" y="18" width="33" height="56" fill="#8275ff"/>
+    </g>
+    <text x="150" y="65" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" letter-spacing="-3">Orvix</text>
+  </g>
+
+  <text x="540" y="337" fill="#a69bff" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" font-weight="700" letter-spacing="7" text-anchor="middle">AI PLAN</text>
+  <g text-anchor="middle" font-family="Arial Black, Inter, Arial, sans-serif" font-weight="900" letter-spacing="-6">
+    <text x="540" y="475" fill="#f3f5f7" font-size="106">KUOTA AI.</text>
+    <text x="540" y="590" fill="#53d7f4" font-size="106">RESET HARIAN.</text>
+  </g>
+  <text x="540" y="659" fill="#aab0bb" font-family="Inter, Arial, sans-serif" font-size="30" text-anchor="middle">Sesi ringan. Rutin tiap hari.</text>
+
+  <!-- Hero agent marks. Assets shared with the existing Orvix Remotion project. -->
+  <g transform="translate(260 733)">
+    <rect width="240" height="240" rx="48" fill="#14171c" stroke="#343941" stroke-width="2"/>
+    <image x="37" y="27" width="166" height="166" href="../../konten/orvix-ai-plan/public/logos/openclaw.svg"/>
+    <text x="120" y="216" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">OpenClaw</text>
+  </g>
+  <text x="540" y="865" fill="#8275ff" font-family="Inter, Arial, sans-serif" font-size="38" text-anchor="middle">+</text>
+  <g transform="translate(580 733)">
+    <rect width="240" height="240" rx="48" fill="#14171c" stroke="#343941" stroke-width="2"/>
+    <image x="42" y="22" width="156" height="166" href="../../konten/orvix-ai-plan/public/logos/hermes-dark.svg"/>
+    <text x="120" y="216" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="25" font-weight="700" text-anchor="middle">Hermes</text>
+  </g>
+  <g transform="translate(330 1022)" text-anchor="middle" fill="#aab0bb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">
+    <image x="-27" width="54" height="54" href="../../konten/orvix-ai-plan/public/logos/opencode.svg"/>
+    <text y="84">OpenCode</text>
+    <image x="183" width="54" height="54" href="../../konten/orvix-ai-plan/public/logos/pi.svg"/>
+    <text x="210" y="84">Pi</text>
+    <image x="393" width="54" height="54" href="../../konten/orvix-ai-plan/public/logos/omp.svg"/>
+    <text x="420" y="84">omp</text>
+  </g>
+
+  <path d="M0 1240L1080 1140V1920H0Z" fill="#53d7f4"/>
+  <g clip-path="url(#panel)">
+    <rect y="1140" width="1080" height="780" fill="url(#microgrid)" opacity=".22"/>
+  </g>
+  <path d="M0 1240L1080 1140" stroke="#b8f36b" stroke-width="8"/>
+
+  <g fill="#0b0d10" text-anchor="middle">
+    <text x="540" y="1284" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" font-weight="700" letter-spacing="4">ORVIX AI PLAN</text>
+    <text x="540" y="1400" font-family="Arial Black, Inter, Arial, sans-serif" font-size="112" font-weight="900" letter-spacing="-6">Rp100rb<tspan font-family="Inter, Arial, sans-serif" font-size="32" font-weight="600" letter-spacing="-1"> / 30 hari</tspan></text>
+  </g>
+  <g transform="translate(160 1462)">
+    <rect width="760" height="104" rx="4" fill="#0b0d10"/>
+    <text x="380" y="65" fill="#f3f5f7" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" text-anchor="middle">Mulai sekarang</text>
+    <path d="M665 52h36m-14-14 14 14-14 14" fill="none" stroke="#b8f36b" stroke-width="3"/>
+  </g>
+  <text x="540" y="1613" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" font-weight="600" text-anchor="middle">platform.orvix.id/token-plan</text>
+  <path d="M280 1660H800" stroke="#0b0d10" stroke-opacity=".2"/>
+  <text x="540" y="1705" fill="#164552" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500" text-anchor="middle">Fair use 20 juta token terhitung/hari.</text>
+</svg>
