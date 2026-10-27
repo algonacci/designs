@@ -63,6 +63,6 @@
     <path d="M665 52h36m-14-14 14 14-14 14" fill="none" stroke="#b8f36b" stroke-width="3"/>
   </g>
   <text x="540" y="1602" fill="#0b0d10" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21" font-weight="600" text-anchor="middle">orvix.id/ai-plan</text>
-  <path d="M280 1660H800" stroke="#0b0d10" stroke-opacity=".2"/>
+  <path d="M280 1622H800" stroke="#0b0d10" stroke-opacity=".2"/>
   <text x="540" y="1650" fill="#164552" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="500" text-anchor="middle">Fair use 20 juta token terhitung/hari.</text>
 </svg>
