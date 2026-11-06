@@ -19,8 +19,8 @@
     .content { padding: 90px 52px; flex: 1; align-self: center; }
     .brand { display: flex; gap: 10px; align-items: center; color: #3b82f6; font-size: 25px; font-weight: 700; }
     .brand svg { width: 40px; height: 40px; }
-    .eyebrow { margin-top: 66px; color: #ea580c; font-size: 18px; font-weight: 600; letter-spacing: .13em; display: flex; align-items: center; gap: 12px; }
-    .eyebrow svg { width: 25px; height: 25px; }
+    .eyebrow { margin-top: 60px; display: inline-flex; align-items: center; gap: 12px; padding: 12px 22px 12px 18px; background: #ea580c; color: #fff; border-radius: 999px; font-size: 24px; font-weight: 700; letter-spacing: .1em; box-shadow: 0 10px 24px -10px rgba(234,88,12,.6); }
+    .eyebrow svg { width: 28px; height: 28px; stroke-width: 2.6; }
     h1 { margin-top: 20px; font-size: 66px; line-height: 1.06; letter-spacing: -.035em; font-weight: 600; }
     h1 span { color: #3b82f6; }
     .intro { margin-top: 23px; color: #64748b; font-size: 25px; line-height: 1.45; }
@@ -30,19 +30,41 @@
     .price .rp { font-size: 31px; font-weight: 500; }
     .price strong { font-size: 103px; line-height: 1.08; letter-spacing: -.06em; font-weight: 600; }
     .price .unit { font-size: 52px; font-weight: 500; }
-    .period { font-size: 23px; color: #64748b; margin-top: 9px; }
+    .price .per { font-size: 40px; font-weight: 500; color: #0f172a; margin-left: -2px; }
     .option { padding: 23px 0; border-bottom: 1px solid #d7e0ed; display: flex; justify-content: space-between; align-items: baseline; }
     .option span { font-size: 23px; color: #64748b; }
     .option strong { font-size: 36px; letter-spacing: -.035em; font-weight: 600; }
     .saving { display: inline-block; margin-top: 17px; color: #c2410c; font-size: 19px; font-weight: 500; background: #fff0e2; padding: 9px 13px; border-radius: 6px; }
     .note { margin-top: 13px; font-size: 17px; color: #64748b; line-height: 1.45; }
-    .footer { position: absolute; bottom: 49px; left: 516px; right: 52px; display: flex; align-items: center; justify-content: space-between; font-size: 18px; color: #64748b; }
-    .footer b { color: #3b82f6; font-weight: 500; }
-    .footer b { padding: 15px 20px; background: #3b82f6; color: #fff; border-radius: 8px; }
+    .cta { display: inline-block; margin-top: 36px; padding: 18px 26px; background: #3b82f6; color: #fff; border-radius: 10px; font-size: 22px; font-weight: 600; }
+    .footer { position: absolute; bottom: 49px; right: 52px; font-size: 18px; color: #64748b; }
     html.story .canvas { height: 1920px; }
     html.story .photo-caption { bottom: 240px; }
-    html.story .footer { bottom: 230px; }
-    html.story .content { padding-top: 150px; padding-bottom: 150px; }
+    html.story .footer { bottom: 190px; }
+    html.story .content { padding: 0 52px 0 56px; }
+    html.story .photo { width: 33%; }
+    html.story .photo-caption { font-size: 34px; left: 40px; right: 16px; }
+    html.story .photo-caption small { font-size: 17px; margin-bottom: 18px; }
+    html.story .brand { font-size: 36px; gap: 14px; }
+    html.story .brand svg { width: 56px; height: 56px; }
+    html.story .eyebrow { margin-top: 70px; font-size: 32px; padding: 16px 30px 16px 24px; gap: 14px; }
+    html.story .eyebrow svg { width: 38px; height: 38px; }
+    html.story h1 { margin-top: 26px; font-size: 98px; }
+    html.story .intro { margin-top: 30px; font-size: 35px; }
+    html.story .monthly { margin-top: 56px; padding-bottom: 38px; }
+    html.story .label { font-size: 24px; }
+    html.story .price { margin-top: 10px; }
+    html.story .price .rp { font-size: 42px; }
+    html.story .price strong { font-size: 144px; }
+    html.story .price .unit { font-size: 70px; }
+    html.story .price .per { font-size: 52px; }
+    html.story .option { padding: 32px 0; }
+    html.story .option span { font-size: 33px; }
+    html.story .option strong { font-size: 54px; }
+    html.story .saving { margin-top: 26px; font-size: 28px; padding: 13px 18px; }
+    html.story .note { margin-top: 18px; font-size: 25px; }
+    html.story .cta { margin-top: 50px; padding: 26px 38px; font-size: 33px; border-radius: 12px; }
+    html.story .footer { font-size: 22px; }
     @media (max-width: 1079px) { .canvas { zoom: calc(100vw / 1080px); } }
   </style>
 </head>
@@ -60,16 +82,16 @@
       <h1>Kelola bisnis.<br><span>Lebih hemat.</span></h1>
       <p class="intro">Pilih modul yang Anda butuhkan,<br>dengan biaya lebih ringan.</p>
       <div class="monthly">
-        <div class="label">LANGGANAN 1 MODUL</div>
-        <div class="price"><span class="rp">Rp</span><strong>250</strong><span class="unit">ribu</span></div>
-        <div class="period">per bulan / per modul</div>
+        <div class="label">BAYAR BULANAN &middot; 1 MODUL</div>
+        <div class="price"><span class="rp">Rp</span><strong>250</strong><span class="unit">ribu</span><span class="per">/bulan</span></div>
       </div>
       <div class="option"><span>6 bulan</span><strong>Rp1,5 juta</strong></div>
       <div class="option"><span>1 tahun</span><strong>Rp2,5 juta</strong></div>
       <div class="saving">Paket tahunan hemat Rp500 ribu</div>
       <p class="note">Dibanding bayar bulanan selama 12 bulan.<br>Semua harga di atas berlaku untuk 1 modul.</p>
+      <div class="cta">Info lengkap di omniflow.id</div>
     </section>
-    <footer class="footer"><b>Info lengkap di omniflow.id</b><span>01 / 02</span></footer>
+    <footer class="footer">01 / 02</footer>
   </main>
 </body>
 </html>
